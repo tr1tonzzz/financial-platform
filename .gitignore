@@ -3,6 +3,5 @@ __pycache__/
 .env
 venv/
 node_modules/
-docs/initial-docs/
 _plan_render/
 data-sets/

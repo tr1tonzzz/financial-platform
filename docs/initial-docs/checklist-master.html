@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Checklist Đồ Án FDP - Full Chi Tiết</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 40px;
+            background-color: #eaf2f8;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 5px solid #2980b9;
+        }
+        h3 {
+            color: #16a085;
+            margin-top: 25px;
+            border-bottom: 1px dashed #ccc;
+            padding-bottom: 5px;
+        }
+        h4 {
+            color: #8e44ad;
+            margin-top: 15px;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 5px;
+        }
+        li {
+            background: white;
+            margin: 8px 0;
+            padding: 12px 15px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: flex-start;
+            transition: all 0.2s ease;
+        }
+        li:hover {
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+        }
+        input[type="checkbox"] {
+            margin-top: 5px;
+            margin-right: 15px;
+            transform: scale(1.4);
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 15px;
+            word-wrap: break-word;
+        }
+        .checked label {
+            text-decoration: line-through;
+            color: #95a5a6;
+        }
+        .deliverable {
+            background-color: #fef9e7;
+            border-left: 4px solid #f39c12;
+            font-weight: 500;
+        }
+        .dod {
+            background-color: #e9f7ef;
+            border-left: 4px solid #27ae60;
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .slide-word {
+            background-color: #e8ebf7;
+            border-left: 4px solid #8e44ad;
+        }
+        button.reset-btn {
+            display: block;
+            margin: 40px auto;
+            padding: 12px 24px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        button.reset-btn:hover {
+            background-color: #c0392b;
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .progress-bar {
+            height: 24px;
+            background-color: #2ecc71;
+            text-align: center;
+            line-height: 24px;
+            color: white;
+            font-weight: bold;
+            width: 0%;
+            transition: width 0.4s ease, background-color 0.4s ease;
+        }
+        code {
+            background-color: #f1f2f6;
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Master Checklist: Lộ Trình 16 Tuần (Bản Đầy Đủ Nội Dung)</h1>
+    
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar">0%</div>
+    </div>
+
+    <div id="checklist">
+        
+        <!-- CHECKPOINT 1 -->
+        <h2>🚩 CHECKPOINT 1 (Tuần 1–2): Vấn đề, Scope, Nền tảng Python</h2>
+        <p><em>(Nội dung giữ nguyên từ file tuan-1-2-chi-tiet-theo-ngay.md)</em></p>
+        
+        <h3>TUẦN 1</h3>
+        <h4>Ngày 1 (Thứ 2) — Cài đặt môi trường</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d1-1"><label for="cp1-d1-1">Tải và cài Python 3.11+ (python.org), kiểm tra bằng <code>python --version</code> hoặc <code>python3 --version</code>.</label></li>
+            <li><input type="checkbox" id="cp1-d1-2"><label for="cp1-d1-2">Cài VS Code, cài extension "Python" (Microsoft) và "Pylance".</label></li>
+            <li><input type="checkbox" id="cp1-d1-3"><label for="cp1-d1-3">Cài Git, cấu hình <code>git config --global user.name</code> và <code>user.email</code>.</label></li>
+            <li><input type="checkbox" id="cp1-d1-4"><label for="cp1-d1-4">Tạo tài khoản GitHub (nếu chưa có), tạo repository mới tên <code>financial-data-platform</code>.</label></li>
+            <li><input type="checkbox" id="cp1-d1-5"><label for="cp1-d1-5">Clone repository về máy, tạo file <code>.gitignore</code> với nội dung tối thiểu: <code>__pycache__/</code>, <code>.env</code>, <code>venv/</code>, <code>node_modules/</code>, <code>*.pyc</code>.</label></li>
+            <li><input type="checkbox" id="cp1-d1-6"><label for="cp1-d1-6">Tạo virtual environment: <code>python -m venv venv</code>, kích hoạt (<code>venv\Scripts\activate</code> trên Windows hoặc <code>source venv/bin/activate</code> trên Mac/Linux).</label></li>
+            <li><input type="checkbox" id="cp1-d1-7"><label for="cp1-d1-7">Commit lần đầu: "Initial commit: project setup".</label></li>
+        </ul>
+
+        <h4>Ngày 2 (Thứ 3) — Cài Database & Python cơ bản (phần 1)</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d2-1"><label for="cp1-d2-1">Tải và cài PostgreSQL 15+ (nhớ lưu lại mật khẩu superuser khi cài).</label></li>
+            <li><input type="checkbox" id="cp1-d2-2"><label for="cp1-d2-2">Cài pgAdmin hoặc DBeaver (công cụ xem database bằng giao diện).</label></li>
+            <li><input type="checkbox" id="cp1-d2-3"><label for="cp1-d2-3">Tạo 1 database mới tên <code>fdp_dev</code> qua pgAdmin/DBeaver.</label></li>
+            <li><input type="checkbox" id="cp1-d2-4"><label for="cp1-d2-4">Thử kết nối, chạy câu lệnh <code>SELECT version();</code> để xác nhận PostgreSQL hoạt động (đây là SQL bạn đã biết, chỉ cần quen giao diện công cụ).</label></li>
+            <li><input type="checkbox" id="cp1-d2-5"><label for="cp1-d2-5">Học Python: kiểu dữ liệu cơ bản — <code>int</code>, <code>float</code>, <code>str</code>, <code>bool</code>, <code>list</code>, <code>dict</code>. Viết 1 file <code>learn_basics.py</code> tự thực hành: tạo vài biến, in ra bằng <code>print()</code>, thử <code>type()</code>.</label></li>
+            <li><input type="checkbox" id="cp1-d2-6"><label for="cp1-d2-6">Học Python: câu lệnh điều kiện <code>if/elif/else</code> — viết 1 hàm nhỏ tự luyện (VD: kiểm tra số chẵn/lẻ).</label></li>
+        </ul>
+
+        <h4>Ngày 3 (Thứ 4) — Python cơ bản (phần 2): vòng lặp, hàm</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d3-1"><label for="cp1-d3-1">Học vòng lặp <code>for</code> và <code>while</code> — thực hành với <code>list</code> (VD: in ra bình phương từng số trong 1 danh sách).</label></li>
+            <li><input type="checkbox" id="cp1-d3-2"><label for="cp1-d3-2">Học viết hàm (<code>def function_name(param):</code>), khái niệm return value.</label></li>
+            <li><input type="checkbox" id="cp1-d3-3"><label for="cp1-d3-3">Học <code>dict</code> (key-value) — vì dữ liệu SEC sẽ ở dạng bảng, việc quen thao tác dict/list-of-dict rất cần thiết.</label></li>
+            <li><input type="checkbox" id="cp1-d3-4"><label for="cp1-d3-4">Bài tập nhỏ tự luyện: viết hàm nhận vào 1 list số, trả về (min, max, trung bình) — không dùng thư viện, tự viết logic bằng vòng lặp (giúp hiểu bản chất trước khi dùng Pandas).</label></li>
+            <li><input type="checkbox" id="cp1-d3-5"><label for="cp1-d3-5">Commit: "Learn Python basics".</label></li>
+        </ul>
+
+        <h4>Ngày 4 (Thứ 5) — Đọc/ghi file & làm quen SEC</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d4-1"><label for="cp1-d4-1">Học đọc/ghi file text trong Python: <code>open()</code>, <code>.read()</code>, <code>.readlines()</code>, <code>with open(...) as f:</code>.</label></li>
+            <li><input type="checkbox" id="cp1-d4-2"><label for="cp1-d4-2">Thực hành: tạo 1 file <code>.txt</code> bất kỳ (VD: danh sách tên), viết script đọc và in ra từng dòng.</label></li>
+            <li><input type="checkbox" id="cp1-d4-3"><label for="cp1-d4-3">Truy cập trang SEC Financial Statement Data Sets (sec.gov/dera/data/financial-statement-data-sets), đọc phần mô tả cấu trúc dữ liệu (đọc kỹ, không cần hiểu hết ngay).</label></li>
+            <li><input type="checkbox" id="cp1-d4-4"><label for="cp1-d4-4">Ghi chú lại (bằng tiếng Việt, ngôn ngữ của bạn): <code>sub.txt</code> chứa gì, <code>num.txt</code> chứa gì, <code>tag.txt</code> chứa gì — mỗi file 2-3 câu.</label></li>
+        </ul>
+
+        <h4>Ngày 5 (Thứ 6) — Tải thử dữ liệu SEC</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d5-1"><label for="cp1-d5-1">Tải 1 file ZIP của 1 quý bất kỳ (khuyến nghị chọn quý gần đây, VD 2023q4, để dữ liệu đầy đủ).</label></li>
+            <li><input type="checkbox" id="cp1-d5-2"><label for="cp1-d5-2">Giải nén thủ công (không cần code), xem các file bên trong bằng Excel hoặc Notepad++ (mở thử vài dòng đầu của <code>sub.txt</code> và <code>num.txt</code>).</label></li>
+            <li><input type="checkbox" id="cp1-d5-3"><label for="cp1-d5-3">Ghi chú: mỗi dòng trong <code>num.txt</code> có những cột gì (adsh, tag, ddate, value...) — đối chiếu với mô tả đã đọc ở Ngày 4.</label></li>
+            <li><input type="checkbox" id="cp1-d5-4"><label for="cp1-d5-4">Thử tìm thủ công (Ctrl+F trong Excel) 1 công ty quen thuộc (VD: tìm "Apple" trong <code>sub.txt</code>), ghi lại CIK của công ty đó.</label></li>
+        </ul>
+
+        <h4>Ngày 6 (Thứ 7) — Nghiên cứu 4 sản phẩm tham khảo</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d6-1"><label for="cp1-d6-1">Đọc/tìm hiểu Nasdaq Data Fabric — ghi chú: sản phẩm cho ai dùng, lưu trữ/cung cấp gì.</label></li>
+            <li><input type="checkbox" id="cp1-d6-2"><label for="cp1-d6-2">Đọc/tìm hiểu Polygon.io — chú ý cách họ thiết kế API (vào trang docs xem thử cấu trúc endpoint).</label></li>
+            <li><input type="checkbox" id="cp1-d6-3"><label for="cp1-d6-3">Đọc/tìm hiểu Economatica — chú ý các tính năng screener, so sánh công ty.</label></li>
+            <li><input type="checkbox" id="cp1-d6-4"><label for="cp1-d6-4">Đọc/tìm hiểu AlphaSense — chú ý đây là dạng search/AI trên tài liệu, khác hẳn 3 sản phẩm kia.</label></li>
+            <li><input type="checkbox" id="cp1-d6-5"><label for="cp1-d6-5">Tổng hợp vào 1 bảng: mỗi sản phẩm — Data gì / Lưu trữ ra sao / Có Analytics không / Có API không / Điểm học được.</label></li>
+        </ul>
+
+        <h4>Ngày 7 (Chủ nhật) — Nghỉ hoặc bù tiến độ</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d7-1"><label for="cp1-d7-1">Nếu đúng tiến độ: nghỉ ngơi, hoặc đọc thêm tài liệu Pandas để chuẩn bị tuần 2.</label></li>
+            <li><input type="checkbox" id="cp1-d7-2"><label for="cp1-d7-2">Nếu trễ: dùng ngày này bù lại các việc chưa xong ở Ngày 1-6, ưu tiên xong phần cài đặt môi trường và bảng so sánh 4 sản phẩm trước khi sang tuần 2.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp1-d7-3"><label for="cp1-d7-3"><strong>Checklist cuối Tuần 1:</strong> Môi trường Python + PostgreSQL + Git đã chạy được.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp1-d7-4"><label for="cp1-d7-4"><strong>Checklist cuối Tuần 1:</strong> Đã đọc và giải nén thử được 1 file ZIP từ SEC.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp1-d7-5"><label for="cp1-d7-5"><strong>Checklist cuối Tuần 1:</strong> Có bảng so sánh 4 sản phẩm tham khảo.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp1-d7-6"><label for="cp1-d7-6"><strong>Checklist cuối Tuần 1:</strong> Tự tin với: biến, if/else, vòng lặp, hàm, đọc file cơ bản trong Python.</label></li>
+        </ul>
+
+        <h3>TUẦN 2</h3>
+        <h4>Ngày 8 (Thứ 2) — Pandas cơ bản (phần 1)</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d8-1"><label for="cp1-d8-1">Cài Pandas: <code>pip install pandas</code>.</label></li>
+            <li><input type="checkbox" id="cp1-d8-2"><label for="cp1-d8-2">Học đọc file bằng Pandas: <code>pd.read_csv('sub.txt', sep='\t')</code> (file SEC là tab-delimited, không phải comma).</label></li>
+            <li><input type="checkbox" id="cp1-d8-3"><label for="cp1-d8-3">Thực hành các lệnh xem dữ liệu: <code>.head()</code>, <code>.shape</code>, <code>.info()</code>, <code>.columns</code>.</label></li>
+            <li><input type="checkbox" id="cp1-d8-4"><label for="cp1-d8-4">Đọc thử <code>sub.txt</code> và <code>num.txt</code> của file đã tải ở Tuần 1, in ra <code>.head()</code> để xem có đọc đúng không.</label></li>
+        </ul>
+
+        <h4>Ngày 9 (Thứ 3) — Pandas cơ bản (phần 2)</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d9-1"><label for="cp1-d9-1">Học lọc dữ liệu: <code>df[df['cik'] == '0000320193']</code> (lọc theo điều kiện).</label></li>
+            <li><input type="checkbox" id="cp1-d9-2"><label for="cp1-d9-2">Học <code>.value_counts()</code> — dùng để đếm số lần xuất hiện (VD: đếm tag nào xuất hiện nhiều nhất trong <code>num.txt</code>).</label></li>
+            <li><input type="checkbox" id="cp1-d9-3"><label for="cp1-d9-3">Học <code>.groupby()</code> cơ bản — VD: group theo <code>cik</code>, đếm số dòng mỗi công ty.</label></li>
+            <li><input type="checkbox" id="cp1-d9-4"><label for="cp1-d9-4">Thực hành: dùng <code>.nunique()</code> đếm số công ty phân biệt, số tag phân biệt trong file đã tải.</label></li>
+        </ul>
+
+        <h4>Ngày 10 (Thứ 4) — Viết script khảo sát dữ liệu</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d10-1"><label for="cp1-d10-1">Tạo file <code>explore_data.py</code> trong thư mục project.</label></li>
+            <li><input type="checkbox" id="cp1-d10-2"><label for="cp1-d10-2">Viết code đọc <code>sub.txt</code>, <code>num.txt</code> bằng Pandas.</label></li>
+            <li><input type="checkbox" id="cp1-d10-3"><label for="cp1-d10-3">In ra: tổng số dòng mỗi file, số <code>cik</code> phân biệt, số <code>tag</code> phân biệt trong <code>num.txt</code>.</label></li>
+            <li><input type="checkbox" id="cp1-d10-4"><label for="cp1-d10-4">Thêm: <code>.value_counts().head(10)</code> để in ra Top 10 tag phổ biến nhất.</label></li>
+            <li><input type="checkbox" id="cp1-d10-5"><label for="cp1-d10-5">Chạy thử, kiểm tra output có hợp lý không (số công ty phải khớp quy mô thực tế của 1 quý báo cáo SEC).</label></li>
+            <li><input type="checkbox" id="cp1-d10-6"><label for="cp1-d10-6">Commit: "Add data exploration script".</label></li>
+        </ul>
+
+        <h4>Ngày 11 (Thứ 5) — Chọn danh sách 30 công ty</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d11-1"><label for="cp1-d11-1">Xác định 3-4 ngành muốn đưa vào (VD: Technology, Retail, Energy, Banking) — nên chọn ngành có đặc điểm báo cáo tài chính khác nhau rõ rệt để so sánh sau này thú vị hơn.</label></li>
+            <li><input type="checkbox" id="cp1-d11-2"><label for="cp1-d11-2">Với mỗi ngành, chọn 7-8 công ty lớn, quen thuộc (dễ tra cứu đối chiếu số liệu thật sau này, dễ có restatement vì lịch sử niêm yết lâu).</label></li>
+            <li><input type="checkbox" id="cp1-d11-3"><label for="cp1-d11-3">Tra CIK của từng công ty (tìm trên SEC EDGAR company search hoặc trong <code>sub.txt</code> đã tải).</label></li>
+            <li><input type="checkbox" id="cp1-d11-4"><label for="cp1-d11-4">Lưu danh sách vào file <code>companies.csv</code> với cột: <code>cik, ticker, name, sic_code</code>.</label></li>
+            <li><input type="checkbox" id="cp1-d11-5"><label for="cp1-d11-5">Dùng script đã viết ở Ngày 10, lọc thử xem 30 công ty này có xuất hiện đủ trong file quý đã tải không (kiểm tra nhanh bằng <code>.isin()</code>).</label></li>
+        </ul>
+
+        <h4>Ngày 12 (Thứ 6) — Viết Problem Statement & Scope</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d12-1"><label for="cp1-d12-1">Viết Problem Statement: 2-3 câu mô tả vấn đề (dựa trên những gì đã học ở Tuần 1 về sự rời rạc/hỗn loạn của dữ liệu tài chính thô).</label></li>
+            <li><input type="checkbox" id="cp1-d12-2"><label for="cp1-d12-2">Viết Product Vision: 1 câu định vị sản phẩm.</label></li>
+            <li><input type="checkbox" id="cp1-d12-3"><label for="cp1-d12-3">Liệt kê Target Users: 2-3 nhóm.</label></li>
+            <li><input type="checkbox" id="cp1-d12-4"><label for="cp1-d12-4">Đối chiếu với bảng Must/Should/Could/Out of Scope đã có sẵn trong SRS-FDP-01 — đọc kỹ, xác nhận có đồng ý với scope này không, ghi chú nếu muốn điều chỉnh gì để trao đổi với giảng viên.</label></li>
+        </ul>
+
+        <h4>Ngày 13 (Thứ 7) — Chuẩn bị Slide & Word Checkpoint 1</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d13-1"><label for="cp1-d13-1">Viết Slide theo cấu trúc đã định (7 slide: đề tài, vấn đề, bảng so sánh, scope, demo, danh sách công ty, kế hoạch tổng quan).</label></li>
+            <li><input type="checkbox" id="cp1-d13-2"><label for="cp1-d13-2">Chèn số liệu thật từ <code>explore_data.py</code> vào slide (không dùng số liệu giả định).</label></li>
+            <li><input type="checkbox" id="cp1-d13-3"><label for="cp1-d13-3">Viết bản nháp báo cáo Word (các mục 1-4 trước, mục 5-7 hoàn thiện sau khi có kết quả cuối).</label></li>
+            <li><input type="checkbox" id="cp1-d13-4"><label for="cp1-d13-4">Chuẩn bị chạy thử demo script trên máy sẽ dùng để báo cáo (đảm bảo không lỗi môi trường vào phút chót).</label></li>
+        </ul>
+
+        <h4>Ngày 14 (Chủ nhật) — Rà soát & Nộp</h4>
+        <ul>
+            <li><input type="checkbox" id="cp1-d14-1"><label for="cp1-d14-1">Đọc lại toàn bộ Slide + Word, kiểm tra số liệu nhất quán giữa 2 tài liệu.</label></li>
+            <li><input type="checkbox" id="cp1-d14-2"><label for="cp1-d14-2">Chạy thử lại <code>explore_data.py</code> lần cuối để chắc chắn demo không lỗi.</label></li>
+            <li><input type="checkbox" id="cp1-d14-3"><label for="cp1-d14-3">Commit toàn bộ code + tài liệu lên Git.</label></li>
+            <li><input type="checkbox" id="cp1-d14-4"><label for="cp1-d14-4">Chuẩn bị câu hỏi muốn hỏi giảng viên (nếu scope có điểm chưa chắc chắn).</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp1-end-1"><label for="cp1-end-1"><strong>Checklist cuối Tuần 2:</strong> <code>explore_data.py</code> chạy hoàn chỉnh, có số liệu thật.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp1-end-2"><label for="cp1-end-2"><strong>Checklist cuối Tuần 2:</strong> File <code>companies.csv</code> với 30 công ty đã chọn.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp1-end-3"><label for="cp1-end-3"><strong>Checklist cuối Tuần 2:</strong> Problem Statement, Scope đã chốt bằng văn bản.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp1-end-4"><label for="cp1-end-4"><strong>Checklist cuối Tuần 2:</strong> Slide + Word đã sẵn sàng nộp/trình bày.</label></li>
+            <li class="dod"><input type="checkbox" id="cp1-dod"><label for="cp1-dod"><strong>✅ Definition of Done Checkpoint 1:</strong> Script khảo sát dữ liệu chạy được và cho ra số liệu thật; scope đã chốt bằng văn bản, không đổi trừ khi có lý do chính đáng được ghi vào Change Log của SRS.</label></li>
+        </ul>
+
+        <hr>
+
+        <!-- CHECKPOINT 2 -->
+        <h2>🚩 CHECKPOINT 2 (Tuần 3–4): Thiết kế Dữ liệu & Kiến trúc</h2>
+        <p><em>(Nội dung giữ nguyên từ file roadmap-chi-tiet-16-tuan.md)</em></p>
+        
+        <h3>Tuần 3 — Kết nối Database & Xác định Chỉ tiêu</h3>
+        <ul>
+            <li><input type="checkbox" id="cp2-t3-1"><label for="cp2-t3-1">Học kết nối Python–PostgreSQL bằng <code>psycopg2</code> hoặc <code>SQLAlchemy</code>: viết được script connect, execute 1 câu <code>SELECT 1</code>.</label></li>
+            <li><input type="checkbox" id="cp2-t3-2"><label for="cp2-t3-2">Học câu lệnh <code>CREATE TABLE</code>, <code>INSERT</code>, và đặc biệt <code>COPY</code> (khác <code>INSERT</code> ở tốc độ khi nạp dữ liệu lớn).</label></li>
+            <li><input type="checkbox" id="cp2-t3-3"><label for="cp2-t3-3">Với 30 công ty đã chọn, kiểm tra thủ công (hoặc bằng script) xem mỗi công ty có đủ dữ liệu 12 quý gần nhất trong file SEC không — loại/thay công ty nào thiếu quá nhiều.</label></li>
+            <li><input type="checkbox" id="cp2-t3-4"><label for="cp2-t3-4">Xác định chốt 10 chỉ tiêu canonical (dùng đúng danh sách ở SDD-FDP-01 Mục 3.5) — viết định nghĩa rõ ràng từng chỉ tiêu bằng tiếng Việt dễ hiểu (để dùng lại khi viết báo cáo).</label></li>
+            <li><input type="checkbox" id="cp2-t3-5"><label for="cp2-t3-5">Với mỗi chỉ tiêu, tra cứu thử trong <code>tag.txt</code>/<code>num.txt</code> xem có những tag XBRL phổ biến nào tương ứng (ghi chú thủ công 3-5 tag mỗi chỉ tiêu để chuẩn bị cho <code>tag_mapping</code> ở tuần sau).</label></li>
+        </ul>
+
+        <h3>Tuần 4 — ERD, Kiến trúc, Use Case</h3>
+        <ul>
+            <li><input type="checkbox" id="cp2-t4-1"><label for="cp2-t4-1">Vẽ lại ERD đầy đủ theo SDD-FDP-01 Mục 3.1 bằng công cụ (dbdiagram.io, draw.io, hoặc vẽ tay rồi chụp) — không copy nguyên bản mermaid, phải tự vẽ để hiểu.</label></li>
+            <li><input type="checkbox" id="cp2-t4-2"><label for="cp2-t4-2">Viết migration script SQL tạo toàn bộ bảng: <code>company</code>, <code>metric_definition</code>, <code>tag_mapping</code>, <code>financial_fact</code>, <code>historical_price</code>, <code>ingestion_log</code>.</label></li>
+            <li><input type="checkbox" id="cp2-t4-3"><label for="cp2-t4-3">Chạy migration trên database <code>fdp_dev</code>, kiểm tra bằng <code>\dt</code> (liệt kê bảng) và <code>\d financial_fact</code> (xem cấu trúc bảng).</label></li>
+            <li><input type="checkbox" id="cp2-t4-4"><label for="cp2-t4-4">Insert thủ công 10 dòng vào <code>metric_definition</code> (10 chỉ tiêu canonical đã chốt).</label></li>
+            <li><input type="checkbox" id="cp2-t4-5"><label for="cp2-t4-5">Vẽ lại Architecture Diagram (theo SDD Mục 2.2) — hiểu và giải thích được từng mũi tên nghĩa là gì.</label></li>
+            <li><input type="checkbox" id="cp2-t4-6"><label for="cp2-t4-6">Vẽ Use Case Diagram (theo SRS Mục 2.7.1) — điều chỉnh nếu thấy actor/use case nào chưa phù hợp với thực tế đang làm.</label></li>
+            <li><input type="checkbox" id="cp2-t4-7"><label for="cp2-t4-7">Viết tài liệu ngắn (nửa trang) giải thích: vì sao chọn fact table long-format thay vì bảng rộng (theo SDD Mục 2.4 — tự viết lại bằng lời của mình, không copy nguyên văn).</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp2-del-1"><label for="cp2-del-1"><strong>Deliverable kỹ thuật:</strong> Database <code>fdp_dev</code> có đủ 6 bảng đúng schema, chạy migration không lỗi.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp2-del-2"><label for="cp2-del-2"><strong>Deliverable kỹ thuật:</strong> File <code>.sql</code> migration lưu trong Git.</label></li>
+        </ul>
+
+        <h4>Nội dung Slide & Báo cáo Checkpoint 2</h4>
+        <ul>
+            <li class="slide-word"><input type="checkbox" id="cp2-slide-1"><label for="cp2-slide-1"><strong>Slide:</strong> Kiến trúc hệ thống tổng thể (Architecture Diagram đã tự vẽ lại).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp2-slide-2"><label for="cp2-slide-2"><strong>Slide:</strong> Use Case Diagram — giải thích 3 nhóm actor (End User, API Consumer, System Operator) và use case chính.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp2-slide-3"><label for="cp2-slide-3"><strong>Slide:</strong> ERD (rút gọn, dễ nhìn — không cần hiện hết field, chỉ tên bảng + quan hệ).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp2-slide-4"><label for="cp2-slide-4"><strong>Slide:</strong> Giải thích thiết kế bitemporal: dùng ví dụ trực quan — "nếu công ty X báo cáo lại Revenue quý Y, hệ thống lưu cả 2 giá trị thay vì ghi đè".</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp2-slide-5"><label for="cp2-slide-5"><strong>Slide:</strong> Danh mục 10 chỉ tiêu canonical + ví dụ 2-3 tag XBRL ánh xạ vào 1 chỉ tiêu.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp2-slide-6"><label for="cp2-slide-6"><strong>Slide:</strong> Demo: chạy <code>\d financial_fact</code> trên psql, chiếu schema thật đã tạo.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp2-slide-7"><label for="cp2-slide-7"><strong>Slide:</strong> Cập nhật tiến độ, vấn đề gặp phải khi học SQL nâng cao (nếu có).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp2-word-1"><label for="cp2-word-1"><strong>Word:</strong> Thiết kế dữ liệu (1.5-2 trang): ERD đầy đủ + giải thích từng bảng, từng field quan trọng, quan hệ giữa các bảng.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp2-word-2"><label for="cp2-word-2"><strong>Word:</strong> Lý do lựa chọn kiến trúc bitemporal (1 trang): trình bày dạng so sánh (ghi đè vs giữ lịch sử), bảng ưu/nhược điểm.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp2-word-3"><label for="cp2-word-3"><strong>Word:</strong> Kiến trúc hệ thống tổng thể (1 trang): giải thích từng thành phần làm gì.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp2-word-4"><label for="cp2-word-4"><strong>Word:</strong> Use Case Model (0.5-1 trang): Use Case Diagram + bảng đặc tả rút gọn.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp2-word-5"><label for="cp2-word-5"><strong>Word:</strong> Danh mục 10 chỉ tiêu canonical (bảng, phụ lục).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp2-word-6"><label for="cp2-word-6"><strong>Word:</strong> Danh sách 30 công ty final (nếu có điều chỉnh so với Checkpoint 1, ghi rõ lý do đổi).</label></li>
+            <li class="dod"><input type="checkbox" id="cp2-dod"><label for="cp2-dod"><strong>✅ Definition of Done Checkpoint 2:</strong> Database chạy đúng schema; ERD, Architecture Diagram, Use Case Diagram đã hoàn chỉnh và tự giải thích được, không chỉ copy hình.</label></li>
+        </ul>
+
+        <hr>
+
+        <!-- CHECKPOINT 3 -->
+        <h2>🚩 CHECKPOINT 3 (Tuần 5–6): Vertical Slice — Chuỗi Chạy Thông Đầu Tiên</h2>
+        
+        <h3>Tuần 5 — Ingestion & Mapping tối giản (3 công ty, 3 chỉ tiêu)</h3>
+        <ul>
+            <li><input type="checkbox" id="cp3-t5-1"><label for="cp3-t5-1">Viết script <code>ingest.py</code>: tải 1 file ZIP theo tham số quý, giải nén vào thư mục <code>data/raw/{quarter}/</code>.</label></li>
+            <li><input type="checkbox" id="cp3-t5-2"><label for="cp3-t5-2">Viết script tạo bảng staging (<code>staging_sub</code>, <code>staging_num</code>) — schema đơn giản, gần giống cấu trúc gốc của SEC.</label></li>
+            <li><input type="checkbox" id="cp3-t5-3"><label for="cp3-t5-3">Dùng <code>COPY</code> (qua <code>psycopg2.copy_expert</code> hoặc tương đương) nạp <code>sub.txt</code>, <code>num.txt</code> vào staging.</label></li>
+            <li><input type="checkbox" id="cp3-t5-4"><label for="cp3-t5-4">Kiểm tra: <code>SELECT COUNT(*)</code> staging phải khớp <code>wc -l</code> của file gốc (trừ dòng header).</label></li>
+            <li><input type="checkbox" id="cp3-t5-5"><label for="cp3-t5-5">Chọn thủ công 3 công ty (CIK) trong danh sách 30, lọc riêng dữ liệu của 3 công ty này trong staging để test.</label></li>
+            <li><input type="checkbox" id="cp3-t5-6"><label for="cp3-t5-6">Viết bảng <code>tag_mapping</code> thủ công cho 3 chỉ tiêu: <code>REVENUE</code>, <code>NET_INCOME</code>, <code>TOTAL_ASSETS</code> — tra cứu tag XBRL tương ứng đã ghi chú ở tuần 3, insert vào bảng <code>tag_mapping</code>.</label></li>
+            <li><input type="checkbox" id="cp3-t5-7"><label for="cp3-t5-7">Viết script <code>standardize.py</code>: join <code>staging_num</code> với <code>tag_mapping</code>, tính giá trị theo <code>metric_id</code>, insert vào <code>financial_fact</code> (kèm <code>filed_at</code>, <code>accession_no</code> lấy từ <code>staging_sub</code>).</label></li>
+            <li><input type="checkbox" id="cp3-t5-8"><label for="cp3-t5-8">Chạy thử toàn bộ cho 3 công ty, kiểm tra bằng <code>SELECT * FROM financial_fact</code> — đối chiếu vài giá trị với báo cáo tài chính thật của công ty đó (tra trên trang IR của công ty hoặc SEC EDGAR) để xác nhận đúng.</label></li>
+        </ul>
+
+        <h3>Tuần 6 — API & Kiểm thử Vertical Slice</h3>
+        <ul>
+            <li><input type="checkbox" id="cp3-t6-1"><label for="cp3-t6-1">Học FastAPI cơ bản: tạo project, chạy <code>uvicorn main:app --reload</code>, viết route đơn giản trả JSON tĩnh.</label></li>
+            <li><input type="checkbox" id="cp3-t6-2"><label for="cp3-t6-2">Viết endpoint thật: <code>GET /companies/{cik}/financials</code> — query từ <code>financial_fact</code>, trả JSON đúng 3 chỉ tiêu cho 1 công ty.</label></li>
+            <li><input type="checkbox" id="cp3-t6-3"><label for="cp3-t6-3">Test bằng Swagger UI (<code>/docs</code> tự sinh của FastAPI) — gọi thử với 3 CIK đã nạp.</label></li>
+            <li><input type="checkbox" id="cp3-t6-4"><label for="cp3-t6-4">Test bằng Postman: 1 case đúng (CIK tồn tại), 1 case sai (CIK không tồn tại) — kiểm tra hệ thống trả lỗi hợp lý, không crash (tương ứng TC-17 rút gọn).</label></li>
+            <li><input type="checkbox" id="cp3-t6-5"><label for="cp3-t6-5">Viết lại toàn bộ pipeline thành 1 script duy nhất chạy tuần tự: <code>python run_pipeline.py --quarter=2023q4 --companies=3</code> để dễ demo.</label></li>
+            <li><input type="checkbox" id="cp3-t6-6"><label for="cp3-t6-6">(Không bắt buộc, làm nếu còn thời gian) Dựng 1 trang React tối giản, gọi API, hiển thị bảng số liệu thô — không cần đẹp.</label></li>
+            <li><input type="checkbox" id="cp3-t6-7"><label for="cp3-t6-7">Chạy lại toàn bộ pipeline 1 lần nữa từ đầu (xóa data, chạy lại) để chắc chắn không có bước nào làm thủ công mà quên ghi vào script.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp3-del-1"><label for="cp3-del-1"><strong>Deliverable kỹ thuật — mốc quan trọng nhất học kỳ:</strong> Lệnh <code>python run_pipeline.py</code> chạy từ đầu đến cuối, không cần can thiệp tay, kết thúc bằng việc gọi API thành công và nhận đúng dữ liệu 3 công ty.</label></li>
+        </ul>
+
+        <h4>Nội dung Slide & Báo cáo Checkpoint 3</h4>
+        <ul>
+            <li class="slide-word"><input type="checkbox" id="cp3-slide-1"><label for="cp3-slide-1"><strong>Slide:</strong> Nhắc lại Architecture Diagram, khoanh vùng màu phần đã chạy được (staging → standardize → DB → API).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp3-slide-2"><label for="cp3-slide-2"><strong>Slide:</strong> Demo trực tiếp (quan trọng nhất buổi này): chạy <code>run_pipeline.py</code> trên máy thật, gọi API qua Swagger, chiếu kết quả JSON.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp3-slide-3"><label for="cp3-slide-3"><strong>Slide:</strong> Đối chiếu 1 số liệu cụ thể trả về từ API với số liệu thật trên báo cáo tài chính công ty đó (chứng minh dữ liệu đúng, không chỉ chạy được).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp3-slide-4"><label for="cp3-slide-4"><strong>Slide:</strong> Khó khăn gặp phải (VD: lỗi kết nối DB, lỗi parse tag) và cách giải quyết.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp3-slide-5"><label for="cp3-slide-5"><strong>Slide:</strong> Kế hoạch mở rộng tuần 7-8 (từ 3 công ty lên 30, từ 3 chỉ tiêu lên 10).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp3-word-1"><label for="cp3-word-1"><strong>Word:</strong> Mô tả kỹ thuật pipeline v0.1 (1.5 trang): từng bước cụ thể kèm sơ đồ (có thể dùng lại Sequence Diagram Ingestion ở SDD Mục 2.6.1, chú thích phần nào đã làm/chưa làm).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp3-word-2"><label for="cp3-word-2"><strong>Word:</strong> Code snippet quan trọng (1 trang): đoạn code COPY staging, đoạn code join tag_mapping, đoạn code endpoint API — có chú thích ngắn.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp3-word-3"><label for="cp3-word-3"><strong>Word:</strong> Kết quả kiểm thử thủ công (0.5 trang): bảng input/output cụ thể — CIK nào, chỉ tiêu nào, giá trị trả về, đối chiếu với nguồn thật.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp3-word-4"><label for="cp3-word-4"><strong>Word:</strong> Đánh giá khả năng mở rộng (0.5 trang): pipeline hiện tại có điểm nào cần sửa trước khi mở rộng lên 30 công ty × 10 chỉ tiêu.</label></li>
+            <li class="dod"><input type="checkbox" id="cp3-dod"><label for="cp3-dod"><strong>✅ Definition of Done Checkpoint 3:</strong> Gọi API thật nhận về dữ liệu đã đi qua toàn bộ pipeline, đối chiếu đúng với số liệu thật của công ty. <strong>ĐIỂM KIỂM SOÁT CỨNG (Hard Gate M3).</strong></label></li>
+        </ul>
+
+        <hr>
+
+        <!-- CHECKPOINT 4 -->
+        <h2>🚩 CHECKPOINT 4 (Tuần 7–8): Mở rộng Toàn bộ Dữ liệu</h2>
+        
+        <h3>Tuần 7 — Mở rộng Ingestion & Tag Mapping đầy đủ</h3>
+        <ul>
+            <li><input type="checkbox" id="cp4-t7-1"><label for="cp4-t7-1">Sửa <code>ingest.py</code> để chạy được cho nhiều quý liên tiếp (12 quý) bằng vòng lặp hoặc tham số danh sách quý.</label></li>
+            <li><input type="checkbox" id="cp4-t7-2"><label for="cp4-t7-2">Chạy ingestion cho toàn bộ 12 quý, toàn bộ 30 công ty (không chỉ 3 công ty như Checkpoint 3) — theo dõi thời gian chạy, log lại nếu có quý nào lỗi tải.</label></li>
+            <li><input type="checkbox" id="cp4-t7-3"><label for="cp4-t7-3">Mở rộng <code>tag_mapping</code> từ 3 chỉ tiêu lên đủ 10 chỉ tiêu: với mỗi chỉ tiêu còn lại (Gross Profit, EPS, Total Liabilities, Total Equity, Operating Cash Flow, Capex, Shares Outstanding), tra cứu tag XBRL phổ biến và thêm vào bảng mapping.</label></li>
+            <li><input type="checkbox" id="cp4-t7-4"><label for="cp4-t7-4">Xử lý case một filing có nhiều tag cùng trỏ 1 chỉ tiêu: cài đặt cột <code>priority</code> trong logic standardize (nếu có nhiều giá trị, lấy theo priority thấp nhất/ưu tiên cao nhất).</label></li>
+            <li><input type="checkbox" id="cp4-t7-5"><label for="cp4-t7-5">Xử lý case tag không map được: ghi vào bảng/file riêng (<code>unmapped_tags.csv</code>) thay vì bỏ qua âm thầm — để phân tích ở tuần 8.</label></li>
+        </ul>
+
+        <h3>Tuần 8 — Coverage Report & Validation</h3>
+        <ul>
+            <li><input type="checkbox" id="cp4-t8-1"><label for="cp4-t8-1">Viết script <code>coverage_report.py</code>: với mỗi chỉ tiêu canonical, tính % số filing (trong 30 công ty × 12 quý) resolve được giá trị.</label></li>
+            <li><input type="checkbox" id="cp4-t8-2"><label for="cp4-t8-2">Xuất coverage report ra bảng/file, sắp xếp từ chỉ tiêu coverage cao đến thấp — xác định chỉ tiêu nào đang yếu.</label></li>
+            <li><input type="checkbox" id="cp4-t8-3"><label for="cp4-t8-3">Nếu có chỉ tiêu coverage quá thấp (<50%), quay lại <code>unmapped_tags.csv</code> xem tag nào phổ biến bị bỏ sót, bổ sung vào <code>tag_mapping</code>, chạy lại standardize.</label></li>
+            <li><input type="checkbox" id="cp4-t8-4"><label for="cp4-t8-4">Viết 3 rule validation theo FR-08: Rule 1 (giá trị âm ở chỉ tiêu không cho phép âm → set <code>is_flagged=true</code>).</label></li>
+            <li><input type="checkbox" id="cp4-t8-5"><label for="cp4-t8-5">Rule 2: duplicate theo khóa <code>(cik, metric_id, period_end, filed_at, accession_no)</code> → phát hiện bằng <code>GROUP BY ... HAVING COUNT(*) > 1</code>.</label></li>
+            <li><input type="checkbox" id="cp4-t8-6"><label for="cp4-t8-6">Rule 3: giá trị lệch quá N lần so với trung vị lịch sử cùng công ty/chỉ tiêu (outlier) → tính bằng Pandas (<code>median()</code>, so sánh tỷ lệ).</label></li>
+            <li><input type="checkbox" id="cp4-t8-7"><label for="cp4-t8-7">Chạy validation trên toàn bộ dữ liệu, cập nhật cột <code>is_flagged</code>, <code>flag_reason</code> trong <code>financial_fact</code>.</label></li>
+            <li><input type="checkbox" id="cp4-t8-8"><label for="cp4-t8-8">Thống kê: bao nhiêu bản ghi bị flag theo từng rule, top 5 công ty/chỉ tiêu có nhiều bản ghi lỗi nhất.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp4-del-1"><label for="cp4-del-1"><strong>Deliverable:</strong> Dataset đầy đủ 30 công ty × 12 quý × 10 chỉ tiêu trong <code>financial_fact</code>.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp4-del-2"><label for="cp4-del-2"><strong>Deliverable:</strong> Coverage report hoàn chỉnh.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp4-del-3"><label for="cp4-del-3"><strong>Deliverable:</strong> Bảng thống kê dữ liệu bị flag.</label></li>
+        </ul>
+
+        <h4>Nội dung Slide & Báo cáo Checkpoint 4</h4>
+        <ul>
+            <li class="slide-word"><input type="checkbox" id="cp4-slide-1"><label for="cp4-slide-1"><strong>Slide:</strong> Số liệu tổng quan dataset: tổng số dòng financial_fact, số công ty, số quý, thời gian chạy ingestion toàn bộ.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp4-slide-2"><label for="cp4-slide-2"><strong>Slide:</strong> Bảng/biểu đồ coverage report — 10 chỉ tiêu, coverage % từng chỉ tiêu (nên vẽ bar chart cho trực quan).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp4-slide-3"><label for="cp4-slide-3"><strong>Slide:</strong> Ví dụ cụ thể: 1 tag khó map (VD: RevenueFromContractWithCustomerExcludingAssessedTax) và cách xử lý.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp4-slide-4"><label for="cp4-slide-4"><strong>Slide:</strong> Kết quả validation: bao nhiêu % dữ liệu sạch / bị flag, breakdown theo 3 rule.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp4-slide-5"><label for="cp4-slide-5"><strong>Slide:</strong> 1 ví dụ thực tế bản ghi bị flag (chụp màn hình dòng dữ liệu + lý do flag).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp4-slide-6"><label for="cp4-slide-6"><strong>Slide:</strong> Đánh giá: dataset đã sẵn sàng cho phần bitemporal + benchmark ở Checkpoint 5-6 chưa.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp4-word-1"><label for="cp4-word-1"><strong>Word:</strong> Cơ chế tag mapping chi tiết (1 trang): logic priority, cách xử lý xung đột nhiều tag, ví dụ minh họa bằng dữ liệu thật.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp4-word-2"><label for="cp4-word-2"><strong>Word:</strong> Coverage report đầy đủ (1 trang): bảng 10 dòng, % coverage, phân tích nguyên nhân với chỉ tiêu coverage thấp (nếu có).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp4-word-3"><label for="cp4-word-3"><strong>Word:</strong> Chi tiết 3 rule validation (1 trang): công thức/logic mỗi rule + ví dụ bản ghi thật bị phát hiện lỗi bởi từng rule.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp4-word-4"><label for="cp4-word-4"><strong>Word:</strong> Đánh giá chất lượng dữ liệu tổng thể (0.5 trang): đối chiếu với NFR-04 (coverage ≥70% cho ≥6/10 chỉ tiêu) — đạt hay chưa, nếu chưa thì phương án xử lý.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp4-word-5"><label for="cp4-word-5"><strong>Word:</strong> Cập nhật danh sách công ty (nếu có công ty bị loại do thiếu dữ liệu quá nhiều).</label></li>
+            <li class="dod"><input type="checkbox" id="cp4-dod"><label for="cp4-dod"><strong>✅ Definition of Done Checkpoint 4:</strong> Coverage đạt NFR-04; toàn bộ dữ liệu 30×12×10 đã nằm trong <code>financial_fact</code>, có gắn cờ chất lượng đầy đủ.</label></li>
+        </ul>
+
+        <hr>
+
+        <!-- CHECKPOINT 5 -->
+        <h2>🚩 CHECKPOINT 5 (Tuần 9–10): Bitemporal & Dữ liệu Giá</h2>
+        
+        <h3>Tuần 9 — Point-in-time Query & Restatement Detection</h3>
+        <ul>
+            <li><input type="checkbox" id="cp5-t9-1"><label for="cp5-t9-1">Kiểm tra trong dữ liệu 30 công ty đã nạp: tìm các trường hợp có từ 2 <code>accession_no</code> khác nhau cho cùng <code>(cik, metric_id, period_end)</code> — đây chính là dấu hiệu restatement.</label></li>
+            <li><input type="checkbox" id="cp5-t9-2"><label for="cp5-t9-2">Nếu ít/không tìm thấy tự nhiên, thử mở rộng: tải thêm 1-2 quý cũ hơn để tăng khả năng bắt được restatement (các công ty lớn thường nộp lại báo cáo trong vòng 1 năm).</label></li>
+            <li><input type="checkbox" id="cp5-t9-3"><label for="cp5-t9-3">Viết script <code>find_restatements.py</code>: liệt kê toàn bộ case restatement tìm được (company, metric, period, giá trị cũ, giá trị mới, ngày filed_at của mỗi lần).</label></li>
+            <li><input type="checkbox" id="cp5-t9-4"><label for="cp5-t9-4">Cài index <code>idx_fact_filed_at</code> (SDD Mục 3.2) trên <code>financial_fact</code>.</label></li>
+            <li><input type="checkbox" id="cp5-t9-5"><label for="cp5-t9-5">Viết endpoint <code>GET /companies/{cik}/financials?period=&as_of=</code> theo đúng SQL pattern ở SDD Mục 3.4 (<code>DISTINCT ON</code> + <code>filed_at <=</code>).</label></li>
+            <li><input type="checkbox" id="cp5-t9-6"><label for="cp5-t9-6">Test thủ công: chọn 1 công ty có restatement, gọi API với 2 giá trị <code>as_of</code> (trước và sau ngày filed lần 2), xác nhận 2 kết quả khác nhau (tương ứng TC-19).</label></li>
+            <li><input type="checkbox" id="cp5-t9-7"><label for="cp5-t9-7">Test case biên: gọi <code>as_of</code> trước cả ngày filing đầu tiên → xác nhận trả về rỗng có kiểm soát, không lỗi 500 (TC-20).</label></li>
+        </ul>
+
+        <h3>Tuần 10 — Dữ liệu Giá Cổ phiếu & Benchmark Baseline</h3>
+        <ul>
+            <li><input type="checkbox" id="cp5-t10-1"><label for="cp5-t10-1">Học dùng thư viện lấy giá cổ phiếu lịch sử (<code>yfinance</code> hoặc tương đương) — test lấy giá 1 mã trong 1 khoảng ngày.</label></li>
+            <li><input type="checkbox" id="cp5-t10-2"><label for="cp5-t10-2">Viết script <code>ingest_prices.py</code>: lấy giá đóng cửa lịch sử cho 30 công ty, khoảng thời gian khớp với 12 quý đã chọn, insert vào <code>historical_price</code>.</label></li>
+            <li><input type="checkbox" id="cp5-t10-3"><label for="cp5-t10-3">Viết endpoint <code>GET /companies/{cik}/prices?from=&to=</code>.</label></li>
+            <li><input type="checkbox" id="cp5-t10-4"><label for="cp5-t10-4">Xác định 4 truy vấn đại diện cho benchmark (theo TP-FDP-01 TC-26): (1) lấy 1 công ty 1 kỳ, (2) lấy chuỗi 12 quý 1 chỉ tiêu, (3) so sánh 5 công ty, (4) lọc toàn bộ 30 công ty theo 1 điều kiện.</label></li>
+            <li><input type="checkbox" id="cp5-t10-5"><label for="cp5-t10-5">Viết script <code>benchmark.py</code>: chạy mỗi truy vấn N lần (VD: 10 lần), đo thời gian trung bình bằng <code>time.perf_counter()</code>.</label></li>
+            <li><input type="checkbox" id="cp5-t10-6"><label for="cp5-t10-6">Chạy benchmark ở trạng thái <strong>hiện tại (chưa có materialized view, chưa tối ưu)</strong> — đây là baseline, lưu kết quả ra file/bảng.</label></li>
+            <li><input type="checkbox" id="cp5-t10-7"><label for="cp5-t10-7">Chạy <code>EXPLAIN ANALYZE</code> cho từng truy vấn baseline, lưu lại text output.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp5-del-1"><label for="cp5-del-1"><strong>Deliverable:</strong> API <code>as_of</code> hoạt động đúng, có bằng chứng cụ thể (2 kết quả khác nhau).</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp5-del-2"><label for="cp5-del-2"><strong>Deliverable:</strong> Danh sách restatement tìm được.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp5-del-3"><label for="cp5-del-3"><strong>Deliverable:</strong> Dữ liệu giá cổ phiếu đầy đủ 30 công ty.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp5-del-4"><label for="cp5-del-4"><strong>Deliverable:</strong> Bảng benchmark baseline + EXPLAIN ANALYZE.</label></li>
+        </ul>
+
+        <h4>Nội dung Slide & Báo cáo Checkpoint 5</h4>
+        <ul>
+            <li class="slide-word"><input type="checkbox" id="cp5-slide-1"><label for="cp5-slide-1"><strong>Slide:</strong> Giải thích bitemporal bằng 1 ví dụ thật tìm được: tên công ty, chỉ tiêu, giá trị trước/sau điều chỉnh, ngày công bố mỗi lần.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp5-slide-2"><label for="cp5-slide-2"><strong>Slide:</strong> Demo trực tiếp: gọi API với 2 giá trị <code>as_of</code>, chiếu 2 response JSON khác nhau cạnh nhau.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp5-slide-3"><label for="cp5-slide-3"><strong>Slide:</strong> Sequence Diagram luồng point-in-time (từ SDD Mục 2.6.2) — giải thích ngắn gọn.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp5-slide-4"><label for="cp5-slide-4"><strong>Slide:</strong> Danh sách đầy đủ các restatement tìm được (bảng, có thể vài dòng).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp5-slide-5"><label for="cp5-slide-5"><strong>Slide:</strong> Giới thiệu dữ liệu giá cổ phiếu đã nạp (số liệu tổng quan).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp5-slide-6"><label for="cp5-slide-6"><strong>Slide:</strong> Bảng benchmark baseline — nêu rõ đây là "trước khi tối ưu", sẽ so sánh ở Checkpoint 6.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp5-slide-7"><label for="cp5-slide-7"><strong>Slide:</strong> 1 slide <code>EXPLAIN ANALYZE</code> mẫu (chỉ 1 truy vấn tiêu biểu, không cần hết 4 truy vấn) — chỉ ra <code>Seq Scan</code> để tạo tương phản cho Checkpoint sau.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp5-word-1"><label for="cp5-word-1"><strong>Word:</strong> Cơ chế bitemporal chi tiết (1 trang): câu lệnh SQL point-in-time đầy đủ, giải thích từng phần (DISTINCT ON, filed_at <=).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp5-word-2"><label for="cp5-word-2"><strong>Word:</strong> Toàn bộ danh sách restatement (1 trang, dạng bảng/phụ lục): company, metric, period, giá trị cũ/mới, ngày filed mỗi lần + 1-2 câu phân tích.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp5-word-3"><label for="cp5-word-3"><strong>Word:</strong> Mô tả nguồn và cách nạp dữ liệu giá cổ phiếu (0.5 trang).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp5-word-4"><label for="cp5-word-4"><strong>Word:</strong> Bảng benchmark baseline đầy đủ (1 trang): 4 truy vấn, thời gian chạy (ms), kèm tóm tắt EXPLAIN ANALYZE.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp5-word-5"><label for="cp5-word-5"><strong>Word:</strong> Kết quả test TC-19, TC-20 (input/output cụ thể).</label></li>
+            <li class="dod"><input type="checkbox" id="cp5-dod"><label for="cp5-dod"><strong>✅ Definition of Done Checkpoint 5:</strong> Tìm được tối thiểu 1 restatement thật; nếu không có, phải ghi rõ trong báo cáo và chuẩn bị phương án minh họa thay thế (dữ liệu giả lập có chú thích).</label></li>
+        </ul>
+
+        <hr>
+
+        <!-- CHECKPOINT 6 -->
+        <h2>🚩 CHECKPOINT 6 (Tuần 11–12): Tối ưu Hiệu năng & API Hoàn chỉnh</h2>
+        
+        <h3>Tuần 11 — Tối ưu & Đo lại Benchmark</h3>
+        <ul>
+            <li><input type="checkbox" id="cp6-t11-1"><label for="cp6-t11-1">Tạo materialized view <code>mv_latest_metrics</code> theo đúng câu lệnh SDD Mục 3.3.</label></li>
+            <li><input type="checkbox" id="cp6-t11-2"><label for="cp6-t11-2">Tạo index bổ sung cần thiết (<code>idx_fact_company_metric_period</code> nếu chưa có từ Checkpoint 2).</label></li>
+            <li><input type="checkbox" id="cp6-t11-3"><label for="cp6-t11-3">Sửa endpoint <code>/compare</code> và <code>/screen</code> (nếu đã viết) để đọc từ <code>mv_latest_metrics</code> thay vì <code>financial_fact</code> trực tiếp.</label></li>
+            <li><input type="checkbox" id="cp6-t11-4"><label for="cp6-t11-4">Chạy lại đúng 4 truy vấn benchmark của Checkpoint 5 (tuần 10), đo lại thời gian — <strong>sau khi tối ưu</strong>.</label></li>
+            <li><input type="checkbox" id="cp6-t11-5"><label for="cp6-t11-5">Chạy lại <code>EXPLAIN ANALYZE</code> cho 4 truy vấn, so sánh loại scan trước/sau (<code>Seq Scan</code> → <code>Index Scan</code>/<code>Index Only Scan</code>).</label></li>
+            <li><input type="checkbox" id="cp6-t11-6"><label for="cp6-t11-6">Tính tỷ lệ cải thiện (%) cho từng truy vấn, tổng hợp thành 1 bảng so sánh trước/sau.</label></li>
+            <li><input type="checkbox" id="cp6-t11-7"><label for="cp6-t11-7">Viết lệnh refresh materialized view (<code>REFRESH MATERIALIZED VIEW mv_latest_metrics</code>) và quyết định thời điểm gọi (sau mỗi lần ingestion).</label></li>
+        </ul>
+
+        <h3>Tuần 12 — Hoàn thiện API & Viết Test</h3>
+        <ul>
+            <li><input type="checkbox" id="cp6-t12-1"><label for="cp6-t12-1">Viết nốt các endpoint còn thiếu: <code>/trend</code>, <code>/compare</code>, <code>/screen</code>, <code>/metrics/coverage</code>, <code>/ingestion/logs</code>, <code>/health</code>.</label></li>
+            <li><input type="checkbox" id="cp6-t12-2"><label for="cp6-t12-2">Viết response format thống nhất (<code>{data, meta}</code>) cho toàn bộ endpoint.</label></li>
+            <li><input type="checkbox" id="cp6-t12-3"><label for="cp6-t12-3">Cài Pytest, viết unit test cho module standardization (map đúng tag → đúng metric), module validation (3 rule ở Checkpoint 4) — mục tiêu tối thiểu 15 test case theo NFR-06.</label></li>
+            <li><input type="checkbox" id="cp6-t12-4"><label for="cp6-t12-4">Viết API test bằng <code>TestClient</code> của FastAPI cho từng endpoint — cả case hợp lệ và case lỗi (VD: CIK không tồn tại → 404, tham số sai định dạng → 400).</label></li>
+            <li><input type="checkbox" id="cp6-t12-5"><label for="cp6-t12-5">Chạy toàn bộ test suite (<code>pytest</code>), sửa lỗi nếu có test fail.</label></li>
+            <li><input type="checkbox" id="cp6-t12-6"><label for="cp6-t12-6">Cập nhật Traceability Matrix trong TP-FDP-01: đánh dấu Pass/Fail cho từng Test Case đã chạy được tới thời điểm này.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp6-del-1"><label for="cp6-del-1"><strong>Deliverable:</strong> Bảng benchmark trước/sau tối ưu hoàn chỉnh.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp6-del-2"><label for="cp6-del-2"><strong>Deliverable:</strong> API đầy đủ toàn bộ endpoint, có test pass.</label></li>
+        </ul>
+
+        <h4>Nội dung Slide & Báo cáo Checkpoint 6</h4>
+        <ul>
+            <li class="slide-word"><input type="checkbox" id="cp6-slide-1"><label for="cp6-slide-1"><strong>Slide (quan trọng nhất cả kỳ):</strong> Biểu đồ cột so sánh benchmark trước/sau tối ưu — 4 truy vấn, 2 cột mỗi truy vấn (trước/sau), có số ms và % cải thiện ghi rõ.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp6-slide-2"><label for="cp6-slide-2"><strong>Slide:</strong> Giải thích ngắn gọn cơ chế: index giúp gì, materialized view giúp gì (1 câu mỗi cái, không sa vào lý thuyết).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp6-slide-3"><label for="cp6-slide-3"><strong>Slide:</strong> So sánh trực quan EXPLAIN ANALYZE trước/sau cho truy vấn cải thiện nhiều nhất.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp6-slide-4"><label for="cp6-slide-4"><strong>Slide:</strong> Danh sách API endpoint hoàn chỉnh (bảng, demo nhanh qua Swagger).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp6-slide-5"><label for="cp6-slide-5"><strong>Slide:</strong> Kết quả test: tổng số test case, số pass/fail, tỷ lệ.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp6-slide-6"><label for="cp6-slide-6"><strong>Slide:</strong> Cập nhật Traceability Matrix (có thể chỉ hiện dòng đã Pass, rút gọn).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp6-word-1"><label for="cp6-word-1"><strong>Word:</strong> Chi tiết các biện pháp tối ưu (1 trang): index đã tạo, materialized view, câu lệnh SQL cụ thể.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp6-word-2"><label for="cp6-word-2"><strong>Word:</strong> Bảng benchmark đầy đủ trước/sau (1 trang): 4 truy vấn × (thời gian trước, thời gian sau, % cải thiện) + EXPLAIN ANALYZE đầy đủ (phụ lục nếu dài).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp6-word-3"><label for="cp6-word-3"><strong>Word:</strong> Phân tích kết quả (0.5 trang): truy vấn nào cải thiện nhiều nhất/ít nhất, vì sao (liên hệ tới loại scan, kích thước dữ liệu quét).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp6-word-4"><label for="cp6-word-4"><strong>Word:</strong> Danh sách API endpoint đầy đủ (bảng chuẩn, giống OpenAPI spec).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp6-word-5"><label for="cp6-word-5"><strong>Word:</strong> Báo cáo kết quả test (0.5 trang): số lượng test case theo từng loại (unit/integration/API), tỷ lệ pass, các lỗi đã sửa trong quá trình test.</label></li>
+            <li class="dod"><input type="checkbox" id="cp6-dod"><label for="cp6-dod"><strong>✅ Definition of Done Checkpoint 6:</strong> Có bằng chứng benchmark rõ ràng bằng số liệu thật; toàn bộ endpoint trong SRS hoạt động và có test pass.</label></li>
+        </ul>
+
+        <hr>
+
+        <!-- CHECKPOINT 7 -->
+        <h2>🚩 CHECKPOINT 7 (Tuần 13–14): Xây dựng Dashboard</h2>
+        
+        <h3>Tuần 13 — Company Overview & Trend</h3>
+        <ul>
+            <li><input type="checkbox" id="cp7-t13-1"><label for="cp7-t13-1">Dựng project React (Vite hoặc Create React App), cài Recharts, cài axios/fetch để gọi API.</label></li>
+            <li><input type="checkbox" id="cp7-t13-2"><label for="cp7-t13-2">Viết component tìm kiếm công ty, gọi <code>GET /companies?search=</code>.</label></li>
+            <li><input type="checkbox" id="cp7-t13-3"><label for="cp7-t13-3">Viết trang <strong>Company Overview</strong>: hiển thị 10 chỉ tiêu chính + 2 chỉ số phái sinh (Revenue Growth YoY, Net Profit Margin — tính ở frontend hoặc lấy từ API <code>/companies/{cik}/financials</code>).</label></li>
+            <li><input type="checkbox" id="cp7-t13-4"><label for="cp7-t13-4">Viết trang <strong>Trend</strong>: dropdown chọn 1 chỉ tiêu, gọi <code>GET /trend</code>, vẽ biểu đồ đường bằng Recharts.</label></li>
+            <li><input type="checkbox" id="cp7-t13-5"><label for="cp7-t13-5">Viết control <strong>As-of date</strong> (input type="date"): khi đổi giá trị, gọi lại API <code>/financials?as_of=</code>, cập nhật số liệu hiển thị trên Overview — đây là phần trực quan hóa quan trọng nhất cho bitemporal.</label></li>
+            <li><input type="checkbox" id="cp7-t13-6"><label for="cp7-t13-6">Test thủ công: chọn công ty có restatement đã tìm được ở Checkpoint 5, gạt as-of qua lại, xác nhận số liệu đổi đúng.</label></li>
+        </ul>
+
+        <h3>Tuần 14 — Comparison & Hoàn thiện UI</h3>
+        <ul>
+            <li><input type="checkbox" id="cp7-t14-1"><label for="cp7-t14-1">Viết trang <strong>Comparison</strong>: cho phép chọn 2-5 công ty (multi-select), chọn chỉ tiêu, gọi <code>POST /compare</code>, hiển thị bảng song song.</label></li>
+            <li><input type="checkbox" id="cp7-t14-2"><label for="cp7-t14-2">(Chỉ làm nếu đúng tiến độ) Viết trang <strong>Screening</strong> đơn giản: form nhập 1-2 điều kiện, gọi <code>POST /screen</code>, hiển thị bảng kết quả.</label></li>
+            <li><input type="checkbox" id="cp7-t14-3"><label for="cp7-t14-3">Xử lý loading state (spinner/skeleton khi đang gọi API) và error state (thông báo khi API lỗi) cho toàn bộ trang.</label></li>
+            <li><input type="checkbox" id="cp7-t14-4"><label for="cp7-t14-4">Kiểm tra responsive cơ bản (không cần hỗ trợ mobile, chỉ cần không vỡ layout ở màn hình desktop thường dùng).</label></li>
+            <li><input type="checkbox" id="cp7-t14-5"><label for="cp7-t14-5">Review lại toàn bộ luồng UI theo checklist UC-01 → UC-06 trong SRS, đảm bảo mỗi Use Case đều thao tác được trên UI thật.</label></li>
+            <li class="deliverable"><input type="checkbox" id="cp7-del-1"><label for="cp7-del-1"><strong>Deliverable:</strong> Dashboard chạy được, tối thiểu 3 trang (Overview, Trend, Comparison) tích hợp thật với backend, không còn dữ liệu giả lập hardcode.</label></li>
+        </ul>
+
+        <h4>Nội dung Slide & Báo cáo Checkpoint 7</h4>
+        <ul>
+            <li class="slide-word"><input type="checkbox" id="cp7-slide-1"><label for="cp7-slide-1"><strong>Slide:</strong> Demo trực tiếp toàn bộ luồng: tìm công ty → overview → trend → gạt as-of date (điểm nhấn) → chọn thêm công ty → so sánh.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp7-slide-2"><label for="cp7-slide-2"><strong>Slide:</strong> Nên có video quay sẵn luồng demo này làm dự phòng ngay từ bây giờ (theo TP-FDP-01 Mục 7.2), không đợi tới cuối kỳ.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp7-slide-3"><label for="cp7-slide-3"><strong>Slide:</strong> Ảnh chụp màn hình từng trang chính (phòng khi demo trực tiếp có sự cố mạng buổi báo cáo).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp7-slide-4"><label for="cp7-slide-4"><strong>Slide:</strong> Những gì đã làm được/chưa làm được so với kế hoạch (đặc biệt nêu rõ nếu Screening chưa kịp làm).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp7-word-1"><label for="cp7-word-1"><strong>Word:</strong> Mô tả từng màn hình (1 trang): luồng tương tác, API được gọi ở mỗi màn hình (liên hệ UC-01 → UC-06).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp7-word-2"><label for="cp7-word-2"><strong>Word:</strong> Screenshot các trang chính (phụ lục).</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp7-word-3"><label for="cp7-word-3"><strong>Word:</strong> Đánh giá UI/UX ở mức cơ bản (0.5 trang): nêu rõ đã ưu tiên tính đúng của dữ liệu hơn thẩm mỹ giao diện, đúng định vị sản phẩm ở SRS.</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp7-word-4"><label for="cp7-word-4"><strong>Word:</strong> Cập nhật tiến độ Must/Should/Could Have — mục nào chắc chắn hoàn thành, mục nào có nguy cơ không kịp.</label></li>
+            <li class="dod"><input type="checkbox" id="cp7-dod"><label for="cp7-dod"><strong>✅ Definition of Done Checkpoint 7:</strong> Toàn bộ dashboard gọi dữ liệu thật, không có màn hình nào dùng dữ liệu hardcode.</label></li>
+        </ul>
+
+        <hr>
+
+        <!-- CHECKPOINT 8 -->
+        <h2>🚩 CHECKPOINT 8 (Tuần 15–16): Hoàn thiện & Trình bày Cuối kỳ</h2>
+        
+        <h3>Tuần 15 — Đóng gói, Kiểm thử Tích hợp, Chuẩn bị Dự phòng</h3>
+        <ul>
+            <li><input type="checkbox" id="cp8-t15-1"><label for="cp8-t15-1">Viết <code>Dockerfile</code> cho backend, <code>Dockerfile</code> cho frontend (hoặc build tĩnh serve qua nginx), viết <code>docker-compose.yml</code> gộp cả 3 service (postgres, backend, frontend).</label></li>
+            <li><input type="checkbox" id="cp8-t15-2"><label for="cp8-t15-2">Test: xóa toàn bộ container/volume, chạy <code>docker-compose up</code> từ đầu, kiểm tra hệ thống lên đúng (NFR-08, TC-36).</label></li>
+            <li><input type="checkbox" id="cp8-t15-3"><label for="cp8-t15-3">Viết script seed dữ liệu từ file backup (không phải chạy lại ingestion từ SEC) để khởi động nhanh khi demo.</label></li>
+            <li><input type="checkbox" id="cp8-t15-4"><label for="cp8-t15-4">Xuất file backup dữ liệu (<code>pg_dump</code>) sau khi đã có dữ liệu đầy đủ và sạch, lưu kèm source code (theo TP-FDP-01 Mục 7.1).</label></li>
+            <li><input type="checkbox" id="cp8-t15-5"><label for="cp8-t15-5">Test TC-37: ngắt mạng, restore từ backup, chạy thử toàn bộ UC-01 → UC-06 — xác nhận hoạt động không cần internet.</label></li>
+            <li><input type="checkbox" id="cp8-t15-6"><label for="cp8-t15-6">Viết integration test cuối: 1 script chạy toàn luồng từ ingestion (dùng dữ liệu mẫu nhỏ) → DB → gọi API → nhận đúng kết quả.</label></li>
+            <li><input type="checkbox" id="cp8-t15-7"><label for="cp8-t15-7">Hoàn thiện README: hướng dẫn cài đặt, chạy, seed dữ liệu, chạy test.</label></li>
+            <li><input type="checkbox" id="cp8-t15-8"><label for="cp8-t15-8">Quay video demo dự phòng (3-5 phút) theo đúng kịch bản sẽ trình bày.</label></li>
+            <li><input type="checkbox" id="cp8-t15-9"><label for="cp8-t15-9">(Tùy chọn, nếu còn thời gian) Deploy backend lên Render, frontend lên Vercel theo TP-FDP-01 Mục 7.3.</label></li>
+        </ul>
+
+        <h3>Tuần 16 — Báo cáo Cuối kỳ & Luyện Demo</h3>
+        <ul>
+            <li><input type="checkbox" id="cp8-t16-1"><label for="cp8-t16-1">Tổng hợp toàn bộ nội dung 8 Checkpoint thành báo cáo cuối kỳ hoàn chỉnh (dùng lại SRS/SDD/TP/PP làm khung, không viết lại từ đầu).</label></li>
+            <li><input type="checkbox" id="cp8-t16-2"><label for="cp8-t16-2">Viết phần "Hạn chế của hệ thống" trung thực (VD: coverage chưa đạt 100%, Screening chưa hoàn thiện nếu vậy).</label></li>
+            <li><input type="checkbox" id="cp8-t16-3"><label for="cp8-t16-3">Viết phần "Hướng phát triển" dựa trên mục Future Work đã xác định từ trước.</label></li>
+            <li><input type="checkbox" id="cp8-t16-4"><label for="cp8-t16-4">Làm slide cuối kỳ (10-12 slide) theo cấu trúc đã thống nhất trước đó.</label></li>
+            <li><input type="checkbox" id="cp8-t16-5"><label for="cp8-t16-5">Luyện demo tối thiểu 2 lần liên tiếp không lỗi, bấm đúng thứ tự kịch bản.</label></li>
+            <li><input type="checkbox" id="cp8-t16-6"><label for="cp8-t16-6">Kiểm tra checklist trước ngày bảo vệ (TP-FDP-01 Mục 7.4): file backup, video, sạc pin, cổng kết nối.</label></li>
+            <li><input type="checkbox" id="cp8-t16-7"><label for="cp8-t16-7">Chuẩn bị trả lời câu hỏi dự kiến: "Vì sao chọn bitemporal thay vì lưu thông thường?", "Benchmark đo như thế nào, có đáng tin không?", "Phần nào để dành đồ án tốt nghiệp và vì sao?".</label></li>
+        </ul>
+
+        <h4>Nội dung Slide & Báo cáo Cuối kỳ</h4>
+        <ul>
+            <li class="slide-word"><input type="checkbox" id="cp8-slide-1"><label for="cp8-slide-1"><strong>Slide:</strong> 1. Giới thiệu đề tài, vấn đề giải quyết</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp8-slide-2"><label for="cp8-slide-2"><strong>Slide:</strong> 2. Nghiên cứu sản phẩm tham khảo (rút gọn)</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp8-slide-3"><label for="cp8-slide-3"><strong>Slide:</strong> 3. Kiến trúc hệ thống + Use Case tổng quan</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp8-slide-4"><label for="cp8-slide-4"><strong>Slide:</strong> 4. ERD + giải thích bitemporal</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp8-slide-5"><label for="cp8-slide-5"><strong>Slide:</strong> 5. Demo: point-in-time query (số liệu trước/sau restatement thật)</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp8-slide-6"><label for="cp8-slide-6"><strong>Slide:</strong> 6. Demo: benchmark trước/sau tối ưu</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp8-slide-7"><label for="cp8-slide-7"><strong>Slide:</strong> 7. Demo: dashboard (Overview → Trend → As-of → Comparison)</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp8-slide-8"><label for="cp8-slide-8"><strong>Slide:</strong> 8. Kết quả đạt được so với scope cam kết (bảng Must/Should Have — cái nào làm, cái nào không, vì sao)</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp8-slide-9"><label for="cp8-slide-9"><strong>Slide:</strong> 9. Kết quả test (số test case, tỷ lệ pass) + kế hoạch dự phòng demo</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp8-slide-10"><label for="cp8-slide-10"><strong>Slide:</strong> 10. Khó khăn & bài học kinh nghiệm</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp8-slide-11"><label for="cp8-slide-11"><strong>Slide:</strong> 11. Hướng phát triển (đồ án tốt nghiệp)</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp8-slide-12"><label for="cp8-slide-12"><strong>Slide:</strong> 12. Kết luận + Cảm ơn</label></li>
+            <li class="slide-word"><input type="checkbox" id="cp8-word-1"><label for="cp8-word-1"><strong>Word:</strong> Tổng hợp đầy đủ theo cấu trúc chuẩn (Giới thiệu → Nghiên cứu → Yêu cầu → Thiết kế → Công nghệ → Triển khai → Kết quả → Kiểm thử → Đánh giá → Hạn chế → Hướng phát triển → Kết luận → Phụ lục), lấy trực tiếp nội dung đã viết ở 7 Checkpoint trước, không viết mới từ đầu — chỉ cần biên tập lại cho mạch lạc và bổ sung phần Kết luận/Đánh giá tổng thể.</label></li>
+            <li class="dod"><input type="checkbox" id="cp8-dod"><label for="cp8-dod"><strong>✅ Definition of Done Checkpoint 8 (cuối kỳ):</strong> Toàn bộ Must Have hoạt động; demo chạy được 2 lần liên tiếp không lỗi; có phương án dự phòng đầy đủ (backup data, video); báo cáo phản ánh đúng thực tế đã làm.</label></li>
+        </ul>
+
+    </div>
+
+    <button class="reset-btn" id="resetBtn">Xóa toàn bộ tiến độ (Reset)</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            const progressBar = document.getElementById('progressBar');
+            const resetBtn = document.getElementById('resetBtn');
+
+            const loadState = () => {
+                checkboxes.forEach(checkbox => {
+                    const saved = localStorage.getItem(checkbox.id);
+                    if (saved === 'true') {
+                        checkbox.checked = true;
+                        checkbox.closest('li').classList.add('checked');
+                    }
+                });
+                updateProgress();
+            };
+
+            const updateProgress = () => {
+                const total = checkboxes.length;
+                const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+                const percentage = total === 0 ? 0 : Math.round((checked / total) * 100);
+                
+                progressBar.style.width = percentage + '%';
+                progressBar.textContent = percentage + '%';
+                
+                if (percentage === 100) {
+                    progressBar.style.backgroundColor = '#27ae60';
+                } else {
+                    progressBar.style.backgroundColor = '#2ecc71';
+                }
+            };
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', (e) => {
+                    const target = e.target;
+                    localStorage.setItem(target.id, target.checked);
+                    
+                    if (target.checked) {
+                        target.closest('li').classList.add('checked');
+                    } else {
+                        target.closest('li').classList.remove('checked');
+                    }
+                    updateProgress();
+                });
+            });
+
+            resetBtn.addEventListener('click', () => {
+                if(confirm('Bạn có chắc chắn muốn xóa toàn bộ lịch sử tích chọn không?')) {
+                    checkboxes.forEach(checkbox => {
+                        localStorage.removeItem(checkbox.id);
+                        checkbox.checked = false;
+                        checkbox.closest('li').classList.remove('checked');
+                    });
+                    updateProgress();
+                }
+            });
+
+            loadState();
+        });
+    </script>
+</body>
+</html>
