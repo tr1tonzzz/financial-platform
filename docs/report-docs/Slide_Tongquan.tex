@@ -1,0 +1,273 @@
+\documentclass[t, aspectratio=169]{beamer} % Khai báo tỉ lệ cho Beamer biết
+\usepackage[utf8]{vietnam}
+\usepackage{amsthm,amsmath,amssymb}
+\usepackage{lmodern}
+
+% --- CẤU HÌNH LỀ (Phải đặt ở đây) ---
+\def\slideContentLeftMargin{0.5cm}  % Lề trái
+\def\slideContentRightMargin{1cm}   % Lề phải
+\def\hustHeaderHeight{1cm}        % Lề trên (Né thanh tiêu đề)
+\def\slideContentBotMargin{3.5cm}   % Lề dưới (Né logo/footer)
+
+
+% Thay đổi [red] thành [blue] để đổi màu
+\usepackage[blue, 169]{beamerthemeHUST} 
+
+% Dùng dấu - thay cho tam giác ở các danh sách
+\setbeamertemplate{itemize item}{--}
+\setbeamertemplate{itemize subitem}{--}
+
+% 1. Điều chỉnh vị trí cả khối title ở trang title
+\renewcommand{\titlePageTitleX}{-0.5cm}
+\renewcommand{\titlePageTitleY}{-0.5cm}
+
+% 2. Căn lề TỪNG THÀNH PHẦN của trang title
+\renewcommand{\hustTitleAlign}{\alignLeft} 
+\renewcommand{\hustSubtitleAlign}{\alignLeft}
+\renewcommand{\hustAuthorAlign}{\alignLeft}
+\renewcommand{\hustInstAlign}{\alignLeft}
+
+
+\title{BÁO CÁO TỔNG QUAN: FINANCIAL DATA PLATFORM (FDP)}
+\author[Phạm Hải Nam]{Sinh viên thực hiện: Phạm Hải Nam - 20235791 \\ Giảng viên hướng dẫn: TS. Nguyễn Đức Toàn}  
+\date{\today}
+
+\begin{document}
+	
+	\hustintropage{} 
+	\hustsectionpage{} 
+	
+	% Trang bìa
+	\husttitlepage
+	
+	\begin{frame}[allowframebreaks]{Nội dung trình bày}
+		\tableofcontents[hideallsubsections]
+	\end{frame}
+	
+	\resetPageCount  
+	\showPageNumber  
+	
+	\useStyleHustFull
+	\useThinBar 
+	
+	% ==========================================
+	\section{Phần I: Tổng quan đề tài}
+	\begin{frame}
+		\vfill
+		\centering
+		{\Huge \textbf{Phần I}} \\[1em]
+		{\huge \textbf{Tổng quan đề tài}}
+		\vfill
+	\end{frame}
+	
+	\subsection{Đặt vấn đề}
+	\begin{frame}{1. Đặt vấn đề}
+		\textbf{Bối cảnh \& Nhu cầu:}
+		\begin{itemize}
+			\item Cần một hệ thống thu thập dữ liệu báo cáo tài chính công khai, chuẩn hóa thành các chỉ tiêu thống nhất.
+			\item Yêu cầu kiểm tra chất lượng và lưu trữ dữ liệu có hỗ trợ truy vấn theo thời điểm lịch sử.
+		\end{itemize}
+		
+		\vspace{1em}
+		
+		\textbf{Giải pháp - Hệ thống Financial Data Platform (FDP):}
+		\begin{itemize}
+			\item \textbf{Nguồn dữ liệu:} SEC Financial Statement Data Sets (doanh nghiệp niêm yết tại Mỹ).
+			\item \textbf{Vai trò:} Đóng vai trò trung gian giữa nguồn dữ liệu công khai và người sử dụng thông qua giao diện web và API.
+		\end{itemize}
+	\end{frame}
+	
+	\subsection{Mục tiêu đề tài}
+	\begin{frame}{2. Mục tiêu đề tài}
+		Thiết kế và xây dựng hệ thống xử lý dữ liệu tài chính theo quy trình thống nhất:
+		\begin{center}
+			\textbf{Thu thập $\rightarrow$ Chuẩn hóa $\rightarrow$ Kiểm tra chất lượng $\rightarrow$ Lưu trữ $\rightarrow$ Truy vấn $\rightarrow$ Khai thác}
+		\end{center}
+		
+		\vspace{0.5em}
+		\textbf{Các mục tiêu cụ thể:}
+		\begin{itemize}
+			\item Thu thập dữ liệu tài chính từ SEC.
+			\item Chuẩn hóa dữ liệu thô thành tập chỉ tiêu tài chính chuẩn hóa (canonical metrics).
+			\item Kiểm tra và ghi nhận các vấn đề chất lượng dữ liệu.
+			\item Lưu trữ dữ liệu lịch sử, duy trì các phiên bản (restatement).
+			\item Khai thác: xem xu hướng, so sánh doanh nghiệp và lọc theo điều kiện.
+			\item Cung cấp dữ liệu qua giao diện Web và API.
+		\end{itemize}
+	\end{frame}
+
+	\subsection{Đối tượng sử dụng}
+	\begin{frame}{3. Đối tượng sử dụng}
+		Hệ thống hướng tới ba nhóm đối tượng chính:
+		\begin{enumerate}
+			\item \textbf{End User (Người dùng cuối):} Sử dụng giao diện web để tìm kiếm, tra cứu và xem thông tin tài chính của doanh nghiệp.
+			\item \textbf{API Consumer (Bên tiêu thụ API):} Truy cập dữ liệu thông qua API phục vụ các mục đích xử lý hoặc tích hợp vào hệ thống khác.
+			\item \textbf{System Operator (Người vận hành):} Phụ trách vận hành, theo dõi quá trình thu thập/xử lý dữ liệu, kiểm tra log và kiểm soát hệ thống.
+		\end{enumerate}
+	\end{frame}
+	
+	% ==========================================
+	\useStyleLogoOnly 
+	\useThickBar      
+	
+	\section{Phần II: Phân tích tập dữ liệu SEC}
+	\begin{frame}
+		\vfill
+		\centering
+		{\Huge \textbf{Phần II}} \\[1em]
+		{\huge \textbf{Phân tích tập dữ liệu SEC}}
+		\vfill
+	\end{frame}
+	
+	\subsection{Phân tích file sub.txt và num.txt}
+	\begin{frame}{Phân tích file sub.txt và num.txt}
+		\begin{columns}[T]
+			\begin{column}{0.48\textwidth}
+				\begin{block}{sub.txt (Thông tin báo cáo)}
+					\begin{itemize}
+						\item \textbf{CIK:} Mã nhận diện công ty từ SEC.
+						\item \textbf{adsh:} Khóa chính, mã truy cập hồ sơ.
+						\item \textbf{sic:} Mã ngành nghề kinh doanh.
+						\item \textbf{form:} Loại báo cáo (10-K, 10-Q).
+						\item \textbf{fy \& fp:} Năm và kỳ tài chính.
+					\end{itemize}
+				\end{block}
+			\end{column}
+			
+			\begin{column}{0.48\textwidth}
+				\begin{block}{num.txt (Dữ liệu số liệu)}
+					\begin{itemize}
+						\item \textbf{adsh:} Khóa ngoại liên kết sub.txt.
+						\item \textbf{tag:} Tên chỉ số (NetIncomeLoss,...).
+						\item \textbf{ddate:} Ngày chốt sổ.
+						\item \textbf{qtrs:} Thời gian phát sinh (0: 1 thời điểm, 1: 1 quý, 4: 1 năm).
+						\item \textbf{value:} Giá trị thực tế.
+					\end{itemize}
+				\end{block}
+			\end{column}
+		\end{columns}
+	\end{frame}
+
+	\subsection{Phân tích file tag.txt và pre.txt}
+	\begin{frame}{Phân tích file tag.txt và pre.txt}
+		\begin{columns}[T]
+			\begin{column}{0.48\textwidth}
+				\begin{block}{tag.txt (Danh mục tham chiếu)}
+					\begin{itemize}
+						\item Định nghĩa cấu trúc cho chỉ số.
+						\item \textbf{datatype:} Kiểu dữ liệu (monetary, shares, pure).
+						\item \textbf{crdr:} Cờ quy đổi dấu C/D (Credit/Debit).
+						\item \textbf{tlabel \& doc:} Nhãn hiển thị UI và mô tả nghiệp vụ.
+					\end{itemize}
+				\end{block}
+			\end{column}
+			
+			\begin{column}{0.48\textwidth}
+				\begin{block}{pre.txt (Cấu trúc trình bày)}
+					\begin{itemize}
+						\item Hỗ trợ tái tạo giao diện gốc.
+						\item \textbf{stmt:} Bảng chứa số liệu (BS, IS, CF).
+						\item \textbf{line:} Thứ tự dòng.
+						\item \textbf{inpth:} Độ thụt lề (cấp bậc khoản mục).
+						\item \textbf{negating:} Đổi dấu khi hiển thị UI (1: đổi).
+					\end{itemize}
+				\end{block}
+			\end{column}
+		\end{columns}
+	\end{frame}
+	
+	% ==========================================
+	\useStyleHustFull
+	\useThinBar 
+	
+	\section{Phần III: Nghiên cứu Case Study}
+	\begin{frame}
+		\vfill
+		\centering
+		{\Huge \textbf{Phần III}} \\[1em]
+		{\huge \textbf{Nghiên cứu Case Study}}
+		\vfill
+	\end{frame}
+	
+	\subsection{Các nền tảng dữ liệu tham khảo}
+	\begin{frame}{Các nền tảng dữ liệu tham khảo (1)}
+		\textbf{1. Nasdaq Data Fabric}
+		\begin{itemize}
+			\item \textbf{Mô hình:} "Managed pipeline" - quản lý nạp dữ liệu, chất lượng và hạ tầng.
+			\item \textbf{Đặc điểm:} Cung cấp catalog tập trung, phân quyền chi tiết qua một API duy nhất.
+			\item[$\rightarrow$] Ứng dụng data catalog tập trung và phân quyền cơ bản.
+		\end{itemize}
+		
+		\vspace{1em}
+		
+		\textbf{2. Polygon.io}
+		\begin{itemize}
+			\item \textbf{Dịch vụ:} Cung cấp dữ liệu thị trường (stock, crypto, forex).
+			\item \textbf{Đặc điểm:} API REST versioned rất chuẩn mực (\texttt{/v1/\{resource\}/...}) và WebSocket.
+			\item[$\rightarrow$] Cấu trúc REST endpoint chuẩn để thiết kế API cho FDP.
+		\end{itemize}
+	\end{frame}
+
+	\begin{frame}{Các nền tảng dữ liệu tham khảo (2)}
+		\textbf{3. Economatica}
+		\begin{itemize}
+			\item \textbf{Mô hình:} Nền tảng phân tích tài chính sâu (40 năm dữ liệu).
+			\item \textbf{Tính năng:} Screener (lọc đa điều kiện), Comparative matrix (so sánh dữ liệu).
+			\item[$\rightarrow$] Gợi ý tính năng query lọc và vẽ biểu đồ so sánh.
+		\end{itemize}
+		
+		\vspace{1em}
+		
+		\textbf{4. AlphaSense}
+		\begin{itemize}
+			\item \textbf{Mô hình:} Tìm kiếm bằng AI/NLP trên tài liệu phi cấu trúc (transcript, news).
+			\item[$\rightarrow$] Khác nhóm bài toán nhưng gợi ý hướng mở rộng AI/Semantic Search trong tương lai.
+		\end{itemize}
+	\end{frame}
+	
+	% ==========================================
+	\useStyleLogoOnly 
+	\useThickBar      
+	
+	\section{Phần IV: Phạm vi của đề tài}
+	\begin{frame}
+		\vfill
+		\centering
+		{\Huge \textbf{Phần IV}} \\[1em]
+		{\huge \textbf{Phạm vi của đề tài}}
+		\vfill
+	\end{frame}
+	
+	\subsection{Phạm vi chức năng}
+	\begin{frame}{1. Phạm vi chức năng}
+		\begin{itemize}
+			\item \textbf{Thu thập (Ingestion):} Dùng khóa (CIK + adsh), ghi log chi tiết.
+			\item \textbf{Chuẩn hóa:} Ánh xạ về canonical metric theo mức ưu tiên; xử lý theo thời đoạn (qtrs) và dấu (crdr).
+			\item \textbf{Kiểm tra chất lượng:} Dùng khóa (cik + tag + ddate + qtrs + adsh) phát hiện trùng, gắn cờ lỗi (không xóa).
+			\item \textbf{Lưu trữ lịch sử:} Báo cáo điều chỉnh lưu song song, không ghi đè; hỗ trợ versioning.
+			\item \textbf{Truy vấn \& Phân tích:} Tìm kiếm DN, xem lịch sử/xu hướng, so sánh (2-5 DN), tính chỉ số dẫn xuất.
+			\item \textbf{Kênh cung cấp:} Giao diện Web (Desktop) và REST API.
+		\end{itemize}
+	\end{frame}
+
+	\subsection{Phạm vi dữ liệu}
+	\begin{frame}{2. Phạm vi dữ liệu}
+		\begin{block}{Quy mô tham chiếu (SEC Data)}
+			\begin{itemize}
+				\item \textbf{Quy mô doanh nghiệp:} 30 doanh nghiệp (đa dạng mã ngành - sic).
+				\item \textbf{Độ sâu thời gian:} Tối thiểu 12 quý dữ liệu lịch sử.
+				\item \textbf{Dữ liệu chỉ tiêu:} Tập canonical metrics xác định trước.
+				\item \textbf{Dữ liệu thị trường:} Bổ sung dữ liệu lịch sử giá cổ phiếu.
+			\end{itemize}
+		\end{block}
+		
+		\vspace{1em}
+		
+		\begin{alertblock}{Mục tiêu chất lượng dữ liệu}
+			Đạt tối thiểu \textbf{70\% coverage} (độ phủ) đối với ít nhất \textbf{6 canonical metrics}.
+		\end{alertblock}
+	\end{frame}
+	
+	\hustthankyou
+	
+\end{document}
