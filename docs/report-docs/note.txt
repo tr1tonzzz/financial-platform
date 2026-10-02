@@ -1,0 +1,53 @@
+Thu thập dữ liệu
+
+Viết script tải file SEC theo quý, giải nén bằng pandas
+Kiểm tra CIK+mã báo cáo đã có trong DB chưa, có rồi thì bỏ qua
+Lưu dữ liệu mới vào bảng tạm (staging)
+Ghi 1 dòng log: thời gian chạy, số dòng, thành công/thất bại
+
+Chuẩn hóa dữ liệu
+
+Làm 1 bảng tra cứu: tên chỉ tiêu gốc → tên chỉ tiêu chuẩn
+Với mỗi dòng dữ liệu thô, tra bảng này để đổi sang tên chuẩn
+Nếu 1 chỉ tiêu có nhiều tên gốc trỏ vào, chọn đúng 1 theo thứ tự ưu tiên đã định sẵn
+Lưu kết quả vào bảng chính thức
+
+Kiểm tra chất lượng
+
+Viết hàm kiểm tra: giá trị âm sai chỗ → đánh dấu
+Viết hàm kiểm tra: dữ liệu bị trùng → đánh dấu
+Viết hàm kiểm tra: giá trị lệch bất thường so với các kỳ trước → đánh dấu
+Dữ liệu bị đánh dấu thì giữ nguyên, chỉ gắn cờ kèm lý do, không xóa
+
+Lưu trữ lịch sử
+
+Mỗi lần có dữ liệu mới thì thêm dòng mới, không sửa/xóa dòng cũ
+Khi công ty nộp báo cáo điều chỉnh, thêm dòng mới bên cạnh dòng cũ
+Viết câu truy vấn: lấy giá trị gần nhất tính đến 1 ngày được chọn
+
+API
+
+Dựng 1 API server (FastAPI)
+Mỗi chức năng làm 1 đường dẫn riêng (tìm công ty, xem tổng quan, xem xu hướng...)
+Mỗi đường dẫn: nhận yêu cầu → lấy dữ liệu từ DB → trả về dạng JSON
+
+Phân tích cơ bản
+
+Làm sẵn 1 bảng/view chứa giá trị mới nhất của mọi chỉ tiêu, để không phải quét lại từ đầu mỗi lần hỏi
+Viết công thức tính thêm vài chỉ số (VD: biên lợi nhuận = lợi nhuận/doanh thu)
+Làm chức năng so sánh: nhập nhiều công ty → trả bảng giá trị cạnh nhau
+Làm chức năng lọc: nhập điều kiện (VD: ROE > 15) → trả danh sách công ty thỏa
+
+Giao diện Web
+
+Màn hình tìm công ty
+Màn hình tổng quan: hiện bảng số liệu + vài chỉ số chính
+Màn hình xu hướng: vẽ biểu đồ theo thời gian
+Màn hình so sánh/lọc: form nhập + bảng kết quả
+
+Đo hiệu năng
+
+Chọn vài câu truy vấn hay dùng nhất
+Đo thời gian chạy (lúc chưa tối ưu)
+Thêm index hoặc bảng tổng hợp sẵn để tăng tốc
+Đo lại, so sánh trước/sau
