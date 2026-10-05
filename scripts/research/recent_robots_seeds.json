@@ -1,0 +1,47 @@
+[
+  {
+    "id": "ree-robots",
+    "role": "robots",
+    "url": "https://www.reecorp.com/robots.txt"
+  },
+  {
+    "id": "hpg-robots",
+    "role": "robots",
+    "url": "https://file.hoaphat.com.vn/robots.txt"
+  },
+  {
+    "id": "dhg-robots",
+    "role": "robots",
+    "url": "https://dhgpharma.com.vn/robots.txt"
+  },
+  {
+    "id": "fpt-robots",
+    "role": "robots",
+    "url": "https://fpt.com/robots.txt"
+  },
+  {
+    "id": "vhc-robots",
+    "role": "robots",
+    "url": "https://www.vinhhoan.com/robots.txt"
+  },
+  {
+    "id": "vnm-robots",
+    "role": "robots",
+    "url": "https://www.vinamilk.com.vn/robots.txt"
+  },
+  {
+    "id": "vnm-cdn-robots",
+    "role": "robots",
+    "url": "https://d8um25gjecm9v.cloudfront.net/robots.txt"
+  },
+  {
+    "id": "vsdc-robots",
+    "role": "robots",
+    "url": "https://vsdc.vn/robots.txt"
+  },
+  {
+    "id": "hnx-robots",
+    "role": "robots",
+    "url": "https://www.hnx.vn/robots.txt"
+  }
+]

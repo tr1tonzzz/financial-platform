@@ -1,0 +1,46 @@
+{
+  "case_id": "DHG-FY2025-versus-comparative-2024",
+  "review_date": "2026-10-04",
+  "status": "manually_transcribed_and_visually_checked_by_same_agent_not_independent_gold",
+  "source_url": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf",
+  "source_local_path": "data-sets/research-evidence/2026-10-03-recent/dhg-fy2025.pdf",
+  "expected_sha256": "abaaac8d3813329db1987e769f325fbee7b8c4776b4205b26a4673f95b589973",
+  "scope_label": "BCTC Cong ty Co phan Duoc Hau Giang, mau B02-DN/B03-DN; khong gan nhan hop nhat",
+  "unit": "VND",
+  "income_statement_locator": {"pdf_page": 10, "printed_page": 8, "line": "60"},
+  "cash_flow_locator": {"pdf_page": 11, "printed_page": 9},
+  "column_context": {"2025": "Nam nay", "2024": "Nam truoc in FY2025 report, not point-in-time FY2024"},
+  "net_income": {"2025": 852354107582, "2024": 778920119960},
+  "reported_cfo": {"2025": 1212967705385, "2024": 1317583405328},
+  "reported_pre_working_capital_subtotal": {"2025": 1051152975349, "2024": 965263438186},
+  "bridge_leaves": [
+    {"line": "01", "label": "Loi nhuan truoc thue", "group": "start", "2025": 986599267177, "2024": 904484566816},
+    {"line": "02", "label": "Khau hao", "group": "adjustments", "2025": 119007964694, "2024": 169695469422},
+    {"line": "03", "label": "Du phong", "group": "adjustments", "2025": 40739512459, "2024": 5075762608},
+    {"line": "04", "label": "Chenh lech ty gia danh gia lai", "group": "adjustments", "2025": -246436677, "2024": 324569255},
+    {"line": "05", "label": "Lai tu hoat dong dau tu", "group": "adjustments", "2025": -120582609948, "2024": -139127459803},
+    {"line": "06", "label": "Chi phi lai vay", "group": "adjustments", "2025": 25635277644, "2024": 24810529888},
+    {"line": "09", "label": "Thay doi phai thu", "group": "working_capital", "2025": -54940769666, "2024": 105103088465},
+    {"line": "10", "label": "Thay doi hang ton kho", "group": "working_capital", "2025": 86655314150, "2024": 420959945637},
+    {"line": "11", "label": "Thay doi phai tra", "group": "working_capital", "2025": 289926692411, "2024": -21510218626},
+    {"line": "12", "label": "Thay doi chi phi tra truoc", "group": "working_capital", "2025": 22881987282, "2024": 13080338745},
+    {"line": "14", "label": "Tien lai vay da tra", "group": "other_operating_cash", "2025": -26019669534, "2024": -24766314819},
+    {"line": "15", "label": "Thue TNDN da nop", "group": "other_operating_cash", "2025": -124797302318, "2024": -101297219913},
+    {"line": "17", "label": "Tien chi khac HDKD", "group": "other_operating_cash", "2025": -31891522289, "2024": -39249652347}
+  ],
+  "owner_distributions_paid_signed": {"line": "36", "2025": -1307460710000, "2024": -980595532500},
+  "cash_flow_totals_2025": {
+    "cfi": 811731248972,
+    "cff": -1957374626414,
+    "net_cash_flow": 67324327943,
+    "opening_cash": 62857547612,
+    "fx_effect": -286210559,
+    "closing_cash": 129895664996
+  },
+  "limitations": [
+    "No complete annual dividend coverage assertion",
+    "Line 36 is period cash paid to owners, not assigned to profit year 2025",
+    "Comparative 2024 belongs to FY2025 report version",
+    "Manual transcription, not a new automatic extraction benchmark"
+  ]
+}

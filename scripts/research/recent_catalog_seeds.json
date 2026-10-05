@@ -1,0 +1,10 @@
+[
+  {"id":"ree-catalog", "company":"REE", "url":"https://www.reecorp.com/danh-muc-bao-cao/bao-cao-tai-chinh/"},
+  {"id":"hpg-catalog", "company":"HPG", "url":"https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh"},
+  {"id":"dhg-annual-detail", "company":"DHG", "url":"https://dhgpharma.com.vn/vi/co-dong/10533-bao-cao-tai-chinh-kiem-toan-nam-2025-va-giai-trinh-chenh-lech"},
+  {"id":"dhg-catalog", "company":"DHG", "url":"https://dhgpharma.com.vn/vi/bao-cao-tai-chinh"},
+  {"id":"fpt-catalog", "company":"FPT", "url":"https://fpt.com/vi/nha-dau-tu/thong-tin-cong-bo"},
+  {"id":"vhc-catalog", "company":"VHC", "url":"https://www.vinhhoan.com/investors-2/"},
+  {"id":"vnm-catalog", "company":"VNM", "url":"https://www.vinamilk.com.vn/investor/reports/financial"},
+  {"id":"vnm-dividend-2025", "company":"VNM", "url":"https://vsdc.vn/vi/ad1/197038"}
+]

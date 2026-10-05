@@ -1,0 +1,1203 @@
+{
+  "research_date": "2026-10-03",
+  "timezone_for_logs": "UTC",
+  "raw_directory_relative_to_repo": "data-sets/research-evidence/2026-10-03-crawl-methods/verified",
+  "script_sha256": "4a57b59d5ca9fe3353f4a0f2c2dffdc60ced97a7cd7fe5c9a8e74f12743271fd",
+  "runtime": {
+    "python": "3.12.14",
+    "packages": {
+      "lxml": "6.1.1",
+      "pypdf": "6.10.0"
+    }
+  },
+  "summary": {
+    "companies": 4,
+    "catalog_pages_per_run": 7,
+    "target_pdfs": 8,
+    "total_pdf_pages": 423,
+    "downloaded_pdf_bytes_first_run": 76118458,
+    "sampled_pages": 96,
+    "sampled_pages_with_more_than_100_text_chars": 0,
+    "second_run_304": 8,
+    "pdf_bytes_second_run": 0,
+    "unique_source_urls": 8,
+    "content_versions": 8,
+    "pdfs_with_unknown_robots_probe": 4
+  },
+  "reports": [
+    {
+      "company": "HPG",
+      "period_candidate": "H1-2026",
+      "scope_candidate": "consolidated",
+      "assurance_candidate": "reviewed",
+      "language_candidate": "vi_or_unknown",
+      "metadata_status": "candidate_from_catalog",
+      "anchor_title": "Báo cáo tài chính hợp nhất soát xét 6 tháng 2026",
+      "catalog_url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+      "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/08/20260828-hpg-bctc-hop-nhat-soat-xet-6-thang-2026-va-giai-trinh-1-2.pdf",
+      "publication_date_evidence": "28/08/2026",
+      "checked_at": "2026-10-03T11:32:31.361917+00:00",
+      "http_status": 200,
+      "robots": {
+        "state": "unknown_http_error",
+        "allowed": true,
+        "unknown_policy_probe": true
+      },
+      "sha256": "9a2881a88ac8ca4cc5cd948b0fafa031ff30fd0332a372f362477a8a6b0c9968",
+      "saved_path": "pdf/9a2881a88ac8ca4cc5cd948b0fafa031ff30fd0332a372f362477a8a6b0c9968.pdf",
+      "bytes": 22266273,
+      "etag": "\"a56bc1bc40d0445f637fa3cb38eedd34-5\"",
+      "last_modified": "Sat, 29 Aug 2026 02:58:55 GMT",
+      "pdf_pages": 67,
+      "sampled_pages": 12,
+      "sampled_text_pages": 0
+    },
+    {
+      "company": "HPG",
+      "period_candidate": "FY-2025",
+      "scope_candidate": "consolidated",
+      "assurance_candidate": "audited",
+      "language_candidate": "vi_or_unknown",
+      "metadata_status": "candidate_from_catalog",
+      "anchor_title": "BCTC hợp nhất năm 2025 sau kiểm toán",
+      "catalog_url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+      "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/03/20260327-hpg-bctc-hop-nhat-nam-2025-sau-kiem-toan.pdf",
+      "publication_date_evidence": "27/03/2026",
+      "checked_at": "2026-10-03T11:32:34.069260+00:00",
+      "http_status": 200,
+      "robots": {
+        "state": "unknown_http_error",
+        "allowed": true,
+        "unknown_policy_probe": true
+      },
+      "sha256": "f38c5f75becf7d3f145d27183eec81f119fd4f75e378b983a2763ddc3f7e0c07",
+      "saved_path": "pdf/f38c5f75becf7d3f145d27183eec81f119fd4f75e378b983a2763ddc3f7e0c07.pdf",
+      "bytes": 8270589,
+      "etag": "\"2557075f2b6a2b92270affb91b23bb8b\"",
+      "last_modified": "Fri, 27 Mar 2026 10:48:23 GMT",
+      "pdf_pages": 53,
+      "sampled_pages": 12,
+      "sampled_text_pages": 0
+    },
+    {
+      "company": "DHG",
+      "period_candidate": "H1-2026",
+      "scope_candidate": "unknown",
+      "assurance_candidate": "reviewed",
+      "language_candidate": "vi_or_unknown",
+      "metadata_status": "candidate_from_catalog",
+      "anchor_title": "Báo cáo tài chính soát xét 6 tháng 2026",
+      "catalog_url": "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh",
+      "url": "https://dhgpharma.com.vn/sites/default/files/2026-08/DHG-BCTC-6T.2026-soat-xet.pdf",
+      "publication_date_evidence": "14 Tháng 8, 2026",
+      "checked_at": "2026-10-03T11:32:38.222954+00:00",
+      "http_status": 200,
+      "robots": {
+        "state": "parsed_pilot_rules",
+        "allowed": true,
+        "matched_rule": "",
+        "crawl_delay": 0
+      },
+      "sha256": "b68e08e74770c5231fee96ad73915b793647629659a43889eb724d6be6798a69",
+      "saved_path": "pdf/b68e08e74770c5231fee96ad73915b793647629659a43889eb724d6be6798a69.pdf",
+      "bytes": 11814477,
+      "etag": "\"6a7f0027-b4464d\"",
+      "last_modified": "Fri, 14 Aug 2026 11:46:47 GMT",
+      "pdf_pages": 45,
+      "sampled_pages": 12,
+      "sampled_text_pages": 0
+    },
+    {
+      "company": "DHG",
+      "period_candidate": "FY-2025",
+      "scope_candidate": "unknown",
+      "assurance_candidate": "audited",
+      "language_candidate": "vi_or_unknown",
+      "metadata_status": "candidate_from_catalog",
+      "anchor_title": "Báo cáo tài chính năm 2025 đã kiểm toán",
+      "catalog_url": "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh",
+      "url": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf",
+      "publication_date_evidence": "21 Tháng 3, 2026",
+      "checked_at": "2026-10-03T11:32:40.195284+00:00",
+      "http_status": 200,
+      "robots": {
+        "state": "parsed_pilot_rules",
+        "allowed": true,
+        "matched_rule": "",
+        "crawl_delay": 0
+      },
+      "sha256": "abaaac8d3813329db1987e769f325fbee7b8c4776b4205b26a4673f95b589973",
+      "saved_path": "pdf/abaaac8d3813329db1987e769f325fbee7b8c4776b4205b26a4673f95b589973.pdf",
+      "bytes": 6991892,
+      "etag": "\"69beb7e8-6ab014\"",
+      "last_modified": "Sat, 21 Mar 2026 15:23:20 GMT",
+      "pdf_pages": 40,
+      "sampled_pages": 12,
+      "sampled_text_pages": 0
+    },
+    {
+      "company": "VHC",
+      "period_candidate": "H1-2026",
+      "scope_candidate": "consolidated",
+      "assurance_candidate": "reviewed",
+      "language_candidate": "vi_or_unknown",
+      "metadata_status": "candidate_from_catalog",
+      "anchor_title": "VHC_Reviewed Consolidated FS_6M2026_VN",
+      "catalog_url": "https://www.vinhhoan.com/investors-2/",
+      "url": "https://www.vinhhoan.com/wp-content/uploads/2026/08/VHC_Reviewed-Consolidated-FS_6M2026_VN.pdf",
+      "publication_date_evidence": null,
+      "checked_at": "2026-10-03T11:32:45.126698+00:00",
+      "http_status": 200,
+      "robots": {
+        "state": "parsed_pilot_rules",
+        "allowed": true,
+        "matched_rule": "",
+        "crawl_delay": 0
+      },
+      "sha256": "e7034122d696abea75b8022ca977d6176726137a1fd55c52d258b2a1f53ac41b",
+      "saved_path": "pdf/e7034122d696abea75b8022ca977d6176726137a1fd55c52d258b2a1f53ac41b.pdf",
+      "bytes": 1994688,
+      "etag": "\"1e6fc0-65a4efc96061f\"",
+      "last_modified": "Mon, 31 Aug 2026 02:59:11 GMT",
+      "pdf_pages": 65,
+      "sampled_pages": 12,
+      "sampled_text_pages": 0
+    },
+    {
+      "company": "VHC",
+      "period_candidate": "FY-2025",
+      "scope_candidate": "consolidated",
+      "assurance_candidate": "audited",
+      "language_candidate": "vi_or_unknown",
+      "metadata_status": "candidate_from_catalog",
+      "anchor_title": "VHC _BCTC hop nhat kiem toan 2025_VN",
+      "catalog_url": "https://www.vinhhoan.com/investors-2/",
+      "url": "https://www.vinhhoan.com//wp-content/uploads/2026/03/VHC-_BCTC-hop-nhat-kiem-toan-2025_VN.pdf",
+      "publication_date_evidence": null,
+      "checked_at": "2026-10-03T11:32:46.716841+00:00",
+      "http_status": 200,
+      "robots": {
+        "state": "parsed_pilot_rules",
+        "allowed": true,
+        "matched_rule": "",
+        "crawl_delay": 0
+      },
+      "sha256": "00629dd42ea6c9d31cc81b1bc56e59e39056753d5cc61cfba78fe5e620667850",
+      "saved_path": "pdf/00629dd42ea6c9d31cc81b1bc56e59e39056753d5cc61cfba78fe5e620667850.pdf",
+      "bytes": 2340349,
+      "etag": "\"23b5fd-64e4a7f09626b\"",
+      "last_modified": "Tue, 31 Mar 2026 04:35:26 GMT",
+      "pdf_pages": 64,
+      "sampled_pages": 12,
+      "sampled_text_pages": 0
+    },
+    {
+      "company": "HPA",
+      "period_candidate": "H1-2026",
+      "scope_candidate": "consolidated",
+      "assurance_candidate": "reviewed",
+      "language_candidate": "vi_or_unknown",
+      "metadata_status": "candidate_from_catalog",
+      "anchor_title": "Báo cáo tài chính hợp nhất bán niên đã được soát xét cho 6 tháng đầu năm 2026",
+      "catalog_url": "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+      "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/08/hpa-bao-cao-soat-xet-6-thang-2026-consol-vn.pdf",
+      "publication_date_evidence": "28/08/2026",
+      "checked_at": "2026-10-03T11:32:50.887699+00:00",
+      "http_status": 200,
+      "robots": {
+        "state": "unknown_http_error",
+        "allowed": true,
+        "unknown_policy_probe": true
+      },
+      "sha256": "e278d2dacc38acf7da010f05a1162a69371aa8d69b744171ddb72d9464efa019",
+      "saved_path": "pdf/e278d2dacc38acf7da010f05a1162a69371aa8d69b744171ddb72d9464efa019.pdf",
+      "bytes": 9773238,
+      "etag": "\"67aef5dbc3d50f0fd3e9d76f6a492c20\"",
+      "last_modified": "Fri, 28 Aug 2026 09:34:29 GMT",
+      "pdf_pages": 48,
+      "sampled_pages": 12,
+      "sampled_text_pages": 0
+    },
+    {
+      "company": "HPA",
+      "period_candidate": "FY-2025",
+      "scope_candidate": "consolidated",
+      "assurance_candidate": "unknown",
+      "language_candidate": "vi_or_unknown",
+      "metadata_status": "candidate_from_catalog",
+      "anchor_title": "Báo cáo tài chính hợp nhất 2025",
+      "catalog_url": "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+      "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/03/260325-hpa-bao-cao-tai-chinh-hop-nhat-2025.pdf",
+      "publication_date_evidence": "25/03/2026",
+      "checked_at": "2026-10-03T11:32:51.801952+00:00",
+      "http_status": 200,
+      "robots": {
+        "state": "unknown_http_error",
+        "allowed": true,
+        "unknown_policy_probe": true
+      },
+      "sha256": "d2e2c906474f96651e27f99fb54afb05b6551641dcb56bc072c1f0184a469ef3",
+      "saved_path": "pdf/d2e2c906474f96651e27f99fb54afb05b6551641dcb56bc072c1f0184a469ef3.pdf",
+      "bytes": 12666952,
+      "etag": "\"3f110de06da57636ef2f2c2ed48e6b65\"",
+      "last_modified": "Wed, 25 Mar 2026 07:51:12 GMT",
+      "pdf_pages": 41,
+      "sampled_pages": 12,
+      "sampled_text_pages": 0
+    }
+  ],
+  "runs": [
+    {
+      "run_id": "20261003T113228728188Z",
+      "started_at": "2026-10-03T11:32:28.728188+00:00",
+      "finished_at": "2026-10-03T11:32:53.639218+00:00",
+      "config": {
+        "companies": "HPG,DHG,VHC,HPA",
+        "max_pages": 2,
+        "max_pdfs_per_company": 2,
+        "allow_unknown_robots": true
+      },
+      "catalogs": [
+        {
+          "company": "HPG",
+          "url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+          "checked_at": "2026-10-03T11:32:28.743699+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "/",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "a11fad9a7681374d0e7fa5c21c26c5800ed69d9d0457818b0be7fc8a88983804",
+          "bytes": 38075,
+          "saved_path": "HPG-7c6375bfd990-20261003T113228728188Z.html",
+          "pdf_links": 17,
+          "observed_pagination": [
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=2",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=3",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=4",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=5",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=6",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=7",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=8",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=23",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=24"
+          ]
+        },
+        {
+          "company": "HPG",
+          "url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=2",
+          "checked_at": "2026-10-03T11:32:30.146068+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "/",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "ae3dbaa8f12d299931dcef8104f4146495fea454666e67030458aa59cd5105c4",
+          "bytes": 34367,
+          "saved_path": "HPG-aaed4473fa77-20261003T113228728188Z.html",
+          "pdf_links": 13,
+          "observed_pagination": [
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=3",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=4",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=5",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=6",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=7",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=8",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=23",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=24"
+          ]
+        },
+        {
+          "company": "DHG",
+          "url": "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh",
+          "checked_at": "2026-10-03T11:32:35.780289+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "a267856924cb9e920e80268e004f9b109b9e26e8aa22acb7612883167273245f",
+          "bytes": 78916,
+          "saved_path": "DHG-a27ef099f31f-20261003T113228728188Z.html",
+          "pdf_links": 12,
+          "observed_pagination": [
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=1",
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=2",
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=3",
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=13"
+          ]
+        },
+        {
+          "company": "DHG",
+          "url": "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=1",
+          "checked_at": "2026-10-03T11:32:37.044966+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "9bc9c5007fc70bb3e83b0c46f193070a9aa3bd10114f06b9db7205d3ebf6b025",
+          "bytes": 79886,
+          "saved_path": "DHG-708baaef2cb9-20261003T113228728188Z.html",
+          "pdf_links": 11,
+          "observed_pagination": [
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=2",
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=3",
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=13"
+          ]
+        },
+        {
+          "company": "VHC",
+          "url": "https://www.vinhhoan.com/investors-2/",
+          "checked_at": "2026-10-03T11:32:41.577126+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "db789fd8f1fffce263ba652ef1287bebeec4dae36844547d66152fd5f93618db",
+          "bytes": 449880,
+          "saved_path": "VHC-712299532194-20261003T113228728188Z.html",
+          "pdf_links": 408,
+          "observed_pagination": []
+        },
+        {
+          "company": "HPA",
+          "url": "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+          "checked_at": "2026-10-03T11:32:48.350034+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "/",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "0a4729f67fde0bb4329ec1d48435f53e98bf087427fe886a69bb215a3d2eef50",
+          "bytes": 32194,
+          "saved_path": "HPA-fddf9379754a-20261003T113228728188Z.html",
+          "pdf_links": 18,
+          "observed_pagination": [
+            "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=2",
+            "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=3"
+          ]
+        },
+        {
+          "company": "HPA",
+          "url": "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=2",
+          "checked_at": "2026-10-03T11:32:49.687936+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "/",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "90922bdfa774b39608cf3ffa0b9dcec723a61933692ef2ae5f076af6db1fca07",
+          "bytes": 26254,
+          "saved_path": "HPA-32d3b35dae2b-20261003T113228728188Z.html",
+          "pdf_links": 10,
+          "observed_pagination": [
+            "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=3"
+          ]
+        }
+      ],
+      "robots": [
+        {
+          "url": "https://www.hoaphat.com.vn/robots.txt",
+          "checked_at": "2026-10-03T11:32:28.743699+00:00",
+          "http_status": 200,
+          "sha256": "3377ef83ebc78212b9bdbdb094afd44009e4ed15781e7bc60914f5adf1eea391",
+          "state": "parsed_pilot_rules"
+        },
+        {
+          "url": "https://file.hoaphat.com.vn/robots.txt",
+          "checked_at": "2026-10-03T11:32:31.361917+00:00",
+          "http_status": 403,
+          "state": "unknown_http_error"
+        },
+        {
+          "url": "https://dhgpharma.com.vn/robots.txt",
+          "checked_at": "2026-10-03T11:32:35.781284+00:00",
+          "http_status": 200,
+          "sha256": "3c99f764d0b3706b779bfdfafbbd709d4d81f4869399bff2fde3026a354b33fd",
+          "state": "parsed_pilot_rules"
+        },
+        {
+          "url": "https://www.vinhhoan.com/robots.txt",
+          "checked_at": "2026-10-03T11:32:41.577126+00:00",
+          "http_status": 200,
+          "sha256": "e0bd42242faf93fc0c92f55846609bf3ab2f25292f0e8c9e9d2ff254eaa77a2b",
+          "state": "parsed_pilot_rules"
+        },
+        {
+          "url": "https://nongnghiep.hoaphat.com.vn/robots.txt",
+          "checked_at": "2026-10-03T11:32:48.350034+00:00",
+          "http_status": 200,
+          "sha256": "830aa8c7953615753466d0efc2a75585282f257408569b13715cd323832f2819",
+          "state": "parsed_pilot_rules"
+        }
+      ],
+      "http_requests": [
+        {
+          "url": "https://www.hoaphat.com.vn/robots.txt",
+          "started_at": "2026-10-03T11:32:28.744697+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 85,
+          "seconds": 0.125
+        },
+        {
+          "url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+          "started_at": "2026-10-03T11:32:29.857372+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 38075,
+          "seconds": 0.281
+        },
+        {
+          "url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=2",
+          "started_at": "2026-10-03T11:32:31.147288+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 34367,
+          "seconds": 0.219
+        },
+        {
+          "url": "https://file.hoaphat.com.vn/robots.txt",
+          "started_at": "2026-10-03T11:32:31.361917+00:00",
+          "attempt": 1,
+          "status": 403,
+          "seconds": 0.328
+        },
+        {
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/08/20260828-hpg-bctc-hop-nhat-soat-xet-6-thang-2026-va-giai-trinh-1-2.pdf",
+          "started_at": "2026-10-03T11:32:32.688986+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 22266273,
+          "seconds": 1.219
+        },
+        {
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/03/20260327-hpg-bctc-hop-nhat-nam-2025-sau-kiem-toan.pdf",
+          "started_at": "2026-10-03T11:32:34.913662+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 8270589,
+          "seconds": 0.843
+        },
+        {
+          "url": "https://dhgpharma.com.vn/robots.txt",
+          "started_at": "2026-10-03T11:32:35.781284+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 2074,
+          "seconds": 0.078
+        },
+        {
+          "url": "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh",
+          "started_at": "2026-10-03T11:32:36.857565+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 78916,
+          "seconds": 0.172
+        },
+        {
+          "url": "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=1",
+          "started_at": "2026-10-03T11:32:38.031722+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 79886,
+          "seconds": 0.187
+        },
+        {
+          "url": "https://dhgpharma.com.vn/sites/default/files/2026-08/DHG-BCTC-6T.2026-soat-xet.pdf",
+          "started_at": "2026-10-03T11:32:39.224886+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 11814477,
+          "seconds": 0.797
+        },
+        {
+          "url": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf",
+          "started_at": "2026-10-03T11:32:41.024855+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 6991892,
+          "seconds": 0.531
+        },
+        {
+          "url": "https://www.vinhhoan.com/robots.txt",
+          "started_at": "2026-10-03T11:32:41.577126+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 497,
+          "seconds": 0.64
+        },
+        {
+          "url": "https://www.vinhhoan.com/investors-2/",
+          "started_at": "2026-10-03T11:32:43.218618+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 449880,
+          "seconds": 1.875
+        },
+        {
+          "url": "https://www.vinhhoan.com/wp-content/uploads/2026/08/VHC_Reviewed-Consolidated-FS_6M2026_VN.pdf",
+          "started_at": "2026-10-03T11:32:46.097665+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 1994688,
+          "seconds": 0.563
+        },
+        {
+          "url": "https://www.vinhhoan.com//wp-content/uploads/2026/03/VHC-_BCTC-hop-nhat-kiem-toan-2025_VN.pdf",
+          "started_at": "2026-10-03T11:32:47.656543+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 2340349,
+          "seconds": 0.64
+        },
+        {
+          "url": "https://nongnghiep.hoaphat.com.vn/robots.txt",
+          "started_at": "2026-10-03T11:32:48.350034+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 79,
+          "seconds": 0.125
+        },
+        {
+          "url": "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+          "started_at": "2026-10-03T11:32:49.471109+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 32194,
+          "seconds": 0.203
+        },
+        {
+          "url": "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=2",
+          "started_at": "2026-10-03T11:32:50.672936+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 26254,
+          "seconds": 0.203
+        },
+        {
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/08/hpa-bao-cao-soat-xet-6-thang-2026-consol-vn.pdf",
+          "started_at": "2026-10-03T11:32:50.887699+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 9773238,
+          "seconds": 0.859
+        },
+        {
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/03/260325-hpa-bao-cao-tai-chinh-hop-nhat-2025.pdf",
+          "started_at": "2026-10-03T11:32:52.756159+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 12666952,
+          "seconds": 0.844
+        }
+      ],
+      "pdf_results": [
+        {
+          "company": "HPG",
+          "period_candidate": "H1-2026",
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/08/20260828-hpg-bctc-hop-nhat-soat-xet-6-thang-2026-va-giai-trinh-1-2.pdf",
+          "http_status": 200,
+          "result": "downloaded_new_content",
+          "sha256": "9a2881a88ac8ca4cc5cd948b0fafa031ff30fd0332a372f362477a8a6b0c9968",
+          "bytes": 22266273,
+          "conditional_request": false,
+          "versions_for_url": 1
+        },
+        {
+          "company": "HPG",
+          "period_candidate": "FY-2025",
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/03/20260327-hpg-bctc-hop-nhat-nam-2025-sau-kiem-toan.pdf",
+          "http_status": 200,
+          "result": "downloaded_new_content",
+          "sha256": "f38c5f75becf7d3f145d27183eec81f119fd4f75e378b983a2763ddc3f7e0c07",
+          "bytes": 8270589,
+          "conditional_request": false,
+          "versions_for_url": 1
+        },
+        {
+          "company": "DHG",
+          "period_candidate": "H1-2026",
+          "url": "https://dhgpharma.com.vn/sites/default/files/2026-08/DHG-BCTC-6T.2026-soat-xet.pdf",
+          "http_status": 200,
+          "result": "downloaded_new_content",
+          "sha256": "b68e08e74770c5231fee96ad73915b793647629659a43889eb724d6be6798a69",
+          "bytes": 11814477,
+          "conditional_request": false,
+          "versions_for_url": 1
+        },
+        {
+          "company": "DHG",
+          "period_candidate": "FY-2025",
+          "url": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf",
+          "http_status": 200,
+          "result": "downloaded_new_content",
+          "sha256": "abaaac8d3813329db1987e769f325fbee7b8c4776b4205b26a4673f95b589973",
+          "bytes": 6991892,
+          "conditional_request": false,
+          "versions_for_url": 1
+        },
+        {
+          "company": "VHC",
+          "period_candidate": "H1-2026",
+          "url": "https://www.vinhhoan.com/wp-content/uploads/2026/08/VHC_Reviewed-Consolidated-FS_6M2026_VN.pdf",
+          "http_status": 200,
+          "result": "downloaded_new_content",
+          "sha256": "e7034122d696abea75b8022ca977d6176726137a1fd55c52d258b2a1f53ac41b",
+          "bytes": 1994688,
+          "conditional_request": false,
+          "versions_for_url": 1
+        },
+        {
+          "company": "VHC",
+          "period_candidate": "FY-2025",
+          "url": "https://www.vinhhoan.com//wp-content/uploads/2026/03/VHC-_BCTC-hop-nhat-kiem-toan-2025_VN.pdf",
+          "http_status": 200,
+          "result": "downloaded_new_content",
+          "sha256": "00629dd42ea6c9d31cc81b1bc56e59e39056753d5cc61cfba78fe5e620667850",
+          "bytes": 2340349,
+          "conditional_request": false,
+          "versions_for_url": 1
+        },
+        {
+          "company": "HPA",
+          "period_candidate": "H1-2026",
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/08/hpa-bao-cao-soat-xet-6-thang-2026-consol-vn.pdf",
+          "http_status": 200,
+          "result": "downloaded_new_content",
+          "sha256": "e278d2dacc38acf7da010f05a1162a69371aa8d69b744171ddb72d9464efa019",
+          "bytes": 9773238,
+          "conditional_request": false,
+          "versions_for_url": 1
+        },
+        {
+          "company": "HPA",
+          "period_candidate": "FY-2025",
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/03/260325-hpa-bao-cao-tai-chinh-hop-nhat-2025.pdf",
+          "http_status": 200,
+          "result": "downloaded_new_content",
+          "sha256": "d2e2c906474f96651e27f99fb54afb05b6551641dcb56bc072c1f0184a469ef3",
+          "bytes": 12666952,
+          "conditional_request": false,
+          "versions_for_url": 1
+        }
+      ]
+    },
+    {
+      "run_id": "20261003T113338176321Z",
+      "started_at": "2026-10-03T11:33:38.176321+00:00",
+      "finished_at": "2026-10-03T11:33:58.486342+00:00",
+      "config": {
+        "companies": "HPG,DHG,VHC,HPA",
+        "max_pages": 2,
+        "max_pdfs_per_company": 2,
+        "allow_unknown_robots": true
+      },
+      "catalogs": [
+        {
+          "company": "HPG",
+          "url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+          "checked_at": "2026-10-03T11:33:38.199318+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "/",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "86579e1601db8f6ef4860426118a5dc5f1e21e99ef954f0f68b5c13137732320",
+          "bytes": 38075,
+          "saved_path": "HPG-7c6375bfd990-20261003T113338176321Z.html",
+          "pdf_links": 17,
+          "observed_pagination": [
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=2",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=3",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=4",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=5",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=6",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=7",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=8",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=23",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=24"
+          ]
+        },
+        {
+          "company": "HPG",
+          "url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=2",
+          "checked_at": "2026-10-03T11:33:39.544938+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "/",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "7975516ee5eb84aec3018cb68cad0e60659fe05e3c59bf1e22556079065a3bd4",
+          "bytes": 34367,
+          "saved_path": "HPG-aaed4473fa77-20261003T113338176321Z.html",
+          "pdf_links": 13,
+          "observed_pagination": [
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=3",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=4",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=5",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=6",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=7",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=8",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=23",
+            "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=24"
+          ]
+        },
+        {
+          "company": "DHG",
+          "url": "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh",
+          "checked_at": "2026-10-03T11:33:43.692757+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "a267856924cb9e920e80268e004f9b109b9e26e8aa22acb7612883167273245f",
+          "bytes": 78916,
+          "saved_path": "DHG-a27ef099f31f-20261003T113338176321Z.html",
+          "pdf_links": 12,
+          "observed_pagination": [
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=1",
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=2",
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=3",
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=13"
+          ]
+        },
+        {
+          "company": "DHG",
+          "url": "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=1",
+          "checked_at": "2026-10-03T11:33:44.966497+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "9bc9c5007fc70bb3e83b0c46f193070a9aa3bd10114f06b9db7205d3ebf6b025",
+          "bytes": 79886,
+          "saved_path": "DHG-708baaef2cb9-20261003T113338176321Z.html",
+          "pdf_links": 11,
+          "observed_pagination": [
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=2",
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=3",
+            "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=13"
+          ]
+        },
+        {
+          "company": "VHC",
+          "url": "https://www.vinhhoan.com/investors-2/",
+          "checked_at": "2026-10-03T11:33:48.319536+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "c592f17b6e71e3ef5e007b3d8554390daa5ece36d693f7188e764522cd8abccd",
+          "bytes": 449880,
+          "saved_path": "VHC-712299532194-20261003T113338176321Z.html",
+          "pdf_links": 408,
+          "observed_pagination": []
+        },
+        {
+          "company": "HPA",
+          "url": "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+          "checked_at": "2026-10-03T11:33:54.331556+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "/",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "aba22b923e9195e0bc60378a7e5a0a827ab5230260377b1e1b22836628e2a643",
+          "bytes": 32194,
+          "saved_path": "HPA-fddf9379754a-20261003T113338176321Z.html",
+          "pdf_links": 18,
+          "observed_pagination": [
+            "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=2",
+            "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=3"
+          ]
+        },
+        {
+          "company": "HPA",
+          "url": "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=2",
+          "checked_at": "2026-10-03T11:33:55.675024+00:00",
+          "robots": {
+            "state": "parsed_pilot_rules",
+            "allowed": true,
+            "matched_rule": "/",
+            "crawl_delay": 0
+          },
+          "result": "live_html",
+          "status": 200,
+          "sha256": "7ca9b38f1fa4659d81e0ea7bd843887b2fa4acaabfac7d727862308fa4f4120b",
+          "bytes": 26254,
+          "saved_path": "HPA-32d3b35dae2b-20261003T113338176321Z.html",
+          "pdf_links": 10,
+          "observed_pagination": [
+            "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=3"
+          ]
+        }
+      ],
+      "robots": [
+        {
+          "url": "https://www.hoaphat.com.vn/robots.txt",
+          "checked_at": "2026-10-03T11:33:38.199318+00:00",
+          "http_status": 200,
+          "sha256": "3377ef83ebc78212b9bdbdb094afd44009e4ed15781e7bc60914f5adf1eea391",
+          "state": "parsed_pilot_rules"
+        },
+        {
+          "url": "https://file.hoaphat.com.vn/robots.txt",
+          "checked_at": "2026-10-03T11:33:40.743949+00:00",
+          "http_status": 403,
+          "state": "unknown_http_error"
+        },
+        {
+          "url": "https://dhgpharma.com.vn/robots.txt",
+          "checked_at": "2026-10-03T11:33:43.692757+00:00",
+          "http_status": 200,
+          "sha256": "3c99f764d0b3706b779bfdfafbbd709d4d81f4869399bff2fde3026a354b33fd",
+          "state": "parsed_pilot_rules"
+        },
+        {
+          "url": "https://www.vinhhoan.com/robots.txt",
+          "checked_at": "2026-10-03T11:33:48.319536+00:00",
+          "http_status": 200,
+          "sha256": "e0bd42242faf93fc0c92f55846609bf3ab2f25292f0e8c9e9d2ff254eaa77a2b",
+          "state": "parsed_pilot_rules"
+        },
+        {
+          "url": "https://nongnghiep.hoaphat.com.vn/robots.txt",
+          "checked_at": "2026-10-03T11:33:54.331556+00:00",
+          "http_status": 200,
+          "sha256": "830aa8c7953615753466d0efc2a75585282f257408569b13715cd323832f2819",
+          "state": "parsed_pilot_rules"
+        }
+      ],
+      "http_requests": [
+        {
+          "url": "https://www.hoaphat.com.vn/robots.txt",
+          "started_at": "2026-10-03T11:33:38.199318+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 85,
+          "seconds": 0.125
+        },
+        {
+          "url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+          "started_at": "2026-10-03T11:33:39.325384+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 38075,
+          "seconds": 0.203
+        },
+        {
+          "url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=2",
+          "started_at": "2026-10-03T11:33:40.531323+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 34367,
+          "seconds": 0.203
+        },
+        {
+          "url": "https://file.hoaphat.com.vn/robots.txt",
+          "started_at": "2026-10-03T11:33:40.743949+00:00",
+          "attempt": 1,
+          "status": 403,
+          "seconds": 0.328
+        },
+        {
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/08/20260828-hpg-bctc-hop-nhat-soat-xet-6-thang-2026-va-giai-trinh-1-2.pdf",
+          "started_at": "2026-10-03T11:33:42.069668+00:00",
+          "attempt": 1,
+          "status": 304,
+          "seconds": 0.328
+        },
+        {
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/03/20260327-hpg-bctc-hop-nhat-nam-2025-sau-kiem-toan.pdf",
+          "started_at": "2026-10-03T11:33:43.396318+00:00",
+          "attempt": 1,
+          "status": 304,
+          "seconds": 0.297
+        },
+        {
+          "url": "https://dhgpharma.com.vn/robots.txt",
+          "started_at": "2026-10-03T11:33:43.692757+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 2074,
+          "seconds": 0.094
+        },
+        {
+          "url": "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh",
+          "started_at": "2026-10-03T11:33:44.784114+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 78916,
+          "seconds": 0.172
+        },
+        {
+          "url": "https://dhgpharma.com.vn/vi/bao-cao-tai-chinh?page=1",
+          "started_at": "2026-10-03T11:33:45.953128+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 79886,
+          "seconds": 0.171
+        },
+        {
+          "url": "https://dhgpharma.com.vn/sites/default/files/2026-08/DHG-BCTC-6T.2026-soat-xet.pdf",
+          "started_at": "2026-10-03T11:33:47.130019+00:00",
+          "attempt": 1,
+          "status": 304,
+          "seconds": 0.094
+        },
+        {
+          "url": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf",
+          "started_at": "2026-10-03T11:33:48.228603+00:00",
+          "attempt": 1,
+          "status": 304,
+          "seconds": 0.094
+        },
+        {
+          "url": "https://www.vinhhoan.com/robots.txt",
+          "started_at": "2026-10-03T11:33:48.319536+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 497,
+          "seconds": 0.672
+        },
+        {
+          "url": "https://www.vinhhoan.com/investors-2/",
+          "started_at": "2026-10-03T11:33:49.982063+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 449880,
+          "seconds": 1.984
+        },
+        {
+          "url": "https://www.vinhhoan.com/wp-content/uploads/2026/08/VHC_Reviewed-Consolidated-FS_6M2026_VN.pdf",
+          "started_at": "2026-10-03T11:33:52.980297+00:00",
+          "attempt": 1,
+          "status": 304,
+          "seconds": 0.172
+        },
+        {
+          "url": "https://www.vinhhoan.com//wp-content/uploads/2026/03/VHC-_BCTC-hop-nhat-kiem-toan-2025_VN.pdf",
+          "started_at": "2026-10-03T11:33:54.157265+00:00",
+          "attempt": 1,
+          "status": 304,
+          "seconds": 0.172
+        },
+        {
+          "url": "https://nongnghiep.hoaphat.com.vn/robots.txt",
+          "started_at": "2026-10-03T11:33:54.331556+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 79,
+          "seconds": 0.125
+        },
+        {
+          "url": "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+          "started_at": "2026-10-03T11:33:55.455660+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 32194,
+          "seconds": 0.218
+        },
+        {
+          "url": "https://nongnghiep.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh?page=2",
+          "started_at": "2026-10-03T11:33:56.675326+00:00",
+          "attempt": 1,
+          "status": 200,
+          "bytes": 26254,
+          "seconds": 0.203
+        },
+        {
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/08/hpa-bao-cao-soat-xet-6-thang-2026-consol-vn.pdf",
+          "started_at": "2026-10-03T11:33:56.883849+00:00",
+          "attempt": 1,
+          "status": 304,
+          "seconds": 0.329
+        },
+        {
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/03/260325-hpa-bao-cao-tai-chinh-hop-nhat-2025.pdf",
+          "started_at": "2026-10-03T11:33:58.201312+00:00",
+          "attempt": 1,
+          "status": 304,
+          "seconds": 0.281
+        }
+      ],
+      "pdf_results": [
+        {
+          "company": "HPG",
+          "period_candidate": "H1-2026",
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/08/20260828-hpg-bctc-hop-nhat-soat-xet-6-thang-2026-va-giai-trinh-1-2.pdf",
+          "http_status": 304,
+          "result": "not_modified_304",
+          "sha256": "9a2881a88ac8ca4cc5cd948b0fafa031ff30fd0332a372f362477a8a6b0c9968",
+          "bytes": 0,
+          "conditional_request": true,
+          "versions_for_url": 1
+        },
+        {
+          "company": "HPG",
+          "period_candidate": "FY-2025",
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/03/20260327-hpg-bctc-hop-nhat-nam-2025-sau-kiem-toan.pdf",
+          "http_status": 304,
+          "result": "not_modified_304",
+          "sha256": "f38c5f75becf7d3f145d27183eec81f119fd4f75e378b983a2763ddc3f7e0c07",
+          "bytes": 0,
+          "conditional_request": true,
+          "versions_for_url": 1
+        },
+        {
+          "company": "DHG",
+          "period_candidate": "H1-2026",
+          "url": "https://dhgpharma.com.vn/sites/default/files/2026-08/DHG-BCTC-6T.2026-soat-xet.pdf",
+          "http_status": 304,
+          "result": "not_modified_304",
+          "sha256": "b68e08e74770c5231fee96ad73915b793647629659a43889eb724d6be6798a69",
+          "bytes": 0,
+          "conditional_request": true,
+          "versions_for_url": 1
+        },
+        {
+          "company": "DHG",
+          "period_candidate": "FY-2025",
+          "url": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf",
+          "http_status": 304,
+          "result": "not_modified_304",
+          "sha256": "abaaac8d3813329db1987e769f325fbee7b8c4776b4205b26a4673f95b589973",
+          "bytes": 0,
+          "conditional_request": true,
+          "versions_for_url": 1
+        },
+        {
+          "company": "VHC",
+          "period_candidate": "H1-2026",
+          "url": "https://www.vinhhoan.com/wp-content/uploads/2026/08/VHC_Reviewed-Consolidated-FS_6M2026_VN.pdf",
+          "http_status": 304,
+          "result": "not_modified_304",
+          "sha256": "e7034122d696abea75b8022ca977d6176726137a1fd55c52d258b2a1f53ac41b",
+          "bytes": 0,
+          "conditional_request": true,
+          "versions_for_url": 1
+        },
+        {
+          "company": "VHC",
+          "period_candidate": "FY-2025",
+          "url": "https://www.vinhhoan.com//wp-content/uploads/2026/03/VHC-_BCTC-hop-nhat-kiem-toan-2025_VN.pdf",
+          "http_status": 304,
+          "result": "not_modified_304",
+          "sha256": "00629dd42ea6c9d31cc81b1bc56e59e39056753d5cc61cfba78fe5e620667850",
+          "bytes": 0,
+          "conditional_request": true,
+          "versions_for_url": 1
+        },
+        {
+          "company": "HPA",
+          "period_candidate": "H1-2026",
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/08/hpa-bao-cao-soat-xet-6-thang-2026-consol-vn.pdf",
+          "http_status": 304,
+          "result": "not_modified_304",
+          "sha256": "e278d2dacc38acf7da010f05a1162a69371aa8d69b744171ddb72d9464efa019",
+          "bytes": 0,
+          "conditional_request": true,
+          "versions_for_url": 1
+        },
+        {
+          "company": "HPA",
+          "period_candidate": "FY-2025",
+          "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/03/260325-hpa-bao-cao-tai-chinh-hop-nhat-2025.pdf",
+          "http_status": 304,
+          "result": "not_modified_304",
+          "sha256": "d2e2c906474f96651e27f99fb54afb05b6551641dcb56bc072c1f0184a469ef3",
+          "bytes": 0,
+          "conditional_request": true,
+          "versions_for_url": 1
+        }
+      ]
+    }
+  ],
+  "manual_cover_metadata_reviews": [
+    {
+      "sha256": "d2e2c906474f96651e27f99fb54afb05b6551641dcb56bc072c1f0184a469ef3",
+      "company": "HPA",
+      "pdf_page": 1,
+      "review_date": "2026-10-03",
+      "method": "human_visual_read_of_rendered_cover_110dpi",
+      "scope": "consolidated",
+      "assurance": "audited",
+      "period_end": "2025-12-31",
+      "cover_description": "Annual audited consolidated financial statements for year ended 31 December 2025",
+      "financial_values_reviewed": 0
+    },
+    {
+      "sha256": "e278d2dacc38acf7da010f05a1162a69371aa8d69b744171ddb72d9464efa019",
+      "company": "HPA",
+      "pdf_page": 1,
+      "review_date": "2026-10-03",
+      "method": "human_visual_read_of_rendered_cover_110dpi",
+      "scope": "consolidated",
+      "assurance": "reviewed",
+      "period_end": "2026-06-30",
+      "cover_description": "Reviewed interim consolidated financial statements for six-month period ended 30 June 2026",
+      "financial_values_reviewed": 0
+    }
+  ],
+  "offline_tests": {
+    "command": "python -m unittest discover -s scripts/research -p test_crawl_official_reports.py -v",
+    "passed": 13,
+    "returncode": 0,
+    "output": "test_combined_fs_file_can_contain_explanation (test_crawl_official_reports.ClassificationTests.test_combined_fs_file_can_contain_explanation) ... ok\ntest_half_year_is_not_annual_even_when_year_matches (test_crawl_official_reports.ClassificationTests.test_half_year_is_not_annual_even_when_year_matches) ... ok\ntest_language_variants_not_both_selected (test_crawl_official_reports.ClassificationTests.test_language_variants_not_both_selected) ... ok\ntest_overview_and_separate_are_not_target_fs (test_crawl_official_reports.ClassificationTests.test_overview_and_separate_are_not_target_fs) ... ok\ntest_pagination_and_duplicate_download_anchor (test_crawl_official_reports.ClassificationTests.test_pagination_and_duplicate_download_anchor) ... ok\ntest_quarter_before_annual_and_short_year (test_crawl_official_reports.ClassificationTests.test_quarter_before_annual_and_short_year) ... ok\ntest_upload_year_is_not_report_year (test_crawl_official_reports.ClassificationTests.test_upload_year_is_not_report_year) ... ok\ntest_content_hash_idempotence_and_corruption_detection (test_crawl_official_reports.TransportAndStorageTests.test_content_hash_idempotence_and_corruption_detection) ... ok\ntest_html_masquerading_as_pdf_is_rejected (test_crawl_official_reports.TransportAndStorageTests.test_html_masquerading_as_pdf_is_rejected) ... ok\ntest_three_run_history_304_and_changed_content (test_crawl_official_reports.TransportAndStorageTests.test_three_run_history_304_and_changed_content) ... ok\ntest_unknown_switch_never_overrides_known_disallow (test_crawl_official_reports.TransportAndStorageTests.test_unknown_switch_never_overrides_known_disallow) ... ok\ntest_url_host_and_tls_scheme_allowlist (test_crawl_official_reports.TransportAndStorageTests.test_url_host_and_tls_scheme_allowlist) ... ok\ntest_wildcard_pdf_disallow_and_query_disallow (test_crawl_official_reports.TransportAndStorageTests.test_wildcard_pdf_disallow_and_query_disallow) ... ok\n\n----------------------------------------------------------------------\nRan 13 tests in 0.485s\n\nOK\n"
+  },
+  "limitations": [
+    "Selected sources and metadata classifier are a development sample, not an independent market-wide benchmark",
+    "Only first 12 pages per PDF sampled for text; not all 423 pages",
+    "No nine-field numerical extraction benchmark executed in this experiment",
+    "file.hoaphat.com.vn robots HTTP 403 is unknown; explicit bounded-probe mode used, not a known Allow",
+    "Changed-content history validated with synthetic offline PDF fixture; no live financial restatement observed",
+    "Two development misclassification downloads outside final targets retained in parent directory and excluded here",
+    "Current script filters FY2025 and H1-2026, not configurable full historical collection",
+    "history JSON is a single-process research store, not transactional production storage"
+  ]
+}

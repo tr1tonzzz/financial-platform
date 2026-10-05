@@ -1,0 +1,432 @@
+{
+  "version": 1,
+  "id": "financial-analysis-profit-cfo-dps-13weeks-v1",
+  "updated": "03/10/2026",
+  "weeks": [
+    {
+      "n": 1,
+      "title": "Hiểu đề tài và đọc dữ liệu bằng tay",
+      "learn": "Python biến/list/dict, JSON; ba báo cáo và DPS. Sách: phần mở đầu và báo cáo kết quả kinh doanh.",
+      "goal": "Một BCTC và một thông báo cổ tức có nguồn, đọc và giải thích được.",
+      "tasks": [
+        "Lập danh sách ba doanh nghiệp ứng viên; ghi ngành, URL nguồn và phạm vi báo cáo cần xác nhận.",
+        "Đọc một BCTC năm, tìm sáu chỉ tiêu lõi; ghi trang, kỳ, đơn vị và cột vào bảng đối chiếu.",
+        "Đọc một thông báo tiền mặt; tự tách DPS theo năm lợi nhuận, giữ lịch trả riêng.",
+        "Tự viết hoặc sửa Python tạo JSON từ bảng đã đọc; chỉ rõ đây là nhập tay, chưa là crawl.",
+        "Giải thích bằng lời lợi nhuận khác tiền thế nào; một thông báo nhiều năm không cộng hết vào một năm.",
+        "Ghi thời gian, đường dẫn minh chứng và tối đa ba việc còn vướng vào nhật ký tuần."
+      ],
+      "done": "Có nguồn cho từng số, biết input/output của JSON; chưa ghi tự crawl khi còn nhập tay.",
+      "refs": [
+        "12",
+        "11",
+        "05"
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Tự tìm nguồn và tải có kiểm soát",
+      "learn": "HTTP, selector, urljoin, hash, lỗi và retry. Sách: bảng cân đối và phân biệt lợi nhuận với tiền.",
+      "goal": "Một luồng tự tìm BCTC và nhiều thông báo cổ tức; đánh giá gate nguồn.",
+      "tasks": [
+        "Chạy collector BCTC trên một nguồn đã kiểm tra; lưu URL danh mục và đường phát hiện file.",
+        "Thử tìm thông báo theo ticker trên nguồn VSDC hoặc IR công khai; đọc phân trang thật, ghi phạm vi đã rà.",
+        "Lưu raw PDF/HTML, hash, HTTP status và ngày kiểm tra; tách URL nhập hỗ trợ khỏi tự phát hiện.",
+        "Chạy lại để kiểm tra 304 hoặc hash không đổi; ghi lỗi/policy skip, không tự bỏ qua hạn chế nguồn.",
+        "Giải thích một request và cách biết HTML giả PDF, timeout hoặc không tìm thấy tài liệu.",
+        "Chuẩn bị báo cáo đợt 1 cho tuần 1–2; demo nguồn tới JSON/raw và xin góp ý phạm vi."
+      ],
+      "done": "Có log tự phát hiện; nếu cổ tức chưa thành công, báo rõ và thử IR thay thế, không ghi đã đủ lịch sử.",
+      "refs": [
+        "11",
+        "03",
+        "07"
+      ]
+    },
+    {
+      "n": 3,
+      "title": "PDF OCR và pilot ba năm",
+      "learn": "Text/bbox, ảnh scan, OCR vie+eng, regex và cột. Sách: dòng tiền và quan hệ với lợi nhuận.",
+      "goal": "Đưa chín BCTC pilot và sự kiện liên quan vào sổ theo dõi, có candidate và missing rõ.",
+      "tasks": [
+        "Bổ sung cấu hình collector cho 2023–2025; tìm/tải hoặc ghi lý do thiếu từng issuer–year–scope.",
+        "Thử text PDF trước; ghi encoding/lớp chữ, chỉ OCR trang cần thiết khi không đọc được.",
+        "Tạo candidate cho sáu chỉ tiêu; lưu raw value, đơn vị, cột, trang và parser version.",
+        "Trích phần thông báo chính và components theo năm; không lẫn các tin liên quan trên trang.",
+        "Đối chiếu mẫu bằng mắt: dấu ngoặc âm, số so sánh, lũy kế và LNST tổng.",
+        "Ghi số tài liệu đã xử lý, lỗi còn thiếu và phút review; chưa dùng mẫu phát triển làm accuracy độc lập."
+      ],
+      "done": "Có ledger pilot; số chưa kiểm tra giữ candidate/missing, không thay bằng 0.",
+      "refs": [
+        "11",
+        "12",
+        "06"
+      ]
+    },
+    {
+      "n": 4,
+      "title": "SQLite kiểm định và chốt phạm vi",
+      "learn": "SQL khóa, JOIN, transaction; cân đối tài sản–nợ–vốn. Sách: tỷ số và cách đọc có điều kiện.",
+      "goal": "Lưu dữ liệu đã duyệt và lịch sử sửa; quyết định scope bằng công sức pilot.",
+      "tasks": [
+        "Lưu nguồn, versions, candidates/facts và events/components trong SQLite theo thiết kế tối thiểu.",
+        "Kiểm định kỳ, đơn vị, scope, nhãn và cân đối; lưu flags thay vì tự sửa số để cân bảng.",
+        "Tạo luồng review tối thiểu có số trước/sau, lý do và vị trí nguồn; kiểm tra rollback.",
+        "Đo công sức chín BCTC cùng notices thực tế; chốt 5–8 công ty hoặc giữ pilot có lý do.",
+        "Kiểm tra ledger nguồn và coverage cổ tức; không gọi tổng DPS đầy đủ chỉ vì đã thấy vài đợt.",
+        "Chuẩn bị báo cáo đợt 2: pilot, ERD tối thiểu, lỗi/effort và quyết định scope."
+      ],
+      "done": "Có reviewed data/audit và quyết định scope ghi ngày, ngân sách, phần thiếu.",
+      "refs": [
+        "03",
+        "06",
+        "14",
+        "07"
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Bảng năm timeline và giao diện",
+      "learn": "pandas merge/group, Streamlit, trạng thái thiếu. Ôn công thức trong sách bằng BCTC Việt Nam.",
+      "goal": "Một doanh nghiệp xem được năm lợi nhuận, timeline và nguồn.",
+      "tasks": [
+        "Ghép theo issuer–profit year và scope đã chọn; kiểm tra JOIN không nhân bản số tài chính.",
+        "Tách bảng theo năm lợi nhuận khỏi timeline công bố/chốt quyền/lịch thanh toán.",
+        "Hiển thị observed DPS và trạng thái đủ/thiếu/chưa rõ, không tự gán annual DPS hoàn chỉnh.",
+        "Tự tính CFO/LNST khi LNST dương, tiền/tài sản và nợ phải trả/tài sản từ operands hợp lệ.",
+        "Tạo giao diện Streamlit tối thiểu mở được trang/đoạn nguồn và lý do missing.",
+        "Tự giải thích một phép JOIN, một ratio và một trường hợp cần chặn phép tính; ghi nhật ký."
+      ],
+      "done": "UI một doanh nghiệp chạy thật; từng kết quả có source và operands.",
+      "refs": [
+        "13",
+        "03",
+        "05"
+      ]
+    },
+    {
+      "n": 6,
+      "title": "Sự kiện sửa hủy và kiểm thử nghiệp vụ",
+      "learn": "Module, hàm thuần, business tests và lifecycle.",
+      "goal": "Event resolver không đếm trùng hoặc biến sửa lịch thành thêm DPS.",
+      "tasks": [
+        "Tách parser, validator, event resolver và engine khỏi code giao diện.",
+        "Xử lý cùng notice qua hai route; các nguồn cùng đợt giữ references, không cộng hai lần.",
+        "Viết ca kiểm tra thông báo gộp hai năm, hai đợt cùng số, sửa lịch, sửa DPS và hủy.",
+        "Giữ phiên bản cũ và quan hệ sửa/hủy; active view lấy đúng components có hiệu lực.",
+        "Kiểm tra thiếu notice và share basis chưa rõ chặn tổng/growth; không CFO/DPS.",
+        "Chuẩn bị báo cáo đợt 3: giao diện, schema/flow, ba ca kiểm thử và ví dụ tài chính tự giải thích."
+      ],
+      "done": "Có bằng chứng tests xử lý các lỗi nghiệp vụ quan trọng, không chỉ kiểm tra hàm chạy.",
+      "refs": [
+        "13",
+        "06",
+        "07"
+      ]
+    },
+    {
+      "n": 7,
+      "title": "Dataset và bộ đánh giá chưa dùng chỉnh parser",
+      "learn": "Batch/resume, coverage, chọn mẫu và holdout.",
+      "goal": "Dataset trong scope đã chốt và bộ đối chiếu đánh giá được tách rõ.",
+      "tasks": [
+        "Thu và xử lý dữ liệu theo scope tuần 4; ghi đầy đủ nguồn thiếu, lỗi và nhập hỗ trợ.",
+        "Review facts/components và scope chính; kiểm tra coverage từng năm với các đợt còn lại.",
+        "Chọn tài liệu/notices holdout khác mẫu phát triển; tránh bản dịch, route hoặc bản gần trùng ở hai tập.",
+        "Tạo bảng đối chiếu sáu targets/report và event fields; nhờ người kiểm tra nếu có.",
+        "Đóng băng danh sách targets và protocol chấm trước khi chạy đánh giá; không bỏ missing khỏi mẫu số.",
+        "Ghi selection bias, số quan sát thực dùng và công sức batch trong nhật ký."
+      ],
+      "done": "Có manifest development/holdout và gold/protocol; mọi giới hạn đối chiếu được ghi rõ.",
+      "refs": [
+        "06",
+        "12",
+        "14"
+      ]
+    },
+    {
+      "n": 8,
+      "title": "Đo độ đúng và công sức",
+      "learn": "Joint correctness, precision/recall, mẫu số và runtime.",
+      "goal": "Bảng kết quả thật của text-only, OCR/parser và dữ liệu sau review.",
+      "tasks": [
+        "Chạy B0 text-only và B1 text/OCR/parser trên holdout đã freeze, giữ log/config.",
+        "Chấm cùng targets, unit/period/scope; báo số đúng, sai, thiếu và mẫu số.",
+        "Đánh giá năm/DPS/components và lifecycle theo gold; không lấy seed để tuyên bố coverage toàn thị trường.",
+        "Đo thời gian tự động và phút review/sửa; B2 sau review không gọi là accuracy tự động.",
+        "Freeze phạm vi để dành giờ cho phân tích và báo cáo; ghi thay đổi nếu có.",
+        "Chuẩn bị báo cáo đợt 4: bảng baseline, lỗi đại diện, event quality, effort và kế hoạch sửa có giới hạn."
+      ],
+      "done": "Có số đo tái lập và giới hạn; khi holdout quá nhỏ nói rõ thay vì phóng đại.",
+      "refs": [
+        "06",
+        "07"
+      ]
+    },
+    {
+      "n": 9,
+      "title": "Phân tích ba trường hợp có nguồn",
+      "learn": "Xu hướng, scatter, Spearman thăm dò và phụ thuộc theo công ty.",
+      "goal": "Ba case được chọn từ dữ liệu thật, diễn giải đúng mức.",
+      "tasks": [
+        "Chọn ba case từ dữ liệu đủ nguồn: lợi nhuận/CFO lệch nhau, DPS khác xu hướng, hoặc thông báo gộp/sửa.",
+        "Vẽ chuỗi lợi nhuận–CFO–DPS với coverage và scope, đơn vị rõ.",
+        "Chỉ tính DPS change/growth khi annual đủ và share basis tương thích; nền 0/âm xử lý riêng.",
+        "Nếu chạy Spearman, báo n, missing, selection và dữ liệu lặp theo công ty; tránh suy nhân quả.",
+        "Viết diễn giải có operands và mở source; không gọi ratio là bằng chứng chắc chắn cắt giảm.",
+        "Tự trình bày một case 2–3 phút và ghi câu hỏi chưa giải thích được."
+      ],
+      "done": "Ba case có dữ liệu/nguồn/giới hạn, không chọn số để làm tương quan đẹp.",
+      "refs": [
+        "13",
+        "08"
+      ]
+    },
+    {
+      "n": 10,
+      "title": "Cập nhật và tái lập snapshot",
+      "learn": "Conditional GET, phiên bản, snapshot và export.",
+      "goal": "Demo cập nhật không phá dữ liệu cũ; xuất bản có thể tái tính.",
+      "tasks": [
+        "Chạy lại danh mục và file: đo 304/hash không đổi/phiên bản mới, giữ log.",
+        "Kiểm tra snapshot cũ giữ nguyên sau review hoặc amendment mới.",
+        "Export CSV/JSON cùng manifest, cutoff và config; thử tái tính một chỉ số.",
+        "Demo một lỗi nguồn được hiển thị rõ và khả năng resume không nhân bản.",
+        "Nếu còn giờ, thêm một ca 2026 từ nguồn chính thức; không biến thành nghĩa vụ mọi quý.",
+        "Chuẩn bị báo cáo đợt 5: ba case, provenance, update/export và giới hạn thống kê."
+      ],
+      "done": "Có artifact snapshot/export và demo rerun; ca 2026 được ghi đúng trạng thái tùy chọn.",
+      "refs": [
+        "11",
+        "03",
+        "07"
+      ]
+    },
+    {
+      "n": 11,
+      "title": "Đóng băng tính năng và viết báo cáo",
+      "learn": "Viết kỹ thuật, ERD, mô tả lựa chọn và hướng dẫn chạy.",
+      "goal": "Báo cáo kỹ thuật gần hoàn chỉnh theo sản phẩm thực tế.",
+      "tasks": [
+        "Feature freeze: ưu tiên sửa lỗi, không mở ML/RAG/API mới ngoài scope.",
+        "Viết bài toán, nguồn, pipeline, schema, thuật toán/kiểm định và quyết định công nghệ.",
+        "Đưa bảng đánh giá và ba case vào báo cáo; gắn nguồn, mẫu số và giới hạn.",
+        "Viết README dựng môi trường/chạy demo, config và phụ thuộc phiên bản.",
+        "Rà tên đề tài, scope và số đo khớp SRS, ứng dụng, Word và slide.",
+        "Ghi danh sách lỗi phải sửa trước demo và nội dung còn cần hỏi thầy."
+      ],
+      "done": "Người chưa đọc cuộc trao đổi có thể hiểu và thử chạy project từ hướng dẫn.",
+      "refs": [
+        "02",
+        "03",
+        "06",
+        "08"
+      ]
+    },
+    {
+      "n": 12,
+      "title": "Luyện demo và bảo vệ",
+      "learn": "Giải thích kỹ thuật bằng input–xử lý–output, tài chính bằng ví dụ.",
+      "goal": "Hai lượt demo 8–12 phút và trả lời được câu hỏi trọng tâm.",
+      "tasks": [
+        "Tạo slide bảo vệ từ kết quả thật; hình/bảng dễ đọc, notes có cách nói và nguồn.",
+        "Luyện hai lượt demo: thành công, lỗi nguồn hoặc sửa/hủy, truy vết và export.",
+        "Giải thích tự crawl khác seed, OCR khác review, DPS công bố khác thực trả và năm lợi nhuận khác năm lịch.",
+        "Tự sửa một hàm hoặc truy vấn nhỏ, đổi input và dự đoán output trước khi chạy.",
+        "Chuẩn bị log/ảnh fallback cùng snapshot, không dùng ảnh giả thay kết quả.",
+        "Chuẩn bị báo cáo đợt 6: demo đầy đủ, rubric/giới hạn, lỗi còn lại và kế hoạch nộp cuối."
+      ],
+      "done": "Tự giải thích phần mình làm, có bằng chứng sửa/test; hỏi thầy điểm rubric chưa rõ.",
+      "refs": [
+        "08",
+        "07",
+        "09"
+      ]
+    },
+    {
+      "n": 13,
+      "title": "Kiểm tra cuối và đóng gói nộp",
+      "learn": "Ôn phần yếu, tái lập và trả lời giới hạn.",
+      "goal": "Bundle cuối đầy đủ, nhất quán và chạy lại được.",
+      "tasks": [
+        "Sửa lỗi ưu tiên sau phản hồi thật; ghi quyết định và không thêm tính năng lớn.",
+        "Thử môi trường mới hoặc môi trường sạch, ghi bước và kết quả thực; không tick nếu chưa chạy.",
+        "Rà paths, config, raw/manifest, tests, provenance và export trong gói nộp.",
+        "Đối chiếu Word/slide/source/ứng dụng cùng số đo và snapshot cuối.",
+        "Nêu rõ phần đã làm, chưa làm và gate dữ liệu cho hướng dự đoán tốt nghiệp.",
+        "Hoàn thiện tổng kết/nộp cuối tuần 13; đây là mốc cuối ngoài sáu đợt báo cáo hai tuần."
+      ],
+      "done": "Có gói nộp và hướng dẫn thật; kế hoạch không được ghi thành tiến độ đã đạt.",
+      "refs": [
+        "06",
+        "08",
+        "09"
+      ]
+    }
+  ],
+  "cycles": [
+    {
+      "n": 1,
+      "weeks": [
+        1,
+        2
+      ],
+      "title": "Đề tài và tính khả thi nguồn",
+      "word": [
+        "Tên/câu hỏi đề tài và phạm vi đã chọn; phần giảng viên cần góp ý.",
+        "Bảng nguồn, một BCTC và thông báo nhiều năm đã đọc; sáu trường và DPS.",
+        "Luồng tự tìm/tải, log thực tế, phần còn nhập tay và lỗi/policy.",
+        "Kiến thức đã hiểu; gate discovery và ba đầu ra cho tuần 3–4."
+      ],
+      "slide": "Tên đề tài → mục tiêu hai tuần → nguồn/dữ liệu → pipeline → demo crawl → điều đã hiểu/giới hạn → kế hoạch và góp ý.",
+      "demo": "Danh mục IR tới file/raw; thông báo tách hai năm. Nếu tự tìm cổ tức chưa chạy, nói rõ.",
+      "ask": "Ngách và tiêu chí IT có phù hợp rubric? Scope/nguồn nào cần điều chỉnh?"
+    },
+    {
+      "n": 2,
+      "weeks": [
+        3,
+        4
+      ],
+      "title": "Pilot dữ liệu và quyết định phạm vi",
+      "word": [
+        "Ledger 3×3 năm: mong đợi/tìm/tải/trích/duyệt, scope và phần thiếu.",
+        "Một lỗi OCR/cột/đơn vị với before–after và kiểm định.",
+        "ERD/SQLite, review audit, components và coverage.",
+        "Phút/report/notice và quyết định 5–8 công ty hoặc giữ pilot."
+      ],
+      "slide": "Mục tiêu pilot → bảng số thực → dữ liệu/coverage → OCR và schema → test/review → bài học → scope chốt.",
+      "demo": "Một candidate OCR tới reviewed fact, mở nguồn; sửa có audit.",
+      "ask": "Scope theo effort đã vừa sức chưa? Protocol đối chiếu cần bổ sung gì?"
+    },
+    {
+      "n": 3,
+      "weeks": [
+        5,
+        6
+      ],
+      "title": "Ứng dụng và vòng đời sự kiện",
+      "word": [
+        "UI/engine, bảng năm lợi nhuận và timeline; ratio có operands.",
+        "Quy tắc route/trùng/nhiều năm/sửa/hủy và share basis.",
+        "Tests nghiệp vụ và các lỗi được bắt; không gán missing bằng 0.",
+        "Kiến thức JOIN/financial đã hiểu; kế hoạch dataset/holdout."
+      ],
+      "slide": "Kết quả ứng dụng → tiến độ → mô hình dữ liệu → event resolver → demo/tests → kiến thức và hạn chế → tuần 7–8.",
+      "demo": "Thông báo sửa lịch không tăng DPS; JOIN không nhân bản tài chính.",
+      "ask": "Quy tắc nghiệp vụ và bộ holdout có đủ đại diện các lỗi quan trọng?"
+    },
+    {
+      "n": 4,
+      "weeks": [
+        7,
+        8
+      ],
+      "title": "Đánh giá chất lượng và công sức",
+      "word": [
+        "Danh sách development/holdout, quy tắc tách và cách tạo gold.",
+        "Bảng B0/B1/B2, joint correctness sáu targets và mẫu số/missing.",
+        "Event/component/lifecycle/coverage metrics; effort và lỗi đại diện.",
+        "Giới hạn tự chấm/mẫu nhỏ và việc sửa sau freeze."
+      ],
+      "slide": "Mục tiêu đánh giá → thiết kế mẫu → baseline → bảng kết quả → lỗi/demo → effort/giới hạn → quyết định tiếp.",
+      "demo": "Chạy một holdout hoặc mở log cố định; chỉ rõ B2 có người review.",
+      "ask": "Cách chấm và baseline hợp rubric? Có cần người đối chiếu độc lập?"
+    },
+    {
+      "n": 5,
+      "weeks": [
+        9,
+        10
+      ],
+      "title": "Phân tích và cập nhật dữ liệu",
+      "word": [
+        "Ba case lợi nhuận–CFO–DPS cùng snapshot/nguồn/coverage.",
+        "Điều kiện ratio/growth và n nếu có Spearman; giới hạn quan hệ mô tả.",
+        "Update/version/rerun, snapshot cũ và export tái lập.",
+        "Ca 2026 nếu đã làm; phần còn thiếu và việc viết báo cáo."
+      ],
+      "slide": "Câu hỏi phân tích → coverage → case/biểu đồ → kỹ thuật snapshot → demo update → giới hạn diễn giải → viết báo cáo.",
+      "demo": "Một case truy ngược source, chạy lại không nhân bản và export.",
+      "ask": "Cách diễn giải case và giới hạn có phù hợp? Kết quả nào nên đưa vào báo cáo cuối?"
+    },
+    {
+      "n": 6,
+      "weeks": [
+        11,
+        12
+      ],
+      "title": "Hoàn thiện và chuẩn bị bảo vệ",
+      "word": [
+        "Bản mô tả kiến trúc/thuật toán, ERD và hướng dẫn chạy.",
+        "Tổng hợp đóng góp IT, benchmark/case cùng scope thực đạt.",
+        "Kết quả hai lượt demo, câu hỏi đã tự trả lời và lỗi còn lại.",
+        "Checklist nộp cuối và hướng tốt nghiệp có gate dữ liệu."
+      ],
+      "slide": "Bài toán → phạm vi thực đạt → dữ liệu/kiến trúc → kỹ thuật chính → kết quả/demo → hạn chế → công việc nộp.",
+      "demo": "Luồng end-to-end, lỗi nguồn/sự kiện và một sửa code nhỏ tự giải thích.",
+      "ask": "Còn yêu cầu rubric hoặc minh chứng nào thiếu trước nộp?"
+    },
+    {
+      "n": 7,
+      "weeks": [
+        13
+      ],
+      "title": "Tổng kết và nộp cuối",
+      "word": [
+        "Bản cuối theo mẫu trường: bài toán, phương pháp, triển khai, đánh giá và kết luận.",
+        "Manifest bundle, hướng dẫn chạy, số đo/snapshot nhất quán.",
+        "Phần chưa hoàn thành, giới hạn và kế hoạch liên thông dự đoán."
+      ],
+      "slide": "Dùng deck bảo vệ cuối; chọn số liệu thật và demo đã tập.",
+      "demo": "Thử chạy gói nộp trong môi trường sạch; nêu đúng trạng thái nếu chưa thử.",
+      "ask": "Ghi phản hồi cuối thật và xác nhận danh mục nộp theo quy định."
+    }
+  ],
+  "refs": {
+    "11": [
+      "Thu thập và xử lý",
+      "11-phuong-phap-thu-thap-va-xu-ly.md"
+    ],
+    "12": [
+      "Từ điển tài chính",
+      "12-kien-thuc-tai-chinh-va-tu-dien.md"
+    ],
+    "13": [
+      "Ghép cổ tức và phân tích",
+      "13-ghep-co-tuc-va-phan-tich.md"
+    ],
+    "14": [
+      "Backlog",
+      "14-backlog-va-quyet-dinh.md"
+    ],
+    "02": [
+      "SRS hiện hành",
+      "02-de-tai-va-srs.md"
+    ],
+    "03": [
+      "Kiến trúc và dữ liệu",
+      "03-kien-truc-va-du-lieu.md"
+    ],
+    "05": [
+      "Lộ trình học",
+      "05-lo-trinh-hoc.md"
+    ],
+    "06": [
+      "Đánh giá",
+      "06-danh-gia-va-nghiem-thu.md"
+    ],
+    "07": [
+      "Báo cáo hai tuần",
+      "07-bao-cao-hang-tuan.md"
+    ],
+    "08": [
+      "Chuẩn bị bảo vệ",
+      "08-chuan-bi-bao-ve.md"
+    ],
+    "09": [
+      "Hướng tốt nghiệp",
+      "09-lien-thong-tot-nghiep.md"
+    ]
+  }
+}

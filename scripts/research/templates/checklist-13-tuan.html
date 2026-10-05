@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checklist 13 tuần • Lợi nhuận, dòng tiền và cổ tức</title>
+<style>
+:root{--ink:#183a40;--teal:#087d75;--pale:#eef7f4;--line:#d4e2df;--paper:#fff;--muted:#53686c}
+*{box-sizing:border-box}body{margin:0;background:#f5f8f7;color:var(--ink);font:16px/1.55 system-ui,"Segoe UI",sans-serif}
+main{max-width:1120px;margin:auto;padding:32px 24px 60px}
+header{padding:8px 0 24px;border-bottom:2px solid var(--teal)}.eyebrow{color:var(--teal);font-weight:700;font-size:13px;letter-spacing:1px}
+h1{font-size:clamp(28px,4vw,43px);line-height:1.2;margin:10px 0 16px;max-width:820px}h2{font-size:25px;margin:28px 0 12px}h3{font-size:20px;margin:12px 0}
+p{margin:8px 0 14px}a{color:var(--teal);text-underline-offset:3px}button,input,textarea,select{font:inherit}
+button{cursor:pointer;border:1px solid var(--line);background:white;color:var(--ink);border-radius:7px;padding:8px 13px}
+button:hover{border-color:var(--teal);background:var(--pale)}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #d18d30;outline-offset:3px}
+.primary{background:var(--teal);color:white;border-color:var(--teal)}.primary:hover{background:#05645e;color:white}
+.tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:16px 0}
+input[type=date],select{border:1px solid var(--line);border-radius:6px;padding:7px;background:white;color:var(--ink)}
+.small{font-size:14px;color:var(--muted)}.notice{background:#fff5dd;border-left:4px solid #b77a18;padding:12px 16px}
+.overview{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:22px 0}.scope{border-left:3px solid var(--teal);padding-left:16px}
+progress{width:100%;height:10px;accent-color:var(--teal)}.links{display:flex;flex-wrap:wrap;gap:8px 18px}
+.week-nav{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0 20px}.week-nav a{padding:5px 10px;border:1px solid var(--line);border-radius:5px;text-decoration:none;background:white;font-size:14px}
+.week{background:white;border:1px solid var(--line);border-radius:10px;margin:12px 0;scroll-margin-top:20px;overflow:hidden}
+.week summary{cursor:pointer;padding:16px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px;list-style:none}.week summary::-webkit-details-marker{display:none}
+.week summary:before{content:"＋";color:var(--teal);font-size:23px}.week[open] summary:before{content:"−"}.week summary strong{flex:1}.count{font-size:14px;color:var(--muted);white-space:nowrap}
+.week-content{padding:0 20px 20px}.learning{color:var(--muted);font-size:15px}.goal{background:var(--pale);padding:12px 14px;border-radius:6px}
+.task{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #e9efed}.task input{width:20px;height:20px;accent-color:var(--teal);flex-shrink:0;margin-top:3px}.task span{flex:1}
+.task:has(input:checked) span{color:#5e7475}.criterion{font-size:15px;margin-top:14px}
+textarea{width:100%;min-height:108px;resize:vertical;padding:10px;border:1px solid var(--line);border-radius:7px;background:#fbfdfc;color:var(--ink);margin-top:7px}
+.notes-label{font-weight:600;font-size:15px;display:block;margin-top:16px}
+.report-box{background:white;border:1px solid var(--line);border-radius:10px;padding:22px;margin-top:14px}
+.report-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.report-grid ul{padding-left:20px}.report-grid li{margin:8px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;margin:16px 0}th,td{text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:10px}th{background:var(--pale)}
+.table-wrap{overflow:auto}.date{font-size:14px;color:var(--muted)}.print-note{display:none}
+footer{border-top:1px solid var(--line);padding-top:18px;margin-top:30px}.saved{font-size:14px;color:var(--teal)}
+@media(max-width:700px){main{padding:20px 14px 40px}.overview,.report-grid{grid-template-columns:1fr;gap:12px}.week summary{padding:14px 12px}.week-content{padding:0 12px 16px}.report-box{padding:15px}.count{font-size:12px}.tools{gap:7px}th,td{padding:8px}}
+@media print{
+ body{background:white;color:black;font-size:11pt}main{max-width:none;padding:0}h1{font-size:24pt}h2{font-size:17pt}
+ .tools,.week-nav,.links,.saved,select,button,.no-print{display:none!important}
+ .overview,.report-grid{display:block}.week{break-inside:avoid;border-radius:0}.week summary{padding:9px}
+ .week-content{padding:0 10px 10px}.task{padding:5px 0}.goal{background:none;padding:0}.report-box{border:0;padding:0}
+ textarea{display:none}.print-note{display:block;white-space:pre-wrap;overflow-wrap:anywhere;border-left:1px solid #aaa;padding-left:10px}
+ a{color:black}.overview{margin:10px 0}.notice{padding:8px}.criterion,.learning{font-size:10pt}
+}
+</style>
+</head>
+<body><main>
+<header>
+<div class="eyebrow">PROJECT BCTC–CỔ TỨC · KẾ HOẠCH HIỆN HÀNH</div>
+<h1>13 tuần học và làm<br>Lợi nhuận, dòng tiền và cổ tức tiền mặt</h1>
+<p>Kế hoạch v3 theo SRS v3.1: lợi nhuận và chuyển thành tiền là trục, cổ tức là lớp đối chiếu. Thêm cầu nối CFO tối thiểu một ca; 83 mã yêu cầu/42 tình huống dự kiến. Đánh dấu việc đã làm thật và ghi minh chứng, báo cáo <strong>hai tuần một lần</strong>.</p>
+<div class="links"><a href="23-bat-dau-va-minh-chung-thuc-hien.md">Bắt đầu và mẫu minh chứng</a><a href="04-ke-hoach-13-tuan.md">Kế hoạch chi tiết</a><a href="22-srs-dac-ta-yeu-cau-phan-mem.md">SRS v3.1</a><a href="README.md">Bộ tài liệu</a><a href="07-bao-cao-hang-tuan.md">Khung Word và slide</a></div>
+</header>
+<div class="overview">
+<div><h3>Phạm vi để tập trung</h3><p class="scope">Pilot 3 doanh nghiệp × 2023–2025; sáu chỉ tiêu BCTC và sự kiện cổ tức tiền mặt. Một ca cầu nối LNTT→CFO bắt buộc, mục tiêu 1–3 sau gate. Tuần 4 đo công sức trước tăng ca hoặc mở 5–8 công ty.</p><p class="small">143 giờ nền + 24 giờ cầu nối = 167 giờ dự toán, chưa xác nhận quỹ giờ thực. Nếu chỉ có 10–12 giờ/tuần cần phân bổ lại/lùi hạn hoặc CR. Tuần tính từ ngày bắt đầu bạn chọn.</p></div>
+<div><h3>Theo dõi công việc</h3><p id="total">Chưa có việc được đánh dấu.</p><progress id="progress" max="78" value="0" aria-label="Số mục checklist được đánh dấu"></progress><p class="small">Số ô đánh dấu phản ánh checklist, không phải % chất lượng hay % hoàn thành đồ án. Không tự đánh dấu vì có tài liệu/kế hoạch.</p><p id="saved" class="saved" role="status" aria-live="polite">Tiến độ được lưu trong trình duyệt này khi bạn thay đổi.</p></div>
+</div>
+<div id="warning" class="notice" hidden></div>
+<div class="tools">
+<label for="start">Ngày bắt đầu</label><input id="start" type="date" aria-describedby="dates-help">
+<button id="export" class="primary" type="button">Xuất tiến độ JSON</button><button id="import" type="button">Nhập bản lưu</button><input id="import-file" type="file" accept=".json,application/json" hidden>
+<button id="print" type="button">In checklist</button>
+</div>
+<p id="dates-help" class="small">Bản JSON lưu ô đánh dấu, ghi chú và ngày bắt đầu để sao lưu/chuyển trình duyệt. Không nhập dữ liệu lên máy chủ. Nên xuất bản lưu sau mỗi đợt báo cáo. Nhập bản lưu sẽ thay thế trạng thái đang xem; xuất trước nếu cần giữ.</p>
+<details id="backup-panel" class="report-box no-print"><summary>Sao lưu bằng văn bản JSON nếu trình duyệt chặn tải hoặc chọn file</summary>
+<p class="small">Sau khi bấm Xuất tiến độ JSON, nội dung cũng xuất hiện ở đây. Chọn toàn bộ rồi sao chép/lưu thành file .json. Có thể dán bản lưu để nhập lại.</p>
+<label class="notes-label" for="backup-json">JSON của tiến độ đang xem</label><textarea id="backup-json" readonly></textarea>
+<button id="select-backup" type="button">Chọn toàn bộ JSON</button>
+<label class="notes-label" for="paste-json">Dán JSON muốn khôi phục</label><textarea id="paste-json" placeholder="Dán nội dung bản lưu JSON ở đây"></textarea>
+<button id="import-text" type="button">Nhập từ JSON đã dán</button>
+<p id="backup-status" class="small" role="status"></p></details>
+
+<h2>Checklist từng tuần</h2><p class="small">Mở một tuần để xem việc học, việc làm và tiêu chí xong. Mỗi tuần ghi nguồn/file/run, thời gian và câu hỏi còn vướng.</p>
+<nav class="week-nav" id="week-nav" aria-label="Chuyển tới tuần"></nav><div id="weeks"></div>
+<h2>Báo cáo hai tuần một lần</h2>
+<p>Sáu đợt tiến độ: tuần <strong>2, 4, 6, 8, 10, 12</strong>. Tuần <strong>13</strong> tổng kết/nộp cuối. Ngày cụ thể hiển thị khi bạn chọn ngày bắt đầu.</p>
+<div class="table-wrap"><table><thead><tr><th>Đợt</th><th>Khoảng tuần</th><th>Trọng tâm</th><th>Mốc chuẩn bị</th></tr></thead><tbody id="report-calendar"></tbody></table></div>
+<div class="tools"><label for="cycle">Nội dung đợt</label><select id="cycle"></select></div>
+<div id="report-guide"></div>
+<div class="report-box"><h3>Khung trình bày dùng chung</h3>
+<div class="report-grid">
+<div><strong>Word khoảng 3–5 trang cho mỗi đợt</strong><ol><li>Mục tiêu hai tuần và tiến độ dự kiến/thực đạt.</li><li>Kết quả có file/run, số đo và mẫu số.</li><li>Một phần kỹ thuật: input → xử lý → output; lựa chọn và lỗi.</li><li>Điều đã hiểu: một ví dụ tài chính và một đoạn Python/SQL.</li><li>Giới hạn, ba đầu ra hai tuần tới và điểm cần thầy góp ý.</li></ol></div>
+<div><strong>Slide khoảng 6–8 trang, nói 8–10 phút</strong><ol><li>Mục tiêu và kết quả chính.</li><li>Tiến độ so kế hoạch.</li><li>Dữ liệu/chất lượng hoặc case cần xem.</li><li>Kỹ thuật trọng tâm và lý do chọn.</li><li>Demo/kiểm thử thật.</li><li>Kiến thức đã hiểu và hạn chế.</li><li>Kế hoạch tiếp và câu hỏi cho thầy.</li></ol></div>
+</div><p class="small">Một slide nói một ý. Word giữ chi tiết; slide ưu tiên sơ đồ/bảng/biểu đồ và demo. Ghi notes để luyện nói, đồng bộ số với log. Không giả lập phản hồi hoặc kết quả chưa chạy.</p>
+<p><a href="mau-bao-cao-hai-tuan.md">Mẫu điền báo cáo</a> · <a href="goi-y-noi-dung-7-dot-bao-cao.md">Gợi ý chi tiết bảy mốc</a></p>
+</div>
+<footer><p><strong>Sách nền tảng:</strong> <a href="15-sach-nen-tang-va-cach-doc.md">Trí tuệ tài chính — Karen Berman, Joe Knight, với John Case</a>. Đọc theo chủ đề cần cho task, áp dụng vào BCTC Việt Nam.</p><p class="small">Cập nhật 05/10/2026. Checklist chạy độc lập. V3 giữ bản lưu v1/v2, chuyển ngày/nhật ký và yêu cầu đối chiếu minh chứng để đánh dấu lại vì tiêu chí đổi. Dùng Xuất/Nhập JSON để sao lưu. Kế hoạch chưa là tiến độ đã đạt.</p></footer>
+</main>
+<script id="plan-data" type="application/json">__PLAN__</script>
+<script>
+'use strict';
+const PLAN=JSON.parse(document.getElementById('plan-data').textContent);
+const KEY=PLAN.id, VERSION=PLAN.version;
+const validTasks=new Set(PLAN.weeks.flatMap(w=>w.tasks.map((_,i)=>'w'+w.n+'-t'+i)));
+const fresh=()=>({version:VERSION,project:KEY,start:'',checked:{},notes:{}});
+const $=id=>document.getElementById(id);
+function el(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e}
+function validate(data){
+ const legacy=data&&PLAN.legacyIds.some(previous=>data.version===previous.version&&data.project===previous.id);
+ if(!data||(!legacy&&(data.version!==VERSION||data.project!==KEY))||typeof data.checked!=='object'||data.checked===null||Array.isArray(data.checked)||typeof data.notes!=='object'||data.notes===null||Array.isArray(data.notes))throw new Error('Bản lưu không đúng project hoặc phiên bản.');
+ const next=fresh();
+ if(data.start){if(typeof data.start!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(data.start)||new Date(data.start+'T00:00:00Z').toISOString().slice(0,10)!==data.start)throw new Error('Ngày bắt đầu không hợp lệ.');next.start=data.start}
+ if(!legacy)for(const [id,v] of Object.entries(data.checked)){if(validTasks.has(id)&&v===true)next.checked[id]=true}
+ for(const w of PLAN.weeks){const v=data.notes[String(w.n)];if(typeof v==='string')next.notes[w.n]=v.slice(0,20000)}
+ if(legacy)warn('Đã chuyển ngày bắt đầu và nhật ký từ bản cũ. Các tick chưa được áp vì tiêu chí v3 có cầu nối CFO; đối chiếu minh chứng rồi đánh dấu lại. Bản lưu cũ gốc được giữ nguyên.');
+ return next;
+}
+function warn(text){$('warning').textContent=text;$('warning').hidden=false}
+let state=fresh();
+try{const raw=localStorage.getItem(KEY);if(raw)state=validate(JSON.parse(raw));else{for(const prior of PLAN.legacyIds){const previous=localStorage.getItem(prior.id);if(previous){state=validate(JSON.parse(previous));persist();break}}}}
+catch(e){warn('Không đọc được tiến độ đã lưu. Trang đang hiển thị checklist trống; nếu có bản JSON hãy nhập lại. '+e.message)}
+function persist(){
+ try{localStorage.setItem(KEY,JSON.stringify(state));$('saved').textContent='Đã lưu trong trình duyệt lúc '+new Date().toLocaleTimeString('vi-VN');return true}
+ catch(e){$('saved').textContent='Chưa lưu được trong trình duyệt';warn('Trình duyệt không cho lưu tự động hoặc đã hết dung lượng. Hãy Xuất tiến độ JSON để giữ dữ liệu.');return false}
+}
+function updateCounts(){
+ const done=Object.values(state.checked).filter(Boolean).length;
+ const total=validTasks.size;
+ $('total').textContent=done+' / '+total+' mục đã đánh dấu';
+ $('progress').max=total;$('progress').value=done;
+ for(const w of PLAN.weeks){const count=w.tasks.filter((_,i)=>state.checked['w'+w.n+'-t'+i]).length;$('count-'+w.n).textContent=count+'/'+w.tasks.length+' mục'}
+}
+function dateAt(offset){
+ if(!state.start)return 'Chưa chọn ngày';
+ const d=new Date(state.start+'T12:00:00Z');d.setUTCDate(d.getUTCDate()+offset);return d.toLocaleDateString('vi-VN',{timeZone:'UTC'});
+}
+function renderDates(){
+ for(const w of PLAN.weeks)$('date-'+w.n).textContent=state.start?dateAt((w.n-1)*7)+' – '+dateAt(w.n*7-1):'Chưa chọn ngày bắt đầu';
+ $('report-calendar').replaceChildren();
+ for(const c of PLAN.cycles){
+  const tr=el('tr');const begin=c.weeks[0],end=c.weeks.at(-1);
+  for(const text of [c.n===7?'Cuối':'Đợt '+c.n,begin===end?'Tuần '+begin:'Tuần '+begin+'–'+end,c.title,state.start?dateAt(end*7-1):'Cuối tuần '+end])tr.append(el('td',text));
+  $('report-calendar').append(tr);
+ }
+}
+function renderWeeks(){
+ $('week-nav').replaceChildren();$('weeks').replaceChildren();
+ for(const w of PLAN.weeks){
+  const link=el('a','Tuần '+w.n);link.href='#week-'+w.n;
+  link.addEventListener('click',()=>{$('week-'+w.n).open=true});$('week-nav').append(link);
+  const d=el('details',undefined,'week');d.id='week-'+w.n;d.open=w.n===1;
+  const summary=el('summary');summary.append(el('strong','Tuần '+w.n+' · '+w.title));
+  const count=el('span','', 'count');count.id='count-'+w.n;summary.append(count);d.append(summary);
+  const body=el('div',undefined,'week-content');
+  const date=el('p','', 'date');date.id='date-'+w.n;body.append(date);
+  body.append(el('p','Học: '+w.learn,'learning'),el('p','Đầu ra: '+w.goal,'goal'));
+  body.append(el('p','Phụ thuộc: '+(w.depends.length?w.depends.map(n=>'tuần '+n).join(', '):'Không')+' · Giờ học/code/kiểm/báo cáo/dự phòng: '+['learn','build','test','report','buffer'].map(k=>w.hours[k]).join('/')+' (11 giờ nền) + '+w.hours.extension+' giờ cầu nối dự toán.','small'));
+  body.append(el('p','Đầu vào: '+w.inputs.join(' '),'small'));
+  w.tasks.forEach((task,i)=>{
+   const id='w'+w.n+'-t'+i,label=el('label',undefined,'task'),input=el('input');
+   input.type='checkbox';input.id=id;input.checked=!!state.checked[id];
+   input.addEventListener('change',()=>{if(input.checked)state.checked[id]=true;else delete state.checked[id];persist();updateCounts()});
+   label.append(input,el('span','W'+String(w.n).padStart(2,'0')+'-'+String(i+1).padStart(2,'0')+' · '+task));body.append(label);
+  });
+  body.append(el('p','Tiêu chí xong: '+w.done,'criterion'));
+  if(w.gate)body.append(el('p',w.gate,'notice'));
+  body.append(el('strong','Nơi lưu đầu ra (tạo khi thực hiện):'));
+  const outputs=el('ul');w.outputs.forEach(s=>outputs.append(el('li',s)));body.append(outputs);
+  body.append(el('strong','Bốn buổi đề xuất; cộng giờ dự phòng của tuần:'));
+  const sessions=el('ul');w.sessions.forEach(s=>sessions.append(el('li',s)));body.append(sessions);
+  body.append(el('p','Yêu cầu SRS: '+w.requirements.join(', '),'small'));
+  body.append(el('p','Kiểm chứng: '+w.tests.join(', ')+'. Dùng input/expected SRS, lưu actual và bằng chứng; checklist không tự xác nhận pass.','small'));
+  const refs=el('p',undefined,'small');
+  w.refs.forEach((id,i)=>{if(i)refs.append(document.createTextNode(' · '));const [name,url]=PLAN.refs[id];const a=el('a',name);a.href=url;refs.append(a)});
+  body.append(refs);
+  const label=el('label','Nhật ký và minh chứng tuần '+w.n,'notes-label');label.htmlFor='notes-'+w.n;
+  const note=el('textarea');note.id='notes-'+w.n;note.maxLength=20000;note.value=state.notes[w.n]||'';
+  note.placeholder='File/run/commit hoặc URL nguồn; giờ học/làm; lỗi và phần còn vướng; điều tôi tự giải thích được…';
+  const printNote=el('p',note.value||'Chưa ghi minh chứng.', 'print-note');printNote.id='print-note-'+w.n;
+  note.addEventListener('input',()=>{state.notes[w.n]=note.value;printNote.textContent=note.value||'Chưa ghi minh chứng.';persist()});
+  body.append(label,note,printNote);d.append(body);$('weeks').append(d);
+ }
+ $('start').value=state.start;updateCounts();renderDates();
+}
+function renderGuide(){
+ const c=PLAN.cycles.find(c=>String(c.n)===$('cycle').value)||PLAN.cycles[0];
+ const box=el('section',undefined,'report-box');box.append(el('h3',(c.n===7?'Mốc cuối':'Đợt '+c.n)+' · '+c.title));
+ const list=el('ul');c.word.forEach(s=>list.append(el('li',s)));
+ box.append(el('strong','Nội dung Word'),list,el('p','Trình tự slide: '+c.slide),el('p','Demo: '+c.demo),el('p','Điểm trao đổi: '+c.ask));
+ const label=el('p','Nhật ký liên quan: ', 'small');
+ c.weeks.forEach((n,i)=>{if(i)label.append(document.createTextNode(' · '));const a=el('a','Tuần '+n);a.href='#week-'+n;a.addEventListener('click',()=>{$('week-'+n).open=true});label.append(a)});
+ box.append(label);$('report-guide').replaceChildren(box);
+}
+PLAN.cycles.forEach(c=>{const option=el('option',(c.n===7?'Cuối':'Đợt '+c.n)+' · tuần '+c.weeks.join('–'));option.value=c.n;$('cycle').append(option)});
+$('cycle').addEventListener('change',renderGuide);
+$('start').addEventListener('change',()=>{try{state=validate({...state,start:$('start').value});persist();renderDates()}catch(e){warn(e.message)}});
+$('export').addEventListener('click',()=>{
+ const payload={...state,exportedAt:new Date().toISOString()};
+ $('backup-json').value=JSON.stringify(payload,null,2);$('backup-panel').open=true;$('backup-status').textContent='Đã tạo bản JSON; nếu không có file tải xuống, dùng ô văn bản để sao lưu.';
+ const url=URL.createObjectURL(new Blob([JSON.stringify(payload,null,2)],{type:'application/json'}));
+ const a=el('a');a.href=url;a.download='tien-do-project-13-tuan-'+new Date().toISOString().slice(0,10)+'.json';document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+$('import').addEventListener('click',()=>$('import-file').click());
+$('import-file').addEventListener('change',async()=>{
+ const file=$('import-file').files[0];if(!file)return;
+ try{if(file.size>1048576)throw new Error('Bản lưu vượt giới hạn 1 MiB.');const next=validate(JSON.parse(await file.text()));state=next;const saved=persist();renderWeeks();renderGuide();$('saved').textContent=saved?'Đã nhập bản lưu và lưu trong trình duyệt.':'Đã nhập bản lưu, nhưng chưa lưu được trong trình duyệt; hãy xuất JSON.'}
+ catch(e){warn('Không nhập được bản lưu; tiến độ hiện tại giữ nguyên. '+e.message)}
+ $('import-file').value='';
+});
+$('select-backup').addEventListener('click',()=>{$('backup-json').focus();$('backup-json').select()});
+$('import-text').addEventListener('click',()=>{
+ try{
+  if($('paste-json').value.length>1048576)throw new Error('Bản lưu quá lớn.');
+  const next=validate(JSON.parse($('paste-json').value));state=next;const saved=persist();renderWeeks();renderGuide();
+  $('backup-status').textContent=saved?'Đã nhập JSON và lưu trong trình duyệt.':'Đã nhập JSON; chưa lưu tự động được, hãy xuất bản dự phòng.';
+ }catch(e){$('backup-status').textContent='Không nhập được; tiến độ hiện tại giữ nguyên. '+e.message}
+});
+let beforePrint=[];
+window.addEventListener('beforeprint',()=>{beforePrint=Array.from(document.querySelectorAll('.week')).map(d=>d.open);document.querySelectorAll('.week').forEach(d=>d.open=true)});
+window.addEventListener('afterprint',()=>{document.querySelectorAll('.week').forEach((d,i)=>d.open=beforePrint[i])});
+$('print').addEventListener('click',()=>window.print());
+renderWeeks();renderGuide();
+</script>
+</body></html>

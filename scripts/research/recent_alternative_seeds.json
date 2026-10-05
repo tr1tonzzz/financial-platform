@@ -1,0 +1,23 @@
+[
+  {
+    "id": "vhc-fy2025-en",
+    "company": "VHC",
+    "role": "english-alternative",
+    "url": "https://www.vinhhoan.com//wp-content/uploads/2026/03/VHC-_Consolidated-FS-2025_EN.pdf",
+    "discovered_from": "vhc-catalog"
+  },
+  {
+    "id": "vhc-q12026-en",
+    "company": "VHC",
+    "role": "english-alternative",
+    "url": "https://www.vinhhoan.com//wp-content/uploads/2026/04/20260425-VHC-Consolidated-Financial-Statements-Q1-2026_EN.pdf",
+    "discovered_from": "vhc-catalog"
+  },
+  {
+    "id": "vhc-h12026-en",
+    "company": "VHC",
+    "role": "english-alternative",
+    "url": "https://www.vinhhoan.com/wp-content/uploads/2026/08/VHC_Reviewed-Consolidated-FS_6M2026_EN.pdf",
+    "discovered_from": "vhc-catalog"
+  }
+]

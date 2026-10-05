@@ -1,0 +1,191 @@
+[
+  {
+    "id": "hpg-fy2025",
+    "company": "HPG",
+    "period": "FY2025",
+    "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/03/20260327-hpg-bctc-hop-nhat-nam-2025-sau-kiem-toan.pdf",
+    "discovered_from": "hpg-catalog",
+    "link_text": "BCTC hợp nhất năm 2025 sau kiểm toán",
+    "probe_allowed": true
+  },
+  {
+    "id": "hpg-q12026",
+    "company": "HPG",
+    "period": "Q1 2026",
+    "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/04/bctc-hop-nhat-quy-i-2026.pdf",
+    "discovered_from": "hpg-catalog",
+    "link_text": "Báo cáo tài chính hợp nhất Quý I/2026",
+    "probe_allowed": true
+  },
+  {
+    "id": "hpg-h12026",
+    "company": "HPG",
+    "period": "H1 2026 reviewed",
+    "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2026/08/20260828-hpg-bctc-hop-nhat-soat-xet-6-thang-2026-va-giai-trinh-1-2.pdf",
+    "discovered_from": "hpg-catalog",
+    "link_text": "Báo cáo tài chính hợp nhất soát xét 6 tháng 2026",
+    "probe_allowed": true
+  },
+  {
+    "id": "dhg-fy2025",
+    "company": "DHG",
+    "period": "FY2025",
+    "url": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf",
+    "discovered_from": "dhg-catalog",
+    "link_text": "Báo cáo tài chính năm 2025 đã kiểm toán",
+    "probe_allowed": true
+  },
+  {
+    "id": "dhg-q12026",
+    "company": "DHG",
+    "period": "Q1 2026",
+    "url": "https://dhgpharma.com.vn/sites/default/files/2026-04/DHG-BCTC-Q1.2026.pdf",
+    "discovered_from": "dhg-catalog",
+    "link_text": "Báo cáo tài chính Quý 1/2026",
+    "probe_allowed": true
+  },
+  {
+    "id": "dhg-h12026",
+    "company": "DHG",
+    "period": "H1 2026 reviewed",
+    "url": "https://dhgpharma.com.vn/sites/default/files/2026-08/DHG-BCTC-6T.2026-soat-xet.pdf",
+    "discovered_from": "dhg-catalog",
+    "link_text": "Báo cáo tài chính soát xét 6 tháng 2026",
+    "probe_allowed": true
+  },
+  {
+    "id": "vhc-fy2025",
+    "company": "VHC",
+    "period": "FY2025",
+    "url": "https://www.vinhhoan.com//wp-content/uploads/2026/03/VHC-_BCTC-hop-nhat-kiem-toan-2025_VN.pdf",
+    "discovered_from": "vhc-catalog",
+    "link_text": "VHC _BCTC hop nhat kiem toan 2025_VN",
+    "probe_allowed": true
+  },
+  {
+    "id": "vhc-q12026",
+    "company": "VHC",
+    "period": "Q1 2026",
+    "url": "https://www.vinhhoan.com//wp-content/uploads/2026/04/20260425-VHC-Consolidated-Financial-Statements-Q1-2026_VN.pdf",
+    "discovered_from": "vhc-catalog",
+    "link_text": "20260425 – VHC – Consolidated Financial Statements Q1 2026_VN",
+    "probe_allowed": true
+  },
+  {
+    "id": "vhc-h12026",
+    "company": "VHC",
+    "period": "H1 2026 reviewed",
+    "url": "https://www.vinhhoan.com/wp-content/uploads/2026/08/VHC_Reviewed-Consolidated-FS_6M2026_VN.pdf",
+    "discovered_from": "vhc-catalog",
+    "link_text": "VHC_Reviewed Consolidated FS_6M2026_VN",
+    "probe_allowed": true
+  },
+  {
+    "id": "vnm-q12026",
+    "company": "VNM",
+    "period": "Q1 2026",
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260429_VNM_BCTC_DA_SOAT_XET_Q1_2026_HOP_NHAT_VN_d44326741a.pdf",
+    "discovered_from": "vnm-catalog",
+    "link_text": "29/04/2026 2026 Q1 Báo cáo tài chính hợp nhất Đã soát xét/kiểm toán Xem",
+    "probe_allowed": true
+  },
+  {
+    "id": "vnm-h12026",
+    "company": "VNM",
+    "period": "H1 2026 candidate reviewed",
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260730_VNM_BCTC_da_soat_xet_Q2_2026_Hop_nhat_76ef2e29c1.pdf",
+    "discovered_from": "vnm-catalog",
+    "link_text": "30/07/2026 2026 Q2 Báo cáo tài chính hợp nhất Đã soát xét/kiểm toán Xem",
+    "probe_allowed": true
+  },
+  {
+    "id": "ree-fy2025",
+    "company": "REE",
+    "period": "FY2025",
+    "url": "https://www.reecorp.com/wp-content/uploads/2026/03/20260312-ree-bctc-hop-nhat-kiem-toan-nam-2025.pdf",
+    "discovered_from": "ree-catalog",
+    "link_text": "",
+    "probe_allowed": false,
+    "skip_reason": "robots.txt disallows this attachment path; not fetched automatically"
+  },
+  {
+    "id": "ree-q12026",
+    "company": "REE",
+    "period": "Q1 2026",
+    "url": "https://www.reecorp.com/wp-content/uploads/2026/04/20260428-ree-bctc-hop-nhat-quy-1-2026.pdf",
+    "discovered_from": "ree-catalog",
+    "link_text": "",
+    "probe_allowed": false,
+    "skip_reason": "robots.txt disallows this attachment path; not fetched automatically"
+  },
+  {
+    "id": "ree-h12026",
+    "company": "REE",
+    "period": "H1 2026 reviewed",
+    "url": "https://www.reecorp.com/wp-content/uploads/2026/08/20260824-ree-bctc-hop-nhat-soat-xet-ban-nien-2026.pdf",
+    "discovered_from": "ree-catalog",
+    "link_text": "",
+    "probe_allowed": false,
+    "skip_reason": "robots.txt disallows this attachment path; not fetched automatically"
+  },
+  {
+    "id": "fpt-fy2025-api",
+    "company": "FPT",
+    "period": "FY2025",
+    "url": "https://fpt.com/api/download?url=%2Fapi%2Fmedia%2F20260319_fpt_bctc_hop_nhat_nam_2025_da_kiem_toan_0159f59257.pdf",
+    "discovered_from": "fpt-catalog",
+    "link_text": "",
+    "probe_allowed": false,
+    "skip_reason": "robots.txt disallows this attachment path; not fetched automatically"
+  },
+  {
+    "id": "fpt-q12026",
+    "company": "FPT",
+    "period": "Q1 2026",
+    "url": "https://fpt.com/api/download?url=%2Fapi%2Fmedia%2F20260424_fpt_bctc_hop_nhat_quy_1_nam_2026_d03fbbebf9.pdf",
+    "discovered_from": "fpt-catalog",
+    "link_text": "",
+    "probe_allowed": false,
+    "skip_reason": "robots.txt disallows this attachment path; not fetched automatically"
+  },
+  {
+    "id": "fpt-h12026",
+    "company": "FPT",
+    "period": "H1 2026 reviewed",
+    "url": "https://fpt.com/api/download?url=%2Fapi%2Fmedia%2F20260821_FPT_BCTC_hop_nhat_ban_nien_da_soat_xet_nam_2026_3b1ebb3536.pdf",
+    "discovered_from": "fpt-catalog",
+    "link_text": "",
+    "probe_allowed": false,
+    "skip_reason": "robots.txt disallows this attachment path; not fetched automatically"
+  },
+  {
+    "id": "fpt-annual2025-legacy",
+    "company": "FPT",
+    "period": "FY2025 annual report candidate",
+    "url": "https://fpt.com/-/media/project/fpt-corporation/fpt/ir/information-disclosures/year-report/2026/april/bctn-2025.pdf",
+    "discovered_from": "official PDF in web search"
+  },
+  {
+    "id": "dhg-dividend-2025-final",
+    "company": "DHG",
+    "role": "dividend",
+    "url": "https://vsdc.vn/vi/ad1/199544"
+  },
+  {
+    "id": "vnm-dividend-2025-mixed",
+    "company": "VNM",
+    "role": "dividend",
+    "url": "https://vsdc.vn/vi/ad1/187729"
+  },
+  {
+    "id": "vsdc-calendar",
+    "role": "dividend-discovery",
+    "url": "https://vsdc.vn/vi/lich-giao-dich?date=12%2F05%2F2026&tab=LICH_THQ"
+  },
+  {
+    "id": "hnx-vhe-fy2025",
+    "company": "VHE",
+    "role": "exchange-detail",
+    "url": "https://www.hnx.vn/vi-vn/m-niem-yet/tin-tuc/Bao%20cao%20tai%20chinh%20nam%202025-603961-1.html"
+  }
+]

@@ -1,0 +1,162 @@
+{
+  "scope": "Selected source arithmetic, existing raw hash, Markdown link/fence checks only",
+  "case_id": "DHG-FY2025-versus-comparative-2024",
+  "raw_status": "hash_checked; visual review recorded separately",
+  "all_checks_pass": true,
+  "checks": [
+    {
+      "name": "2024: leaf sum equals CFO",
+      "actual": 1317583405328,
+      "expected": 1317583405328,
+      "pass": true
+    },
+    {
+      "name": "2024: start and adjustments equal line08",
+      "actual": 965263438186,
+      "expected": 965263438186,
+      "pass": true
+    },
+    {
+      "name": "2025: leaf sum equals CFO",
+      "actual": 1212967705385,
+      "expected": 1212967705385,
+      "pass": true
+    },
+    {
+      "name": "2025: start and adjustments equal line08",
+      "actual": 1051152975349,
+      "expected": 1051152975349,
+      "pass": true
+    },
+    {
+      "name": "unique leaf codes",
+      "actual": 13,
+      "expected": 13,
+      "pass": true
+    },
+    {
+      "name": "delta group sum equals delta CFO",
+      "actual": -104615699943,
+      "expected": -104615699943,
+      "pass": true
+    },
+    {
+      "name": "cash flow totals",
+      "actual": 67324327943,
+      "expected": 67324327943,
+      "pass": true
+    },
+    {
+      "name": "cash rollforward",
+      "actual": 129895664996,
+      "expected": 129895664996,
+      "pass": true
+    },
+    {
+      "name": "source PDF hash",
+      "actual": "abaaac8d3813329db1987e769f325fbee7b8c4776b4205b26a4673f95b589973",
+      "expected": "abaaac8d3813329db1987e769f325fbee7b8c4776b4205b26a4673f95b589973",
+      "pass": true
+    },
+    {
+      "name": "01-de-xuat-va-tinh-kha-thi.md: balanced fences",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "02-co-so-nghien-cuu-va-so-nguon.md: balanced fences",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "03-nghiep-vu-va-tu-dien.md: balanced fences",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "04-nguon-chuan-hoa-va-chat-luong.md: balanced fences",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "05-thiet-ke-va-workflow.md: balanced fences",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "06-dac-ta-bo-sung-va-truy-vet.md: balanced fences",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "07-ke-hoach-thi-nghiem-va-kiem-thu.md: balanced fences",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "08-ca-thuc-te-dhg-vnm.md: balanced fences",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "09-de-cuong-trao-doi-voi-giang-vien.md: balanced fences",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "README.md: balanced fences",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    },
+    {
+      "name": "local markdown link targets exist",
+      "actual": 0,
+      "expected": 0,
+      "pass": true
+    }
+  ],
+  "broken_links": [],
+  "group_sums_vnd": {
+    "2024": {
+      "start": 904484566816,
+      "adjustments": 60778871370,
+      "working_capital": 517633154221,
+      "other_operating_cash": -165313187079
+    },
+    "2025": {
+      "start": 986599267177,
+      "adjustments": 64553708172,
+      "working_capital": 344523224177,
+      "other_operating_cash": -182708494141
+    }
+  },
+  "group_deltas_vnd": {
+    "start": 82114700361,
+    "adjustments": 3774836802,
+    "working_capital": -173109930044,
+    "other_operating_cash": -17395307062
+  },
+  "net_income_growth": "0.09427666039204516429191969848",
+  "cfo_growth": "-0.07939967938269297279323027366",
+  "cfo_over_net_income": {
+    "2024": "1.691551381925610106562691440",
+    "2025": "1.423079556483873078969496733"
+  },
+  "cfo_over_owner_distributions_paid_2025": "0.9277278438332575209850856627",
+  "not_verified": [
+    "Mermaid visual rendering",
+    "application implementation",
+    "independent extraction accuracy",
+    "annual dividend completeness"
+  ]
+}

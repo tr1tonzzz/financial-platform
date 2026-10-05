@@ -1,0 +1,114 @@
+[
+  {
+    "id": "vnm-dividend-2025",
+    "ticker": "VNM",
+    "source_url": "https://vsdc.vn/vi/ad1/197038",
+    "source_sha256": "6451c59c28f5ae3bbcb75b86e58ead2bf81c9171351158dacd83693f105dd27c",
+    "retrieved_at": "2026-10-03T04:20:09.495983+00:00",
+    "title": "VNM: Trả cổ tức còn lại năm 2025 bằng tiền",
+    "event_kind": "cash_dividend_notice",
+    "published_at_as_displayed": "17/06/2026 - 16:09:03",
+    "published_date": "2026-06-17",
+    "displayed_timezone": null,
+    "record_date": "2026-06-29",
+    "scheduled_payment_date": "2026-07-17",
+    "par_value_vnd": 10000,
+    "total_dps_vnd": 1850,
+    "profit_year_components": [
+      {
+        "profit_year": 2025,
+        "dps_vnd": 1850
+      }
+    ],
+    "paid_status": "scheduled",
+    "confirmed_paid_at": null,
+    "source_locator": "Main notice before Tin cùng tổ chức; table labels and payment bullets",
+    "review_status": "checked_against_official_notice_text_by_same_agent",
+    "warning": "Not an independent benchmark; not a complete annual dividend history or proof of actual payment."
+  },
+  {
+    "id": "vnm-dividend-2025-mixed",
+    "ticker": "VNM",
+    "source_url": "https://vsdc.vn/vi/ad1/187729",
+    "source_sha256": "2d8143d6673d5184d94b17d6060582e13a7d23d950b08c3b2ce58745d191a2d1",
+    "retrieved_at": "2026-10-03T04:23:58.380471+00:00",
+    "title": "VNM: Chi trả cổ tức còn lại năm 2024 và tạm ứng đợt 1/2025 bằng tiền mặt",
+    "event_kind": "cash_dividend_notice",
+    "published_at_as_displayed": "02/10/2025 - 16:15:38",
+    "published_date": "2025-10-02",
+    "displayed_timezone": null,
+    "record_date": "2025-10-17",
+    "scheduled_payment_date": "2025-10-24",
+    "par_value_vnd": 10000,
+    "total_dps_vnd": 2850,
+    "profit_year_components": [
+      {
+        "profit_year": 2024,
+        "dps_vnd": 350
+      },
+      {
+        "profit_year": 2025,
+        "dps_vnd": 2500
+      }
+    ],
+    "paid_status": "scheduled",
+    "confirmed_paid_at": null,
+    "source_locator": "Main notice before Tin cùng tổ chức; table labels and payment bullets",
+    "review_status": "checked_against_official_notice_text_by_same_agent",
+    "warning": "Not an independent benchmark; not a complete annual dividend history or proof of actual payment."
+  },
+  {
+    "id": "dhg-dividend-2025-final",
+    "ticker": "DHG",
+    "source_url": "https://vsdc.vn/vi/ad1/199544",
+    "source_sha256": "73c8264617ae2412a07e91c52baf888f672748912235ba9feb367e1f9fc1688c",
+    "retrieved_at": "2026-10-03T04:23:57.276685+00:00",
+    "title": "DHG: Trả cổ tức bằng tiền đợt cuối năm 2025",
+    "event_kind": "cash_dividend_notice",
+    "published_at_as_displayed": "21/08/2026 - 11:07:15",
+    "published_date": "2026-08-21",
+    "displayed_timezone": null,
+    "record_date": "2026-09-15",
+    "scheduled_payment_date": "2026-09-30",
+    "par_value_vnd": 10000,
+    "total_dps_vnd": 5000,
+    "profit_year_components": [
+      {
+        "profit_year": 2025,
+        "dps_vnd": 5000
+      }
+    ],
+    "paid_status": "scheduled",
+    "confirmed_paid_at": null,
+    "source_locator": "Main notice before Tin cùng tổ chức; table labels and payment bullets",
+    "review_status": "checked_against_official_notice_text_by_same_agent",
+    "warning": "Not an independent benchmark; not a complete annual dividend history or proof of actual payment."
+  },
+  {
+    "id": "dhg-dividend-2025-first",
+    "ticker": "DHG",
+    "source_url": "https://vsdc.vn/ad/195056",
+    "source_sha256": "b5bdb35efdc4a4450baef57d5f260a790c5e45bb1af84fd8faa1e2baa0bf48ec",
+    "retrieved_at": "2026-10-03T04:29:06.398334+00:00",
+    "title": "DHG: Trả cổ tức bằng tiền đợt 1 năm 2025",
+    "event_kind": "cash_dividend_notice",
+    "published_at_as_displayed": "29/04/2026 - 11:05:53",
+    "published_date": "2026-04-29",
+    "displayed_timezone": null,
+    "record_date": "2026-05-12",
+    "scheduled_payment_date": "2026-05-28",
+    "par_value_vnd": 10000,
+    "total_dps_vnd": 5000,
+    "profit_year_components": [
+      {
+        "profit_year": 2025,
+        "dps_vnd": 5000
+      }
+    ],
+    "paid_status": "scheduled",
+    "confirmed_paid_at": null,
+    "source_locator": "Main notice before Tin cùng tổ chức; table labels and payment bullets",
+    "review_status": "checked_against_official_notice_text_by_same_agent",
+    "warning": "Not an independent benchmark; not a complete annual dividend history or proof of actual payment."
+  }
+]

@@ -1,144 +1,75 @@
-# PROJECT PLAN
-## Financial Data Platform
+# Kế hoạch dự án BCTC–cổ tức Việt Nam
 
-**Document ID:** PP-FDP-01
-**Version:** 1.0
-**Tài liệu tham chiếu:** SRS-FDP-01, SDD-FDP-01, TP-FDP-01
-**Chuẩn tham chiếu:** cấu trúc theo PMBOK (rút gọn cho đồ án học kỳ) — WBS, Schedule, Risk Register
+> **Trạng thái 03/10/2026 — hồ sơ khảo sát trước.** Project hiện hành tập trung thu thập, kiểm định và phân tích lợi nhuận–dòng tiền–cổ tức tiền mặt. Xem [SRS hiện hành](../research-platform/02-de-tai-va-srs.md) và [phương pháp thống nhất](../research-platform/11-phuong-phap-thu-thap-va-xu-ly.md). Các ngưỡng cảnh báo, dự báo, scope và lịch cũ bên dưới chỉ để tham khảo; không là yêu cầu MVP hiện hành.
 
----
+Phiên bản 2.0 — 03/10/2026. Tham chiếu: [SRS](SRS-FDP-01.md), [SDD](SDD-FDP-01.md), [TP](TP-FDP-01.md).
 
-## 1. Project Overview
+## 1. Mục tiêu và nguồn lực
 
-| Mục | Nội dung |
-|---|---|
-| Tên dự án | Financial Data Platform |
-| Người thực hiện | 1 sinh viên |
-| Thời lượng | 16 tuần (1 học kỳ) |
-| Hình thức báo cáo | Checkpoint 2 tuần/lần: Slide + Báo cáo Word |
-| Ràng buộc năng lực | SQL: cơ bản · Python: mới bắt đầu · React: đã biết |
-| Phạm vi tham chiếu | SRS-FDP-01 — chỉ thực hiện Must Have + phần lõi Should Have trong học kỳ này |
+Một sinh viên thực hiện MVP trong 13 tuần, đồng thời học các môn khác. Giả định lập kế hoạch là 10–12 giờ/tuần, khoảng 130–156 giờ; phải điều chỉnh sau khi đo công sức pilot.
 
----
+Ưu tiên thời gian: khoảng 60% thu thập/chuẩn hóa/kiểm định; 25% phân tích và báo cáo; 15% API, demo và tích hợp. AI hỗ trợ viết code, nhưng người thực hiện phải đọc, kiểm tra và giải thích được logic dữ liệu.
 
-## 2. Work Breakdown Structure (WBS)
+## 2. Kế hoạch 13 tuần
 
-```
-1. Khởi tạo & Nghiên cứu
-   1.1 Nghiên cứu sản phẩm tham khảo
-   1.2 Xác định Problem Statement, Scope
-   1.3 Học Python nền tảng
-
-2. Thiết kế
-   2.1 Thiết kế ERD (SDD Mục 3)
-   2.2 Thiết kế kiến trúc (SDD Mục 2)
-   2.3 Setup schema database
-
-3. Xây dựng Data Pipeline
-   3.1 Ingestion module (FR-01–FR-04)
-   3.2 Standardization module (FR-05–FR-07)
-   3.3 Validation module (FR-08–FR-09)
-   3.4 Bitemporal storage (FR-10–FR-11)
-
-4. Xây dựng Backend & API
-   4.1 API cơ bản (FR-12–FR-14, FR-16–FR-17)
-   4.2 Point-in-time query (FR-15)
-   4.3 Analytics endpoints (FR-18–FR-20)
-   4.4 Tối ưu hiệu năng + Benchmark (FR-21–FR-22)
-
-5. Xây dựng Frontend
-   5.1 Company Overview + As-of control (FR-23, FR-27)
-   5.2 Trend (FR-24)
-   5.3 Comparison (FR-25)
-   5.4 Screening (FR-26, nếu kịp)
-
-6. Kiểm thử & Hoàn thiện
-   6.1 Unit/Integration/API test (theo TP-FDP-01)
-   6.2 Đóng gói Docker (NFR-08)
-   6.3 Tài liệu hóa
-   6.4 Báo cáo & Demo cuối kỳ
-```
-
----
-
-## 3. Schedule — 16 tuần / 8 Checkpoint
-
-| CP | Tuần | WBS liên quan | Trọng tâm | Test Case chạy (theo TP-FDP-01) | Deliverable báo cáo |
-|---|---|---|---|---|---|
-| 1 | 1–2 | 1.1, 1.2, 1.3 | Vấn đề & học nền tảng | — | Slide + Word: Scope, nghiên cứu thị trường |
-| 2 | 3–4 | 2.1, 2.2, 2.3 | Thiết kế dữ liệu & kiến trúc | — | Slide + Word: ERD, kiến trúc |
-| 3 | 5–6 | 3.1 (rút gọn), 4.1 (rút gọn) | **Vertical Slice** | TC-01–TC-05 (rút gọn) | Slide + Word: demo end-to-end 3 công ty |
-| 4 | 7–8 | 3.1, 3.2 | Mở rộng ingestion & chuẩn hóa | TC-01–TC-09 | Slide + Word: coverage report |
-| 5 | 9–10 | 3.3, 3.4 | Validation & Bitemporal | TC-10–TC-15, TC-19, TC-20 | Slide + Word: as-of query, restatement list |
-| 6 | 11–12 | 4.2, 4.3, 4.4 | API đầy đủ & Benchmark | TC-16–TC-27, TC-32, TC-33 | Slide + Word: bảng benchmark trước/sau |
-| 7 | 13–14 | 5.1, 5.2, 5.3, (5.4) | Dashboard | TC-28–TC-31 | Slide + Word: demo dashboard |
-| 8 | 15–16 | 6.1, 6.2, 6.3, 6.4 | Hoàn thiện & Demo cuối kỳ | TC-34–TC-36, toàn bộ regression | Báo cáo cuối kỳ đầy đủ + Slide cuối kỳ |
-
-*Nội dung chi tiết từng tuần trong mỗi Checkpoint (task theo ngày, Definition of Done, cấu trúc slide/Word gợi ý) đã được lập ở tài liệu roadmap chi tiết đi kèm (`roadmap-16-tuan-checkpoint.md`) — Project Plan này giữ vai trò khung quản lý ở mức cao hơn, nối trực tiếp WBS với FR/Test Case để phục vụ truy vết.*
-
-### 3.1 Milestone chính
-
-| Milestone | Tuần | Tiêu chí đạt |
+| Tuần | Công việc | Bằng chứng hoàn thành |
 |---|---|---|
-| M1 — Scope Baseline | 2 | SRS-FDP-01 được xác nhận, không đổi Must Have sau mốc này |
-| M2 — Design Baseline | 4 | SDD-FDP-01 được xác nhận |
-| M3 — Vertical Slice | 6 | TC-01 đến TC-05 pass trên dữ liệu thật (không giả lập) |
-| M4 — Data Platform hoàn chỉnh | 10 | NFR-04 đạt; FR-10, FR-11, FR-15 hoạt động đúng |
-| M5 — Platform tối ưu hoàn chỉnh | 12 | FR-21, FR-22 có kết quả; toàn bộ API pass test |
-| M6 — Sản phẩm hoàn chỉnh | 16 | Toàn bộ Must Have trong SRS đạt Definition of Done |
+| 1 | Chọn 10 công ty pilot, khảo sát nguồn và tải mẫu | Sổ nguồn có URL thật, loại PDF, ngày công bố; danh sách loại mẫu |
+| 2 | Crawler khám phá và lưu raw | URL → PDF/HTML, hash, log, retry; thử chạy lại |
+| 3 | Parser cho 6 chỉ tiêu, 3–5 báo cáo | Các giá trị có kỳ, đơn vị, phạm vi và trang |
+| 4 | Chuẩn hóa, validation và bộ đối chiếu | Facts VND; bảng lỗi; mẫu kiểm tra độc lập |
+| 5 | Thu thập cổ tức pilot | Các đợt DPS, lịch dự kiến, nguồn và trạng thái |
+| 6 | Chuỗi hoàn chỉnh một công ty | Bản gốc → facts/sự kiện → chỉ số → API/demo có nguồn |
+| 7 | Mở rộng 20–30 công ty; đo công sức | Độ phủ, lỗi, phút review mỗi báo cáo; quyết định tăng quy mô |
+| 8 | Chốt 30 công ty hoặc mở lên 60–80 | Dataset snapshot; bảng mẫu có/không đủ điều kiện |
+| 9 | Phân tích phân bố, xu hướng, quan hệ và nhóm | Bảng kết quả, biểu đồ, kiểm tra dữ liệu thiếu |
+| 10 | Điểm quy tắc, đánh giá và 3 case study | Baseline, bảng cảnh báo đúng/sai; nguồn cho từng case |
+| 11 | Hoàn thiện API/dashboard; ML nếu còn đủ điều kiện | Ba màn hình dùng dữ liệu thật; ML chỉ khi không ảnh hưởng nghiệm thu |
+| 12 | Kiểm thử, tái lập và báo cáo | Kết quả TP, manifest, hướng dẫn chạy; bản báo cáo |
+| 13 | Buffer, sửa lỗi và bảo vệ | Demo dự phòng từ snapshot, slide và các giới hạn |
 
-**Điểm kiểm soát cứng (Hard Gate):** Nếu M3 không đạt đúng hạn tuần 6, phải kích hoạt kịch bản cắt giảm scope tại Mục 5 trước khi tiếp tục.
+Nếu chỉ có 12 tuần, gộp viết báo cáo vào các tuần trước và bỏ phần ML; không cắt bước kiểm định dữ liệu.
 
----
+## 3. Mốc quyết định
 
-## 4. Resource Plan
-- Nhân lực: 1 sinh viên, ước lượng 15–20 giờ/tuần.
-- Công cụ: máy cá nhân, Docker, PostgreSQL, VS Code — không phát sinh chi phí.
-- Dữ liệu: SEC Financial Statement Data Sets — miễn phí, không giới hạn truy cập.
-
----
-
-## 5. Risk Register
-
-| ID | Rủi ro | Xác suất | Ảnh hưởng | Mitigation | Contingency | Kích hoạt khi |
-|---|---|---|---|---|---|---|
-| R-01 | Học Python chậm hơn dự kiến | Cao | Cao | Checkpoint 1 có deliverable cụ thể để đo tiến độ sớm | Giảm số chỉ tiêu canonical từ 10 xuống 5–6 | M3 trễ quá 1 tuần |
-| R-02 | Tag XBRL không map hết (coverage thấp) | Cao | Trung bình | Chấp nhận ngưỡng NFR-04 = 70%, không cố map 100% | Loại chỉ tiêu có coverage quá thấp khỏi phạm vi Must Have | Coverage < 50% ở Checkpoint 4 |
-| R-03 | Không tìm đủ trường hợp restatement thật trong 30 công ty | Trung bình | Trung bình | Chọn trước công ty có lịch sử niêm yết lâu năm | Minh họa bằng 1 case tạo giả lập có chú thích rõ trong báo cáo | Không tìm được case nào tới hết Checkpoint 5 |
-| R-04 | Trễ Vertical Slice (M3) | Trung bình | Cao | Giới hạn vertical slice ở 3 công ty, 3 chỉ tiêu | Kích hoạt Hard Gate — báo giảng viên, cắt scope trước khi đi tiếp | Hết tuần 6 chưa qua TC-01–TC-05 |
-| R-05 | Frontend tốn thời gian dù đã biết React | Thấp | Trung bình | Đã có buffer ở Checkpoint 7 | Cắt FR-26 (Screening UI) trước | Hết tuần 13 chưa xong Overview + Trend |
-| R-06 | Thiếu thời gian tích hợp & viết báo cáo cuối kỳ | Trung bình | Cao | Viết tài liệu song song mỗi Checkpoint (không dồn cuối kỳ) | Dùng lại nội dung SRS/SDD/TP đã có sẵn làm khung báo cáo cuối kỳ | Không áp dụng — đã phòng ngừa cấu trúc từ đầu |
-
----
-
-## 6. Scope Change Control
-
-Mọi thay đổi FR/NFR trong SRS-FDP-01 sau Milestone M1 phải:
-1. Ghi vào Change Log của SRS-FDP-01.
-2. Đánh giá tác động tới WBS/Schedule ở tài liệu này.
-3. Được xác nhận trong buổi báo cáo Checkpoint gần nhất.
-
-**Thứ tự cắt giảm khi cần (tham chiếu SRS Mục 2.2, Feature priority):**
-FR-26 (Screening UI) → FR-20 (Screening logic) → FR-19/FR-25 (Comparison) → giảm số công ty từ 30 xuống 15.
-**Không cắt:** FR-10, FR-11, FR-15 (bitemporal) và FR-21, FR-22 (benchmark) — đây là các yêu cầu định vị giá trị cốt lõi của đồ án theo SRS Mục 2.1.
-
----
-
-## 7. Deliverables Checklist (cuối dự án)
-
-- [ ] SRS-FDP-01 (đã duyệt, có Change Log nếu có sửa)
-- [ ] SDD-FDP-01
-- [ ] TP-FDP-01 + kết quả chạy toàn bộ Test Case
-- [ ] PP-FDP-01 (tài liệu này)
-- [ ] Source code (Git repository)
-- [ ] Docker Compose để tái lập hệ thống
-- [ ] Coverage report, danh sách restatement, bảng benchmark (đính kèm phụ lục báo cáo cuối kỳ)
-- [ ] Báo cáo cuối kỳ tổng hợp + Slide trình bày
-
----
-
-## Change Log
-
-| Version | Ngày | Nội dung thay đổi |
+| Mốc | Điều kiện | Khi chưa đạt |
 |---|---|---|
-| 1.0 | | Bản phát hành đầu tiên, tách từ roadmap gộp trước đó |
+| Cuối tuần 2 | Tải được ít nhất 10 tài liệu thật từ một nguồn | Thu hẹp nguồn; dùng IR có cùng cấu trúc để tiếp tục pilot |
+| Cuối tuần 4 | Trích xuất và đối chiếu được 6 chỉ tiêu | Giới hạn PDF có text; ghi tỷ lệ loại scan; giảm quy mô |
+| Cuối tuần 6 | Có chuỗi hoàn chỉnh một công ty | Cắt UI nâng cao, nguồn thứ hai và ML |
+| Cuối tuần 8 | Dataset tối thiểu 30 công ty, có bảng độ phủ | Không tăng công ty; tập trung sửa dữ liệu, báo cáo phạm vi thực đạt |
+| Cuối tuần 10 | Có phân tích, quy tắc và 3 case study | Chốt phân tích mô tả nếu nhãn chưa đủ; ghi RQ3 chưa kết luận |
+
+Không dùng dữ liệu giả để thay thế chỉ tiêu nghiệm thu dữ liệu thật.
+
+## 4. Quyết định tăng số công ty
+
+Đo số phút tải, trích xuất, review một báo cáo và tỷ lệ file cần sửa tay. Với 60–80 công ty × 5 năm, có khoảng 300–400 BCTC trước khi tính thông báo cổ tức.
+
+Chỉ tăng quy mô nếu khối lượng còn lại, ước lượng bằng số file × thời gian xử lý/review đã đo, nằm trong quỹ giờ thực tế và vẫn còn 20% dự phòng. Tránh chọn toàn công ty dễ lấy dữ liệu rồi suy rộng ra toàn thị trường; ghi rõ tiêu chí mẫu.
+
+## 5. Rủi ro và xử lý
+
+| Rủi ro | Biện pháp | Phần giảm trước |
+|---|---|---|
+| Nguồn khó crawl hoặc thiếu lịch sử | Pilot sớm, lưu raw, một adapter/nguồn | Nguồn thứ hai |
+| PDF scan, bảng lỗi | Đo tỷ lệ, review mẫu, ưu tiên text | OCR tổng quát |
+| Thiếu bằng chứng đã trả | Giữ scheduled/unknown; chọn biến kết quả phù hợp | Dự báo tiền thực trả |
+| Nhãn ít hoặc mất cân bằng | Chốt phân tích mô tả, baseline và độ bất định | ML phức tạp |
+| Thiếu EPS/cổ phiếu được hưởng | Dùng chỉ số lõi, không tính ratio thiếu đầu vào | Payout/coverage |
+| UI chiếm thời gian | Ba màn hình tối thiểu | Quản trị, so sánh tùy biến |
+| Kết quả quan hệ yếu | Báo cáo trung thực cùng khoảng tin cậy | Không thay nhãn để làm đẹp kết quả |
+
+## 6. Bộ sản phẩm phải nộp
+
+- Dataset có nguồn và manifest; từ điển dữ liệu.
+- Pipeline tự thu thập và chuẩn hóa; hướng dẫn tái lập.
+- Báo cáo độ phủ, độ chính xác trước/sau review và công sức thủ công.
+- Phân tích quan hệ BCTC–cổ tức, điểm cảnh báo và 3 case study.
+- API/dashboard đọc snapshot thật.
+- Báo cáo kiểm thử, đề cương phương pháp, slide và demo.
+- Nếu có ML: baseline, cách chia theo thời gian, kết quả và giới hạn.
+
+## 7. Quản lý thay đổi
+
+Khi đổi nguồn, khoảng năm, số công ty, định nghĩa nhãn hoặc quy tắc, cập nhật SRS và sổ quyết định. Sau tuần 8 đóng băng snapshot đánh giá; mọi sửa dữ liệu tạo phiên bản mới để kiểm tra tác động.

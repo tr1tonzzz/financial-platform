@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "prepared_on": "2026-10-04",
+  "purpose": "week_01_learning_and_supervisor_discussion",
+  "prepared_by": "assistant",
+  "student_review_status": "pending",
+  "gold_status": "development_example_not_independent_gold",
+  "sources": [
+    {
+      "id": "W1-SEC",
+      "publisher": "US Securities and Exchange Commission",
+      "title": "Beginners' Guide to Financial Statements",
+      "url": "https://www.sec.gov/about/reports-publications/beginners-guide-financial-statements",
+      "verification": "web_page_opened",
+      "role": "introductory_concepts_not_vietnamese_reporting_rules"
+    },
+    {
+      "id": "W1-VAS24",
+      "publisher": "CSDL quốc gia về văn bản pháp luật / Bộ Tài chính",
+      "title": "Quyết định 165/2002/QĐ-BTC, Chuẩn mực số 24",
+      "url": "https://vbpl.vn/botaichinh/Pages/vbpq-toanvan.aspx?ItemID=21394",
+      "verification": "official_search_result_excerpt; direct_open_returned_403",
+      "role": "vietnamese_cash_flow_concepts",
+      "full_text_review_status": "pending"
+    },
+    {
+      "id": "W1-DHG-FS-2024",
+      "publisher": "Công ty Cổ phần Dược Hậu Giang",
+      "title": "Báo cáo tài chính kiểm toán năm 2024",
+      "landing_url": "https://dhgpharma.com.vn/vi/co-dong/10253-bao-cao-tai-chinh-kiem-toan-nam-2024-va-giai-trinh-chenh-lech",
+      "url": "https://dhgpharma.com.vn/sites/default/files/2025-03/DHG-Audited-FS-2024-VN.pdf",
+      "verification": "landing_page_opened; pdf_downloaded; relevant_pages_rendered_and_visually_reviewed",
+      "local_path": "data-sets/fap/week-01-reading/DHG-Audited-FS-2024-VN.pdf",
+      "sha256": "75b6d4c5296f9496b059f77d99f67c836f783ab2e41cd6e57787aa216be602da",
+      "page_count": 47,
+      "pdf_pages_reviewed_for_exercise": [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "printed_pages": "4-12",
+      "role": "manual_development_example",
+      "review_status": "assistant_visual_check; student_and_independent_check_pending",
+      "scope_note": "Company-level report; do not label consolidated without scope review",
+      "mapping_issue": "Source cash labels are Tiền / Tiền cuối năm; cash_equivalents normalization requires review"
+    },
+    {
+      "id": "W1-DHG-DIV-2024-ADVANCE",
+      "publisher": "VSDC",
+      "title": "DHG: Tạm ứng cổ tức bằng tiền năm 2024",
+      "url": "https://www.vsd.vn/vi/ad1/177453",
+      "verification": "official_search_result_with_event_fields; direct_open_timed_out",
+      "source_updated_date": "2024-12-11",
+      "profit_year": 2024,
+      "announced_dps_vnd": 4000,
+      "record_date": "2024-12-25",
+      "scheduled_payment_date": "2025-02-14",
+      "confirmed_paid": null,
+      "first_seen": null,
+      "role": "dividend_notice_example_not_full_year_coverage"
+    },
+    {
+      "id": "W1-DHG-DIV-2024-NEXT",
+      "publisher": "VSDC",
+      "title": "DHG: Trả cổ tức bằng tiền năm 2024",
+      "url": "https://www.vsd.vn/vi/ad1/182731",
+      "verification": "web_page_opened_and_event_fields_checked",
+      "source_updated_date": "2025-05-13",
+      "profit_year": 2024,
+      "announced_dps_vnd": 6000,
+      "record_date": "2025-05-26",
+      "scheduled_payment_date": "2025-06-18",
+      "confirmed_paid": null,
+      "first_seen": null,
+      "role": "dividend_notice_example_not_full_year_coverage"
+    },
+    {
+      "id": "W1-IAS7",
+      "publisher": "IFRS Foundation",
+      "title": "IAS 7 Statement of Cash Flows",
+      "url": "https://www.ifrs.org/issued-standards/list-of-standards/ias-7-statement-of-cash-flows/",
+      "verification": "web_page_opened",
+      "role": "optional_concept_comparison_not_automatic_VAS_rule"
+    },
+    {
+      "id": "W1-HPG-FS-2024",
+      "publisher": "Tập đoàn Hòa Phát",
+      "title": "Báo cáo tài chính hợp nhất năm 2024 đã kiểm toán",
+      "url": "https://file.hoaphat.com.vn/hoaphat-com-vn/2025/03/bao-cao-tai-chinh-hop-nhat-nam-2024-da-kiem-toan-1.pdf",
+      "verification": "pdf_link_opened; 67_pages; no_financial_values_transcribed",
+      "role": "optional_consolidated_reporting_comparison"
+    },
+    {
+      "id": "W1-TT200",
+      "publisher": "Cổng thông tin quốc gia về đăng ký doanh nghiệp",
+      "title": "Thông tư 200/2014/TT-BTC",
+      "url": "https://dangkykinhdoanh.gov.vn/vn/pages/ChiTietVanBan.aspx?vID=26993",
+      "verification": "official_search_result_excerpt",
+      "role": "historical_lookup_not_current_rule_for_all_periods"
+    },
+    {
+      "id": "W1-TT99",
+      "publisher": "Công báo Chính phủ / Bộ Tài chính",
+      "title": "Thông tư 99/2025/TT-BTC và giải đáp thời điểm áp dụng",
+      "url": "https://congbao.chinhphu.vn/van-ban/thong-tu-so-99-2025-tt-btc-46529.htm",
+      "applicability_source_url": "https://portal.mof.gov.vn/hoidapcstc/home/cthoidap/159102",
+      "verification": "official_search_results_with_effective_date_and_fiscal_year_applicability",
+      "role": "optional_context_for_financial_years_starting_on_or_after_2026_01_01"
+    }
+  ],
+  "limitations": [
+    "No student learning, application implementation or week completion claimed",
+    "No claim that issuer/year pilot dataset or dividend history is complete",
+    "Notice schedule alone does not prove actual payment",
+    "Source updated dates are not automatically issuer publication dates",
+    "Manual reading example must stay in development split",
+    "Local dataset directory is Git-ignored and needs separate backup"
+  ]
+}

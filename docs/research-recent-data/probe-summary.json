@@ -1,0 +1,34 @@
+{
+  "summary_generated_at": "2026-10-03T04:33:29.175350+00:00",
+  "pdf_files_downloaded": 15,
+  "pdf_companies": [
+    "DHG",
+    "HPG",
+    "VHC",
+    "VHE",
+    "VNM"
+  ],
+  "pdf_files_zero_text_pages": 12,
+  "total_pdf_pages": 804,
+  "six_metric_documents_reviewed": 2,
+  "ocr_core_candidates": 12,
+  "ocr_candidates_matching_visual": 11,
+  "ocr_pages": 10,
+  "ocr_total_seconds": 29.784745100000002,
+  "ocr_median_seconds": 2.8030044999999992,
+  "ocr_initialization_seconds": 1.1114136000000001,
+  "runtime": {
+    "python": "3.12.14",
+    "node_observed": "24.15.0",
+    "tesseract_js": "7.0.0",
+    "languages": [
+      "vie",
+      "eng"
+    ]
+  },
+  "balance_residuals_vnd": {
+    "vnm-q12026": 0,
+    "dhg-fy2025": 0
+  },
+  "warning": "Convenience sample and selected-page OCR check; not full market coverage, end-to-end accuracy or independent benchmark."
+}

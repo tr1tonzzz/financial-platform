@@ -1,134 +1,63 @@
-# TEST PLAN
-## Financial Data Platform
+# Kế hoạch kiểm thử và đánh giá dữ liệu BCTC–cổ tức Việt Nam
 
-**Document ID:** TP-FDP-01
-**Version:** 1.0
-**Tài liệu tham chiếu:** SRS-FDP-01, SDD-FDP-01
-**Chuẩn tham chiếu:** cấu trúc theo IEEE 829 (Test Documentation)
+> **Trạng thái 03/10/2026 — hồ sơ khảo sát trước.** Project hiện hành tập trung thu thập, kiểm định và phân tích lợi nhuận–dòng tiền–cổ tức tiền mặt. Xem [SRS hiện hành](../research-platform/02-de-tai-va-srs.md) và [phương pháp thống nhất](../research-platform/11-phuong-phap-thu-thap-va-xu-ly.md). Các ngưỡng cảnh báo, dự báo, scope và lịch cũ bên dưới chỉ để tham khảo; không là yêu cầu MVP hiện hành.
 
----
+Phiên bản 2.0 — 03/10/2026. Mục tiêu là chứng minh dữ liệu đúng, có nguồn, không dùng thông tin tương lai và kết quả phân tích tái lập được.
 
-## 1. Introduction
+## 1. Hai lớp bằng chứng
 
-### 1.1 Purpose
-Xác định phạm vi, phương pháp, tài nguyên và lịch trình kiểm thử cho hệ thống Financial Data Platform, đảm bảo mọi yêu cầu trong SRS-FDP-01 đều được kiểm chứng trước khi nghiệm thu.
+Kiểm thử logic dùng fixture nhỏ cho các trường hợp lỗi có chủ đích. Đánh giá thực nghiệm dùng tài liệu thật và bảng đối chiếu được đọc thủ công. Hai lớp được báo cáo riêng; fixture không chứng minh crawler đang hoạt động trên nguồn thực.
 
-### 1.2 Scope
-Bao gồm: unit test, integration test, API test, kiểm thử thủ công UI, và benchmark hiệu năng (đo lường, không phải pass/fail nhị phân).
+## 2. Bộ đối chiếu
 
----
+Tối thiểu 20 BCTC từ ít nhất 10 công ty, rải qua năm và kiểu bảng, gồm đơn vị khác nhau, số âm và cột so sánh. Ghi trước giá trị, metric, kỳ, đơn vị, phạm vi và trang bằng chứng.
 
-## 2. Test Strategy
+Tách mẫu dùng phát triển mapping khỏi mẫu đánh giá cuối. Người thực hiện có thể tự đọc lại nhưng phải ghi rằng chưa có người chấm độc lập; kiểm tra lại ngẫu nhiên sau một khoảng thời gian. Thêm ít nhất 20 thông báo cổ tức gồm tạm ứng, đổi lịch, cổ phiếu và thông báo dự kiến.
 
-| Loại kiểm thử | Mục tiêu | Công cụ | Mức độ tự động |
+## 3. Ma trận kiểm thử
+
+| Mã | Liên kết yêu cầu | Tình huống | Kết quả mong đợi |
 |---|---|---|---|
-| Unit Test | Kiểm tra logic từng hàm/module độc lập (mapping, validation) | Pytest | Tự động |
-| Integration Test | Kiểm tra luồng nhiều module phối hợp (ingestion → DB) | Pytest + test database riêng | Tự động |
-| API Test | Kiểm tra từng endpoint, cả case hợp lệ/không hợp lệ | Pytest + FastAPI TestClient | Tự động |
-| UI Test | Kiểm tra luồng tương tác người dùng trên dashboard | Thủ công theo checklist | Thủ công |
-| Performance Benchmark | Đo thời gian thực thi truy vấn, không phải test đúng/sai | Script Python đo thời gian + `EXPLAIN ANALYZE` | Bán tự động |
+| VN-TC-01 | FR-01, 02 | Crawl một công ty có tài liệu | Metadata và URL tài liệu thật được lưu |
+| VN-TC-02 | FR-02, 03 | Timeout, lỗi HTTP, tải lại | Retry hữu hạn, log lỗi, không lưu file hỏng |
+| VN-TC-03 | FR-03 | Chạy hai lần cùng dữ liệu | Không nhân bản facts và sự kiện |
+| VN-TC-04 | FR-03, 08 | Bản đính chính cùng kỳ | Giữ bản cũ; snapshot quá khứ không lấy bản công bố sau cutoff |
+| VN-TC-05 | FR-04, 05 | Đơn vị VND/nghìn/triệu, ngoặc âm | Số chuẩn đúng dấu và hệ số |
+| VN-TC-06 | FR-04, 05 | Năm hiện tại và cột so sánh | Lấy đúng giá trị và period_end |
+| VN-TC-07 | FR-05 | Báo cáo riêng/hợp nhất | Không ghép lẫn phạm vi |
+| VN-TC-08 | FR-06 | Tài sản không cân đối hoặc đơn vị thiếu | Gắn lỗi; không xuất bản như fact đã duyệt |
+| VN-TC-09 | FR-06 | Sửa tay | Có bằng chứng, giá trị cũ/mới, lý do |
+| VN-TC-10 | FR-07 | Tỷ lệ cổ tức và mệnh giá nguồn | DPS đúng; thiếu mệnh giá trả unknown |
+| VN-TC-11 | FR-07 | Đề xuất, lịch dự kiến và đổi lịch | Không tự coi là đã trả; đổi lịch không cộng hai lần |
+| VN-TC-12 | FR-08 | Chưa đủ 12 tháng kết quả | Label censored, không đưa vào train/test |
+| VN-TC-13 | FR-08 | Thiếu sự kiện và độ phủ chưa xác minh | Label unknown, không gán bằng 0 |
+| VN-TC-14 | FR-08 | Ngày công bố thiếu hoặc không chính xác | Loại khỏi mẫu dự báo theo thời điểm |
+| VN-TC-15 | FR-09, 10 | LNST/vốn bằng 0 hoặc âm | Không chia sai; trạng thái đặc biệt có giải thích |
+| VN-TC-16 | FR-10 | Thiếu đầu vào | Không đủ dữ liệu, không rủi ro thấp mặc định |
+| VN-TC-17 | FR-11 | API truy nguồn một chỉ tiêu | Tìm lại đúng PDF/HTML và vị trí |
+| VN-TC-18 | FR-12 | Chạy lại từ raw và cấu hình cố định | Dataset và kết quả trùng trong dung sai được khai báo |
+| VN-TC-19 | FR-09 | 3 case study | Số liệu, ngày và kết luận kiểm tra được từ nguồn |
+| VN-TC-20 | FR-13 | Chia dữ liệu dự báo | Train chỉ chứa mẫu có outcome_end trước mốc validation/test |
 
-### 2.1 Entry Criteria
-- SRS-FDP-01 và SDD-FDP-01 đã hoàn thành ở mức đủ chi tiết cho module cần test.
-- Môi trường test (database riêng, dữ liệu mẫu) đã sẵn sàng.
+FR trong bảng là mã VN-FR tương ứng tại SRS.
 
-### 2.2 Exit Criteria
-- 100% Must Have FR có tối thiểu 1 test case tương ứng và pass.
-- NFR-04 (coverage ≥ 70% cho ≥ 6/10 chỉ tiêu) đạt trên dữ liệu thật.
-- Benchmark FR-21/FR-22 có kết quả ghi nhận đầy đủ trước/sau tối ưu.
+## 4. Đo chất lượng
 
----
+- Độ chính xác kết hợp: số ô trích đúng cả giá trị, đơn vị, kỳ và phạm vi / tổng ô đối chiếu.
+- Precision trích xuất: số ứng viên đúng / tổng ứng viên trích; recall: số facts mục tiêu tìm đúng / tổng facts có trong mẫu.
+- Độ phủ: ô facts đủ điều kiện / ô dự kiến của tập công ty–năm đã chốt. Báo cáo riêng tỷ lệ tải và tỷ lệ có báo cáo nguồn.
+- Tỷ lệ provenance đầy đủ; lỗi theo loại; phút review mỗi báo cáo.
+- Công bố trước và sau sửa thủ công; không chỉ báo cáo dữ liệu sạch sau review.
+- Ngưỡng mục tiêu: độ chính xác kết hợp ≥95%, độ phủ lõi ≥80%, truy vết 100%. Đây là mục tiêu chưa được đo.
 
-## 3. Test Environment
-- Database test: PostgreSQL riêng biệt với database phát triển, seed bằng dữ liệu mẫu 1 quý, 3–5 công ty.
-- Backend chạy ở chế độ test (`ENV=test`), dùng biến môi trường riêng.
-- Dữ liệu test cho case lỗi: bộ dữ liệu giả lập có chèn sẵn giá trị âm bất thường, bản ghi trùng lặp, giá trị outlier (phục vụ FR-08).
+## 5. Đánh giá phân tích và dự báo
 
----
+Theo [đề cương nghiên cứu](../research-design.md): phân bố và tương quan, so sánh nhóm, baseline và rule score. Quan sát lặp theo công ty phải được tính đến khi đánh giá độ bất định; không coi mọi firm-year độc lập.
 
-## 4. Traceability Matrix (FR ↔ Test Case)
+Nếu triển khai ML, báo cáo precision/recall/F1, PR-AUC khi đủ hai lớp, confusion matrix; xác suất thêm Brier/calibration. Báo cáo cả số mẫu, số ca giảm cổ tức và khoảng bất định. Tập một lớp hoặc quá ít ca thì ghi không thể đánh giá chỉ số tương ứng.
 
-| FR | Mô tả ngắn | Test Case ID | Loại test | Kết quả mong đợi |
-|---|---|---|---|---|
-| FR-01 | Tải dữ liệu nguồn | TC-01 | Integration | File ZIP tải và giải nén thành công với tham số quý hợp lệ |
-| FR-01 | — | TC-02 | Integration | Xử lý đúng khi tham số quý không hợp lệ (báo lỗi rõ ràng, không crash) |
-| FR-02 | Nạp staging | TC-03 | Integration | Số dòng staging = số dòng file nguồn |
-| FR-03 | Idempotent | TC-04 | Integration | Chạy ingestion 2 lần → số dòng không đổi sau lần 2 |
-| FR-04 | Ghi log | TC-05 | Unit | Bảng `ingestion_log` có bản ghi mới sau mỗi lần chạy, đúng field |
-| FR-05 | Danh mục canonical | TC-06 | Unit | Bảng `metric_definition` có đủ 10 chỉ tiêu đã định nghĩa |
-| FR-06 | Ánh xạ tag | TC-07 | Unit | Với input có 2 tag cùng nghĩa, output chỉ có 1 giá trị theo đúng priority |
-| FR-06 | — | TC-08 | Unit | Với tag không có trong mapping, hệ thống bỏ qua có kiểm soát, không crash |
-| FR-07 | Coverage report | TC-09 | Integration | Coverage tính đúng theo công thức (số filing resolve / tổng filing) |
-| FR-08 | Rule validation | TC-10 | Unit | Giá trị âm ở chỉ tiêu không cho phép âm → bị gắn cờ |
-| FR-08 | — | TC-11 | Unit | Bản ghi trùng khóa → bị phát hiện |
-| FR-08 | — | TC-12 | Unit | Giá trị lệch > ngưỡng so với trung vị lịch sử → bị gắn cờ outlier |
-| FR-09 | Gắn cờ không xóa | TC-13 | Integration | Bản ghi vi phạm vẫn tồn tại trong DB, có `is_flagged=true` và `flag_reason` |
-| FR-10 | Bitemporal | TC-14 | Integration | Nạp 2 filing cùng kỳ khác `filed_at` → cả 2 bản ghi cùng tồn tại |
-| FR-11 | Truy vết nguồn | TC-15 | Unit | Mỗi fact có `accession_no` hợp lệ, không rỗng |
-| FR-12 | Tìm kiếm company | TC-16 | API | `GET /companies?search=apple` trả đúng kết quả liên quan |
-| FR-13 | Company profile | TC-17 | API | `GET /companies/{cik}` với CIK hợp lệ trả đủ thông tin; CIK không tồn tại → 404 |
-| FR-14 | Financials mới nhất | TC-18 | API | Trả đúng giá trị `filed_at` lớn nhất cho mỗi chỉ tiêu |
-| FR-15 | Point-in-time | TC-19 | API | Với 2 giá trị `as_of` khác nhau bao quanh ngày điều chỉnh → 2 kết quả khác nhau |
-| FR-15 | — | TC-20 | API | `as_of` trước ngày filing đầu tiên → trả rỗng có kiểm soát, không lỗi 500 |
-| FR-16 | Trend | TC-21 | API | Trả đủ chuỗi giá trị theo đúng thứ tự thời gian |
-| FR-17 | Giá lịch sử | TC-22 | API | Trả đúng khoảng `from`–`to` |
-| FR-18 | Overview | TC-23 | Integration | Chỉ số phái sinh (Revenue Growth, Profit Margin) tính đúng theo công thức |
-| FR-19 | Comparison | TC-24 | API | `POST /compare` với 2–5 CIK trả đúng cấu trúc, đúng giá trị |
-| FR-20 | Screening | TC-25 | API | Điều kiện đơn (VD: ROE > 15) trả đúng tập company thỏa mãn |
-| FR-21 | Benchmark | TC-26 | Performance | Script benchmark chạy và xuất được bảng thời gian trước/sau tối ưu |
-| FR-22 | Query plan | TC-27 | Performance | `EXPLAIN ANALYZE` được lưu lại đầy đủ cho từng truy vấn benchmark |
-| FR-23 | UI Overview | TC-28 | Manual UI | Tìm kiếm → xem overview đúng dữ liệu từ API |
-| FR-24 | UI Trend | TC-29 | Manual UI | Biểu đồ hiển thị đúng số điểm dữ liệu |
-| FR-25 | UI Comparison | TC-30 | Manual UI | Chọn/bỏ chọn company cập nhật đúng bảng so sánh |
-| FR-27 | UI As-of | TC-31 | Manual UI | Thay đổi as-of date → số liệu trên UI cập nhật đúng theo TC-19 |
-| NFR-01 | Hiệu năng truy vấn đơn | TC-32 | Performance | Thời gian phản hồi < 300ms trên dữ liệu tham chiếu |
-| NFR-02 | Hiệu năng screening | TC-33 | Performance | Thời gian phản hồi < 1s sau tối ưu |
-| NFR-03 | Reliability ingestion | TC-34 | Integration | Ngắt kết nối giữa chừng khi ingestion → dữ liệu cũ không bị hỏng |
-| NFR-04 | Data quality | TC-35 | Integration | Coverage ≥ 70% cho ≥ 6/10 chỉ tiêu trên dữ liệu thật |
-| NFR-08 | Reproducibility | TC-36 | Integration | `docker-compose up` từ trạng thái sạch → hệ thống chạy đúng |
+## 6. Hồ sơ kết quả
 
-*Nguyên tắc: mỗi FR/NFR bắt buộc có ít nhất 1 dòng trong bảng này. Không có yêu cầu nào trong SRS được coi là "đã kiểm thử" nếu không xuất hiện ở đây.*
+Mỗi lần đánh giá lưu: mã test, snapshot, phiên bản parser/quy tắc, đầu vào, kết quả mong đợi/thực tế, pass/fail, log và lỗi còn mở. Bản này là kế hoạch, chưa có test nào được tuyên bố pass.
 
----
-
-## 5. Test Case Detail Template
-
-Mỗi Test Case trong bảng trên khi triển khai thực tế cần được viết chi tiết theo mẫu:
-
-```
-Test Case ID: TC-XX
-Liên quan đến: FR-XX
-Mục tiêu:
-Điều kiện tiên quyết:
-Bước thực hiện:
-  1. ...
-  2. ...
-Dữ liệu đầu vào:
-Kết quả mong đợi:
-Kết quả thực tế: [điền khi chạy]
-Trạng thái: Pass / Fail
-```
-
----
-
-## 6. Risk-based Test Prioritization
-
-| Mức ưu tiên | Nhóm Test Case | Lý do |
-|---|---|---|
-| Cao | TC-14, TC-19, TC-20 (bitemporal) | Đây là phần logic phức tạp nhất, sai sót khó phát hiện bằng mắt |
-| Cao | TC-26, TC-27, TC-32, TC-33 (benchmark) | Là bằng chứng định lượng cốt lõi của đồ án |
-| Trung bình | TC-07, TC-08, TC-09 (mapping/coverage) | Ảnh hưởng trực tiếp chất lượng dữ liệu nhưng dễ phát hiện lỗi qua coverage report |
-| Thấp | TC-28 → TC-31 (UI thủ công) | Ảnh hưởng trải nghiệm, không ảnh hưởng tính đúng đắn dữ liệu |
-
----
-
-## 7. Test Schedule
-Việc thực thi Test Case gắn với từng Checkpoint trong PP-FDP-01 — không dồn toàn bộ kiểm thử vào cuối kỳ. Tham chiếu PP-FDP-01, Mục 3 để biết Test Case nào chạy ở Checkpoint nào.
-
----
-
-## Change Log
-
-| Version | Ngày | Nội dung thay đổi |
-|---|---|---|
-| 1.0 | | Bản phát hành đầu tiên |
+Trước demo chạy toàn bộ test bắt buộc, kiểm tra 3 case study từ tài liệu gốc và chạy lại snapshot dự phòng. Chỉ nghiệm thu sau khi giới hạn dữ liệu và phạm vi thực đạt đã được ghi rõ.

@@ -1,0 +1,166 @@
+[
+  {
+    "document": "vnm-q12026",
+    "metric": "cash_equivalents",
+    "pdf_page": 7,
+    "printed_page": 6,
+    "candidate": {
+      "raw": "2.077.596.293.461",
+      "value_vnd": 2077596293461,
+      "context": "Tién va các khoản tương đương tiền 110 V1 2.077.596.293.461 1.794.879.718.871 Tiên . 111 2.003.596.293.461  1.630.879.718.871 Các khoản tương đương tiên 112 74.000.000.000 164.000.000.000"
+    },
+    "visually_reviewed_vnd": 2077596293461,
+    "candidate_matches_visual": true,
+    "review_note": "Same agent selected pages, wrote extraction rules, and reviewed images; not independent gold."
+  },
+  {
+    "document": "vnm-q12026",
+    "metric": "total_assets",
+    "pdf_page": 9,
+    "printed_page": 8,
+    "candidate": {
+      "raw": "55.429.011.127.169",
+      "value_vnd": 55429011127169,
+      "context": "TONG TAI SAN (280 = 100 + 200) 280 55.429.011.127.169  53.312.370.717.301 Ễ ấn"
+    },
+    "visually_reviewed_vnd": 55429011127169,
+    "candidate_matches_visual": true,
+    "review_note": "Same agent selected pages, wrote extraction rules, and reviewed images; not independent gold."
+  },
+  {
+    "document": "vnm-q12026",
+    "metric": "total_liabilities",
+    "pdf_page": 10,
+    "printed_page": 9,
+    "candidate": null,
+    "visually_reviewed_vnd": 18740931850130,
+    "candidate_matches_visual": false,
+    "review_note": "Same agent selected pages, wrote extraction rules, and reviewed images; not independent gold."
+  },
+  {
+    "document": "vnm-q12026",
+    "metric": "total_equity",
+    "pdf_page": 10,
+    "printed_page": 9,
+    "candidate": {
+      "raw": "36.688.079.277.039",
+      "value_vnd": 36688079277039,
+      "context": "VON CHU SỞ HỮU 400 V.21  36.688.079.277.039 34.483.015.286.107 Vốn cổ phần 411 V22 20899554.450.000 20.899.554.450.000 Thing dự vốn cổ phần 412 34.110.709.700 34.110.709.700"
+    },
+    "visually_reviewed_vnd": 36688079277039,
+    "candidate_matches_visual": true,
+    "review_note": "Same agent selected pages, wrote extraction rules, and reviewed images; not independent gold."
+  },
+  {
+    "document": "vnm-q12026",
+    "metric": "net_income_total",
+    "pdf_page": 11,
+    "printed_page": 10,
+    "candidate": {
+      "raw": "2.458.221.002.532",
+      "value_vnd": 2458221002532,
+      "context": "Lợi nhuận sau thuế TNDN (60 = 50 - 51 - 52) (mang sang trang sau) 60 2.458.221.002.532 1.587.273.268.054 NHA"
+    },
+    "visually_reviewed_vnd": 2458221002532,
+    "candidate_matches_visual": true,
+    "review_note": "Same agent selected pages, wrote extraction rules, and reviewed images; not independent gold."
+  },
+  {
+    "document": "vnm-q12026",
+    "metric": "cfo",
+    "pdf_page": 13,
+    "printed_page": 12,
+    "candidate": {
+      "raw": "269.326.997.516",
+      "value_vnd": 269326997516,
+      "context": "Lưu chuyén tiền thuần từ hoạt động kinh donnh 20 269.326.997.516 (124.187.023.735) &"
+    },
+    "visually_reviewed_vnd": 269326997516,
+    "candidate_matches_visual": true,
+    "review_note": "Same agent selected pages, wrote extraction rules, and reviewed images; not independent gold."
+  },
+  {
+    "document": "dhg-fy2025",
+    "metric": "cash_equivalents",
+    "pdf_page": 7,
+    "printed_page": 5,
+    "candidate": {
+      "raw": "129.895.664.996",
+      "value_vnd": 129895664996,
+      "context": "I. Tiền và các khoản tương đương tiền 110 5 129.895.664.996 62.857.547.612 1... Tiền 111 129.895.664.996 62.857.547.612 Il. Dau tu tài chính ngắn hạn 120 6 2.024.000.000.000 2.745.000.000.000"
+    },
+    "visually_reviewed_vnd": 129895664996,
+    "candidate_matches_visual": true,
+    "review_note": "Same agent selected pages, wrote extraction rules, and reviewed images; not independent gold."
+  },
+  {
+    "document": "dhg-fy2025",
+    "metric": "total_assets",
+    "pdf_page": 8,
+    "printed_page": 6,
+    "candidate": {
+      "raw": "5.173.881.628.997",
+      "value_vnd": 5173881628997,
+      "context": "TỔNG CỘNG TÀI SẢN (270=100+200) 270 5.173.881.628.997 5.959.243.276.265 1500 | NHÁ"
+    },
+    "visually_reviewed_vnd": 5173881628997,
+    "candidate_matches_visual": true,
+    "review_note": "Same agent selected pages, wrote extraction rules, and reviewed images; not independent gold."
+  },
+  {
+    "document": "dhg-fy2025",
+    "metric": "total_liabilities",
+    "pdf_page": 9,
+    "printed_page": 7,
+    "candidate": {
+      "raw": "1.036.616.453.045",
+      "value_vnd": 1036616453045,
+      "context": "C. NỢPHẢI TRẢ 300 1.036.616.453.045 1.864.488.178.296 I. Nợngắn hạn 310 965.949.656.404 1.790.292.694.239 1. Phải trả người bán ngắn hạn 311 19 391.630.655.164 167.297.346.734"
+    },
+    "visually_reviewed_vnd": 1036616453045,
+    "candidate_matches_visual": true,
+    "review_note": "Same agent selected pages, wrote extraction rules, and reviewed images; not independent gold."
+  },
+  {
+    "document": "dhg-fy2025",
+    "metric": "total_equity",
+    "pdf_page": 9,
+    "printed_page": 7,
+    "candidate": {
+      "raw": "4.137.265.175.952",
+      "value_vnd": 4137265175952,
+      "context": "D. VỐN CHỦ SỞ HỮU 400 4.137.265.175.952 4.094.755.097.969 I. Vốn chủ sở hữu 410.28 4.137.265.175.952 4.094.755.097.969 1. Vốngóp của chủ sở hữu 411 1.307.460.710.000 1.307.460.710.000"
+    },
+    "visually_reviewed_vnd": 4137265175952,
+    "candidate_matches_visual": true,
+    "review_note": "Same agent selected pages, wrote extraction rules, and reviewed images; not independent gold."
+  },
+  {
+    "document": "dhg-fy2025",
+    "metric": "net_income_total",
+    "pdf_page": 10,
+    "printed_page": 8,
+    "candidate": {
+      "raw": "852.354.107.582",
+      "value_vnd": 852354107582,
+      "context": "17. Lợi nhuận sau thuế thu nhập doanh nghiệp (60=50-51-52) 60 852.354.107.582 778.920.119.960 18. Lãi cơ bản trên cổ phiếu 70 40 6.308 5.763"
+    },
+    "visually_reviewed_vnd": 852354107582,
+    "candidate_matches_visual": true,
+    "review_note": "Same agent selected pages, wrote extraction rules, and reviewed images; not independent gold."
+  },
+  {
+    "document": "dhg-fy2025",
+    "metric": "cfo",
+    "pdf_page": 11,
+    "printed_page": 9,
+    "candidate": {
+      "raw": "1.212.967.705.385",
+      "value_vnd": 1212967705385,
+      "context": "Lưu chuyển tiền thuần từ hoạt động kinh doanh 20 1.212.967.705.385 1.317.583.405.328 II. _ LƯU CHUYỂN TIỀN TỪ HOẠT ĐỘNG ĐẦU TƯ ¡, \"Tiền chí mua sắm, xây dựng tài sản cố định và 21 (31.136.402.852) (88.704.714.502)"
+    },
+    "visually_reviewed_vnd": 1212967705385,
+    "candidate_matches_visual": true,
+    "review_note": "Same agent selected pages, wrote extraction rules, and reviewed images; not independent gold."
+  }
+]

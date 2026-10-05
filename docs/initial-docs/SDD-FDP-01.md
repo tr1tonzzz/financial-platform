@@ -1,323 +1,128 @@
-# SOFTWARE DESIGN DOCUMENT (SDD)
-## Financial Data Platform
+# Thiết kế hệ thống BCTC–cổ tức Việt Nam
 
-**Document ID:** SDD-FDP-01
-**Version:** 1.0
-**Tài liệu gốc tham chiếu:** SRS-FDP-01
-**Chuẩn tham chiếu:** cấu trúc theo IEEE 1016 (Software Design Description)
+> **Trạng thái 03/10/2026 — hồ sơ khảo sát trước.** Project hiện hành tập trung thu thập, kiểm định và phân tích lợi nhuận–dòng tiền–cổ tức tiền mặt. Xem [SRS hiện hành](../research-platform/02-de-tai-va-srs.md) và [phương pháp thống nhất](../research-platform/11-phuong-phap-thu-thap-va-xu-ly.md). Các ngưỡng cảnh báo, dự báo, scope và lịch cũ bên dưới chỉ để tham khảo; không là yêu cầu MVP hiện hành.
 
-*Tài liệu này đặc tả HỆ THỐNG ĐƯỢC XÂY DỰNG NHƯ THẾ NÀO (how) để thỏa mãn các yêu cầu đã nêu trong SRS-FDP-01. Mỗi quyết định thiết kế quan trọng được nối lại với FR/NFR tương ứng.*
+Phiên bản 2.0 — 03/10/2026. Yêu cầu tham chiếu: [SRS](SRS-FDP-01.md). Đây là thiết kế đề xuất cho ý tưởng mới, chưa phải mô tả code đã triển khai.
 
----
+## 1. Kiến trúc và lựa chọn kỹ thuật
 
-## 1. Introduction
+Một pipeline Python chạy theo lô, PostgreSQL lưu dữ liệu, FastAPI cung cấp truy vấn. Dashboard React tối thiểu; có thể dùng Streamlit ở pilot để sớm kiểm tra dữ liệu. Chỉ duy trì một giao diện khi chốt MVP.
 
-### 1.1 Purpose
-Trình bày kiến trúc hệ thống, thiết kế dữ liệu, thiết kế thành phần và các quyết định công nghệ, làm cơ sở để lập trình và để giảng viên đánh giá năng lực thiết kế hệ thống.
-
-### 1.2 Scope
-Bao phủ toàn bộ các Feature trong SRS-FDP-01 Mục 4. Không lặp lại nội dung yêu cầu, chỉ tham chiếu bằng mã FR/NFR.
-
-### 1.3 Design Goals & Constraints
-- Ưu tiên đơn giản, dễ bảo trì bởi một người thực hiện (constraint: NFR-05).
-- Tách rõ ràng vùng dữ liệu thô (staging) khỏi vùng dữ liệu đã xử lý (core store) để hỗ trợ tái xử lý khi logic thay đổi.
-- Không dùng kiến trúc phân tán (constraint từ SRS 2.5).
-
----
-
-## 2. System Architecture
-
-### 2.1 Architecture Style
-**Layered monolith** — một ứng dụng backend duy nhất, chia thành các layer/module rõ trách nhiệm, chạy cùng một tiến trình. Lựa chọn này thỏa mãn NFR-05 (maintainability bởi 1 người) mà không cần độ phức tạp vận hành của microservices.
-
-### 2.2 High-level Architecture Diagram
+Công cụ đề xuất: requests/httpx cho tải HTTP, BeautifulSoup cho HTML, pdfplumber cho PDF có text, pandas cho bảng phân tích, pytest cho kiểm thử. Trình duyệt tự động chỉ thêm khi nguồn pilot thực sự cần; OCR là nhánh mở rộng sau khi đã đo tỷ lệ PDF scan.
 
 ```mermaid
-flowchart TD
-    A[SEC FSDS ZIP theo quý] -->|FR-01| B[Ingestion Module]
-    B -->|FR-02, FR-03, FR-04| C[(Staging Tables)]
-    C -->|FR-05, FR-06| D[Standardization Module]
-    D -->|FR-07| E[Coverage Reporter]
-    D --> F[Validation Module]
-    F -->|FR-08, FR-09| G[(Core Store — financial_fact)]
-    G -->|FR-10, FR-11| H[Bitemporal Query Layer]
-    G --> I[Materialized Views]
-    H --> J[API Layer — FastAPI]
-    I --> J
-    J -->|FR-12..FR-20| K[React Dashboard]
-    G --> L[Benchmark Harness]
-    L -->|FR-21, FR-22| M[Benchmark Report]
+flowchart LR
+    A[Công bố Việt Nam và IR] --> B[Khám phá và tải]
+    B --> C[Kho PDF và HTML gốc]
+    C --> D[Trích xuất và chuẩn hóa]
+    D --> E[Kiểm định và hàng đợi rà soát]
+    E --> F[(Facts và sự kiện có nguồn)]
+    F --> G[Bảng phân tích theo thời điểm]
+    G --> H[Phân tích quan hệ và cảnh báo]
+    F --> I[API và dashboard]
+    H --> I
 ```
 
-### 2.3 Component Responsibilities
+## 2. Các module cần xây dựng
 
-| Component | Trách nhiệm | FR/NFR liên quan |
+| Module | Đầu vào → đầu ra | Yêu cầu |
 |---|---|---|
-| Ingestion Module | Tải, giải nén, nạp dữ liệu thô vào staging; ghi log | FR-01–FR-04, NFR-03 |
-| Standardization Module | Ánh xạ dữ liệu thô về canonical metrics | FR-05–FR-07 |
-| Validation Module | Áp dụng rule chất lượng, gắn cờ vi phạm | FR-08–FR-09 |
-| Core Store | Lưu trữ bitemporal, nguồn sự thật duy nhất | FR-10–FR-11, NFR-04 |
-| Bitemporal Query Layer | Xử lý logic truy vấn as-of | FR-15 |
-| Materialized Views | Phẳng hóa dữ liệu phục vụ truy vấn nhanh | NFR-01, NFR-02 |
-| API Layer | Expose REST endpoints | FR-12–FR-20 |
-| Benchmark Harness | Đo & ghi lại hiệu năng truy vấn | FR-21–FR-22 |
-| React Dashboard | Giao diện người dùng | FR-23–FR-27 |
+| sources | Danh sách công ty/năm → URL tài liệu/sự kiện | VN-FR-01, 02 |
+| archive | URL → bản gốc, hash, metadata | VN-FR-03 |
+| extract | Bản gốc → các ứng viên chỉ tiêu và vị trí | VN-FR-04 |
+| normalize | Ứng viên → facts chuẩn VND và kỳ báo cáo | VN-FR-05 |
+| validate/review | Facts → cờ lỗi, quyết định duyệt và sửa | VN-FR-06 |
+| dividends | Thông báo → sự kiện, sửa lịch, trạng thái bằng chứng | VN-FR-07 |
+| dataset | Facts/sự kiện → firm-year, feature và label | VN-FR-08, 12 |
+| analytics | Dataset → thống kê, quy tắc và case study | VN-FR-09, 10 |
+| api/ui | Dữ liệu đã duyệt → truy vấn, biểu đồ, nguồn | VN-FR-11 |
+| modeling | Dataset đủ điều kiện → baseline và đánh giá | VN-FR-13 |
 
-### 2.4 Design Rationale — Bitemporal Storage
-**Vấn đề (từ FR-10, FR-11):** dữ liệu tài chính có thể được điều chỉnh sau khi công bố; lưu trữ ghi đè sẽ làm mất khả năng biết "hệ thống đã biết gì tại thời điểm X".
+Thứ tự triển khai theo bảng. Pilot đi qua toàn bộ chuỗi cho một doanh nghiệp trước khi tăng số lượng.
 
-**Phương án đã xem xét:**
+## 3. Mô hình dữ liệu
 
-| Phương án | Ưu điểm | Nhược điểm | Quyết định |
-|---|---|---|---|
-| A. Bảng rộng, ghi đè khi có update | Đơn giản, quen thuộc | Mất lịch sử, không thỏa FR-10 | Loại |
-| B. Bảng lịch sử riêng (audit table) song song bảng chính | Giữ được lịch sử | Phức tạp khi query, 2 nguồn sự thật | Loại |
-| **C. Fact table long-format, mỗi thay đổi là 1 dòng mới, phân biệt bằng `filed_at`** | 1 nguồn sự thật duy nhất, query as-of tự nhiên bằng `WHERE filed_at <=` | Cần `DISTINCT ON`/window function khi lấy giá trị mới nhất, chi phí lưu trữ cao hơn | **Chọn** |
+Dùng khóa company_id ổn định; ticker là thuộc tính, tránh coi đổi mã là đổi doanh nghiệp. Giá trị tiền lưu NUMERIC, không dùng số thực dấu phẩy động cho facts gốc.
 
-Phương án C được chọn vì trực tiếp thỏa mãn FR-10/FR-11 mà không cần đồng bộ hai nguồn dữ liệu.
+| Bảng | Trường chính và mục đích |
+|---|---|
+| company | company_id, ticker, name, market, industry, cohort_status, exclusion_reason |
+| crawl_run | run_id, source, started_at, config_version, status, error |
+| source_document | document_id, company_id, source_url, published_at, publication_precision, retrieved_at, document_type, report_scope, audit_status |
+| document_file | file_id, document_id, hash_sha256, local_path, mime_type, downloaded_at |
+| raw_extracted_fact | raw_id, file_id, page_number, locator, original_label, raw_value, raw_unit, raw_period, method, parser_version |
+| metric_definition | metric_code, display_name, statement_type, unit, sign_convention |
+| metric_label_mapping | label_pattern, statement_type, metric_code, mapping_version |
+| financial_fact | fact_id, raw_id, company_id, metric_code, period_start, period_end, report_scope, value_vnd, available_at, validation_status |
+| dividend_event | event_id, company_id, dividend_type, profit_year, announced_at, record_date, scheduled_payment_date, confirmed_payment_date, cash_dps, nominal_value, status |
+| dividend_event_source | event_id, document_id, locator, claim_type; nối nhiều thông báo với một sự kiện |
+| data_quality_issue | issue_id, entity_type, entity_id, rule_code, severity, status, resolution |
+| review_decision | decision_id, entity_id, old_value, new_value, reviewer, reason, reviewed_at |
+| dataset_snapshot | snapshot_id, config_version, created_at, manifest_hash, cohort_description |
+| firm_year_observation | snapshot_id, company_id, report_year, cutoff_at, outcome_start/end, feature_status, label, label_reason, event_ids |
+| score_result | snapshot_id, company_id, cutoff_at, rule_version, score, completeness, reasons |
 
-### 2.5 Design Rationale — Staging tách khỏi Core Store
-Nếu logic ánh xạ tag (FR-06) thay đổi giữa kỳ (gần như chắc chắn xảy ra), hệ thống cần rebuild lại Core Store mà **không phải tải lại dữ liệu nguồn**. Staging đóng vai trò dữ liệu thô bất biến, Core Store có thể xóa và build lại từ staging bất cứ lúc nào.
+Một document có nhiều file/phiên bản; file có nhiều raw facts; mỗi fact chuẩn nối về ứng viên gốc. Sự kiện có nhiều tài liệu chứng minh; không đếm lại thông báo đổi lịch thành cổ tức mới.
 
-### 2.6 Sequence Diagrams
+Ràng buộc duy nhất của fact: company, metric, period, scope, source version và parser version. Dedupe tài liệu bằng URL/hash; dedupe sự kiện bằng đối chiếu công ty, loại, kỳ cổ tức và ngày quyền, có hàng đợi xử lý xung đột.
 
-#### 2.6.1 Luồng Ingestion (UC-08, FR-01 → FR-04)
+## 4. Ngày khả dụng và phiên bản
 
-```mermaid
-sequenceDiagram
-    actor Op as System Operator
-    participant Ing as Ingestion Module
-    participant SEC as SEC FSDS Source
-    participant Stg as Staging DB
-    participant Log as ingestion_log
+available_at là ngày công bố xác định từ nguồn; không suy ra từ cuối năm tài chính. publication_precision thể hiện ngày chính xác, khoảng thời gian hoặc chưa xác định. Mẫu không có ngày đủ tin cậy bị loại khỏi đánh giá theo thời điểm.
 
-    Op->>Ing: run(period="2024Q1")
-    Ing->>SEC: download ZIP
-    SEC-->>Ing: file ZIP
-    Ing->>Ing: giải nén, kiểm tra checksum
-    Ing->>Stg: COPY dữ liệu vào staging (idempotent check)
-    alt dữ liệu đã tồn tại cho kỳ này
-        Stg-->>Ing: skip / upsert theo unique key
-    else dữ liệu mới
-        Stg-->>Ing: insert thành công
-    end
-    Ing->>Log: ghi log (status, rows_loaded)
-    Ing-->>Op: kết quả chạy (thành công/thất bại)
+Khi nguồn có đính chính, giữ cả hai bản và chọn bản đã khả dụng tại cutoff_at. Không dùng bản sửa công bố sau cutoff để xây feature quá khứ. retrieved_at chỉ là thời điểm hệ thống tải.
+
+Kho raw được giữ để tái xử lý. Những số sửa thủ công luôn có quyết định sửa và bằng chứng, không ghi đè mất lịch sử.
+
+## 5. Quy trình parser và kiểm định
+
+1. Nhận diện doanh nghiệp, năm, phạm vi hợp nhất/riêng và trạng thái kiểm toán.
+2. Tìm đơn vị ở trang/bảng; không coi đơn vị toàn tài liệu luôn áp dụng mọi bảng.
+3. Xác định tiêu đề cột năm hiện tại/năm so sánh; lấy đúng cột.
+4. Tìm chỉ tiêu theo nhãn, loại báo cáo và mã số nếu có; nhãn mơ hồ giữ nhiều ứng viên.
+5. Parse số âm, ngoặc, dấu phân cách và quy đổi đơn vị.
+6. Kiểm tra tổng tài sản ≈ nợ phải trả + vốn chủ sở hữu với dung sai theo độ làm tròn nguồn.
+7. Cờ xung đột, thiếu kỳ/phạm vi/đơn vị được đưa sang review. Chỉ facts đủ điều kiện mới đi vào tính chỉ số.
+
+confidence_score của parser thể hiện mức chắc chắn thao tác trích xuất, không thay thế kiểm chứng độc lập.
+
+## 6. Sự kiện và phân tích cổ tức
+
+Trạng thái: proposed, scheduled, confirmed_paid, postponed, cancelled, unknown. advance_cash là đặc điểm đợt tạm ứng, không tự chứng minh đã trả.
+
+Quy đổi cash_dps từ số tiền/cổ phiếu hoặc tỷ lệ × mệnh giá nguồn. Theo dõi từng đợt trả; nếu cộng theo năm lợi nhuận phải biết profit_year. Nếu cộng theo cửa sổ thời gian phải ghi rõ phương pháp.
+
+Chỉ số lõi: CFO/LNST khi LNST > 0; CFO/tổng tài sản; tiền/nợ phải trả; nợ phải trả/tổng tài sản; nợ phải trả/vốn chủ sở hữu khi vốn > 0; biến động DPS đã đủ điều kiện so sánh. Coverage và payout chỉ tính khi dữ liệu mở rộng đủ.
+
+Không bù thiếu bằng 0. Không mặc định một giá trị doanh nghiệp–năm là kết quả dự báo đã quan sát hoàn chỉnh.
+
+## 7. API và giao diện
+
+| Endpoint đọc | Nội dung |
+|---|---|
+| GET /companies | Danh sách, ngành, trạng thái độ phủ |
+| GET /companies/{ticker}/financials | Facts theo năm/phạm vi, nguồn, trạng thái duyệt |
+| GET /companies/{ticker}/dividends | Các đợt, DPS, lịch và trạng thái thực hiện |
+| GET /companies/{ticker}/dividend-risk | Chỉ số, điểm, lý do, cutoff, độ đầy đủ |
+| GET /data-quality/coverage | Mẫu số, tỷ lệ thiếu/duyệt/sửa và loại lỗi |
+| GET /documents/{id} | Metadata và vị trí bằng chứng/bản gốc |
+| GET /datasets/{snapshot_id}/manifest | Phạm vi và phiên bản dataset |
+
+Response dùng data và meta: snapshot_id, cutoff_at, rule_version, missing_reasons. Không gán nhãn rủi ro thấp cho công ty chưa có đủ dữ liệu.
+
+Ba màn hình: danh sách công ty; chi tiết BCTC–cổ tức–cảnh báo với nguồn; chất lượng dữ liệu. Duyệt dữ liệu có thể dùng CLI và bảng review trong MVP, chưa cần giao diện quản trị riêng.
+
+## 8. Cấu trúc triển khai đề xuất
+
+```text
+src/
+  sources/ archive/ extract/ normalize/ validate/
+  dividends/ dataset/ analytics/ api/
+tests/
+data/
+  raw/ processed/ snapshots/
+reports/
+  quality/ analysis/ evaluation/
 ```
 
-#### 2.6.2 Luồng Point-in-time Query (UC-06, FR-15)
-
-```mermaid
-sequenceDiagram
-    actor U as End User
-    participant FE as React Dashboard
-    participant API as FastAPI /financials
-    participant DB as financial_fact (Core Store)
-
-    U->>FE: chọn công ty + chọn "as-of date"
-    FE->>API: GET /companies/{cik}/financials?period=&as_of=
-    API->>DB: SELECT DISTINCT ON (cik, metric_id, period_end) ... WHERE filed_at <= as_of
-    DB-->>API: giá trị đúng tại thời điểm as_of
-    API-->>FE: JSON {data, meta.as_of, meta.source_accession}
-    FE-->>U: hiển thị số liệu tương ứng thời điểm đã chọn
-```
-
----
-
-## 3. Data Design
-
-### 3.1 Entity Relationship Diagram
-
-```
-company (
-    cik             VARCHAR(10) PK,
-    name            VARCHAR(255),
-    sic_code        VARCHAR(4),
-    sic_description VARCHAR(255)
-)
-
-metric_definition (
-    metric_id       SMALLSERIAL PK,
-    code            VARCHAR(32) UNIQUE,     -- 'REVENUE', 'NET_INCOME'
-    display_name    VARCHAR(64),
-    statement_type  VARCHAR(16)             -- 'IS' | 'BS' | 'CF'
-)
-
-tag_mapping (
-    xbrl_tag        VARCHAR(128) PK,
-    metric_id       SMALLINT FK -> metric_definition,
-    priority        SMALLINT DEFAULT 1
-)
-
-financial_fact (
-    fact_id         BIGSERIAL PK,
-    cik             VARCHAR(10) FK -> company,
-    metric_id       SMALLINT FK -> metric_definition,
-    period_end      DATE NOT NULL,
-    fiscal_period   VARCHAR(8),             -- 'Q1' | 'FY'
-    value           NUMERIC(24,4),
-    filed_at        DATE NOT NULL,          -- transaction time (FR-11)
-    accession_no    VARCHAR(20) NOT NULL,   -- truy vết filing gốc (FR-11)
-    is_flagged      BOOLEAN DEFAULT FALSE,  -- (FR-09)
-    flag_reason     VARCHAR(255),
-    UNIQUE (cik, metric_id, period_end, filed_at, accession_no)
-)
-
-historical_price (
-    cik             VARCHAR(10) FK -> company,
-    trade_date      DATE,
-    close_price     NUMERIC(12,4),
-    PK (cik, trade_date)
-)
-
-ingestion_log (
-    log_id          SERIAL PK,
-    run_at          TIMESTAMP DEFAULT now(),
-    period          VARCHAR(8),
-    rows_loaded     INT,
-    status          VARCHAR(16),
-    error_message   TEXT
-)
-```
-
-**Quan hệ:** `company (1) — (N) financial_fact`; `metric_definition (1) — (N) tag_mapping`; `metric_definition (1) — (N) financial_fact`.
-
-### 3.2 Indexing Strategy (phục vụ NFR-01, NFR-02)
-
-| Index | Trên bảng | Phục vụ truy vấn |
-|---|---|---|
-| `idx_fact_company_metric_period` | `financial_fact (cik, metric_id, period_end)` | FR-14, FR-16 |
-| `idx_fact_filed_at` | `financial_fact (filed_at)` | FR-15 (as-of query) |
-| PK tự nhiên | `historical_price (cik, trade_date)` | FR-17 |
-
-### 3.3 Materialized View
-
-```sql
-CREATE MATERIALIZED VIEW mv_latest_metrics AS
-SELECT DISTINCT ON (cik, metric_id, period_end)
-    cik, metric_id, period_end, value
-FROM financial_fact
-WHERE is_flagged = FALSE
-ORDER BY cik, metric_id, period_end, filed_at DESC;
-
-CREATE INDEX ON mv_latest_metrics (cik, period_end);
-```
-Phục vụ FR-18, FR-19, FR-20 — tránh phải quét dạng long-format mỗi lần so sánh/lọc, trực tiếp phục vụ NFR-02.
-
-### 3.4 Point-in-time Query Pattern (thiết kế cho FR-15)
-
-```sql
-SELECT DISTINCT ON (cik, metric_id, period_end)
-    value, filed_at, accession_no
-FROM financial_fact
-WHERE cik = :cik
-  AND period_end = :period_end
-  AND filed_at <= :as_of_date
-ORDER BY cik, metric_id, period_end, filed_at DESC;
-```
-
-### 3.5 Data Dictionary — Canonical Metrics (chi tiết cho FR-05)
-
-| Code | Display Name | Statement Type |
-|---|---|---|
-| REVENUE | Doanh thu thuần | IS |
-| NET_INCOME | Lợi nhuận ròng | IS |
-| GROSS_PROFIT | Lợi nhuận gộp | IS |
-| EPS | Lãi cơ bản trên cổ phiếu | IS |
-| TOTAL_ASSETS | Tổng tài sản | BS |
-| TOTAL_LIABILITIES | Tổng nợ phải trả | BS |
-| TOTAL_EQUITY | Vốn chủ sở hữu | BS |
-| OPERATING_CASH_FLOW | Dòng tiền hoạt động kinh doanh | CF |
-| CAPEX | Chi đầu tư tài sản cố định | CF |
-| SHARES_OUTSTANDING | Số cổ phiếu lưu hành | BS |
-
----
-
-## 4. Interface Design
-
-### 4.1 API Design (chi tiết hóa FR-12 → FR-20)
-
-| Method | Endpoint | FR | Request | Response (tóm tắt) |
-|---|---|---|---|---|
-| GET | `/companies` | FR-12 | `?search=&page=&limit=` | Danh sách company |
-| GET | `/companies/{cik}` | FR-13 | — | Company profile |
-| GET | `/companies/{cik}/financials` | FR-14, FR-15 | `?period=&as_of=` | Giá trị canonical metrics |
-| GET | `/companies/{cik}/trend` | FR-16 | `?metric=` | Chuỗi giá trị theo thời gian |
-| GET | `/companies/{cik}/prices` | FR-17 | `?from=&to=` | Chuỗi giá đóng cửa |
-| POST | `/compare` | FR-19 | `{ciks[], metrics[]}` | Bảng so sánh |
-| POST | `/screen` | FR-20 | `{conditions[]}` | Danh sách company thỏa điều kiện |
-| GET | `/metrics/coverage` | FR-07 | — | Bảng coverage |
-| GET | `/ingestion/logs` | FR-04 | — | Lịch sử ingestion |
-
-Response format thống nhất:
-```json
-{ "data": {...}, "meta": { "as_of": "2024-06-01", "source_accession": "0000320193-24-000123" } }
-```
-
-### 4.2 UI Design (chi tiết hóa FR-23 → FR-27)
-
-| Màn hình | FR | Thành phần chính |
-|---|---|---|
-| Company Overview | FR-18, FR-23, FR-27 | Ô tìm kiếm, bảng chỉ tiêu chính, bộ chọn "as-of date" |
-| Trend | FR-16, FR-24 | Biểu đồ đường (Recharts), chọn chỉ tiêu |
-| Comparison | FR-19, FR-25 | Bảng nhiều cột, chọn 2–5 company |
-| Screening | FR-20, FR-26 | Form điều kiện, bảng kết quả |
-
-#### 4.2.1 Wireframe tối giản — Company Overview (màn hình quan trọng nhất)
-
-```
-┌─────────────────────────────────────────────┐
-│  [ Tìm kiếm công ty ______________ ] [Search]│
-├─────────────────────────────────────────────┤
-│  AAPL — Apple Inc.          As-of: [📅 date] │
-├─────────────────────────────────────────────┤
-│  Revenue: $XXX B     Net Income: $XX B       │
-│  ROE: XX%            Revenue Growth: XX%     │
-├─────────────────────────────────────────────┤
-│  [ Trend chart: Revenue 12 quý ]             │
-├─────────────────────────────────────────────┤
-│  [+ Thêm công ty để so sánh]                 │
-└─────────────────────────────────────────────┘
-```
-
-*Ghi chú:* Với đồ án data platform, wireframe chỉ cần ở mức thấp (low-fidelity) như trên, đủ để hướng dẫn code — không cần dựng Figma chi tiết vì trọng tâm chấm điểm là tầng dữ liệu, không phải UI/UX (theo định vị sản phẩm ở SRS Mục 2.1).
-
----
-
-## 5. Technology Stack & Justification
-
-| Layer | Công nghệ | Đáp ứng yêu cầu nào | Lý do chọn |
-|---|---|---|---|
-| Data pipeline | Python 3.11 + Pandas | FR-01–FR-09 | Hệ sinh thái mạnh cho xử lý dữ liệu bảng, phù hợp Data Engineering |
-| Database | PostgreSQL 15+ | FR-10, FR-11, NFR-01, NFR-02 | Hỗ trợ `NUMERIC` chính xác, materialized view, index nâng cao cần cho bitemporal + benchmark |
-| Backend/API | FastAPI | FR-12–FR-20 | Cùng ngôn ngữ với pipeline; tự sinh OpenAPI docs |
-| Frontend | React + Recharts | FR-23–FR-27 | Người thực hiện đã có sẵn kỹ năng |
-| Testing | Pytest | NFR-06 | Chuẩn cho hệ sinh thái Python |
-| Containerization | Docker Compose | NFR-08 | Đảm bảo khả năng tái lập không cần Kubernetes |
-
----
-
-## 6. Deployment View
-
-```
-docker-compose.yml
- ├── service: postgres        (port 5432)
- ├── service: backend (FastAPI) (port 8000)
- └── service: frontend (React, build tĩnh hoặc dev server) (port 3000)
-```
-Toàn bộ chạy trên một máy/VPS đơn giản, không yêu cầu orchestration.
-
----
-
-## 7. Design Constraints Carried Forward from SRS
-- 2.5 (SRS): không dùng kiến trúc phân tán → phản ánh ở Mục 2.1 (layered monolith).
-- NFR-05: maintainability → phản ánh ở việc chia module theo Mục 2.3.
-- NFR-08: reproducibility → phản ánh ở Mục 6.
-
----
-
-## Change Log
-
-| Version | Ngày | Nội dung thay đổi |
-|---|---|---|
-| 1.0 | | Bản phát hành đầu tiên, tách từ tài liệu gộp SRS trước đó |
+Đây là cấu trúc cần triển khai, không khẳng định thư mục/module đã có. Bản gốc lớn lưu ngoài Git kèm manifest/hash. Quản lý phụ thuộc bằng requirements/lockfile; lệnh chạy từng bước có cấu hình công ty, năm, snapshot. Docker chỉ thêm sau khi chuỗi chạy ổn định.

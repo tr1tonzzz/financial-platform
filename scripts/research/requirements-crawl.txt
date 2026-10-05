@@ -1,0 +1,3 @@
+# Versions used for the dated Python 3.12.14 crawler experiment.
+lxml==6.1.1
+pypdf==6.10.0

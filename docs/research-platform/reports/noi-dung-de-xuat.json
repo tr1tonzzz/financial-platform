@@ -1,0 +1,255 @@
+{
+  "date": "03/10/2026",
+  "title": "Lợi nhuận dòng tiền và cổ tức tiền mặt",
+  "topic": "Xây dựng hệ thống thu thập, chuẩn hóa và phân tích dữ liệu lợi nhuận, dòng tiền kinh doanh và cổ tức tiền mặt của doanh nghiệp niêm yết Việt Nam.",
+  "pages": [
+    {
+      "heading": "Đề tài và phạm vi hiện hành",
+      "blocks": [
+        {
+          "p": "Định hướng đã được người thực hiện lựa chọn ngày 03/10/2026. Project xây pipeline dữ liệu và ứng dụng phân tích có truy vết; tên đề tài và tiêu chí nghiệm thu được trình giảng viên để thống nhất."
+        },
+        {
+          "h": "Câu hỏi và đóng góp"
+        },
+        {
+          "p": "Trong mẫu doanh nghiệp được chọn, lợi nhuận và dòng tiền hoạt động biến động ra sao so với cổ tức tiền mặt công bố theo năm lợi nhuận? Hệ thống giúp nối các tài liệu rời rạc, phân biệt kỳ tài chính và sự kiện, kiểm định số liệu và mở lại nguồn của từng kết quả."
+        },
+        {
+          "p": "Đóng góp IT gồm tự phát hiện tài liệu, tải có phiên bản, trích PDF/OCR và HTML, kiểm định và duyệt có audit, mô hình dữ liệu sự kiện, snapshot, giao diện và đánh giá độ đúng. Phân tích hiện tại mang tính mô tả; dự đoán dành cho giai đoạn tốt nghiệp."
+        },
+        {
+          "h": "Phạm vi để học và hoàn thành"
+        },
+        {
+          "table": {
+            "headers": [
+              "Thành phần",
+              "Quyết định"
+            ],
+            "rows": [
+              [
+                "Mẫu dữ liệu",
+                "Pilot 3 doanh nghiệp × 2023–2025: 9 BCTC năm và thông báo cổ tức liên quan. Ưu tiên phi tài chính; phạm vi hợp nhất hoặc riêng được giữ thành series riêng."
+              ],
+              [
+                "Sáu chỉ tiêu lõi",
+                "LNST toàn doanh nghiệp, CFO, tiền và tương đương tiền, tổng tài sản, tổng nợ phải trả, tổng vốn chủ sở hữu."
+              ],
+              [
+                "Cổ tức",
+                "DPS tiền mặt công bố (VND/cổ phiếu), năm lợi nhuận, các mốc ngày và trạng thái sự kiện. Cổ tức bằng cổ phiếu dùng để kiểm tra cơ sở số cổ phiếu khi cần."
+              ],
+              [
+                "Mở rộng sau gate",
+                "Tuần 4 đo công sức rồi chốt 5–8 doanh nghiệp, tương ứng 15–24 BCTC năm, hoặc giữ pilot có lý do. Một ca cập nhật 2026 là tùy chọn."
+              ]
+            ],
+            "widths": [
+              3.5,
+              13.5
+            ]
+          }
+        },
+        {
+          "p": "EPS, payout ratio, doanh thu và các trường chi tiết là tùy chọn sau khi đủ dữ liệu và tương thích ngữ nghĩa. Không bắt buộc ML, dự báo, RAG, giá cổ phiếu hay mọi quý trong project."
+        }
+      ]
+    },
+    {
+      "heading": "Phương pháp thu thập và xử lý",
+      "blocks": [
+        {
+          "table": {
+            "headers": [
+              "Bước",
+              "Cách thực hiện"
+            ],
+            "rows": [
+              [
+                "1. Lập danh mục",
+                "Đăng ký doanh nghiệp, nguồn, kỳ, scope và ledger phạm vi cần rà. IR chính thức cho BCTC; VSDC/IR và nghị quyết để đối chiếu cổ tức."
+              ],
+              [
+                "2. Tự phát hiện",
+                "Python HTTP + lxml đọc danh mục/tìm kiếm/phân trang công khai. Lưu đường discovery. URL nhập hỗ trợ được ghi riêng, không tính là tự tìm."
+              ],
+              [
+                "3. Tải và phiên bản",
+                "Downloader theo policy nguồn, giới hạn tần suất/retry/size; lưu raw, URL, ngày kiểm tra và SHA-256. Conditional GET tránh tải lại; bản đổi giữ cả phiên bản cũ."
+              ],
+              [
+                "4. Trích và chuẩn hóa",
+                "Text/tọa độ PDF trước; render và Tesseract vie+eng khi scan. Xác nhận kỳ, scope, đơn vị và cột. Parser chỉ lấy phần thông báo chính, tách components theo năm."
+              ],
+              [
+                "5. Kiểm định và duyệt",
+                "Kiểm tra cân đối, nhãn, dấu, đơn vị; xử lý trùng/sửa/hủy, năm và cơ sở cổ phiếu. Review lưu trước/sau/lý do; SQLite giữ audit và provenance."
+              ],
+              [
+                "6. Ghép và phân tích",
+                "Snapshot doanh nghiệp–năm lợi nhuận, timeline theo lịch riêng. Streamlit hiển thị xu hướng/case, CFO/LNST khi hợp lệ và nguồn cho từng kết quả."
+              ]
+            ],
+            "widths": [
+              3.5,
+              13.5
+            ]
+          }
+        },
+        {
+          "h": "Quy tắc giữ kết quả đúng"
+        },
+        {
+          "p": "DPS công bố không phải tổng tiền thực trả. Ngày thanh toán dự kiến đã qua không chứng minh đã thanh toán. Một thông báo gộp nhiều năm phải tách số thuộc từng năm; nghị quyết không tự được cộng thêm như một lần chi trả."
+        },
+        {
+          "p": "Tổng DPS quan sát được luôn đi kèm coverage: đủ tại snapshot, thiếu hoặc chưa xác định. Không thấy thông báo không bằng 0. Không cộng hoặc so tăng trưởng DPS khác cơ sở cổ phiếu trước xác minh; không dùng DPS × cổ phiếu cuối năm để khẳng định số tiền thực chi."
+        },
+        {
+          "h": "Bằng chứng và giới hạn hiện có"
+        },
+        {
+          "p": "Prototype BCTC đã tự tìm và tải 8 PDF FY2025/H1-2026 của 4 doanh nghiệp, 423 trang; chạy lại 8 HTTP 304. Probe pypdf ở 96 trang đầu không có trang trên 100 ký tự text. OCR phát triển hai tài liệu khớp 11/12 giá trị đối chiếu, chưa là benchmark độc lập. Bốn thông báo cổ tức của hai doanh nghiệp là mẫu seed, chưa chứng minh tự discovery đủ lịch sử."
+        },
+        {
+          "p": "Collector còn phải bổ sung kỳ 2023–2024; adapter discovery cổ tức, kho dữ liệu ứng dụng và UI review chưa hoàn chỉnh. Gate tuần 2 phải thử tự tìm thông báo; nếu dùng IR thay thế hoặc hỗ trợ tay thì báo rõ coverage và công sức."
+        }
+      ]
+    },
+    {
+      "heading": "Kế hoạch đánh giá và liên thông tốt nghiệp",
+      "blocks": [
+        {
+          "table": {
+            "headers": [
+              "Giai đoạn",
+              "Đầu ra và nội dung học"
+            ],
+            "rows": [
+              [
+                "Tuần 1–2",
+                "Python, tài chính cơ bản, HTTP; một doanh nghiệp từ nguồn tới JSON. Tự tìm BCTC và nhiều thông báo, kiểm tra gate discovery."
+              ],
+              [
+                "Tuần 3–4",
+                "PDF/OCR, SQL; pilot 9 BCTC, events/components, SQLite và review. Đo phút xử lý rồi chốt phạm vi."
+              ],
+              [
+                "Tuần 5–7",
+                "pandas, Streamlit, kiểm thử nghiệp vụ; UI, timeline, sửa/hủy, coverage, dataset và freeze holdout."
+              ],
+              [
+                "Tuần 8–10",
+                "Đánh giá parser/OCR/review, ba case phân tích; cập nhật/version/export, ca 2026 nếu đủ giờ."
+              ],
+              [
+                "Tuần 11–13",
+                "Feature freeze, tài liệu kỹ thuật, demo, luyện giải thích code/tài chính, kiểm tra môi trường mới và dự phòng."
+              ]
+            ],
+            "widths": [
+              3.5,
+              13.5
+            ]
+          }
+        },
+        {
+          "p": "Ngân sách giả định 10–12 giờ/tuần, mốc 11 giờ × 13 tuần = 143 giờ: học 2,5; làm 5; kiểm tra 1; báo cáo và luyện nói 1,5; dự phòng 1 giờ mỗi tuần. Mỗi tuần ghi nhật ký và một ví dụ tự tính/viết; hai tuần một lần nộp Word 3–5 trang và 6–8 slide vào tuần 2, 4, 6, 8, 10, 12. Tuần 13 tổng kết/nộp cuối. Nhật ký 0,5 giờ/tuần + tổng hợp/luyện nói 2 giờ mỗi cặp tuần, bình quân 1,5 giờ/tuần. Chưa mặc định học kỳ còn đủ 13 tuần."
+        },
+        {
+          "h": "Đánh giá và nghiệm thu"
+        },
+        {
+          "p": "Đo tài liệu tự phát hiện, tải/không nhân bản và phiên bản; độ đúng sáu trường trên holdout tách khỏi mẫu phát triển; độ đúng năm/DPS/components, xử lý sửa/hủy/trùng; phút sửa tay, coverage và truy vết. So text-only, OCR/parser và dữ liệu sau review với cùng bộ đối chiếu. Báo cả số thiếu và mẫu số."
+        },
+        {
+          "p": "Phân tích mô tả và Spearman nếu đủ cặp so sánh được phải ghi n, missing và sự phụ thuộc các năm trong một doanh nghiệp. Mẫu nhỏ/chọn có chủ đích không chứng minh quan hệ nhân quả hoặc khả năng dự báo."
+        },
+        {
+          "h": "Hướng đồ án tốt nghiệp"
+        },
+        {
+          "p": "Ưu tiên dự đoán duy trì/giảm DPS công bố trong 12 tháng tiếp theo, với lịch sử dài hơn, cutoff có tài liệu thực sự sẵn có, xử lý nhãn thiếu/chưa hết cửa sổ và đánh giá theo thời gian. Chỉ triển khai khi đạt gate dữ liệu; không lấy bảng phân tích hồi cứu năm lợi nhuận làm nhãn tương lai mặc định."
+        },
+        {
+          "h": "Tài liệu đi kèm"
+        },
+        {
+          "p": "Đọc docs/research-platform/11-phuong-phap-thu-thap-va-xu-ly.md; 12-kien-thuc-tai-chinh-va-tu-dien.md; 13-ghep-co-tuc-va-phan-tich.md; 04-ke-hoach-13-tuan.md; 06-danh-gia-va-nghiem-thu.md. Bằng chứng gốc ở docs/research-crawl-methods/crawl-evidence.json và docs/research-recent-data. Nguồn chính thức: trang IR doanh nghiệp và https://vsdc.vn."
+        }
+      ]
+    }
+  ],
+  "slides": [
+    {
+      "texts": [
+        "Lợi nhuận dòng tiền\nvà cổ tức tiền mặt",
+        "Thu thập dữ liệu và phân tích mối quan hệ",
+        "Định hướng đã lựa chọn ngày 03 tháng 10 năm 2026"
+      ],
+      "notes": "Tên đầy đủ: Xây dựng hệ thống thu thập, chuẩn hóa và phân tích dữ liệu lợi nhuận, dòng tiền kinh doanh và cổ tức tiền mặt của doanh nghiệp niêm yết Việt Nam. Project thu thập, kiểm định, phân tích mô tả; dự đoán dành cho tốt nghiệp. Định hướng được người thực hiện chọn, chưa thay phê duyệt của giảng viên."
+    },
+    {
+      "texts": [
+        "Phương pháp dữ liệu thống nhất",
+        "Nguồn: IR cho BCTC; VSDC và IR cho cổ tức",
+        "Python HTTP và lxml tự tìm danh mục và thông báo",
+        "Lưu raw, URL, hash và phiên bản; kiểm tra tải lặp",
+        "PDF text trước; OCR vie + eng khi cần",
+        "Tách thông báo chính thành sự kiện và năm lợi nhuận",
+        "Kiểm định, review và audit trong SQLite",
+        "Snapshot theo năm; timeline và phân tích bằng Streamlit"
+      ],
+      "notes": "Không dùng dataset có sẵn làm nguồn demo chính. Discovery thông báo chưa hoàn chỉnh, phải thử gate tuần 2. URL nhập hỗ trợ được ghi riêng. Policy nguồn chưa rõ thì mặc định pending/skip. Nguồn: docs/research-platform/11-phuong-phap-thu-thap-va-xu-ly.md."
+    },
+    {
+      "texts": [
+        "Phạm vi và bằng chứng hiện có",
+        "Đã tự tải 8 PDF của 4 công ty, tổng 423 trang",
+        "Chạy lại: 8 HTTP 304; kho không thêm bản trùng",
+        "4 thông báo cổ tức mẫu; lịch sử chưa đầy đủ",
+        "6 chỉ tiêu tài chính lõi; cổ tức tiền mặt công bố",
+        "Pilot: 3 công ty × 2023–2025 và sự kiện liên quan",
+        "Gate tuần 4: mở rộng 5–8 công ty theo công sức"
+      ],
+      "notes": "8 PDF là FY2025/H1-2026, không phải chín PDF pilot đã hoàn thành. 96 trang đầu được pypdf probe không có trang trên 100 ký tự text. OCR development 11/12 chưa là benchmark độc lập. Sáu trường: LNST toàn doanh nghiệp, CFO, tiền và tương đương tiền, tài sản, nợ phải trả, vốn chủ. Phải thêm cấu hình 2023–24, discovery cổ tức, SQLite/review/UI. Nguồn: docs/research-crawl-methods/crawl-evidence.json; docs/research-platform/02-de-tai-va-srs.md."
+    },
+    {
+      "texts": [
+        "Quy tắc ghép và kiểm định",
+        "DPS công bố; ngày dự kiến không chứng minh thực trả",
+        "Năm lợi nhuận khác năm công bố hoặc thanh toán",
+        "Tách nhiều năm; xử lý trùng, sửa và hủy thông báo",
+        "Coverage thiếu hoặc chưa rõ không được gán bằng 0",
+        "Khác cơ sở cổ phiếu: xác minh trước khi cộng DPS",
+        "Mỗi kết quả có nguồn; mẫu nhỏ chỉ phân tích mô tả"
+      ],
+      "notes": "Annual announced DPS cần closure reviewed complete as of snapshot; observed DPS có thể partial. Không nhân DPS với số cổ phiếu cuối năm rồi gọi thực chi. Scope hợp nhất/riêng và đơn vị phải cùng series; CFO/LNST chỉ khi LNST dương. Không suy nhân quả từ Spearman trong mẫu nhỏ và nhiều năm cùng doanh nghiệp. Nguồn: docs/research-platform/12-kien-thuc-tai-chinh-va-tu-dien.md; 13-ghep-co-tuc-va-phan-tich.md; https://vsdc.vn/vi/ad1/187729."
+    },
+    {
+      "texts": [
+        "13 tuần học gắn với triển khai",
+        "Tuần 1–2: Python, tài chính, HTTP và discovery",
+        "Tuần 3–4: OCR, SQL, pilot và đo công sức review",
+        "Tuần 5–7: giao diện, nghiệp vụ, dataset và holdout",
+        "Tuần 8–10: đánh giá, ba case và cập nhật dữ liệu",
+        "Tuần 11–13: báo cáo, demo, luyện bảo vệ và buffer",
+        "10–12 giờ/tuần; Word và slide hai tuần một lần"
+      ],
+      "notes": "11h×13=143h: học2.5, làm5, kiểm tra1, báo cáo/luyện nói1.5, dự phòng1 mỗi tuần. Gate tuần2 thử discovery, tuần4 scope, tuần8 freeze holdout, tuần11 feature freeze. Mỗi tuần tự tính một ví dụ hoặc giải thích một đoạn code. Lịch tính từ bắt đầu thật; phải điều chỉnh nếu hạn học kỳ ngắn. Nguồn: docs/research-platform/04-ke-hoach-13-tuan.md; 05-lo-trinh-hoc.md; 07-bao-cao-hang-tuan.md. Báo cáo mới: sáu đợt tuần2/4/6/8/10/12; tổng kết tuần13. Word3–5trang,6–8slide,8–10phút. Nhật ký mỗi tuần, bình quân1.5h/tuần gồm log0.5h và formal2h/cặp tuần."
+    },
+    {
+      "texts": [
+        "Nghiệm thu và hướng tốt nghiệp",
+        "IT: tự tìm và tải, trích xuất, review, dữ liệu và UI",
+        "Đo độ đúng trên holdout, coverage và phút sửa tay",
+        "Project: giải thích lợi nhuận – CFO – DPS qua case",
+        "Tốt nghiệp: dự đoán duy trì hoặc giảm DPS công bố",
+        "Cần lịch sử, cutoff đúng và nhãn tương lai đủ chín",
+        "Baseline và đánh giá theo thời gian sau gate dữ liệu"
+      ],
+      "notes": "Hướng dự đoán ưu tiên DPS công bố 12 tháng sau cutoff BCTC có sẵn, so với cửa sổ trước. Chưa chốt ngưỡng giảm. Unknown/censored/basis và ngày sẵn có phải được xử lý. Cửa sổ FY2025 công bố03/2026 chưa đủ12tháng tại03/10/2026. Không phải kế hoạch ML hiện tại. Nguồn: docs/research-platform/06-danh-gia-va-nghiem-thu.md; 09-lien-thong-tot-nghiep.md."
+    }
+  ]
+}
