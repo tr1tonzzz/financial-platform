@@ -1,0 +1,247 @@
+{
+  "company": "VNM",
+  "scope": "consolidated",
+  "period": "2026-01-01/2026-03-31",
+  "comparative": "2025-01-01/2025-03-31, reclassified in 2026 report",
+  "unit": "VND",
+  "assurance": "reviewed, KPMG report 25-01-00430-26-4 dated 2026-04-29, PDF page 6",
+  "source_url": "https://d8um25gjecm9v.cloudfront.net/cms/20260429_VNM_BCTC_DA_SOAT_XET_Q1_2026_HOP_NHAT_VN_d44326741a.pdf",
+  "pdf_sha256": "aa9e9d9a18fbbf05cc23c35b71a5dbae7a0a858a81727ff2e0d1c8ad047cb451",
+  "reference_method": "Same implementer manually read rendered original pages; development reference, not independent ground truth. Total consolidated net income, not parent-attributable income.",
+  "facts": [
+    {
+      "key": "net_income",
+      "pdf_page": 12,
+      "printed_page": 11,
+      "values": [
+        2458221002532,
+        1587273268054
+      ]
+    },
+    {
+      "key": "cfo",
+      "pdf_page": 13,
+      "printed_page": 12,
+      "values": [
+        269326997516,
+        -124187023735
+      ]
+    },
+    {
+      "key": "cash_dividends_paid",
+      "pdf_page": 14,
+      "printed_page": 13,
+      "values": [
+        -55837540,
+        -1044977722500
+      ]
+    }
+  ],
+  "manual_bridge": {
+    "pdf_page": 13,
+    "printed_page": 12,
+    "method": "Manual original-page reading, same implementer; not full automatic extraction. Suffix a/b distinguishes repeated official codes 02/05.",
+    "rows": [
+      {
+        "id": "01",
+        "label": "Lợi nhuận kế toán trước thuế",
+        "values": [
+          3014396468576,
+          1951296195523
+        ]
+      },
+      {
+        "id": "02a",
+        "label": "Khấu hao và phân bổ",
+        "values": [
+          537336950720,
+          511791212722
+        ]
+      },
+      {
+        "id": "02b",
+        "label": "Phân bổ lợi thế thương mại",
+        "values": [
+          60819781207,
+          60819781207
+        ]
+      },
+      {
+        "id": "03",
+        "label": "Các khoản dự phòng",
+        "values": [
+          -16770329348,
+          2485756955
+        ]
+      },
+      {
+        "id": "04",
+        "label": "Lỗ chênh lệch tỷ giá đánh giá lại",
+        "values": [
+          12172815226,
+          4698502109
+        ]
+      },
+      {
+        "id": "05a",
+        "label": "Thu nhập cổ tức, lãi tiền gửi và lãi/lỗ đầu tư khác",
+        "values": [
+          -340884346057,
+          -326600970096
+        ]
+      },
+      {
+        "id": "05b",
+        "label": "Lãi từ công ty liên kết, liên doanh",
+        "values": [
+          -48459806269,
+          -16189054400
+        ]
+      },
+      {
+        "id": "06",
+        "label": "Chi phí đi vay",
+        "values": [
+          118301437284,
+          75155207673
+        ]
+      },
+      {
+        "id": "09",
+        "label": "Biến động các khoản phải thu",
+        "values": [
+          -127949065402,
+          916055229563
+        ]
+      },
+      {
+        "id": "10",
+        "label": "Biến động tồn kho và tài sản sinh học",
+        "values": [
+          -1036622597598,
+          -1409385906048
+        ]
+      },
+      {
+        "id": "11",
+        "label": "Biến động phải trả và nợ phải trả khác",
+        "values": [
+          327879637282,
+          -429866370661
+        ]
+      },
+      {
+        "id": "12",
+        "label": "Biến động chi phí chờ phân bổ",
+        "values": [
+          -126150419127,
+          -61949344633
+        ]
+      },
+      {
+        "id": "14",
+        "label": "Chi phí đi vay đã trả",
+        "values": [
+          -80973790732,
+          -58880104706
+        ]
+      },
+      {
+        "id": "15",
+        "label": "Thuế thu nhập doanh nghiệp đã nộp",
+        "values": [
+          -1579997498166,
+          -931863109189
+        ]
+      },
+      {
+        "id": "17",
+        "label": "Tiền chi khác cho hoạt động kinh doanh",
+        "values": [
+          -443772240080,
+          -411754049754
+        ]
+      }
+    ],
+    "checks": {
+      "subtotal_08": [
+        3336912971339,
+        2263456631693
+      ],
+      "cfo_sum": [
+        269326997516,
+        -124187023735
+      ],
+      "residual_vnd": [
+        0,
+        0
+      ]
+    }
+  },
+  "dividend_context": {
+    "checked_at": "2026-10-06",
+    "method": "Targeted manual reading of VSDC notices and PDF notes; not exhaustive event crawler or transaction reconciliation.",
+    "events": [
+      {
+        "source_url": "https://vsdc.vn/vi/ad/177392",
+        "published_on": "2024-12-10",
+        "record_date": "2024-12-27",
+        "scheduled_payment": "2025-02-28",
+        "components": [
+          {
+            "profit_year": 2024,
+            "dps_vnd": 500
+          }
+        ],
+        "match_status": "candidate_for_Q1_2025_cash_line; period/year confirmed from notice, exact transaction attribution not proven"
+      },
+      {
+        "source_url": "https://vsdc.vn/vi/ad1/187729",
+        "published_on": "2025-10-02",
+        "scheduled_payment": "2025-10-24",
+        "components": [
+          {
+            "profit_year": 2024,
+            "dps_vnd": 350
+          },
+          {
+            "profit_year": 2025,
+            "dps_vnd": 2500
+          }
+        ],
+        "match_status": "outside_Q1_2026; do not infer actual payment from schedule"
+      },
+      {
+        "source_url": "https://vsdc.vn/vi/ad/197038",
+        "published_on": "2026-06-17",
+        "record_date": "2026-06-29",
+        "scheduled_payment": "2026-07-17",
+        "components": [
+          {
+            "profit_year": 2025,
+            "dps_vnd": 1850
+          }
+        ],
+        "match_status": "outside_Q1_2026 and published after report; supplementary retrospective context only"
+      }
+    ],
+    "pdf_note": {
+      "pdf_page": 60,
+      "printed_page": 59,
+      "note": "V.23",
+      "approval_date": "2026-04-22",
+      "profit_year_2025_approved_dps_vnd": 4350,
+      "profit_year_2026_plan": "At least 50% of planned 2026 consolidated net income, not an actual payment or fixed DPS",
+      "timing": "Approval after quarter end, disclosed in Q1 report issued 2026-04-29; do not present as known at 2026-03-31"
+    },
+    "checks": {
+      "selected_profit_year_2025_dps_sum": 4350,
+      "matches_approved_2025_dps": true
+    },
+    "unresolved": [
+      "Exact event attribution of Q1/2026 cash dividend line 55,837,540 VND",
+      "Full set of notices and amendments",
+      "Transaction-level attribution of aggregate consolidated cash line to parent notices"
+    ]
+  }
+}

@@ -1,5 +1,7 @@
 # 02 — Cơ sở nghiên cứu và sổ nguồn
 
+**Bổ sung nghiên cứu sâu 05/10/2026:** xem [cơ sở học thuật và giá trị sử dụng trong báo cáo 1](../research-platform/reports/dot-01-tuan-01-02/co-so-hoc-thuat-va-gia-tri-su-dung.md). Đã mở rộng tới 10 công trình, tài liệu CFA/IAS 7 và Điều 135 bản hợp nhất Luật Doanh nghiệp 2025; bổ sung câu hỏi U1–U8, dữ liệu cần có và cách đánh giá lợi ích. Riêng Vu (2023), đã đọc thêm mục 3/Bảng 8/thảo luận: kết quả mô hình FCF–payout dương, khác phần abstract nhấn mạnh doanh nghiệp tăng trưởng; không dùng abstract để suy hệ số âm. Ghi chép ngày 04/10 bên dưới giữ lại như lịch sử mức đọc; phần đề xuất biến mở rộng chưa thay phạm vi SRS.
+
 **Trạng thái cập nhật05/10/2026:** hướng kết hợp đã được tích hợp vào [SRS v3.1](../research-platform/22-srs-dac-ta-yeu-cau-phan-mem.md), CR-PCD-01/mục15, theo yêu cầu cập nhật tài liệu của người thực hiện. Tối thiểu một ca cầu nối là nghĩa vụ dự thảo; E05/E10 và ca thêm có điều kiện. Nội dung đề xuất ngày04/10 bên dưới là cơ sở nghiên cứu; các câu “chưa tích hợp/chờ change record” mô tả trạng thái lúc đó, được thay bởi SRS v3.1. Chưa có phê duyệt giảng viên hoặc kiểm thử ứng dụng đã chạy. Kế hoạch/checklist v3 là lịch triển khai duy nhất; bảng tuần/giờ trong hồ sơ nghiên cứu là phương án trước tích hợp.
 
 Ngày đọc: **04/10/2026**. Ưu tiên nguồn gốc: nhà xuất bản/tác giả, doanh nghiệp, VSDC, cơ quan công bố văn bản. Phạm vi là rà soát có mục tiêu phục vụ thiết kế, chưa phải systematic literature review hoặc tái lập kinh tế lượng.

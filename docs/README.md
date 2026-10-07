@@ -1,6 +1,8 @@
 # Đề tài hiện hành và tài liệu triển khai
 
-**Báo cáo 1 đang soạn:** [bối cảnh đề tài, hướng project và ví dụ DHG](research-platform/reports/dot-01-tuan-01-02/bao-cao-01.md), kèm [phụ lục số liệu/phép tính](research-platform/reports/dot-01-tuan-01-02/vi-du-phan-tich-dhg.md). Theo yêu cầu hiện tại, chỉ làm tài liệu Markdown; chưa cần các bản xuất Word/slide/PDF.
+**Báo cáo 1 đang soạn:** [bối cảnh đề tài, hướng project và ví dụ Vinamilk quý I/2026](research-platform/reports/dot-01-tuan-01-02/bao-cao-01.md), kèm [phụ lục số liệu/phép tính](research-platform/reports/dot-01-tuan-01-02/vi-du-phan-tich-vnm.md). Theo yêu cầu hiện tại, chỉ làm tài liệu Markdown; chưa cần các bản xuất Word/slide/PDF.
+
+**Nghiên cứu giá trị sử dụng 05/10/2026:** [vì sao liên kết BCTC với cổ tức có ích](research-platform/reports/dot-01-tuan-01-02/co-so-hoc-thuat-va-gia-tri-su-dung.md), có 10 nghiên cứu, tài liệu nghề nghiệp/pháp lý và ma trận câu hỏi người dùng → dữ liệu → kết quả → lợi ích. Phân biệt tác vụ pilot với đánh giá payout/FCFE cần thêm nguồn; chưa là phạm vi SRS mở rộng đã chốt.
 
 **Hướng hiện hành cập nhật 05/10/2026:** Xây dựng hệ thống thu thập, chuẩn hóa và phân tích lợi nhuận, dòng tiền kinh doanh trong mối liên hệ với cổ tức tiền mặt của doanh nghiệp niêm yết Việt Nam. Lợi nhuận và khả năng chuyển thành tiền là trục, cổ tức là lớp đối chiếu. [SRS v3.1](research-platform/22-srs-dac-ta-yeu-cau-phan-mem.md) đã tích hợp CR-PCD-01: tối thiểu một ca cầu nối CFO, mục tiêu1–3 sau gate; 83 mã yêu cầu/42 tình huống dự kiến. [Kế hoạch v3](research-platform/04-ke-hoach-13-tuan.md) và checklist cùng JSON có quỹ dự toán143+24=167 giờ; chưa xác nhận tăng thời gian thực. Quyết định giữ tên/extension chưa tích hợp ngày04/10 bên dưới được thay bằng cập nhật này. Chưa có phê duyệt giảng viên hoặc phần mềm hoàn chỉnh.
 

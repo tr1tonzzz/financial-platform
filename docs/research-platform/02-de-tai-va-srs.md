@@ -1,5 +1,7 @@
 # Đề tài và đặc tả hiện hành
 
+**Cơ sở nhu cầu bổ sung 05/10/2026:** [nghiên cứu giá trị BCTC–cổ tức](reports/dot-01-tuan-01-02/co-so-hoc-thuat-va-gia-tri-su-dung.md) đưa ra câu hỏi người dùng U1–U6 cho pilot và U7–U8 mở rộng, căn cứ học thuật/nghề nghiệp, dữ liệu còn thiếu và cách đo lợi ích. [Báo cáo 1](reports/dot-01-tuan-01-02/bao-cao-01.md) đã gắn nhóm chức năng với các câu hỏi này. Mã U là ma trận giải thích trong báo cáo, không thay các mã yêu cầu/TC của SRS v3.1 hoặc tự mở rộng phạm vi đã dự toán.
+
 ## Bổ sung nhu cầu theo hướng kết hợp ngày 05/10/2026
 
 Phiên bản nhu cầu 2.4; SRS v3.1 là nguồn yêu cầu hiện hành. Câu hỏi thêm: CFO khác lợi nhuận ở những dòng nào và phần nào chưa giải thích được? Người vận hành duyệt các dòng của BCLCTT gián tiếp; người đọc mở cầu nối LNTT→CFO cạnh LNST, đọc nguồn từng khoản rồi đối chiếu DPS theo năm lợi nhuận. Đây là phân rã số học, chưa là kết luận nhân quả. Tối thiểu một ca thật; 1–3 ca theo gate. P/US/PF/AN nền bên dưới giữ nguyên; E01–E10 và P01–P11 là bổ sung tại mục 15 SRS. Không nâng sáu chỉ tiêu toàn mẫu thành yêu cầu mọi dòng BCLCTT cho mọi công ty.

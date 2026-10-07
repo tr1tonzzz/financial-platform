@@ -1,5 +1,7 @@
 # Ý tưởng dự án và câu chuyện người dùng
 
+**Bổ sung cơ sở giá trị sử dụng 05/10/2026:** [nghiên cứu trong báo cáo 1](reports/dot-01-tuan-01-02/co-so-hoc-thuat-va-gia-tri-su-dung.md) nối câu hỏi U1–U8 với dữ liệu, kết quả và lợi ích; có 10 nghiên cứu và nguồn CFA/pháp lý. Mục đích là giúp người đọc hiểu cổ tức trong bối cảnh lợi nhuận/tạo tiền, tìm khoản mục cần đọc sâu và kiểm chứng câu trả lời. Sáu fact lõi chưa đủ đánh giá toàn diện khả năng duy trì cổ tức; payout/FCFE cần thêm dữ liệu và chưa được thêm thành nghĩa vụ SRS. Giảm công sức/lỗi và ích lợi cầu nối là giả thuyết cần đánh giá tác vụ, chưa là kết quả đã đo.
+
 **Cập nhật hướng triển khai 05/10/2026:** Xây dựng hệ thống thu thập, chuẩn hóa và phân tích lợi nhuận, dòng tiền kinh doanh trong mối liên hệ với cổ tức tiền mặt của doanh nghiệp niêm yết Việt Nam. Lấy lợi nhuận→chuyển thành tiền làm trục, đối chiếu cổ tức; [SRS v3.1](22-srs-dac-ta-yeu-cau-phan-mem.md) tích hợp cầu nối CFO tối thiểu một ca, mục tiêu 1–3 sau gate. Giữ pilot/sáu trường; chưa ghi nhận phê duyệt giảng viên. Các quyết định ngày 03–04/10 bên dưới là bối cảnh trước cập nhật này.
 
 Ngày cập nhật: **04/10/2026 sau nghiên cứu lần hai**. Tài liệu dùng để trình bày bài toán với giảng viên trước khi triển khai và chuẩn bị hướng nối tiếp cho đồ án tốt nghiệp. Yêu cầu chi tiết nằm trong [SRS v2.3](02-de-tai-va-srs.md); tài liệu này diễn giải cùng phạm vi. [Quyết định cuối và prior art](20-nghien-cuu-lan-hai-va-chot-de-tai.md).

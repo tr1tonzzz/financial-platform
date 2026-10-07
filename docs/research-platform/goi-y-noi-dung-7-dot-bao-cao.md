@@ -6,7 +6,7 @@ Nhịp 03/10/2026: sáu đợt tiến độ hai tuần, một tổng kết tuầ
 
 ## Đợt 1 — tuần 1–2: Đề tài và tính khả thi nguồn
 
-**Nội dung đã điều chỉnh theo yêu cầu 05/10/2026:** [báo cáo 1](reports/dot-01-tuan-01-02/bao-cao-01.md) chỉ soạn Markdown, gồm bối cảnh đề tài, vấn đề cần giải quyết, hướng đi/chức năng/lý do cần thiết và ví dụ DHG sơ bộ. Đã bổ sung [thử nghiệm công cụ](reports/dot-01-tuan-01-02/thu-nghiem-cong-cu.md) theo yêu cầu: crawler tìm/tải, đọc PDF, OCR hai trang và đối chiếu số. Chưa cần ứng dụng hoàn chỉnh; các mục Word/slide phía dưới vẫn là khung trước.
+**Nội dung đã điều chỉnh theo yêu cầu 05/10/2026:** [báo cáo 1](reports/dot-01-tuan-01-02/bao-cao-01.md) chỉ soạn Markdown, gồm bối cảnh đề tài, vấn đề cần giải quyết, hướng đi/chức năng/lý do cần thiết và ví dụ Vinamilk quý I/2026 sơ bộ. Đã bổ sung [thử nghiệm công cụ](reports/dot-01-tuan-01-02/thu-nghiem-cong-cu.md) theo yêu cầu: crawler tìm/tải, đọc PDF, OCR ba trang Vinamilk Q1/2026 và đối chiếu số (cập nhật 06/10/2026). Chưa cần ứng dụng hoàn chỉnh; các mục Word/slide phía dưới vẫn là khung trước.
 
 Word:
 

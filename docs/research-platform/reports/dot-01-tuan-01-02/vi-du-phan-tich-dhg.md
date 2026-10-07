@@ -1,5 +1,7 @@
 # Phụ lục báo cáo 1 — Ví dụ phân tích sơ bộ DHG
 
+**Trạng thái 06/10/2026:** hồ sơ ví dụ cũ được giữ để bảo toàn nguồn và phép tính. Báo cáo 1 hiện dùng [Vinamilk quý I/2026](vi-du-phan-tich-vnm.md) làm ví dụ chính. Thử nghiệm OCR DHG là lần chạy lịch sử ngày 05/10/2026, khác phụ lục công cụ VNM hiện tại.
+
 Ngày đối chiếu lại: **05/10/2026**. Phụ lục phục vụ [báo cáo 1](bao-cao-01.md), giữ số gốc để kiểm tra các bảng minh họa. Dữ liệu chép thủ công từ BCTC thật, chưa là gold kiểm độc lập. [Thử nghiệm công cụ](thu-nghiem-cong-cu.md) sau đó tái tạo được bốn số LNST/CFO bằng OCR/parser nhỏ; cầu nối và khoản chi chủ sở hữu trong phụ lục này vẫn dựa trên số đọc thủ công.
 
 ## 1. Tài liệu và vị trí nguồn
