@@ -1,0 +1,28 @@
+{
+  "requested_repo": "OpenBB-finance/backends-for-openbb",
+  "repo": "OpenBB-finance/backends-for-openbb",
+  "sha": "a6293707576e16edda8305adda95b07b6a4b968b",
+  "stars": 221,
+  "forks": 70,
+  "archived": true,
+  "default_branch": "main",
+  "description": "Backend template to bring your own data into the OpenBB Workspace",
+  "pushed_at": "2026-07-29T13:01:30Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3399,
+      "sha256": "bc40e4527cf33b3ce568a5cd9c47f50e130874043e3aec78b4f7b2b0327efa24"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

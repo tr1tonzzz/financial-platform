@@ -1,0 +1,28 @@
+{
+  "requested_repo": "microsoft/qlib",
+  "repo": "microsoft/qlib",
+  "sha": "54355232463878d2eebb91fe0ee5fa7fa1f5976c",
+  "stars": 49272,
+  "forks": 7780,
+  "archived": false,
+  "default_branch": "main",
+  "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github.com/microsoft/RD-Agent to automate R&D process.",
+  "pushed_at": "2026-10-08T10:58:43Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 44277,
+      "sha256": "e9f7cc8eeb60e3fe3784ec496e350ecb584157c3240cda0651c20acb26fd9037"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

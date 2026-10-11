@@ -19,21 +19,23 @@ from docx.oxml.ns import qn
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / 'docs/research-platform/22-srs-dac-ta-yeu-cau-phan-mem.md'
-OUTPUT = ROOT / 'docs/research-platform/reports/SRS-FAP-01-v3.1.docx'
-QA = ROOT / '_plan_render/srs-v3.1'
+VERSION = re.search(r'^Phiên bản ([\d.]+) •', SOURCE.read_text(encoding='utf-8'), re.M).group(1)
+OUTPUT = ROOT / f'docs/research-platform/reports/SRS-FAP-01-v{VERSION}.docx'
+QA = ROOT / f'_plan_render/srs-v{VERSION}'
 
 
 def validate(text: str) -> dict:
     declared = re.findall(r'^\*\*((?:FR|BR|DR|IR|NFR)\d{2})\b', text, re.M)
     counts = Counter(re.sub(r'\d+$', '', item) for item in declared)
     assert len(declared) == len(set(declared)), 'Repeated requirement declaration'
-    assert counts == {'FR': 38, 'BR': 12, 'DR': 8, 'IR': 5, 'NFR': 10}, counts
+    withdrawn = VERSION == '3.3'
+    assert counts == {'FR': 36 if withdrawn else 38, 'BR': 12, 'DR': 8, 'IR': 5, 'NFR': 10}, counts
     tests = set(re.findall(r'^\| (TC\d{2}) —', text, re.M))
     uses = set(re.findall(r'^### [\d.]+ (UC\d{2}) —', text, re.M))
-    assert len(tests) == 31 and len(uses) == 8, (tests, uses)
-    assert set(re.findall(r'\bTC\d{2}\b', text)) == tests
+    assert len(tests) == (30 if withdrawn else 31) and len(uses) == 8, (tests, uses)
+    assert set(re.findall(r'\bTC\d{2}\b', text)) == tests | ({'TC22'} if withdrawn else set())
     assert set(re.findall(r'\bUC\d{2}\b', text)) == uses
-    matrix = re.findall(r'^\| ((?:FR|DR|IR|NFR)\d{2}) \| (.+)$', text, re.M)
+    matrix = re.findall(r'^\| ((?:FR|DR|IR|NFR)\d{2}) \| (.+)$', text.split('\n## 18.',1)[0], re.M)
     expected = {item for item in declared if not item.startswith('BR')}
     assert len(matrix) == len(expected) and {row[0] for row in matrix} == expected
     for rid, cols in matrix:
@@ -56,12 +58,28 @@ def validate(text: str) -> dict:
     assert extension_tests == {f'P{i:02d}' for i in range(1, 12)}
     for rid, cols in extension_matrix:
         assert re.search(r'UC-E\d{2}', cols) and re.search(r'P\d{2}', cols), rid
-    return {'document_id': 'SRS-FAP-01', 'version': '3.1',
+    business_ucs = set(re.findall(r'^### [\d.]+ (BUC\d{2}) —', text, re.M))
+    dividend_requirements = re.findall(r'^\*\*(D\d{2})\b', text, re.M)
+    dividend_matrix = re.findall(r'^\| (D\d{2}) \| (.+)$', text.split('\n## 18.',1)[0], re.M)
+    dividend_tests = set(re.findall(r'^\| (TC-D\d{2}) \|', text, re.M))
+    if VERSION == '3.2':
+        assert business_ucs == {f'BUC{i:02d}' for i in range(1,6)}
+        assert len(dividend_requirements) == 12 and set(dividend_requirements) == {f'D{i:02d}' for i in range(1,13)}
+        assert len(dividend_matrix) == 12 and {r for r,_ in dividend_matrix} == set(dividend_requirements)
+        assert dividend_tests == {f'TC-D{i:02d}' for i in range(1,13)}
+    elif withdrawn:
+        expected_d = {f'D{i:02d}' for i in range(1,13)} - {'D09','D10'}
+        assert business_ucs == {f'BUC{i:02d}' for i in range(1,6)}
+        assert len(dividend_requirements) == 10 and set(dividend_requirements) == expected_d
+        assert len(dividend_matrix) == 10 and {r for r,_ in dividend_matrix} == expected_d
+        assert dividend_tests == {'TC-'+r for r in expected_d}
+    return {'document_id': 'SRS-FAP-01', 'version': VERSION,
             'requirements': dict(counts), 'total_requirements': len(declared),
             'use_cases': len(uses), 'planned_test_cases': len(tests),
             'matrix_rows': len(matrix), 'extension_requirements':len(extensions),
-            'total_requirement_ids':len(declared)+len(extensions),
-            'total_planned_tests':len(tests)+len(extension_tests), 'validation': 'passed',
+            'business_use_cases':len(business_ucs), 'dividend_requirements':len(dividend_requirements),
+            'total_requirement_ids':len(declared)+len(extensions)+len(dividend_requirements),
+            'total_planned_tests':len(tests)+len(extension_tests)+len(dividend_tests), 'validation': 'passed',
             'application_tests': 'not_run: specification-only task'}
 
 
@@ -179,7 +197,7 @@ def build(text: str):
     doc.styles['Title'].font.size = Pt(27)
     doc.styles['Subtitle'].font.size = Pt(15)
     head = sec.header.paragraphs[0]
-    head.add_run('FAP  |  ĐẶC TẢ YÊU CẦU PHẦN MỀM  |  v3.1').font.size = Pt(8)
+    head.add_run(f'FAP  |  ĐẶC TẢ YÊU CẦU PHẦN MỀM  |  v{VERSION}').font.size = Pt(8)
     head.paragraph_format.space_after = Pt(0)
     foot = sec.footer.paragraphs[0]; foot.alignment = WD_ALIGN_PARAGRAPH.RIGHT
     foot.add_run('SRS-FAP-01  •  Trang ').font.size = Pt(8)
@@ -192,7 +210,7 @@ def build(text: str):
     p = doc.add_paragraph(topic)
     p.paragraph_format.space_after = Pt(28)
     p.runs[0].font.size = Pt(16); p.runs[0].bold = True
-    doc.add_paragraph('Phiên bản 3.1  •  05/10/2026')
+    doc.add_paragraph(re.search(r'^Phiên bản .+? • Ngày ([\d/]+)', text, re.M).group(0))
     doc.add_paragraph('Dự thảo cơ sở yêu cầu để rà soát và triển khai')
     doc.add_paragraph('Tham chiếu ISO/IEC/IEEE 29148:2018 và hướng dẫn công khai NASA; chưa ghi nhận phê duyệt baseline.')
     doc.add_page_break()
@@ -229,7 +247,7 @@ def build(text: str):
     doc.core_properties.title = 'SRS-FAP-01 — Đặc tả yêu cầu phần mềm'
     doc.core_properties.subject = topic
     doc.core_properties.author = 'Sinh viên thực hiện đề tài / trợ lý Codex'
-    doc.core_properties.version = '3.1'
+    doc.core_properties.version = VERSION
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     doc.save(OUTPUT)
 

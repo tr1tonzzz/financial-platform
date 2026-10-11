@@ -1,0 +1,28 @@
+{
+  "requested_repo": "bukosabino/ta",
+  "repo": "bukosabino/ta",
+  "sha": "a890410710a6e483c9ba08da7f3dd5089e4b9dff",
+  "stars": 5235,
+  "forks": 1159,
+  "archived": false,
+  "default_branch": "master",
+  "description": "Technical Analysis Library using Pandas and Numpy",
+  "pushed_at": "2026-03-18T13:04:55Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 22336,
+      "sha256": "259715e047dc12ea97021c01ca7b1340f2b24bc37d67eca7961793bc2958aa65"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

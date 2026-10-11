@@ -1,12 +1,17 @@
 # Đề tài và đặc tả hiện hành
 
+**Quyết định hiện hành 11/10/2026:** phần AN06/AN07 và nhu cầu sàng lọc trong hồ sơ nền này được rút theo [SRS v3.3 mục18](22-srs-dac-ta-yeu-cau-phan-mem.md). Giữ nội dung cũ để truy vết nghiên cứu, không coi là chức năng cần triển khai. Danh mục sản phẩm hiện tại theo [UC lớn→nhỏ v2.0](27-yeu-cau-chuc-nang-va-vi-du.md).
+
+**Cập nhật chức năng 11/10/2026:** [SRS v3.2 dự thảo](22-srs-dac-ta-yeu-cau-phan-mem.md) là nguồn yêu cầu hiện hành. Tổ chức năm UC lớn theo mục tiêu: quản lý hồ sơ dữ liệu → đánh giá nền tảng tiền mặt → tra soát lịch sử cổ tức → sàng lọc/đối chiếu → quản lý hồ sơ thẩm định. [Nghiên cứu triển khai G02/G03/G01](../research-dividend-functions/README.md) bổ sung D01–D12 có điều kiện theo ca; chưa phê duyệt/nghiệm thu. Các quyết định 05/10 và P/US/PF/AN bên dưới là baseline kế thừa; Word3.1/checklist167 giờ chưa gồm bổ sung mới.
+
+
 **Cơ sở nhu cầu bổ sung 05/10/2026:** [nghiên cứu giá trị BCTC–cổ tức](reports/dot-01-tuan-01-02/co-so-hoc-thuat-va-gia-tri-su-dung.md) đưa ra câu hỏi người dùng U1–U6 cho pilot và U7–U8 mở rộng, căn cứ học thuật/nghề nghiệp, dữ liệu còn thiếu và cách đo lợi ích. [Báo cáo 1](reports/dot-01-tuan-01-02/bao-cao-01.md) đã gắn nhóm chức năng với các câu hỏi này. Mã U là ma trận giải thích trong báo cáo, không thay các mã yêu cầu/TC của SRS v3.1 hoặc tự mở rộng phạm vi đã dự toán.
 
 ## Bổ sung nhu cầu theo hướng kết hợp ngày 05/10/2026
 
-Phiên bản nhu cầu 2.4; SRS v3.1 là nguồn yêu cầu hiện hành. Câu hỏi thêm: CFO khác lợi nhuận ở những dòng nào và phần nào chưa giải thích được? Người vận hành duyệt các dòng của BCLCTT gián tiếp; người đọc mở cầu nối LNTT→CFO cạnh LNST, đọc nguồn từng khoản rồi đối chiếu DPS theo năm lợi nhuận. Đây là phân rã số học, chưa là kết luận nhân quả. Tối thiểu một ca thật; 1–3 ca theo gate. P/US/PF/AN nền bên dưới giữ nguyên; E01–E10 và P01–P11 là bổ sung tại mục 15 SRS. Không nâng sáu chỉ tiêu toàn mẫu thành yêu cầu mọi dòng BCLCTT cho mọi công ty.
+Phiên bản nhu cầu 2.4; SRS v3.1 là baseline tại thời điểm 05/10; nguồn hiện hành là v3.2. Câu hỏi thêm: CFO khác lợi nhuận ở những dòng nào và phần nào chưa giải thích được? Người vận hành duyệt các dòng của BCLCTT gián tiếp; người đọc mở cầu nối LNTT→CFO cạnh LNST, đọc nguồn từng khoản rồi đối chiếu DPS theo năm lợi nhuận. Đây là phân rã số học, chưa là kết luận nhân quả. Tối thiểu một ca thật; 1–3 ca theo gate. P/US/PF/AN nền bên dưới giữ nguyên; E01–E10 và P01–P11 là bổ sung tại mục 15 SRS. Không nâng sáu chỉ tiêu toàn mẫu thành yêu cầu mọi dòng BCLCTT cho mọi công ty.
 
-**Đặc tả triển khai cập nhật ngày 05/10/2026:** [SRS-FAP-01 v3.1](22-srs-dac-ta-yeu-cau-phan-mem.md) là nguồn yêu cầu chi tiết hiện hành, gồm FR/BR/DR/IR/NFR, use case và truy vết kiểm chứng; [bản Word](reports/SRS-FAP-01-v3.1.docx). Nội dung v2.3 bên dưới được giữ làm nguồn bài toán, P/US/PF/AN và ví dụ thiết kế. Khi có khác biệt về mức chi tiết/phạm vi, dùng v3.1; trạng thái vẫn là dự thảo chưa ghi nhận phê duyệt của giảng viên.
+**Đặc tả triển khai cập nhật ngày 05/10/2026:** [SRS-FAP-01 v3.1](22-srs-dac-ta-yeu-cau-phan-mem.md) là bản baseline trước CR-DIV-02, gồm FR/BR/DR/IR/NFR, use case và truy vết kiểm chứng; [bản Word](reports/SRS-FAP-01-v3.1.docx). Nội dung v2.3 bên dưới được giữ làm nguồn bài toán, P/US/PF/AN và ví dụ thiết kế. Khi có khác biệt về mức chi tiết/phạm vi, dùng v3.2; trạng thái vẫn là dự thảo chưa ghi nhận phê duyệt của giảng viên.
 
 Phiên bản **2.3 ngày 04/10/2026**, giữ tên/phạm vi v2.2 sau nghiên cứu lần hai; làm rõ hủy đối tượng thực hiện quyền và đổi ưu tiên liên thông sang đối chiếu phiên bản/ảnh hưởng. Kế thừa câu chuyện người dùng, yêu cầu và tiêu chí nghiệm thu của v2.1. Tên:
 **Xây dựng hệ thống thu thập, chuẩn hóa và phân tích lợi nhuận, dòng tiền kinh doanh trong mối liên hệ với cổ tức tiền mặt của doanh nghiệp niêm yết Việt Nam.**
@@ -72,21 +77,23 @@ Pilot 3 doanh nghiệp × 2023–2025 = 9 BCTC năm và các thông báo liên q
 
 Đích cổ tức: **mức tiền mặt được công bố trên mỗi cổ phiếu và năm lợi nhuận**. Sự kiện có ngày công bố, chốt quyền, lịch thanh toán, trạng thái sửa/hủy. Paid confirmation là optional có bằng chứng; ngày thanh toán đã qua không đủ để gán paid. Một case 2026 có thể dùng chứng minh cập nhật.
 
-## 3 Yêu cầu MVP
+## 3 UC lớn và năng lực phân rã kế thừa
 
-| Mã | Chức năng | Nghiệm thu |
+Danh mục chức năng chính dùng BUC01–BUC05 tại mục3 SRS, chi tiết [cấu trúc UC](../research-dividend-functions/01-uc-lon-va-phan-ra.md). Bảng PF dưới đây giữ để truy vết nhu cầu cũ, là năng lực phân rã hỗ trợ các UC lớn, không tiếp tục trình bày mỗi bước pipeline như một chức năng sản phẩm riêng.
+
+| Mã | Năng lực phân rã kế thừa | Nghiệm thu |
 |---|---|---|
 | PF01 | Công ty/kỳ/coverage | Expected ledger với lý do missing, trạng thái source/scope |
 | PF02 | Tự thu BCTC và sự kiện | Ít nhất một adapter tự phát hiện danh mục BCTC và một luồng tự phát hiện thông báo cổ tức; seed danh mục/search hợp lệ, không seed từng file như bằng chứng tự phát hiện; fallback nhập ghi riêng |
 | PF03 | Trích và chuẩn hóa | Sáu financial targets; event/components; raw value, unit, period, scope, source hash và locator |
 | PF04 | Validation/review | Trước/sau/lý do, không xuất candidate chưa duyệt như fact đúng |
-| PF05 | Lưu phiên bản | SQLite constraints/transaction; chạy lại không trùng; nguồn sửa có lịch sử |
+| PF05 | Lưu phiên bản | PostgreSQL constraints/transaction; chạy lại không trùng; nguồn sửa có lịch sử |
 | PF06 | Ghép doanh nghiệp–năm | DPS quan sát và trạng thái đủ dữ liệu riêng; năm lợi nhuận khác năm lịch; sửa/hủy không cộng trùng |
 | PF07 | Phân tích mối quan hệ | Xu hướng, CFO/LNST hợp lệ, tiền/nợ trên tài sản, DPS biến động khi tương thích; số mẫu và giới hạn |
 | PF08 | Dashboard/export | Timeline và chart, mở nguồn/operand, chất lượng, snapshot CSV/JSON |
 | PF09 | Demo và đánh giá | File/thông báo mới qua luồng, lỗi được phát hiện, baseline/holdout và ba case |
 
-Tự crawl cổ tức đầy đủ là gate chưa vượt, dù bốn thông báo mẫu đã trích được. Khi nguồn chỉ cho phép nhập có provenance, báo rõ tỷ lệ và hạn chế; không nghiệm thu PF02 như đã tự phát hiện. Không cần FastAPI/React hoặc nhiều người dùng trong MVP. Stack một app Python/Streamlit/SQLite.
+Tự crawl cổ tức đầy đủ là gate chưa vượt, dù bốn thông báo mẫu đã trích được. Khi nguồn chỉ cho phép nhập có provenance, báo rõ tỷ lệ và hạn chế; không nghiệm thu PF02 như đã tự phát hiện. Thiết kế hiện hành là web React + FastAPI/Python + PostgreSQL, chạy local trước; chưa mở triển khai nhiều người dùng.
 
 ### 3.1 Hệ thống phải phân tích cụ thể những gì
 

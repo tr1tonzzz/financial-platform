@@ -1,0 +1,28 @@
+{
+  "requested_repo": "financedata-org/FinanceDataReader",
+  "repo": "FinanceData/FinanceDataReader",
+  "sha": "addcbb7e887f0db6176a87d323de5de28357b5f4",
+  "stars": 1554,
+  "forks": 406,
+  "archived": false,
+  "default_branch": "master",
+  "description": "Financial data reader",
+  "pushed_at": "2026-05-13T19:12:11Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 13534,
+      "sha256": "f222baf34f7c2dc6ad6999a7b09c97812c3d1cd82403f076ebb115dff1a4c28f"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

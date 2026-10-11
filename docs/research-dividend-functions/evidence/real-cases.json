@@ -1,0 +1,121 @@
+{
+  "method": "manual page inspection, not independently verified gold; PDF page 11 printed 9",
+  "retrieved_on": "2026-10-11",
+  "dhg": {
+    "source": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf",
+    "local_pdf": "data-sets/research-evidence/2026-10-03-recent/dhg-fy2025.pdf",
+    "sha256": "abaaac8d3813329db1987e769f325fbee7b8c4776b4205b26a4673f95b589973",
+    "facts": {
+      "2024": {
+        "cfo": {
+          "value": "1317583405328",
+          "issuer": "DHG",
+          "period": "2024",
+          "scope": "entity",
+          "unit": "VND",
+          "published_at": null,
+          "source": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11",
+          "line": "20",
+          "reviewed": true,
+          "review_status": "research author visual check only",
+          "available_at": "2026-10-11",
+          "availability_note": "Observed in this research on 2026-10-11; exact historical publication time unverified; do not use for historical point-in-time screening."
+        },
+        "capex": {
+          "value": "88704714502",
+          "issuer": "DHG",
+          "period": "2024",
+          "scope": "entity",
+          "unit": "VND",
+          "published_at": null,
+          "source": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11",
+          "line": "21",
+          "reviewed": true,
+          "review_status": "research author visual check only",
+          "definition": "gross cash purchase/construction of fixed and other long-term assets; source outflow mapped to positive magnitude",
+          "available_at": "2026-10-11",
+          "availability_note": "Observed in this research on 2026-10-11; exact historical publication time unverified; do not use for historical point-in-time screening."
+        },
+        "distribution": {
+          "value": "980595532500",
+          "issuer": "DHG",
+          "period": "2024",
+          "scope": "entity",
+          "unit": "VND",
+          "published_at": null,
+          "source": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11",
+          "line": "36",
+          "reviewed": true,
+          "review_status": "research author visual check only",
+          "kind": "owner_distribution_grouped",
+          "available_at": "2026-10-11",
+          "availability_note": "Observed in this research on 2026-10-11; exact historical publication time unverified; do not use for historical point-in-time screening."
+        }
+      },
+      "2025": {
+        "cfo": {
+          "value": "1212967705385",
+          "issuer": "DHG",
+          "period": "2025",
+          "scope": "entity",
+          "unit": "VND",
+          "published_at": null,
+          "source": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11",
+          "line": "20",
+          "reviewed": true,
+          "review_status": "research author visual check only",
+          "available_at": "2026-10-11",
+          "availability_note": "Observed in this research on 2026-10-11; exact historical publication time unverified; do not use for historical point-in-time screening."
+        },
+        "capex": {
+          "value": "31136402852",
+          "issuer": "DHG",
+          "period": "2025",
+          "scope": "entity",
+          "unit": "VND",
+          "published_at": null,
+          "source": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11",
+          "line": "21",
+          "reviewed": true,
+          "review_status": "research author visual check only",
+          "definition": "gross cash purchase/construction of fixed and other long-term assets; source outflow mapped to positive magnitude",
+          "available_at": "2026-10-11",
+          "availability_note": "Observed in this research on 2026-10-11; exact historical publication time unverified; do not use for historical point-in-time screening."
+        },
+        "distribution": {
+          "value": "1307460710000",
+          "issuer": "DHG",
+          "period": "2025",
+          "scope": "entity",
+          "unit": "VND",
+          "published_at": null,
+          "source": "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11",
+          "line": "36",
+          "reviewed": true,
+          "review_status": "research author visual check only",
+          "kind": "owner_distribution_grouped",
+          "available_at": "2026-10-11",
+          "availability_note": "Observed in this research on 2026-10-11; exact historical publication time unverified; do not use for historical point-in-time screening."
+        }
+      }
+    }
+  },
+  "fpt": {
+    "source": "https://vsdc.vn/vi/ad1/184974",
+    "kind": "free_share_issue",
+    "published_at": "2025-07-14",
+    "record_date": "2025-07-22",
+    "numerator": 3,
+    "denominator": 20,
+    "factor": "1.15",
+    "rounding": "floor; fractional shares canceled",
+    "basis_effective_date": null,
+    "basis_confirmed": false,
+    "registration_notice": "https://vsdc.vn/vi/ad1/186572",
+    "cash_notices": [
+      "https://vsdc.vn/vi/ad1/183589",
+      "https://vsdc.vn/vi/ad1/189195"
+    ],
+    "note": "No actual later cash entitlement inferred; two installments belong to different profit years"
+  }
+}

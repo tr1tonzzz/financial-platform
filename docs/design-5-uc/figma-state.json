@@ -1,0 +1,16 @@
+{
+  "file_key": "GbpKDOPNhXuCYC2X2Yt7sa",
+  "file_url": "https://www.figma.com/design/GbpKDOPNhXuCYC2X2Yt7sa",
+  "page_id": "0:1",
+  "canvas_status": "blank",
+  "created_screen_node_ids": [],
+  "completed": [
+    "file creation",
+    "read-only discovery",
+    "local SVG design and visual QA"
+  ],
+  "blocker": "Starter MCP tool call limit; preceding import run exceeded return size and was not committed",
+  "font_available_in_figma": "Be Vietnam Pro",
+  "local_screens": 10,
+  "next_step": "Import editable SVGs manually or resume native composition when Figma tool access is available"
+}

@@ -1,0 +1,347 @@
+{
+  "source_path": "C:\\Users\\admin\\Downloads\\Báo cáo 2.docx",
+  "sha256": "4ecd6493037207a496105caf70aae5801d21b22b530a44ef3ce90c7a7390fab2",
+  "note": "Trích nội dung làm tham chiếu; không phải minh chứng triển khai ứng dụng.",
+  "blocks": [
+    {
+      "block": 1,
+      "type": "p",
+      "text": "Báo cáo 2 – Nghiên cứu đề tài : “Xây dựng hệ thống thu thập, chuẩn hóa và phân tích lợi nhuận, dòng tiền kinh doanh trong mối liên hệ với cổ tức tiền mặt của doanh nghiệp niêm yết Việt Nam.”"
+    },
+    {
+      "block": 3,
+      "type": "p",
+      "text": "I.Bối cảnh - tổng quan"
+    },
+    {
+      "block": 4,
+      "type": "p",
+      "text": "1,Bối cảnh - vấn đề - cơ sở đề tài"
+    },
+    {
+      "block": 5,
+      "type": "p",
+      "text": "Khó khăn trong việc thu thập, sắp xếp các dữ liệu tài chính và xác minh nguồn dữ liệu khi phân tích các loại dữ liệu "
+    },
+    {
+      "block": 6,
+      "type": "p",
+      "text": "-> Cần hệ thống thu tập, chuẩn hoá các dữ liệu này (đã tổng hợp trong báo cáo 1)"
+    },
+    {
+      "block": 7,
+      "type": "p",
+      "text": "Có lợi nhuận chưa đủ kết luận về khả năng chi trả cổ tức : Việc trả cổ tức phổ thông được trích từ nguồn lợi nhuận giữ lại của doanh nghiệp và chỉ được thực hiện khi lợi nhuận ròng đã thực hiện và công ty cổ phần đã thực hiện đủ nghĩa vụ tài chính, bù lỗ và khả năng thanh toán nghĩa vụ đến hạn sau phân phối ( theo Luật doanh nghiệp khoản 2 điều 135 – 2025) "
+    },
+    {
+      "block": 8,
+      "type": "p",
+      "text": "-> Cần thêm bối cảnh về tích luỹ và thanh khoản, cơ cấu nợ, lịch đáo hạn,.. khi đọc dữ liệu tài chính/lợi nhuận sau thuế để hiểu nền tảng phân phối"
+    },
+    {
+      "block": 9,
+      "type": "p",
+      "text": "CFO (cash flow-dòng tiền kinh doanh) chưa phải toàn bộ tiền có thể phân phối cho cổ đông : CFO lớn vẫn có thể đi kèm nhu cầu đầu tư hoặc trả nợ lớn. CFO nhỏ hơn tiền chi cổ tức trong một năm cũng chưa xác định nguồn nào đã tài trợ khoản chi. Cần đọc tiền đầu kỳ, dòng tiền đầu tư/tài chính và nghĩa vụ khác (CFA Institute, Free Cash Flow Valuation – 2026)"
+    },
+    {
+      "block": 10,
+      "type": "p",
+      "text": "- > CFO không đủ để kết luận cổ tức an toàn "
+    },
+    {
+      "block": 11,
+      "type": "p",
+      "text": "Cổ tức còn chứa thông tin về chính sách và kỳ vọng của doanh nghiệp: Lịch sử cổ tức có thể bổ sung bối cảnh cho việc đọc BCTC (mục 5.4.Information, signaling, and stock prices – Pay out policy in 21st century, Brav et al) "
+    },
+    {
+      "block": 12,
+      "type": "p",
+      "text": "-> Người dùng cần xem cổ tức giữ nguyên/tăng/giảm qua nhiều kỳ, rồi đối chiếu với lợi nhuận và tiền, thay vì chỉ một lần công bố "
+    },
+    {
+      "block": 13,
+      "type": "p",
+      "text": "Cổ tức là lớp thông tin phân phối cần ghép đúng : Khi đối chiếu kết quả kinh doanh với cổ tức, cần phân biệt năm lợi nhuận được chia với năm công bố và lịch thanh toán. Một thông báo có thể gồm các phần thuộc nhiều năm ( Thông báo VSDC về VNM )"
+    },
+    {
+      "block": 14,
+      "type": "p",
+      "text": "->Lựa chọn cổ tức tiền mặt làm đối tượng đối chiếu vì đây là hình thức phân phối lợi nhuận có thể quan sát thông qua các thông báo chính thức và dữ liệu tài chính của doanh nghiệp. Việc kết hợp lợi nhuận sau thuế, dòng tiền kinh doanh và lịch sử cổ tức tiền mặt giúp người dùng xem xét mối quan hệ giữa kết quả kinh doanh, khả năng tạo tiền và chính sách phân phối lợi nhuận."
+    },
+    {
+      "block": 15,
+      "type": "p",
+      "text": "2. Các mục tiêu xác định – hướng giải quyết đề tài"
+    },
+    {
+      "block": 16,
+      "type": "p",
+      "text": "Mục tiêu của đề tài là xây dựng một hệ thống có khả năng thu thập, chuẩn hóa, lưu trữ và truy xuất dữ liệu tài chính từ các nguồn công bố chính thức của doanh nghiệp niêm yết Việt Nam. Trên nền tảng dữ liệu đã được kiểm tra, hệ thống hỗ trợ phân tích mối quan hệ giữa lợi nhuận sau thuế, dòng tiền kinh doanh và cổ tức tiền mặt, đồng thời cho phép truy xuất nguồn gốc của các số liệu và kết quả phân tích."
+    },
+    {
+      "block": 17,
+      "type": "p",
+      "text": "Luồng xử lý dự kiến :"
+    },
+    {
+      "block": 18,
+      "type": "p",
+      "text": "Tài liệu gốc -> trích số -> chuẩn hóa -> kiểm tra và duyệt -> lưu dữ liệu -> phân tích và mở nguồn"
+    },
+    {
+      "block": 19,
+      "type": "p",
+      "text": "1 ca phân tích được xác định hiện tại :"
+    },
+    {
+      "block": 20,
+      "type": "p",
+      "text": "Chọn doanh nghiệp -> xem lợi nhuận và CFO -> đọc một ca biến động khác chiều -> kiểm tra cầu nối và nguồn -> đối chiếu cổ tức thuộc năm lợi nhuận -> lưu kết quả phân tích."
+    },
+    {
+      "block": 21,
+      "type": "p",
+      "text": "Các yêu cầu chức năng xác định hiện tại: "
+    },
+    {
+      "block": 22,
+      "type": "p",
+      "text": "+ Quản lý danh mục và nguồn : Chọn doanh nghiệp, năm, xem tài liệu đã có và còn thiếu"
+    },
+    {
+      "block": 23,
+      "type": "p",
+      "text": "+ Thu thập tài liệu : Tìm/tải BCTC và thông báo, lưu ngày lấy và bản gốc"
+    },
+    {
+      "block": 24,
+      "type": "p",
+      "text": "+ Trích xuất và chuẩn hóa dữ liệu: Lấy chỉ tiêu, đổi đơn vị, xác định đúng cột/kỳ/phạm vi"
+    },
+    {
+      "block": 25,
+      "type": "p",
+      "text": "+ Kiểm tra và duyệt Xem số cạnh nguồn, sửa lỗi có lịch sử; chặn phép tính thiếu dữ liệu"
+    },
+    {
+      "block": 26,
+      "type": "p",
+      "text": "+ Quản lý sự kiện cổ tức"
+    },
+    {
+      "block": 27,
+      "type": "p",
+      "text": "+ Phân tích lợi nhuận-CFO-cổ tức: Xem biến động, tỷ số hợp lệ và ca khác chiều"
+    },
+    {
+      "block": 28,
+      "type": "p",
+      "text": "+ Cầu nối CFO theo ca: Xem điểm đầu lợi nhuận, nhóm điều chỉnh và phần chưa khớp"
+    },
+    {
+      "block": 29,
+      "type": "p",
+      "text": "+ Truy nguồn và lưu kết quả: Mở nguồn số/công thức; lưu dữ liệu để tính lại"
+    },
+    {
+      "block": 30,
+      "type": "p",
+      "text": "3. Các dữ liệu dự kiến cần thu thập"
+    },
+    {
+      "block": 31,
+      "type": "tbl",
+      "text": "Nhóm dữ liệu | Nội dung cần thu thập/lưu | Nguồn hoặc cách hình thành | Mức áp dụng và mục đích\n1. Danh mục doanh nghiệp và cổ phiếu | Định danh doanh nghiệp, mã chứng khoán, tên, sàn, ngành, loại cổ phần/cơ sở quyền; lịch sử mã khi có thay đổi | Thông tin doanh nghiệp trên nguồn chính thức và cấu hình danh mục pilot | Lõi: xác định đúng doanh nghiệp, chọn mẫu phi tài chính và ghép đúng đối tượng hưởng cổ tức\n2. Tài liệu gốc và ngữ cảnh báo cáo | BCTC năm kiểm toán, thông báo cổ tức, văn bản sửa/hủy và phần thuyết minh liên quan; URL, bản gốc, ngày công bố/ngày tải, mã kiểm tra nội dung, phiên bản, kỳ, đơn vị, riêng/hợp nhất, trạng thái kiểm toán/soát xét | Trang quan hệ cổ đông của doanh nghiệp, VSDC hoặc nguồn chính thức của doanh nghiệp về cổ tức | Giữ bằng chứng và phân biệt các phiên bản; không trích toàn bộ thuyết minh thành dữ liệu trong pilot\n3. Số liệu BCTC nền | Tổng LNST, CFO, tiền và tương đương tiền, tổng tài sản, tổng nợ phải trả, tổng vốn chủ sở hữu; số gốc và số chuẩn hóa | Báo cáo kết quả kinh doanh, lưu chuyển tiền tệ và bảng cân đối kế toán trong BCTC | Theo dõi lợi nhuận-tiền và bối cảnh tài chính\n4. Các dòng phục vụ cầu nối CFO | Phương pháp lập BCLCTT, điểm đầu lợi nhuận, từng dòng điều chỉnh, tổng trung gian, CFO cuối cầu nối; mã/nhãn dòng, giá trị có dấu, nhóm và vai trò dòng | BCLCTT của ca được chọn; trích hoặc nhập tay có nguồn và duyệt | Bắt buộc ít nhất một ca đủ dữ liệu\n5. Dòng tiền chi cho chủ sở hữu | Giá trị có dấu, nguyên văn nhãn dòng cổ tức/lợi nhuận đã chi, kỳ và phạm vi báo cáo | BCLCTT và thuyết minh liên quan của ca | Có điều kiện khi chọn đối chiếu tiền đã chi trong kỳ với CFO ; giữ riêng với mức cổ tức công bố và năm lợi nhuận\n6. Sự kiện và thành phần cổ tức tiền mặt | Loại sự kiện, đợt, năm lợi nhuận, mức tiền/cổ phiếu, tỷ lệ và cơ sở quy đổi nếu có, các ngày, trạng thái và quan hệ sửa/hủy/trùng | Thông báo VSDC/doanh nghiệp; nghị quyết hoặc thuyết minh liên quan để kiểm chéo | Tổng hợp theo năm lợi nhuận và dựng lịch sự kiện\n7. Truy nguồn, chất lượng và lịch sử xử lý | Trang/vùng PDF hoặc đoạn HTML của từng số, cách trích, lỗi kiểm tra, trạng thái duyệt, số trước–sau sửa, người/thời điểm/lý do duyệt, nguồn và khoảng thời gian đã rà, phần thiếu | Hệ thống ghi nhận khi thu thập, trích, kiểm tra và duyệt | Kiểm lại dữ liệu, giải thích dữ liệu thiếu và tái lập kết quả; đây là dữ liệu hệ thống sinh, không phải chỉ tiêu tài chính lấy từ BCTC",
+      "rows": [
+        [
+          "Nhóm dữ liệu",
+          "Nội dung cần thu thập/lưu",
+          "Nguồn hoặc cách hình thành",
+          "Mức áp dụng và mục đích"
+        ],
+        [
+          "1. Danh mục doanh nghiệp và cổ phiếu",
+          "Định danh doanh nghiệp, mã chứng khoán, tên, sàn, ngành, loại cổ phần/cơ sở quyền; lịch sử mã khi có thay đổi",
+          "Thông tin doanh nghiệp trên nguồn chính thức và cấu hình danh mục pilot",
+          "Lõi: xác định đúng doanh nghiệp, chọn mẫu phi tài chính và ghép đúng đối tượng hưởng cổ tức"
+        ],
+        [
+          "2. Tài liệu gốc và ngữ cảnh báo cáo",
+          "BCTC năm kiểm toán, thông báo cổ tức, văn bản sửa/hủy và phần thuyết minh liên quan; URL, bản gốc, ngày công bố/ngày tải, mã kiểm tra nội dung, phiên bản, kỳ, đơn vị, riêng/hợp nhất, trạng thái kiểm toán/soát xét",
+          "Trang quan hệ cổ đông của doanh nghiệp, VSDC hoặc nguồn chính thức của doanh nghiệp về cổ tức",
+          "Giữ bằng chứng và phân biệt các phiên bản; không trích toàn bộ thuyết minh thành dữ liệu trong pilot"
+        ],
+        [
+          "3. Số liệu BCTC nền",
+          "Tổng LNST, CFO, tiền và tương đương tiền, tổng tài sản, tổng nợ phải trả, tổng vốn chủ sở hữu; số gốc và số chuẩn hóa",
+          "Báo cáo kết quả kinh doanh, lưu chuyển tiền tệ và bảng cân đối kế toán trong BCTC",
+          "Theo dõi lợi nhuận-tiền và bối cảnh tài chính"
+        ],
+        [
+          "4. Các dòng phục vụ cầu nối CFO",
+          "Phương pháp lập BCLCTT, điểm đầu lợi nhuận, từng dòng điều chỉnh, tổng trung gian, CFO cuối cầu nối; mã/nhãn dòng, giá trị có dấu, nhóm và vai trò dòng",
+          "BCLCTT của ca được chọn; trích hoặc nhập tay có nguồn và duyệt",
+          "Bắt buộc ít nhất một ca đủ dữ liệu"
+        ],
+        [
+          "5. Dòng tiền chi cho chủ sở hữu",
+          "Giá trị có dấu, nguyên văn nhãn dòng cổ tức/lợi nhuận đã chi, kỳ và phạm vi báo cáo",
+          "BCLCTT và thuyết minh liên quan của ca",
+          "Có điều kiện khi chọn đối chiếu tiền đã chi trong kỳ với CFO ; giữ riêng với mức cổ tức công bố và năm lợi nhuận"
+        ],
+        [
+          "6. Sự kiện và thành phần cổ tức tiền mặt",
+          "Loại sự kiện, đợt, năm lợi nhuận, mức tiền/cổ phiếu, tỷ lệ và cơ sở quy đổi nếu có, các ngày, trạng thái và quan hệ sửa/hủy/trùng",
+          "Thông báo VSDC/doanh nghiệp; nghị quyết hoặc thuyết minh liên quan để kiểm chéo",
+          "Tổng hợp theo năm lợi nhuận và dựng lịch sự kiện"
+        ],
+        [
+          "7. Truy nguồn, chất lượng và lịch sử xử lý",
+          "Trang/vùng PDF hoặc đoạn HTML của từng số, cách trích, lỗi kiểm tra, trạng thái duyệt, số trước–sau sửa, người/thời điểm/lý do duyệt, nguồn và khoảng thời gian đã rà, phần thiếu",
+          "Hệ thống ghi nhận khi thu thập, trích, kiểm tra và duyệt",
+          "Kiểm lại dữ liệu, giải thích dữ liệu thiếu và tái lập kết quả; đây là dữ liệu hệ thống sinh, không phải chỉ tiêu tài chính lấy từ BCTC"
+        ]
+      ]
+    },
+    {
+      "block": 34,
+      "type": "p",
+      "text": "II. Thử nghiệm công cụ với crawler và OCR một mẫu pdf báo cáo tài chính cụ thể"
+    },
+    {
+      "block": 35,
+      "type": "p",
+      "text": "1, Mẫu thử nghiệm – BCTC Vinamilk quý I-2026"
+    },
+    {
+      "block": 36,
+      "type": "p",
+      "text": "Nguồn mẫu: BCTC hợp nhất VNM Q1/2026"
+    },
+    {
+      "block": 37,
+      "type": "p",
+      "text": "Công cụ sử dụng :"
+    },
+    {
+      "block": 38,
+      "type": "p",
+      "text": "+ urllib và lxml: tìm nguồn, tải HTML và PDF."
+    },
+    {
+      "block": 39,
+      "type": "p",
+      "text": "+ Python hashlib: tính SHA-256 của PDF."
+    },
+    {
+      "block": 40,
+      "type": "p",
+      "text": "+ pypdf: trích lớp chữ từ PDF."
+    },
+    {
+      "block": 41,
+      "type": "p",
+      "text": "+ Poppler pdftoppm: chuyển trang PDF thành ảnh."
+    },
+    {
+      "block": 42,
+      "type": "p",
+      "text": "+ Tesseract.js: OCR tiếng Việt và tiếng Anh."
+    },
+    {
+      "block": 43,
+      "type": "p",
+      "text": "+ Python re: trích số, đối chiếu và tính chỉ tiêu."
+    },
+    {
+      "block": 44,
+      "type": "p",
+      "text": "2,Kết quả thực nghiệm"
+    },
+    {
+      "block": 45,
+      "type": "p",
+      "text": "urllib, lxml: danh mục HTTP 200, tìm được 9 liên kết PDF; chọn đúng BCTC hợp nhất VNM Q1/2026."
+    },
+    {
+      "block": 46,
+      "type": "p",
+      "text": "hashlib: lưu PDF 3.839.441 byte theo mã SHA-256."
+    },
+    {
+      "block": 47,
+      "type": "p",
+      "text": "pypdf: 71/71 trang không trích được chữ."
+    },
+    {
+      "block": 48,
+      "type": "p",
+      "text": "Poppler: tạo ảnh trang 12–14 ở 220 DPI."
+    },
+    {
+      "block": 49,
+      "type": "p",
+      "text": "Tesseract.js: OCR ba trang trong 6,026 giây"
+    },
+    {
+      "block": 50,
+      "type": "p",
+      "text": "Python re: đối chiếu sáu ô: 6 đúng, 0 sai, 0 thiếu."
+    },
+    {
+      "block": 51,
+      "type": "p",
+      "text": "Python: LNST tăng 54,87%; CFO tăng 393,514 tỷ đồng; CFO/LNST Q1/2026 khoảng 0,110 lần."
+    },
+    {
+      "block": 52,
+      "type": "p",
+      "text": "Bảng tổng hợp từ comparasion.js"
+    },
+    {
+      "block": 53,
+      "type": "p",
+      "text": " (có cả Q1/2025 do trong bctc này có bao gồm)"
+    },
+    {
+      "block": 54,
+      "type": "tbl",
+      "text": "Chỉ tiêu, VND | Q1/2026 | Q1/2025, đã phân loại lại | Vị trí | Đối chiếu\nTổng LNST hợp nhất | 2.458.221.002.532 | 1.587.273.268.054 | Trang 12 | Cả hai ô khớp\nCFO | 269.326.997.516 | −124.187.023.735 | Trang 13 | Cả hai ô khớp\nTiền chi trả cổ tức, dòng tiền âm | −55.837.540 | −1.044.977.722.500 | Trang 14  | Cả hai ô khớp",
+      "rows": [
+        [
+          "Chỉ tiêu, VND",
+          "Q1/2026",
+          "Q1/2025, đã phân loại lại",
+          "Vị trí",
+          "Đối chiếu"
+        ],
+        [
+          "Tổng LNST hợp nhất",
+          "2.458.221.002.532",
+          "1.587.273.268.054",
+          "Trang 12",
+          "Cả hai ô khớp"
+        ],
+        [
+          "CFO",
+          "269.326.997.516",
+          "−124.187.023.735",
+          "Trang 13",
+          "Cả hai ô khớp"
+        ],
+        [
+          "Tiền chi trả cổ tức, dòng tiền âm",
+          "−55.837.540",
+          "−1.044.977.722.500",
+          "Trang 14 ",
+          "Cả hai ô khớp"
+        ]
+      ]
+    },
+    {
+      "block": 56,
+      "type": "p",
+      "text": "-> Có thể thu thập/trích ứng viên trên mẫu; kết hợp lợi nhuận-CFO dẫn tới câu hỏi đọc sâu hơn; tách năm cổ tức tránh tổng sai; kiểm nguồn/tổng phát hiện lỗi OCR"
+    }
+  ]
+}

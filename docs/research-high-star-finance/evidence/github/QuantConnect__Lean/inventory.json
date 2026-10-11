@@ -1,0 +1,28 @@
+{
+  "requested_repo": "QuantConnect/Lean",
+  "repo": "QuantConnect/Lean",
+  "sha": "80e7843f645673bcbeaab963049f76f20f6785e1",
+  "stars": 21956,
+  "forks": 5295,
+  "archived": false,
+  "default_branch": "master",
+  "description": "Lean Algorithmic Trading Engine by QuantConnect (Python, C#)",
+  "pushed_at": "2026-10-09T21:00:25Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "spdx_id": "Apache-2.0",
+    "url": "https://api.github.com/licenses/apache-2.0",
+    "node_id": "MDc6TGljZW5zZTI="
+  },
+  "files": [
+    {
+      "path": "readme.md",
+      "bytes": 11001,
+      "sha256": "c93d2d649740ffdbfeca35ee5035eff668dc1f0a6b97873756addb70f4f4b91e"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

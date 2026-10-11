@@ -1,0 +1,9 @@
+{
+  "scope": "independent calculation/rule prototype; not application acceptance",
+  "executed_on": "2026-10-11",
+  "python": "3.14.7",
+  "tests_run": 20,
+  "failures": 0,
+  "errors": 0,
+  "status": "passed"
+}

@@ -1,0 +1,136 @@
+{
+  "version": 1,
+  "created": "2026-10-11",
+  "status": "local_design_complete_figma_canvas_blocked_by_starter_tool_limit",
+  "figma_file_url": "https://www.figma.com/design/GbpKDOPNhXuCYC2X2Yt7sa",
+  "figma_canvas_status": "blank; import run not committed",
+  "data_status": "All financial values and document layouts are synthetic illustrations, not company evidence.",
+  "font": "Be Vietnam Pro",
+  "tokens": {
+    "ink": "#182F39",
+    "muted": "#64767E",
+    "line": "#DCE5E8",
+    "bg": "#F3F6F7",
+    "white": "#FFFFFF",
+    "brand": "#126B59",
+    "pale": "#E6F4EE",
+    "blue": "#4168C8",
+    "amber": "#865A14",
+    "amberbg": "#FFF3DA",
+    "red": "#AE453B",
+    "nav": "#122F37"
+  },
+  "screens": [
+    {
+      "id": "uc1",
+      "title": "UC-1 · Khai thác dữ liệu",
+      "uc": 1,
+      "functions": [
+        "F01.1",
+        "F01.2",
+        "F01.3",
+        "F01.4",
+        "F01.5",
+        "F01.6"
+      ],
+      "file": "uc1.svg"
+    },
+    {
+      "id": "uc2",
+      "title": "UC-2 · Phân tích tài chính",
+      "uc": 2,
+      "functions": [
+        "F02.1",
+        "F02.4",
+        "F02.5",
+        "F02.8"
+      ],
+      "file": "uc2.svg"
+    },
+    {
+      "id": "uc3",
+      "title": "UC-3 · So sánh doanh nghiệp",
+      "uc": 3,
+      "functions": [
+        "F03.1",
+        "F03.2"
+      ],
+      "file": "uc3.svg"
+    },
+    {
+      "id": "uc4",
+      "title": "UC-4 · Theo dõi doanh nghiệp",
+      "uc": 4,
+      "functions": [
+        "F04.1",
+        "F04.2",
+        "F04.3",
+        "F04.4",
+        "F04.5"
+      ],
+      "file": "uc4.svg"
+    },
+    {
+      "id": "uc5",
+      "title": "UC-5 · Phân tích cổ tức",
+      "uc": 5,
+      "functions": [
+        "F05.1",
+        "F05.2",
+        "F05.3",
+        "F05.4",
+        "F05.5",
+        "F05.6"
+      ],
+      "file": "uc5.svg"
+    },
+    {
+      "id": "source",
+      "title": "Chi tiết · Nguồn và định nghĩa",
+      "uc": 1,
+      "functions": [
+        "F01.4",
+        "F01.5"
+      ],
+      "file": "source.svg"
+    },
+    {
+      "id": "review",
+      "title": "Chi tiết · Duyệt và tra soát",
+      "uc": 1,
+      "functions": [
+        "F01.6"
+      ],
+      "file": "review.svg"
+    },
+    {
+      "id": "bridge",
+      "title": "Chi tiết · Cầu nối CFO",
+      "uc": 2,
+      "functions": [
+        "F02.5"
+      ],
+      "file": "bridge.svg"
+    },
+    {
+      "id": "basis",
+      "title": "Chi tiết · Cơ sở DPS",
+      "uc": 5,
+      "functions": [
+        "F05.4",
+        "F05.5"
+      ],
+      "file": "basis.svg"
+    },
+    {
+      "id": "saved",
+      "title": "Chi tiết · Hồ sơ phân tích",
+      "uc": 2,
+      "functions": [
+        "F02.8",
+        "F05.6"
+      ],
+      "file": "saved.svg"
+    }
+  ]
+}

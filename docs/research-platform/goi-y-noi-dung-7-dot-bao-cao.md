@@ -27,7 +27,7 @@ Word:
 
 - Ledger 3×3 năm: mong đợi/tìm/tải/trích/duyệt, scope và phần thiếu.
 - Một lỗi OCR/cột/đơn vị với before–after và kiểm định.
-- ERD/SQLite, review audit, components và coverage.
+- ERD/PostgreSQL, review audit, components và coverage.
 - Phút/report/notice và quyết định 5–8 công ty hoặc giữ pilot.
 
 Slide: Mục tiêu pilot → bảng số thực → dữ liệu/coverage → OCR và schema → test/review → bài học → scope chốt.

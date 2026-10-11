@@ -1,0 +1,33 @@
+{
+  "requested_repo": "JerBouma/FinanceDatabase",
+  "repo": "JerBouma/FinanceDatabase",
+  "sha": "daf39af72cde42352a47d7981ae2e8b53d2f0d55",
+  "stars": 9452,
+  "forks": 977,
+  "archived": false,
+  "default_branch": "main",
+  "description": "This is a database of 300.000+ symbols containing Equities, ETFs, Funds, Indices, Currencies, Cryptocurrencies and Money Markets.",
+  "pushed_at": "2026-10-11T07:05:33Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 39169,
+      "sha256": "be091879bde78ffbb67ed83b8daa09ee998a83acc6384a5199f1c7dde370bbb9"
+    },
+    {
+      "path": "financedatabase/query_model.py",
+      "bytes": 8320,
+      "sha256": "9b8a5c9880d998ae137aaf1672decc8e13d019b1360ea31438bef27c9b04d620"
+    }
+  ],
+  "review_level": "README and selected implementation files",
+  "method": "static evidence capture; no installation or execution"
+}

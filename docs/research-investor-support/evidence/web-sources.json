@@ -1,0 +1,41 @@
+{
+  "reviewed_on": "2026-10-11",
+  "method": "Browser/search review of primary sources. No copied full web articles.",
+  "sources": [
+    {
+      "title": "CFA analysis framework",
+      "url": "https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/introduction-financial-statement-analysis",
+      "limitations": "Official curriculum overview reviewed; not a user study for this project."
+    },
+    {
+      "title": "CFA analytical techniques",
+      "url": "https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/financial-analysis-techniques",
+      "limitations": "Official overview: interpretation, comparisons and ratio categories."
+    },
+    {
+      "title": "CFA free cash flow valuation",
+      "url": "https://www.cfainstitute.org/insights/professional-learning/refresher-readings/2026/free-cash-flow-valuation",
+      "limitations": "Official overview; not a validated valuation model or market forecast."
+    },
+    {
+      "title": "Vnstock Fundamental",
+      "url": "https://vnstocks.com/docs/vnstock/phan-tich-co-ban-fundamental",
+      "limitations": "Documented interface and code reviewed. No authenticated/live pilot queries executed."
+    },
+    {
+      "title": "HPG financial-report catalog",
+      "url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+      "limitations": "Catalog lists consolidated/standalone audited FY2025 and explanation documents. This round did not verify individual financial cells."
+    },
+    {
+      "title": "FPT FY2025 annual-report business review",
+      "url": "https://bctn2025.fpt.com/vi/phan-tich-hoat-dong-kinh-doanh/danh-gia-chung/",
+      "limitations": "Official page and business-block navigation reviewed. Segment/plan normalization still proposed."
+    },
+    {
+      "title": "VNM issuer search",
+      "url": "https://www.vinamilk.com.vn/",
+      "limitations": "Search did not establish the full current annual-report set; not claimed as complete coverage."
+    }
+  ]
+}

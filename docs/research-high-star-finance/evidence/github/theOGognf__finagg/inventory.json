@@ -1,0 +1,28 @@
+{
+  "requested_repo": "theOGognf/finagg",
+  "repo": "theOGognf/finagg",
+  "sha": "614631d8e26bdbb21c1a6e6a3a10972a00e1d24b",
+  "stars": 547,
+  "forks": 36,
+  "archived": false,
+  "default_branch": "main",
+  "description": "A Python package for aggregating and normalizing historical data from popular and free financial APIs.",
+  "pushed_at": "2026-03-22T14:40:04Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "spdx_id": "Apache-2.0",
+    "url": "https://api.github.com/licenses/apache-2.0",
+    "node_id": "MDc6TGljZW5zZTI="
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 11715,
+      "sha256": "b29a3b4777f84335fe1c11169b11846b180042fbc7dee7aec62a333913e5375c"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

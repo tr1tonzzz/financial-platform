@@ -85,7 +85,7 @@ N1/N2 không phải tính năng vừa phát minh trong lượt này: đã có ph
 - Chỉ tiêu tới candidate → validation → review → reviewed fact. Sửa có trước/sau/lý do; không biến review thành accuracy tự động.
 - Thông báo tới event/components/relations; phân biệt sửa lịch, sửa mức, hủy đối tượng thực hiện và nội dung hành chính.
 - Bảng năm và timeline; lợi nhuận/CFO, CFO/LNST theo điều kiện, tiền/tài sản, nợ phải trả/tài sản, DPS theo năm lợi nhuận khi đủ và cùng basis.
-- Người đọc mở nguồn/operands; người vận hành xử lý issue; export snapshot tái lập được. Stack Python/SQLite/Streamlit hiện hành đủ cho phạm vi này.
+- Người đọc mở nguồn/operands; người vận hành xử lý issue; export snapshot tái lập được. Stack React/FastAPI/Python/PostgreSQL hiện hành đủ cho phạm vi này.
 
 ### Bổ sung hữu hạn cho chất lượng
 
@@ -107,7 +107,7 @@ Giá/yield/backtest, portfolio, scoring sức khỏe tổng hợp, OCR hoàn h�
 |---|---|
 | Đơn vị đối chiếu | Financial fact: issuer + metric + period + scope + unit/basis; event theo identity đã review |
 | Phát hiện thay đổi | Bỏ qua layout/bytes không ảnh hưởng; so giá trị và metadata nghiệp vụ đã chuẩn hóa; chưa tự hòa giải mọi dòng BCTC |
-| Đồ thị phụ thuộc | Fact/component → ratio/annual aggregate → case; có thể lưu bảng quan hệ trong SQLite, không bắt buộc graph database |
+| Đồ thị phụ thuộc | Fact/component → ratio/annual aggregate → case; có thể lưu bảng quan hệ trong PostgreSQL, không bắt buộc graph database |
 | Quy trình | Đánh dấu cần review → duyệt bản có hiệu lực → tính lại kết quả phụ thuộc; lưu before/after và snapshot cũ |
 | Dữ liệu đánh giá | Cặp PDF/notice thật và gold loại thay đổi/đối tượng bị ảnh hưởng; fixture giả lập báo riêng |
 | Baseline | Hash-only gắn cờ mọi thay đổi; latest-overwrite; refresh mọi kết quả; so với diff nghiệp vụ và cập nhật theo phụ thuộc |

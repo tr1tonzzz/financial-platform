@@ -1,0 +1,312 @@
+[
+  {
+    "repo": "aspirin188/dividend-low-vol-tracker",
+    "sha": "7ca601f6bb3f9f3411bfce3f70b80a6708e93ea1",
+    "path": "server/services/data_validator.py",
+    "url": "https://github.com/aspirin188/dividend-low-vol-tracker/blob/7ca601f6bb3f9f3411bfce3f70b80a6708e93ea1/server/services/data_validator.py",
+    "local_path": "evidence/aspirin188__dividend-low-vol-tracker/source/server/services/data_validator.py",
+    "bytes": 17543,
+    "sha256": "64dc174eddeb57b893b0221ed5a90f8d30998c4237419835a7cea4415a336355",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "aspirin188/dividend-low-vol-tracker",
+    "sha": "7ca601f6bb3f9f3411bfce3f70b80a6708e93ea1",
+    "path": "server/services/financial_calculator.py",
+    "url": "https://github.com/aspirin188/dividend-low-vol-tracker/blob/7ca601f6bb3f9f3411bfce3f70b80a6708e93ea1/server/services/financial_calculator.py",
+    "local_path": "evidence/aspirin188__dividend-low-vol-tracker/source/server/services/financial_calculator.py",
+    "bytes": 13230,
+    "sha256": "7de040e9c3978df888fee3bed6e5e161f65f402b71d945d1c83e3c2921b7d54e",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "aspirin188/dividend-low-vol-tracker",
+    "sha": "7ca601f6bb3f9f3411bfce3f70b80a6708e93ea1",
+    "path": "server/services/scorer.py",
+    "url": "https://github.com/aspirin188/dividend-low-vol-tracker/blob/7ca601f6bb3f9f3411bfce3f70b80a6708e93ea1/server/services/scorer.py",
+    "local_path": "evidence/aspirin188__dividend-low-vol-tracker/source/server/services/scorer.py",
+    "bytes": 30416,
+    "sha256": "48b1af8adb8dd3fb7d7b522f84d87ee0480c43a2ea02bc570c023bf4f8766589",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "aspirin188/dividend-low-vol-tracker",
+    "sha": "7ca601f6bb3f9f3411bfce3f70b80a6708e93ea1",
+    "path": "tests/test_scorer.py",
+    "url": "https://github.com/aspirin188/dividend-low-vol-tracker/blob/7ca601f6bb3f9f3411bfce3f70b80a6708e93ea1/tests/test_scorer.py",
+    "local_path": "evidence/aspirin188__dividend-low-vol-tracker/source/tests/test_scorer.py",
+    "bytes": 7756,
+    "sha256": "62059fb0ed2cbd9a3e5d61ef7b932b70baa9e897014421a8e8c613d1b17979cc",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "GavrielP1/SALARY-2045",
+    "sha": "806cdaa821c7a4eb04a0f1bc7cf59c0a30314e0a",
+    "path": "app.py",
+    "url": "https://github.com/GavrielP1/SALARY-2045/blob/806cdaa821c7a4eb04a0f1bc7cf59c0a30314e0a/app.py",
+    "local_path": "evidence/GavrielP1__SALARY-2045/source/app.py",
+    "bytes": 62659,
+    "sha256": "fd0aa973ce09674fe5e8dcb7e873955c9c0a0a499783ac3741af5bb04a33af70",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "GavrielP1/SALARY-2045",
+    "sha": "806cdaa821c7a4eb04a0f1bc7cf59c0a30314e0a",
+    "path": "data_fetcher.py",
+    "url": "https://github.com/GavrielP1/SALARY-2045/blob/806cdaa821c7a4eb04a0f1bc7cf59c0a30314e0a/data_fetcher.py",
+    "local_path": "evidence/GavrielP1__SALARY-2045/source/data_fetcher.py",
+    "bytes": 7618,
+    "sha256": "6d10a874c7a00cdb96f7593947cc8f96e2511ce08704dee206eab430b0c0c9bc",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "GavrielP1/SALARY-2045",
+    "sha": "806cdaa821c7a4eb04a0f1bc7cf59c0a30314e0a",
+    "path": "goal.example.json",
+    "url": "https://github.com/GavrielP1/SALARY-2045/blob/806cdaa821c7a4eb04a0f1bc7cf59c0a30314e0a/goal.example.json",
+    "local_path": "evidence/GavrielP1__SALARY-2045/source/goal.example.json",
+    "bytes": 75,
+    "sha256": "756994a3afc54a3d044967aa70defa7253b5bddeb6a7140d3c20b1b88bd92f29",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "GavrielP1/SALARY-2045",
+    "sha": "806cdaa821c7a4eb04a0f1bc7cf59c0a30314e0a",
+    "path": "holdings.example.json",
+    "url": "https://github.com/GavrielP1/SALARY-2045/blob/806cdaa821c7a4eb04a0f1bc7cf59c0a30314e0a/holdings.example.json",
+    "local_path": "evidence/GavrielP1__SALARY-2045/source/holdings.example.json",
+    "bytes": 167,
+    "sha256": "613213f7c5fbd7a712af488cdbd14642f12ae6409ffdcacf5f6a28b9f90df875",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "ghostfolio/ghostfolio",
+    "sha": "8fa4f6a6739afee82461b3aa48f47dfa6a396dc8",
+    "path": "apps/api/src/app/portfolio/portfolio.service.ts",
+    "url": "https://github.com/ghostfolio/ghostfolio/blob/8fa4f6a6739afee82461b3aa48f47dfa6a396dc8/apps/api/src/app/portfolio/portfolio.service.ts",
+    "local_path": "evidence/ghostfolio__ghostfolio/source/apps/api/src/app/portfolio/portfolio.service.ts",
+    "bytes": 83935,
+    "sha256": "383a88fc335fc658b87ee219ceb25164dbc9f87b660b2b18c773534eb5551f78",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "ghostfolio/ghostfolio",
+    "sha": "8fa4f6a6739afee82461b3aa48f47dfa6a396dc8",
+    "path": "apps/api/src/models/rule.ts",
+    "url": "https://github.com/ghostfolio/ghostfolio/blob/8fa4f6a6739afee82461b3aa48f47dfa6a396dc8/apps/api/src/models/rule.ts",
+    "local_path": "evidence/ghostfolio__ghostfolio/source/apps/api/src/models/rule.ts",
+    "bytes": 2252,
+    "sha256": "c20a259fa0f5edde0d9e515f0c9b11afed6adf197d39a6cd4844cbbe3d13d812",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "ghostfolio/ghostfolio",
+    "sha": "8fa4f6a6739afee82461b3aa48f47dfa6a396dc8",
+    "path": "apps/api/src/models/rules/account-cluster-risk/current-investment.ts",
+    "url": "https://github.com/ghostfolio/ghostfolio/blob/8fa4f6a6739afee82461b3aa48f47dfa6a396dc8/apps/api/src/models/rules/account-cluster-risk/current-investment.ts",
+    "local_path": "evidence/ghostfolio__ghostfolio/source/apps/api/src/models/rules/account-cluster-risk/current-investment.ts",
+    "bytes": 3511,
+    "sha256": "3160cee8b6bff6ebaf018fe935e23429c9ef3759be21a9b9f7889faa92a46e16",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "ghostfolio/ghostfolio",
+    "sha": "8fa4f6a6739afee82461b3aa48f47dfa6a396dc8",
+    "path": "apps/api/src/models/rules/account-cluster-risk/single-account.ts",
+    "url": "https://github.com/ghostfolio/ghostfolio/blob/8fa4f6a6739afee82461b3aa48f47dfa6a396dc8/apps/api/src/models/rules/account-cluster-risk/single-account.ts",
+    "local_path": "evidence/ghostfolio__ghostfolio/source/apps/api/src/models/rules/account-cluster-risk/single-account.ts",
+    "bytes": 2066,
+    "sha256": "4322248d9ec8edf55cb0f067900322150bd8112063622ab4428e66cdf647750d",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "hsteffens/dividend_analysis",
+    "sha": "53469d0da4127402f500af5ef5ea6c8a44a5ce9c",
+    "path": "Analytic Dividend Analysis.ipynb",
+    "url": "https://github.com/hsteffens/dividend_analysis/blob/53469d0da4127402f500af5ef5ea6c8a44a5ce9c/Analytic%20Dividend%20Analysis.ipynb",
+    "local_path": "evidence/hsteffens__dividend_analysis/source/Analytic Dividend Analysis.ipynb",
+    "bytes": 709959,
+    "sha256": "7e5118504d8688904c6458be516bfddb2b6d22aa6738ca3ba67160600a58cbc0",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "JerBouma/FinanceToolkit",
+    "sha": "37ed6f01465b4bfb6718b07e1d65826734f53337",
+    "path": "financetoolkit/models/intrinsic_model.py",
+    "url": "https://github.com/JerBouma/FinanceToolkit/blob/37ed6f01465b4bfb6718b07e1d65826734f53337/financetoolkit/models/intrinsic_model.py",
+    "local_path": "evidence/JerBouma__FinanceToolkit/source/financetoolkit/models/intrinsic_model.py",
+    "bytes": 22351,
+    "sha256": "ce06d6f51f56df5c88b3fbf6f42ff81c0c10002e495eb50691bb7ae21aa7cbd5",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "JerBouma/FinanceToolkit",
+    "sha": "37ed6f01465b4bfb6718b07e1d65826734f53337",
+    "path": "financetoolkit/ratios/solvency_model.py",
+    "url": "https://github.com/JerBouma/FinanceToolkit/blob/37ed6f01465b4bfb6718b07e1d65826734f53337/financetoolkit/ratios/solvency_model.py",
+    "local_path": "evidence/JerBouma__FinanceToolkit/source/financetoolkit/ratios/solvency_model.py",
+    "bytes": 14547,
+    "sha256": "5059c266ccd786beb13b01a027068cce0d8e5d7c3d6e9d6242dc854e1d621a8f",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "JerBouma/FinanceToolkit",
+    "sha": "37ed6f01465b4bfb6718b07e1d65826734f53337",
+    "path": "financetoolkit/ratios/valuation_model.py",
+    "url": "https://github.com/JerBouma/FinanceToolkit/blob/37ed6f01465b4bfb6718b07e1d65826734f53337/financetoolkit/ratios/valuation_model.py",
+    "local_path": "evidence/JerBouma__FinanceToolkit/source/financetoolkit/ratios/valuation_model.py",
+    "bytes": 23212,
+    "sha256": "9b452fa1946444e63d23f7a1de2c45f087068a2b47995a1d99b1fae4652715a8",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "JerBouma/FinanceToolkit",
+    "sha": "37ed6f01465b4bfb6718b07e1d65826734f53337",
+    "path": "tests/ratios/test_solvency_model.py",
+    "url": "https://github.com/JerBouma/FinanceToolkit/blob/37ed6f01465b4bfb6718b07e1d65826734f53337/tests/ratios/test_solvency_model.py",
+    "local_path": "evidence/JerBouma__FinanceToolkit/source/tests/ratios/test_solvency_model.py",
+    "bytes": 3064,
+    "sha256": "4a71dd2d63b5140b11e08ee2e919c8454c23839696e0c08ce4eec95b5931adec",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "OpenBB-finance/OpenBB",
+    "sha": "ae0268771f761b036996d81bd21522ce79d95415",
+    "path": "openbb_platform/core/openbb_core/provider/standard_models/calendar_dividend.py",
+    "url": "https://github.com/OpenBB-finance/OpenBB/blob/ae0268771f761b036996d81bd21522ce79d95415/openbb_platform/core/openbb_core/provider/standard_models/calendar_dividend.py",
+    "local_path": "evidence/OpenBB-finance__OpenBB/source/openbb_platform/core/openbb_core/provider/standard_models/calendar_dividend.py",
+    "bytes": 1550,
+    "sha256": "0c9c6058c57da085e1fb7afa787a85acbf26e18b3df4abdbc9ef64acae152de9",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "OpenBB-finance/OpenBB",
+    "sha": "ae0268771f761b036996d81bd21522ce79d95415",
+    "path": "openbb_platform/core/openbb_core/provider/standard_models/historical_dividends.py",
+    "url": "https://github.com/OpenBB-finance/OpenBB/blob/ae0268771f761b036996d81bd21522ce79d95415/openbb_platform/core/openbb_core/provider/standard_models/historical_dividends.py",
+    "local_path": "evidence/OpenBB-finance__OpenBB/source/openbb_platform/core/openbb_core/provider/standard_models/historical_dividends.py",
+    "bytes": 1368,
+    "sha256": "369a651ad43b8aa2c4a5236127b9086f009c36a1d38d963655fc6745964bdee4",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "OpenBB-finance/OpenBB",
+    "sha": "ae0268771f761b036996d81bd21522ce79d95415",
+    "path": "openbb_platform/core/openbb_core/provider/standard_models/historical_splits.py",
+    "url": "https://github.com/OpenBB-finance/OpenBB/blob/ae0268771f761b036996d81bd21522ce79d95415/openbb_platform/core/openbb_core/provider/standard_models/historical_splits.py",
+    "local_path": "evidence/OpenBB-finance__OpenBB/source/openbb_platform/core/openbb_core/provider/standard_models/historical_splits.py",
+    "bytes": 1170,
+    "sha256": "b88f9e16a25f182bd5d6bec72a1007fae12644899a063f8e21355aa704ba2578",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "portfolio-performance/portfolio",
+    "sha": "b09410e06ed3153e3ab256ffe579f97511adbf3d",
+    "path": "name.abuchen.portfolio.tests/src/issues/Issue1879DividendRateOfReturnPerYearWithSecurityInMultipleAccountsTest.java",
+    "url": "https://github.com/portfolio-performance/portfolio/blob/b09410e06ed3153e3ab256ffe579f97511adbf3d/name.abuchen.portfolio.tests/src/issues/Issue1879DividendRateOfReturnPerYearWithSecurityInMultipleAccountsTest.java",
+    "local_path": "evidence/portfolio-performance__portfolio/source/name.abuchen.portfolio.tests/src/issues/Issue1879DividendRateOfReturnPerYearWithSecurityInMultipleAccountsTest.java",
+    "bytes": 5977,
+    "sha256": "27c572e8e84721e0fe3b74410d0af03f1f4d742b67a4bf809d136c387ab9af7a",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "portfolio-performance/portfolio",
+    "sha": "b09410e06ed3153e3ab256ffe579f97511adbf3d",
+    "path": "name.abuchen.portfolio.tests/src/issues/Issue1897AddFeesToDividendTransactionsTest.java",
+    "url": "https://github.com/portfolio-performance/portfolio/blob/b09410e06ed3153e3ab256ffe579f97511adbf3d/name.abuchen.portfolio.tests/src/issues/Issue1897AddFeesToDividendTransactionsTest.java",
+    "local_path": "evidence/portfolio-performance__portfolio/source/name.abuchen.portfolio.tests/src/issues/Issue1897AddFeesToDividendTransactionsTest.java",
+    "bytes": 6575,
+    "sha256": "2735e11e414b683e30e32df774c285b8d32b288976393a95c5bd29f4fc3badc6",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "Santhosh-004/dividend-cli",
+    "sha": "7c6033b11db694eb101d2b27217441c7184e9c4f",
+    "path": "dividend_calculator/api/routes.py",
+    "url": "https://github.com/Santhosh-004/dividend-cli/blob/7c6033b11db694eb101d2b27217441c7184e9c4f/dividend_calculator/api/routes.py",
+    "local_path": "evidence/Santhosh-004__dividend-cli/source/dividend_calculator/api/routes.py",
+    "bytes": 35788,
+    "sha256": "a7798e9926ed419dffd6c3fe2c12b8d97c0c30fa966d7ef8a48185152a24ce8d",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "Santhosh-004/dividend-cli",
+    "sha": "7c6033b11db694eb101d2b27217441c7184e9c4f",
+    "path": "dividend_calculator/db.py",
+    "url": "https://github.com/Santhosh-004/dividend-cli/blob/7c6033b11db694eb101d2b27217441c7184e9c4f/dividend_calculator/db.py",
+    "local_path": "evidence/Santhosh-004__dividend-cli/source/dividend_calculator/db.py",
+    "bytes": 13067,
+    "sha256": "b383d00b85b669d956ac4d65d0b00bbecac5959395e326ba89b3879691719ad8",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "Santhosh-004/dividend-cli",
+    "sha": "7c6033b11db694eb101d2b27217441c7184e9c4f",
+    "path": "dividend_calculator/fetch.py",
+    "url": "https://github.com/Santhosh-004/dividend-cli/blob/7c6033b11db694eb101d2b27217441c7184e9c4f/dividend_calculator/fetch.py",
+    "local_path": "evidence/Santhosh-004__dividend-cli/source/dividend_calculator/fetch.py",
+    "bytes": 17623,
+    "sha256": "31eea9666e4cc09046139d46ec7e55760ef875e99a62c5b7a8d14fb57fdeb0e5",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "Santhosh-004/dividend-cli",
+    "sha": "7c6033b11db694eb101d2b27217441c7184e9c4f",
+    "path": "dividend_calculator/utils.py",
+    "url": "https://github.com/Santhosh-004/dividend-cli/blob/7c6033b11db694eb101d2b27217441c7184e9c4f/dividend_calculator/utils.py",
+    "local_path": "evidence/Santhosh-004__dividend-cli/source/dividend_calculator/utils.py",
+    "bytes": 8310,
+    "sha256": "decb45202c6c647b1e0c9cf51010cc116d741ce18ef3690053105462f89d1784",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "Santhosh-004/dividend-cli",
+    "sha": "7c6033b11db694eb101d2b27217441c7184e9c4f",
+    "path": "tests/test_utils.py",
+    "url": "https://github.com/Santhosh-004/dividend-cli/blob/7c6033b11db694eb101d2b27217441c7184e9c4f/tests/test_utils.py",
+    "local_path": "evidence/Santhosh-004__dividend-cli/source/tests/test_utils.py",
+    "bytes": 1734,
+    "sha256": "6ced403f628b164e1f518b078bf51e4869dc412d146f911b94dea053ce42b7b3",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "thinh-vu/vnstock",
+    "sha": "88825be3f9aab729362e6fca178eb6e9ae4d3f88",
+    "path": "LICENSE.md",
+    "url": "https://github.com/thinh-vu/vnstock/blob/88825be3f9aab729362e6fca178eb6e9ae4d3f88/LICENSE.md",
+    "local_path": "evidence/thinh-vu__vnstock/source/LICENSE.md",
+    "bytes": 8050,
+    "sha256": "2658eba078df3a4bc45abb8fddf1330d903d49f5f8fd59c7eee3dbba7fc0d644",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "thinh-vu/vnstock",
+    "sha": "88825be3f9aab729362e6fca178eb6e9ae4d3f88",
+    "path": "vnstock/explorer/vci/company.py",
+    "url": "https://github.com/thinh-vu/vnstock/blob/88825be3f9aab729362e6fca178eb6e9ae4d3f88/vnstock/explorer/vci/company.py",
+    "local_path": "evidence/thinh-vu__vnstock/source/vnstock/explorer/vci/company.py",
+    "bytes": 27710,
+    "sha256": "ab775e5787ce1577ffe88193e9923101fb0b2acd3fca489eded78adecdac027b",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "thinh-vu/vnstock",
+    "sha": "88825be3f9aab729362e6fca178eb6e9ae4d3f88",
+    "path": "vnstock/explorer/vci/financial.py",
+    "url": "https://github.com/thinh-vu/vnstock/blob/88825be3f9aab729362e6fca178eb6e9ae4d3f88/vnstock/explorer/vci/financial.py",
+    "local_path": "evidence/thinh-vu__vnstock/source/vnstock/explorer/vci/financial.py",
+    "bytes": 22667,
+    "sha256": "a9d723f604dce2dab17e327048cfec4609b6d45cb1039ba54f38c78dd325b2c4",
+    "evidence_level": "downloaded_source_static_review_only"
+  },
+  {
+    "repo": "thinh-vu/vnstock",
+    "sha": "88825be3f9aab729362e6fca178eb6e9ae4d3f88",
+    "path": "vnstock/ui/domains/fundamental/equity.py",
+    "url": "https://github.com/thinh-vu/vnstock/blob/88825be3f9aab729362e6fca178eb6e9ae4d3f88/vnstock/ui/domains/fundamental/equity.py",
+    "local_path": "evidence/thinh-vu__vnstock/source/vnstock/ui/domains/fundamental/equity.py",
+    "bytes": 3989,
+    "sha256": "073fa881bc465821ed03ec193ff0498a8f87da52942ec34faa946a9ede6ecea0",
+    "evidence_level": "downloaded_source_static_review_only"
+  }
+]

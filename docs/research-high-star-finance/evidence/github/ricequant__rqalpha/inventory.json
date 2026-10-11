@@ -1,0 +1,28 @@
+{
+  "requested_repo": "ricequant/rqalpha",
+  "repo": "ricequant/rqalpha",
+  "sha": "284b78a1975bd2d6c4bee8fde35586e6846bfd96",
+  "stars": 6818,
+  "forks": 1792,
+  "archived": false,
+  "default_branch": "master",
+  "description": "A extendable, replaceable Python algorithmic backtest && trading framework supporting multiple securities",
+  "pushed_at": "2026-10-10T09:50:07Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "other",
+    "name": "Other",
+    "spdx_id": "NOASSERTION",
+    "url": null,
+    "node_id": "MDc6TGljZW5zZTA="
+  },
+  "files": [
+    {
+      "path": "README.rst",
+      "bytes": 10630,
+      "sha256": "0c5534a0a728042cc7d739178d97a8cec473d92472d1a5b31424076fcb0f464c"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

@@ -1,0 +1,145 @@
+{
+  "ran_at": "2026-10-11T13:52:04.936294+00:00",
+  "present_count": 6,
+  "target_count": 6,
+  "csv_all_fields_round_trip": true,
+  "checks": [
+    {
+      "name": "cash_110_equals_111_plus_112",
+      "operands": [
+        {
+          "raw_value": "1.630.879.718.871",
+          "value": 1630879718871,
+          "pdf_page_index": 6,
+          "bbox": [
+            896,
+            639,
+            1106,
+            667
+          ],
+          "ocr_result": "workspace\\week1\\data\\vnm-2025\\ocr\\page-007.json"
+        },
+        {
+          "raw_value": "164.000.000.000",
+          "value": 164000000000,
+          "pdf_page_index": 6,
+          "bbox": [
+            919,
+            671,
+            1107,
+            699
+          ],
+          "ocr_result": "workspace\\week1\\data\\vnm-2025\\ocr\\page-007.json"
+        }
+      ],
+      "sum_vnd": "1794879718871",
+      "target_vnd": "1794879718871",
+      "passed": true
+    },
+    {
+      "name": "assets_270_equals_100_plus_200",
+      "operands": [
+        {
+          "raw_value": "36.261.180.908.033",
+          "value": 36261180908033,
+          "pdf_page_index": 6,
+          "bbox": [
+            883,
+            546,
+            1110,
+            572
+          ],
+          "ocr_result": "workspace\\week1\\data\\vnm-2025\\ocr\\page-007.json"
+        },
+        {
+          "raw_value": "17.051.189.809.268",
+          "value": 17051189809268,
+          "pdf_page_index": 7,
+          "bbox": [
+            889,
+            485,
+            1115,
+            513
+          ],
+          "ocr_result": "workspace\\week1\\data\\vnm-2025\\ocr\\page-008.json"
+        }
+      ],
+      "sum_vnd": "53312370717301",
+      "target_vnd": "53312370717301",
+      "passed": true
+    },
+    {
+      "name": "liabilities_300_equals_310_plus_330",
+      "operands": [
+        {
+          "raw_value": "18.520.286.019.795",
+          "value": 18520286019795,
+          "pdf_page_index": 8,
+          "bbox": [
+            879,
+            533,
+            1105,
+            563
+          ],
+          "ocr_result": "workspace\\week1\\data\\vnm-2025\\ocr\\page-009.json"
+        },
+        {
+          "raw_value": "309.069.411.399",
+          "value": 309069411399,
+          "pdf_page_index": 8,
+          "bbox": [
+            911,
+            916,
+            1101,
+            943
+          ],
+          "ocr_result": "workspace\\week1\\data\\vnm-2025\\ocr\\page-009.json"
+        }
+      ],
+      "sum_vnd": "18829355431194",
+      "target_vnd": "18829355431194",
+      "passed": true
+    },
+    {
+      "name": "income_60_equals_61_plus_62",
+      "operands": [
+        {
+          "raw_value": "9.410.201.646.692",
+          "value": 9410201646692,
+          "pdf_page_index": 10,
+          "bbox": [
+            925,
+            613,
+            1372,
+            645
+          ],
+          "ocr_result": "workspace\\week1\\data\\vnm-2025\\ocr\\page-011.json"
+        },
+        {
+          "raw_value": "3.388.085,777",
+          "value": 3388085777,
+          "pdf_page_index": 10,
+          "bbox": [
+            976,
+            667,
+            1139,
+            695
+          ],
+          "ocr_result": "workspace\\week1\\data\\vnm-2025\\ocr\\page-011.json"
+        }
+      ],
+      "sum_vnd": "9413589732469",
+      "target_vnd": "9413589732469",
+      "passed": true
+    },
+    {
+      "name": "assets_equals_liabilities_plus_equity",
+      "sum_vnd": "53312370717301",
+      "target_vnd": "53312370717301",
+      "passed": true
+    }
+  ],
+  "reviewed_fact_count": 0,
+  "independent_gold": false,
+  "input_script_sha256": "d27c9241f56494f1c53a5a75befe2e1b25050641921609bffd529bdead0eb8b9"
+}

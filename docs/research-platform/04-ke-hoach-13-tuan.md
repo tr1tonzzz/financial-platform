@@ -1,5 +1,9 @@
 # Kế hoạch thực hiện 13 tuần — v3 theo SRS v3.1
 
+**Đã thay lịch thực hiện tiếp theo:** người thực hiện xác nhận còn **10 tuần**, cần demo cơ bản UC-1/2/3 trong **4–5 tuần tới**. Dùng [kế hoạch 10 tuần v5](32-ke-hoach-10-tuan-tiep-theo.md) và [checklist HTML mới](checklist-10-tuan-v4.html). Bản này giữ làm baseline lịch sử, không tự chuyển tick cũ sang tiêu chí mới.
+
+**Lưu ý phạm vi hiện hành 11/10/2026:** đây là baseline lịch/giờ của SRS v3.1, chưa đồng bộ các bổ sung và việc rút screening. [SRS v3.3/mục18](22-srs-dac-ta-yeu-cau-phan-mem.md) loại FR29/FR30/D09/D10 và các TC tương ứng; không thực hiện phần tìm trường hợp/sàng lọc trong checklist cũ. Thứ tự lựa chọn chức năng mới nằm tại [khả thi và lộ trình UC](../research-high-star-finance/03-kha-thi-va-thu-tu-thuc-hien.md); chưa có lịch/giờ mới đã chốt.
+
 Cập nhật 05/10/2026 theo hướng lợi nhuận→chuyển thành tiền→đối chiếu cổ tức. CR-PCD-01/mục15 SRS thêm cầu nối LNTT→CFO tối thiểu một ca, mục tiêu1–3 theo gate; 83 mã yêu cầu/42 tình huống dự kiến. Giữ 78 việc, bổ sung tiêu chí cầu nối trong việc WNN-05. E05/E10 chỉ áp dụng khi có quyết định kích hoạt.
 
 Quỹ nền143 giờ + cầu nối tối thiểu24 giờ =167 giờ dự toán (12–15giờ/tuần tùy tuần), chưa được người thực hiện xác nhận. Nghiên cứu ước lượng24–40 giờ;24 là mức thấp phải đo lại G4. Nếu thời gian thực chỉ10–12giờ/tuần thì cần phân bổ lại/lùi hạn hoặc CR giảm phạm vi, không coi quỹ mới nằm trong143giờ. Ưu tiên một ca trước mở5–8 doanh nghiệp; không đồng thời mở mọi chiều sâu. B5 là giờ thêm, không lấy dự phòng nền. Phần giả định nền bên dưới được giữ để đối chiếu.

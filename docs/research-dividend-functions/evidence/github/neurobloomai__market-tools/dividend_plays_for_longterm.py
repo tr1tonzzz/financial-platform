@@ -1,0 +1,764 @@
+# -*- coding: utf-8 -*-
+"""
+internal_dividend.py — Dividend & Value Screener  (GITIGNORED)
+Screens quality dividend payers for yield sustainability, margin quality,
+low debt, and 4/4 MA alignment. Separate from growth screener.
+Run: python internal_dividend.py
+"""
+
+import yfinance as yf
+import math
+import time
+import json
+import os
+import warnings
+from concurrent.futures import ThreadPoolExecutor
+from datetime import datetime
+
+warnings.filterwarnings('ignore')
+
+_CACHE_FILE    = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dividend_data_cache.json')
+_MA_CACHE_FILE = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dividend_ma_cache.json')
+
+def _load_cache():
+    try:
+        with open(_CACHE_FILE) as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def _save_cache(cache):
+    try:
+        with open(_CACHE_FILE, 'w') as f:
+            json.dump(cache, f, indent=2)
+    except Exception:
+        pass
+
+def _load_ma_cache():
+    try:
+        with open(_MA_CACHE_FILE) as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+def _save_ma_cache(cache):
+    try:
+        with open(_MA_CACHE_FILE, 'w') as f:
+            json.dump(cache, f, indent=2)
+    except Exception:
+        pass
+
+
+def _fetch(ticker, fn, retries=3):
+    for attempt in range(retries):
+        try:
+            result = fn(ticker)
+            if result is not None:
+                return result
+        except Exception:
+            pass
+        if attempt < retries - 1:
+            time.sleep(1.5 * (attempt + 1))
+    return None
+
+# ─── Universe ────────────────────────────────────────────────────────────────
+
+UNIVERSE = [
+    # Asset managers — fee income, capital-light, buyback compounders
+    'TROW',  # T. Rowe Price — 37yr div growth, 37% OM, FCF 8%, P/E 12
+    'AMP',   # Ameriprise — TROW twin; 37% OM, FCF 8%, P/E 12, aggressive buybacks
+
+    'AB',    # AllianceBernstein Holding L.P. — asset manager structured as a limited partnership; Equitable Holdings (EQH) owns ~65%, unitholders get the rest; LP pass-through = distributes ~100% of earnings each quarter (variable, not fixed); ~9% distribution yield at current price; AUM ~$700B+ across equity, fixed income, alternatives, multi-asset; fwdPE 9.5x cheap; yfinance metrics mostly blank for LP structure — judge by distribution per unit history + AUM trend + EQH parent health; distribution variability is the structural caveat (falls in bad market years); income vehicle, not a compounder — size accordingly
+
+    # Insurance — float-based compounders
+    'AFL',   # Aflac — 42yr div growth, supplemental insurance moat, Japan exposure
+    'CINF',  # Cincinnati Financial — 63yr dividend king, FCF 10.5%, pure compounder
+    'TRV',   # Travelers — FCF 20%+, P/E 9, best underwriter in P&C
+    'CB',    # Chubb — global P&C leader, 20% OM, fortress balance sheet
+    'AJG',   # Arthur J. Gallagher — insurance broker, fee model, 30yr growth
+    'AON',   # Aon — insurance/reinsurance broker, pricing power
+    'PRU',   # Prudential Financial — US life insurance + retirement solutions + PGIM asset management ($1.3T+ AUM); PGIM fee income is the floor — stable capital-light earnings regardless of insurance cycle volatility; 4-5% yield, consistent multi-year dividend growth; D/EV reads elevated due to insurance policyholder liabilities (structural, not deteriorating debt — same sector-aware read as VZ on telecom spectrum); moat = scale in group insurance + PGIM distribution; watch payout ratio and FCF coverage each quarter as the qualifying gate
+    'ERIE',  # Erie Indemnity — super-regional P&C insurer (PA/OH/NY/VA/WI); management company model: ERIE manages the Erie Insurance Exchange (the actual reciprocal insurer) and earns a fixed management fee % of premiums written — fee income is recurring and virtually unlosable; ROE 24.8%, NM 14.0%, FCF 3.6%, D/EV 0.5% (near-zero debt); ~2.3% yield, payout 64.6% soft miss on GAAP (FCF 3.6% covers dividend — same read as QSR); 4/5 gates; Dividend Aristocrat path; added 2026-08-12
+
+    # Healthcare / pharma
+    'ABT',   # Abbott Laboratories — 52yr dividend aristocrat; FreeStyle Libre CGM + Alinity diagnostics + Ensure/Similac nutrition; 2.8% yield, FCF 3.7% covers dividend; Libre growing 20%+ masking COVID test revenue cliff in blended numbers; quality franchise, dividend compounding for decades; SIP on pullbacks
+    'JNJ',   # J&J — 62yr dividend king, MedTech + pharma
+    'ABBV',  # AbbVie — Skyrizi/Rinvoq replacing Humira; 3.5%+ yield
+    'MRK',   # Merck — Keytruda franchise, 2.5% yield
+    'BMY',   # Bristol-Myers — Celgene debt near paid; Eliquis+Opdivo FCF
+    'NVO',   # Novo Nordisk — GLP-1 franchise (Ozempic/Wegovy/Victoza); ~40% OM, ~30% NM, ROE 80%+, near-zero debt; ~1.5% yield (Danish semi-annual payer); FCF machine; growth + dividend compounder
+    'NVS',   # Novartis AG (ADR) — Swiss pharma giant, pure-play innovative medicines since spinning off the Sandoz generics business 2023; oncology + cardiovascular-renal-metabolic + immunology + neuroscience portfolio; OM 22.5% (MRQ 21.8%, stable — no NTNX/INVA/ZM-style contradiction), NM 22.5%, ROE 30.3%, ROA 10.2%, ROIC 14.3% — strong and clean, EPS Growth TTM +21.8% is real and positive, no artifact caveat needed (compared directly against ONC 2026-09-27, this is the notably cleaner of the two); FCF yield 4.30% comfortably covers the dividend either way it's read — genuinely well-covered, not a RISKY-COVERAGE case; REAL UNRESOLVED CROSS-SOURCE GAP on the dividend rate itself, flagged not resolved: Schwab shows $3.08/yr (2.12% yield) vs yfinance $4.74/yr (3.26% yield, payout 71.6% vs Schwab-implied 46.6%) — likely Schwab lagging Novartis's 2026 dividend increase, but not confirmed; annual (not quarterly) payer, same structural note as NVO's semi-annual schedule — don't mistake either figure for a quarterly rate; Swiss domicile — dividend withholding tax applies at source, same consideration as TRP/NVO/TIGO elsewhere in this file; D/E 93.3%, D/Capital 43.0% — meaningfully leveraged, reasonable for a large stable pharma but real, not zero; REAL CAUTION worth naming plainly despite the strong margins: current ratio 0.86, quick ratio 0.55 — both below 1.0, genuinely tight short-term liquidity for a company this size, not glossed over just because the rest of the picture is strong; grade context: fundamentally the stronger, cleaner name vs ONC (this framework's other recent international ADR pharma add) on margins, earnings quality, and valuation (PE 22.0x vs ONC's 64.6x), but a mature ~3% revenue grower, not a growth story; technical: below its 10w MA (-3.9%), weekly RSI 47 neutral, weekly slope -2.6% (mildly declining), CMF +0.153 still positive despite the soft price (some tension worth watching), -11.1% off 52w high, 87w structure +10.8% "mild"; earnings Oct 27 (30d); added 2026-09-27
+    'PFE',   # Pfizer — 6.6% yield, FCF 8.4% covers dividend; OM 31.6% (core pharma intact); ROE 8.3% + D/EV 0.323 (Seagen acq) block filter; post-COVID revenue cliff in numbers, grades A
+    'CVS',   # CVS Health — pharmacy/PBM/Aetna; 2.6% yield, FCF 4.1%; OM 4.1%/ROE 3.8%/D/EV 0.401 all blocking; Aetna debt + PBM regulatory headwinds; grades B, watch for restructuring
+    'FMS',   # Fresenius Medical Care AG (ADR) — world's largest kidney dialysis operator (~4,100 clinics globally, ~342k patients, ~2,700 US clinics); also manufactures dialysis machines/dialyzers — vertically integrated; Medicare ESRD reimbursement = guaranteed revenue floor (dialysis is life-sustaining 3x/week treatment, patients don't switch clinics); ~3.7% yield, payout 45% ✓, FCF 16% ✓ (exceptional); GrossM 26.4% structural (medical services labor model, not a quality blocker); OM 10.8% ✓; NM negative ✗, ROE 8.5% ✗, D/EV 46.6% ✗ — 2/5 dividend gates; fwdPE 6.6x cheap; LT watch: GLP-1 drugs (Ozempic/Wegovy) reduce obesity → less diabetic kidney disease → less ESRD incidence — a 10-20yr structural headwind, not imminent; gate to full conviction: ROE ≥ 10% + NM ≥ 5% + D/EV ≤ 35% via FCF deleveraging; added 2026-08-15
+
+    # Consumer staples — pricing power tollbooths
+    'PG',    # P&G — 68yr dividend king, brand moat
+    'CL',    # Colgate — 62yr dividend king, oral care dominance
+    'KO',    # Coca-Cola — 62yr dividend king, global distribution moat
+    'CCEP',  # Coca-Cola Europacific Partners — one of KO's largest independent bottling partners (Western Europe + Australia/Pacific after the 2021 Coca-Cola Amatil merger); different economics from KO itself — bottlers carry the capital-intensive manufacturing/distribution/trucking, KO keeps the high-margin concentrate/licensing side, same split visible in the numbers (KO's OM 34.9% vs CCEP's ~13%); ~1.9-2.4% yield depending on source, payout 46.6% comfortable, FCF yield 3.5% (covers the dividend); OM 13.4% ✓, NM 9.3% ✓, ROE 23.5% ✓; D/EV 0.221 sole blocker on the UNIVERSE/WATCHLIST gate, hairline (0.021 over) — structural bottling-infrastructure leverage, same sector-aware read as VZ/CMCSA elsewhere in this file, not deteriorating; real cross-vendor data gap worth flagging plainly, not silently picked: Schwab's raw operating margin (9.5% TTM) is meaningfully lower than the yfinance-sourced figure (13.4%) used above — same kind of gap already flagged for NGVT, don't fully trust either number in isolation; grade B; RevG +4.4% (fwd +9.2%), epsChangePercentTTM a strong +38.3%; technical: -6.5% off 52w high, weekly RSI 52 neutral, weekly slope -0.8% mildly negative, CMF +0.063, 87w structure +10.8% "mild"; added 2026-09-22
+    'PEP',   # PepsiCo — 51yr aristocrat, snacks + beverages
+    'KHC',   # Kraft Heinz — Buffett/3G Capital legacy; 7% yield, FCF 11.9% (covers div 1.7x), OM 20.7% (brands intact); NM -23%/ROE -12.6% (goodwill write-downs)/D/EV 0.478 (LBO debt) all blocking; FCF story is real but balance sheet is the puzzle
+    'CLX',   # [RISKY-COVERAGE] Clorox — 46yr dividend aristocrat; cleaning/household (Clorox, Glad, Brita, Burt's Bees); OM recovering post-inflation hit; yield has risen to 5.96% (this comment previously said ~3.5%, stale) — the real coverage question is the reason: FCF yield only 1.1%, payout 103.1%, meaning free cash flow no longer comfortably covers the dividend; confirmed live 2026-09-24, right coverage metric for a normal consumer-staples C-corp, not a REIT/utility metric mismatch; watch payout ratio and FCF coverage each quarter
+    'CHD',   # Church & Dwight — household + personal care brand portfolio (Arm & Hammer, OxiClean, Trojan, Vitafusion gummies, ZICAM, Nair, Waterpik); consistent mid-single-digit revenue grower via mix of organic + bolt-on acquisitions; GrossM 45.6%, OM 18.1%, NM 12.0%, ROE 17.0%, D/EV 9.1% (near-zero debt), FCF 3.9%, payout 38.6%; ~1.2% yield — low yield, high quality; the compounder profile not the yield is the reason to own; 5/5 dividend quality gates; P/E 32.7x (premium, justified by consistency); added 2026-08-12
+    'INGR',  # Ingredion — specialty food + industrial ingredients (corn wet milling → starches, sweeteners, nutrition ingredients, biomaterials); B2B ingredient supplier to food/beverage/pharma/industrial — sticky because reformulating a recipe around a new ingredient supplier costs more than the ingredient price itself; GrossM 23.7% (corn processing structural), OM 12.6%, NM 8.2%, ROE 13.7%, FCF yield 6.9% (standout — structural free cash machine), payout 35.7%, D/EV 24.0%; ~3.2% yield; P/E 11.3x — value priced; -20% from 52w high; 5/5 dividend quality gates; added 2026-08-12
+    'ECL',   # Ecolab — water/hygiene/infection prevention services + chemicals; once a food plant, hotel, or hospital is on Ecolab's bundled system (chemicals + service team + digital monitoring), switching is near-impossible — the service team becomes embedded in the customer's operations; Global Water + Institutional + Pest Elimination + Life Sciences = four durable recurring revenue streams; GrossM 44.2%, OM 18.5%, NM 12.6%, ROE 22.0%, D/EV 15.7%, payout 38.1%; FCF yield 1.9% (just below 2% gate — technicality, dividend covered 2.5x on cash flow); ~1.0% yield, 30+ yr Dividend Aristocrat; not a yield play — a compounder; 4/5 gates; added 2026-08-12
+    'ROL',   # Rollins — world's largest pest control company (Orkin + HomeTeam + other brands); recurring residential + commercial pest contracts — pests don't stop, contracts renew, churn is structurally low; global franchise in pest control + termite + wildlife management; GrossM 52.4%, OM 18.8%, NM 13.6%, ROE 37.0% (D/EV 5.9% = genuine, not leveraged), FCF 2.8%, D/EV 5.9%; payout 64.9% just over 60% gate (soft miss — 20+ yr consecutive dividend grower, payout reflects choice not stress); ~2.0% yield; 4/5 gates; added 2026-08-12
+    'CTAS',  # Cintas — world's largest uniform services company (uniform rental + laundry + First Aid/Safety + Fire Protection + document shredding); once a business is on Cintas' system (custom-branded uniforms, employee sizes on file, weekly service routes), switching is more disruptive than it's worth — same embedded-service moat as ECL and ROL; GrossM 50.7%, OM 23.7%, NM 17.8%, ROE 40.7% (D/EV 3.2% = genuine, not leveraged), payout 36.7%; FCF yield 1.8% (just below 2% gate — same technicality as ECL, dividend covered 2.7x on cash); ~1.0% yield, 40+ yr Dividend Aristocrat; not a yield play — a compounder; 4/5 gates; added 2026-08-12
+    'KR',    # Kroger — grocery chain, 2.2% yield, FCF 8.9% (covers dividend); OM 3.4%/NM 0.7% (structural grocery thin margins) + D/EV 0.341 block filter; grades B; scale moat, not a margin story
+    'GPC',   # Genuine Parts — 68yr dividend king, auto/industrial parts distribution
+    'SYY',   # Sysco — food distribution aristocrat, 54yr growth
+
+    # Industrials — durable cash generators
+    'ITW',   # Illinois Tool Works — 80/20 model, 50yr aristocrat, 25% OM
+    'EMR',   # Emerson Electric — 43yr aristocrat, process automation
+    'GWW',   # W.W. Grainger — industrial distribution, pricing power, 53yr growth
+    'CMI',   # Cummins — engines + power, 18yr growth
+    'DOV',   # Dover Corp — diversified industrial, 69yr dividend king
+    'SNA',   # Snap-on — professional tools + diagnostics + repair software; franchise toolbox-on-credit dealer network = sticky recurring relationship with technicians (hard to displace once in the bay); GrossM 51.8%, OM 25.4%, NM 19.6%, ROE 17.9%, D/EV 0.061, FCF 5.1%, yield ~2.6%; 14yr+ consecutive div growth (Aristocrat path); A+; 4/4 MA aligned, RSI 68.6, MACD expanding — strong momentum; added 2026-08-06
+
+    'UNP',   # Union Pacific — western US railroad duopoly (UNP + BNSF own the West; you can't build a new railroad); every ton of coal/grain/auto/intermodal freight moving west pays UNP; pricing power structural — shipper alternative is truck at 3x cost; NM 28.8%, ROE 39.7%, FCF 2.7%, payout 44.7%, D/EV 15.4%, RevG 11.5%; ~1.9% yield; 5/5 dividend quality gates; Dividend Aristocrat; added 2026-08-12
+    'NSC',   # Norfolk Southern — eastern US Class I railroad duopoly partner to CSX (mirrors UNP/BNSF's western duopoly structure — the same "can't build a new railroad" moat); real, worth naming plainly: East Palestine OH derailment (Feb 2023) was a genuine safety/reputational/liability event, not resolved-and-forgotten, though it hasn't shown up as fundamental deterioration in the numbers below; OM 35.3%, NM 21.0%, ROE 17.0%, FCF yield 1.9% (thin but not alarming), payout 46.1% (comfortable room), D/EV 0.195; ~1.7% yield; grade B (dividend_grade); technical: -10.0% off 52w high, weekly RSI 48 neutral, weekly slope +1.7% (mildly positive), CMF -0.059 mild negative, -5.9% below 10w MA — unremarkable, no red flag either way; added 2026-09-18
+    'WM',    # Waste Management — regulated waste collection duopoly (WM + RSG control ~50% US market); landfill permit moat is near-impossible to replicate (10+ yr permitting + NIMBYism guarantees scarcity); non-discretionary recurring revenue; NM 11.1%, ROE 29.8%, FCF 2.6%, D/EV 20.6%; ~1.6% yield; payout 93.2% GAAP misleading — landfill D&A inflates denominator, FCF 2.6% is the real coverage signal; 4/5 gates; Dividend Aristocrat; added 2026-08-12
+    'RSG',   # Republic Services — WM's duopoly partner; same landfill permit moat + municipal contract lock-in + route density economics; OM 20.2%, ROE 18.3%, D/EV 0.173, FCF 2.7%, RevG 2.6%; ~1.5% yield; waste is slow-growth by nature but the compounding is durable and nearly unlosable; Dividend Aristocrat (20yr+ consecutive growth); SIP on dips alongside WM; added 2026-08-25
+
+    # Specialty Materials — niche chemical compounders
+    'CBT',   # Cabot Corporation — specialty chemicals (carbon black for tires/rubber/coatings, activated carbon for water/air/pharma purification, specialty fluids for drilling/processing); niche industrial inputs with meaningful switching costs; OM 14.3%, NM 5.2%, ROE 13.3%, FCF 5.8%, RevG 6.4%; D/EV 0.227 (slightly over gate, structural for a capex-intensive materials co) + GrossM 24.2% (materials structural, not fixable) — both acknowledged; yield ~2.8%, consistent payer; watch D/EV trending toward 0.20 as FCF compounds; added 2026-08-07
+
+    # Franchise / consumer
+    'MCD',   # McDonald's — 44% OM franchise royalty, 49yr div growth
+    'LEVI',  # Levi Strauss — 150+ yr denim brand (Levi's + Dockers + Beyond Yoga); direct-to-consumer shift improving margins; GrossM 61.7%, NM 9.7%, ROE 25.4%, FCF 6.8%, D/EV 23.1%, payout 40.0%; ~2.85% yield; fwdPE 13.2x cheap for the brand quality; 5/5 dividend gates; added 2026-08-14
+    'QSR',   # Restaurant Brands International — 3G Capital franchise holding co (Burger King global #2 QSR + Tim Hortons Canada coffee dominance + Popeyes fast-growing fried chicken + Firehouse Subs); pure franchise royalty model = asset-light, recurring, global; Tim Hortons ~90%+ brand awareness in Canada (cultural institution, not just a brand); Popeyes Chicken Sandwich viral moment = structural traffic reacceleration; OM 27.7%, NM 13.1%, ROE 34.8%, FCF yield 5.0% (covers dividend comfortably in cash); D/EV 37.6% structural LBO financing (same read as MCD — franchise model leverage, not deteriorating); ~3.5% yield, P/E 18.8x (cheap vs MCD peer); payout 63.8% soft miss on GAAP (FCF coverage is real — 5% FCF yield vs 3.5% dividend); 4/5 gates; added 2026-08-12
+
+
+    # Technology with growing dividend
+    'TXN',   # Texas Instruments — analog semis, 20yr growth, FCF machine
+    'MSFT',  # Microsoft — massive FCF, 20yr+ growth, low yield but compounding
+    'AAPL',  # Apple — buyback + dividend machine, massive FCF
+    'FIS',   # Fidelity National Information Services — banking + payments infrastructure software (core banking, digital banking, fraud, capital markets, wealth mgmt); post-Worldpay spinoff (2023: sold 55% stake for $18.5B) is now a focused banking-tech platform, not a merchant acquirer; ~4% yield, payout 31.8% (dividend well covered by earnings), FCF $2.45B positive (5.6% yield vs 4% payout = real buffer); OM 16.4%, NM 23.3%, ROE 17.2% all clean; fwdPE 6.5x cheap (priced like the debt is permanent); D/EV 0.486 only blocker — $21B Worldpay merger debt (2019 $43B deal); $18.5B Worldpay proceeds + $2.45B/yr FCF = deleveraging path is real; -42% from 52w high ($76 → $44) — price dislocated from business quality; not a quality-filter screener name (D/EV > 0.30 fails) but FCF coverage is honest and dividend trajectory is durable; added 2026-08-05
+
+
+    # Energy — integrated, durable through cycles
+    'CVX',   # Chevron — 37yr aristocrat, integrated oil
+    'XOM',   # ExxonMobil — 42yr consecutive increases, massive scale
+    'CNQ',   # Canadian Natural Resources — largest Canadian oil producer; oil sands (40-50yr reserve life, near-zero decline post-construction) = cash machine; Berkshire Hathaway holds it; OM 21.8%, NM 25.1%, ROE 22.8%, D/EV 0.191, FCF 6.2%, yield 4.5%, PE 11.8x, payout 46%; A+
+    'OXY',   # Occidental Petroleum — largest Permian operator (CrownRock acquisition added scale); OxyChem sold to Berkshire Hathaway for $9.7B cash (Oct 2025) — OXY is now a pure-play Permian E&P, chemicals diversification gone but $9.7B proceeds went straight at CrownRock debt, materially cleaning the balance sheet; Berkshire still holds ~28%+ OXY common + $10B preferred (8% dividend) separately from OxyChem — natural buyer floor remains; Vicki Hollub CEO highly regarded; Direct Air Capture (Stratos plant) = carbon optionality + DOE backing; not a dividend aristocrat (cut in 2020); sits between CVX/XOM (core) and DVN (satellite) — larger Permian scale than DVN but now equally pure-play oil-price exposed; watch debt paydown completion + FCF coverage as qualifying gate each quarter
+    'SM',    # SM Energy — mid-cap Permian E&P (Midland Basin + Delaware Basin); fixed + variable dividend model similar to DVN — fixed base small, variable from excess FCF above breakeven; OM 61.3%, FCF 23.1% (real cash generation), GrossM 84.6% (E&P lifting cost economics); D/EV 0.545 is the watch item — higher leverage than DVN/OXY, meaningful at oil trough; ROE 16.1% solid; RevG 227.8% is commodity price spike, not durable; size at 30-40% of what you'd allocate to CVX/XOM for the same energy income thesis; variable dividend evaporates in a sustained oil downturn (same design as DVN); watch FCF coverage + debt paydown progress as qualifying gate each quarter; added 2026-08-07
+    'DVN',   # Devon Energy — SATELLITE position, not core; pure Permian (Delaware Basin) E&P with no downstream, no chemicals, no Berkshire floor; fixed + variable dividend model is honest (fixed base ~$40/bbl, variable from excess FCF) but most oil-price naked of the energy names; variable dividend evaporates below ~$50/bbl by design; size at 50-60% of what you'd allocate to CVX/XOM/OXY for the same income thesis; watch FCF coverage and payout ratio each quarter as qualifying gate
+    'PR',    # Permian Resources — Delaware Basin pure-play E&P (formed from Colgate Energy + Centennial Resource Development merger 2022); low-cost operator, cleanest gate profile of the whole Permian satellite group — GrossM 75.8% ✓, OM 57.4% ✓, NM 21.5% ✓, ROE 11.4% ✓, D/EV 14.0% ✓, FCF 2.3% ✓, RevG 55.1% ✓ — 7/7 gates, no blockers at all; yield 2.65%, payout only 40% — real room for the fixed+variable dividend to grow, unlike DVN/SM where the variable portion is thin/oil-price-naked; same structural risk as any pure-play E&P (dividend still commodity-cycle-exposed), but the balance sheet and cash generation are meaningfully cleaner than its Permian peers here; added 2026-09-06
+    'MGY',   # Magnolia Oil & Gas — Eagle Ford Shale (South Texas) E&P, not Permian — actual basin diversification within this group, not just another Permian name; cleanest balance sheet of the whole set: D/EV 0.062, practically debt-free (vs PR's already-clean 14.0%, SM's 54.5%); GrossM 82.2% ✓, OM 50.7% ✓, NM 28.8% ✓, ROE 20.9% ✓, FCF yield 5.0% ✓, RevG 50.1% ✓ — 7/7 gates, no blockers; grade A+; fixed dividend + opportunistic FCF-funded buybacks, not a thin variable-dividend model like DVN/SM; yield 2.4%, payout only 27.5% — most room to grow of the group; same commodity-cycle exposure as any E&P, but the balance sheet gives it the most room to survive a downturn; added 2026-09-09
+
+    # Banks — deposit franchise compounders
+    'PNC',   # PNC Financial Services — #5 US bank by assets; retail + corporate banking + asset management (BBVA acquisition added scale); Main Street + Wall Street balanced model, not Goldman-style trading-heavy; net interest margin expands as rates stay elevated; consistent dividend grower, returned to pre-COVID payout levels fast; D/EV reads elevated (bank deposits = structural liabilities, same sector-aware read as PRU/VZ — not deteriorating debt); fee income from treasury management + capital markets + asset management cushions NII volatility in rate cycles; watch payout ratio and NIM trend each quarter as the qualifying gate
+    'CATY',  # Cathay General Bancorp — California regional bank serving the Chinese-American community; unique franchise: deep cultural trust + bilingual staff + trade finance expertise (US-China commerce corridor) = sticky deposit base; OM 62.6%, NM 43.7%, ROE 11.7%, D/EV 0.036 (exceptionally well-capitalized for a bank), RevG 13.8%; FCF/GrossM banking artifacts; yield ~3%, consistent payer; 4/4 MA aligned, RSI 72.4 — strong momentum; added 2026-08-07
+    'IBOC',  # International Bancshares — Texas regional bank (US-Mexico border corridor); border franchise = unique moat in cross-border commerce, trade finance, remittances between US and Mexico; OM 63.9%, NM 49.9%, ROE 13.5%; FCF/GrossM are banking artifacts (deposits-as-liabilities, same sector read as PNC/CFG); D/EV 0.151 low for a bank; yield ~3.5%, consistent dividend grower; RevG 5.4% slow but NIM discipline is exceptional for a regional bank; watch NIM trend + ROE stability as qualifying gate each quarter; added 2026-08-07
+    'CFG',   # Citizens Financial Group — #7 US regional bank by assets; retail + commercial banking across New England + Mid-Atlantic + Midwest; OM 35.1%, NM 26.1%, RevG 14.7%; ROE 8.3% (below 10% gate — genuine watch item for a bank, below PNC/USB peer range); D/EV 0.459 + FCF 0.0% are structural bank artifacts (deposits = liabilities, FCF doesn't report cleanly for banks — same sector-aware read as PNC); dividend yield ~3.5%, consistent payer; 4/4 MA aligned, slope +4.7%, RSI 71.4 — strong momentum; watch NIM trend + ROE recovery above 10% as rate environment normalizes; added 2026-08-06
+    'STT',   # State Street Corporation — global custodian bank duopoly (only BNY Mellon competes globally) + SPDR ETF franchise (SPY, GLD, SLV — one of the largest ETF issuers); custody moat = switching a pension fund's custodian is a multi-year project requiring board approval + legal transfer — structural stickiness; SPDR fee income is recurring royalty on $1T+ AUM; OM 27.8%, NM 23.0%, ROE 12.4%; FCF 0%, GrossM 0%, D/EV 0.000 all banking artifacts (same sector read as PNC/CFG — deposits-as-liabilities, not deteriorating); RevG -2.8% watch item (NII cycle + fee pressure); yield ~3%, consistent payer; RSI 85.5 + 56.2% above 87w MA at time of add = very extended, not an entry — buy on correction; judge by custody AUM + SPDR ETF AUM growth + NIM trend; added 2026-08-08
+
+    'WFC',   # Wells Fargo — 4th largest US bank by assets; ~2.3% yield, payout 26.2% (same conservative posture as C/BAC — significant growth runway); OM 37.4%, NM 27.2%, ROE 12.6%; operating under Fed's $1.95T asset cap since 2018 (fake-accounts scandal penalty) — cap constrains balance sheet growth and suppresses earnings relative to peers; asset cap removal is the thesis: once Fed lifts the cap, WFC can grow loans + deposits again, re-accelerating EPS and dividend; D/EV + FCF banking artifacts; DCA on weakness, thesis is cap removal + payout ratio expanding toward 40%+; added 2026-08-09
+    'BAC',   # Bank of America — 2nd largest US bank; ~2% yield, payout 25.9% (most conservative of the big four); OM 38.3%, NM 29.5%, ROE 11.2%; Buffett's other major bank holding alongside AXP; most rate-sensitive major US bank — massive fixed-rate bond portfolio bought in 2020-21 low-rate era created large unrealized losses (AOCI drag) that reverse as rates normalize = hidden earnings tailwind; Merrill Lynch wealth management ($3.5T+ AUM) + consumer banking + investment banking = diversified franchise; D/EV + FCF banking artifacts; DCA alongside JPM; thesis is AOCI reversal + payout growing from 26% toward 40%+; added 2026-08-09
+    'C',     # Citigroup — 4th largest US bank; deep turnaround under Jane Fraser (CEO 2021): shedding 14 international consumer franchises, reorganizing into 5 streamlined divisions (Services, Markets, Banking, US Personal Banking, Wealth), simplifying a historically bloated structure; ~2% yield ($2.68/yr), payout 25.9% (most conservative payout of any major US bank = significant dividend growth headroom as turnaround prints earnings); OM 36.2%, NM 21.8%; D/EV + FCF banking artifacts; trading at discount to book value = market hasn't priced turnaround completion yet; DCA on weakness — thesis is payout ratio expanding from 26% toward 40%+ as restructuring delivers; added 2026-08-09
+
+    # Midstream / MLP — toll-road pipelines, high yield, K-1 tax
+    'EPD',   # Enterprise Products Partners — largest US midstream MLP; Permian + Gulf Coast pipeline network (natural gas, NGL, crude) + NGL fractionation + LNG/petrochemical export terminals; fee-based toll contracts = revenue independent of commodity prices (volume matters, not oil price); 25+ consecutive years of distribution growth, never cut; Dan Duncan family owns ~30%+ (founder-aligned, not financial-engineer-aligned); ROE 19.8%, OM 12.7% (pipeline margins look thin because revenue includes commodity pass-through — toll economics better than GAAP shows), yield 5.7%, fwdPE 12.2x; distributable cash flow (DCF) coverage ~1.7x = distribution very conservatively funded; D/EV elevated but investment-grade rated (BBB+) — structural pipeline infrastructure leverage, not deteriorating; caution: MLP issues K-1 (not 1099) + generates UBTI (avoid in IRA/Roth unless you want complexity); income vehicle, not a growth compounder — size for yield
+
+    'ET',    # [RISKY-COVERAGE] Energy Transfer LP — MLP peer to EPD; massive midstream network (natural gas, crude, NGL, refined products, LNG export); yield 6.73% (higher than EPD), FCF $1.72B real, RevG 32.1%; more aggressive than EPD: higher leverage (D/EV elevated), Kelcy Warren (founder/CEO) has run acquisitive playbook (Enable Midstream, Crestwood); KEY CAVEAT: ET cut its distribution 50% in 2020 COVID (EPD never has in 25+ years) — that's the trust differential; distribution rebuilt and growing again but the cut happened; same K-1/UBTI caution as EPD (MLP structure); size smaller than EPD given the cut history; coverage confirmed live 2026-09-24, unlike EPD's real DCF coverage (~1.7x): FCF yield 4.5% is below the 6.64% distribution yield, payout 91.4% — a real gap on top of the 2020 cut history, not resolved
+
+    'CQP',   # Cheniere Energy Partners — Sabine Pass LNG terminal MLP; owns/operates the largest LNG export facility in the US (6 liquefaction trains + deepwater marine terminal + cryogenic storage); revenue model = fixed-fee tolling contracts (Cheniere parent + long-term SPAs with global counterparties) — cash flows are volume-based and contracted, not commodity-price exposed; unsexy asset (marine terminal + cryogenic tanks + compressors), sexy numbers: 20-25yr contracted revenue streams + distributions growing consistently; ~5-7% yield; D/EV elevated from infrastructure build-out (same structural read as EPD — investment-grade rated, not deteriorating); same K-1/UBTI caution as EPD/ET (MLP structure — avoid in IRA unless comfortable with complexity); size similar to EPD; added 2026-08-04
+    'KRP',   # [RISKY-COVERAGE] Kimbell Royalty Partners, LP — non-operated oil & gas mineral/royalty aggregator across US basins (Permian, Anadarko, Haynesville, Eagle Ford, Bakken, DJ Basin) — collects royalty/mineral payments, doesn't drill or operate wells itself; K-1 partnership (LP structure), same UBTI/IRA caution as EPD/ET/CQP; structurally DIFFERENT risk from a toll-road pipeline, worth naming plainly: royalty income depletes with underlying well production over time — sustaining the payout requires continued acquisitions, not just holding existing assets; ARTIFACT WARNING on trailing GAAP figures — epsChangePercentTTM is -614.3%, an extreme swing most likely a one-time non-cash impairment ("ceiling test" writedown on mineral/royalty carrying values when commodity-price assumptions get marked down, a known mechanic in this industry) — don't trust trailing EPS/payout-ratio math right now; underlying cash business looks fine independent of that charge: OM 56.1%/29.4-44.5% (Schwab TTM/MRQ, improving), NM 25.8%, FCF yield 8.4% (real, strong on its own); REAL COVERAGE CAUTION independent of the EPS artifact, worth flagging as plainly as TRP's: div yield 11.1-13.2% (very high, both sources) is actually ABOVE the 8.4% FCF yield — the distribution is not fully covered by free cash flow even on the cleaner cash-flow metric, not just a GAAP-payout technicality (GAAP payout shows 177.7%); D/EV 0.225 elevated (structural, same MLP-infrastructure read); ROE 12.4% ✓; grade B; technical: -5.7% off 52w high, weekly RSI 54 neutral, weekly slope +1.2% mildly positive, CMF -0.125 real negative (distribution pressure), -1.4% below 10w MA, 87w structure +14.1% "mild"; a genuinely higher-risk income name than its neighbors in this section — size accordingly; added 2026-09-24
+    'DMLP',  # [RISKY-COVERAGE] Dorchester Minerals, L.P. — same archetype as KRP: non-operated oil & gas mineral/royalty owner, collects royalty payments across multiple US basins, doesn't drill or operate; K-1 partnership, same UBTI/IRA caution as EPD/ET/CQP/KRP; VARIABLE distribution, not a fixed dividend — quarterly payout is tied directly to actual royalty income received that quarter (commodity price + production volume dependent), same depleting-royalty-asset structural risk as KRP (sustaining the payout over time requires continued acquisitions, not just holding existing interests); div yield 9.6% (Schwab) / 11.0% (yfinance) vs FCF yield 8.71% — a real gap, same direction as KRP though narrower (KRP's gap was 11.1-13.2% yield vs 8.4% FCF yield, wider); GAAP payout ratio 145% looks alarming but is the wrong lens here (same caveat as KRP/EPD — GAAP net income doesn't cleanly represent distributable cash for a royalty entity with 90%+ gross margins and near-zero operating cost base); epsChangePercentTTM -45.6% is real but far less extreme than KRP's -614.3% cliff — more plausibly commodity-price cyclicality (oil/gas royalty income moves directly with commodity prices) than a one-time writedown artifact, though not confirmed either way; margins TTM-vs-MRQ actually IMPROVING (OM 46.9%→55.0%, NM 45.3%→53.2%) — opposite direction from the NTNX/INVA/ZM deterioration pattern, a genuine positive; balance sheet notably cleaner than KRP: D/E ~1% (essentially debt-free), current ratio 13.85; ROE 28.0%, ROA 17.1%, ROIC 28.3% — strong; Beta 0.52 — low volatility for the sector; technical: midway zone, +3.0% above 10w MA, weekly RSI 65 (upper end of the sweet spot), weekly slope +6.7% strong positive, CMF +0.077 positive, -2.5% off 52w high, 87w structure +19.4% "mild" (not extended); grade context: cleaner balance sheet and less extreme earnings distortion than KRP, but the core coverage gap (yield > FCF yield) and depleting-asset/commodity-price structural risk are the same real caution — sized as a peer to KRP in this section, not a safer substitute for it; added 2026-09-27
+    'DTM',   # [RISKY-COVERAGE] DT Midstream — natural gas gathering/transmission/storage; spun off from DTE Energy 2021; Michigan (legacy DTE-utility-linked) gathering/storage + Haynesville Basin (Louisiana) gathering + interstate pipeline JV stakes (NEXUS, Millennium, Vector); fee-based toll contracts, same volume-not-price economics as EPD/ET/CQP — but a straightforward C-corp (1099, no K-1/UBTI complexity), the one structural difference worth naming from its MLP neighbors in this section; OM 50.4%, NM 35.7% (strong toll economics), ROE 9.9% modest, D/EV 0.208 elevated (structural pipeline infra, same read as EPD/ET/CQP); ~2.8% yield, payout 74.6% (less cushion than EPD/NSC), FCF yield only 1.0% — thin dividend coverage worth flagging honestly, not a hidden risk; grade B (dividend_grade); technical: -15.8% off 52w high, weekly RSI 42 (leaning soft), weekly slope -4.9% (declining), CMF -0.040 mild negative, -5.2% below 10w MA, 87w structure +8.6% "at base" (not extended); added 2026-09-18
+    'TRP',   # [RISKY-COVERAGE] TC Energy Corporation — Canadian pipeline giant; North American natural gas transmission network (Canada/US/Mexico) including the former Columbia Pipeline Group system; historically also owned Keystone oil pipeline, spun off as South Bow Corporation 2024 to simplify the portfolio after Coastal GasLink (LNG feeder pipeline) suffered major, real cost overruns that pressured the balance sheet in 2022-2023 — worth naming plainly, not a clean history; foreign (Canadian) domicile — dividends carry Canadian withholding tax, same consideration as NVO's Danish payer note elsewhere in this file; OM 44.3%, NM 22.9% solid toll economics, ROE 11.8%, ROA 3.7% low (capital-intensity); REAL CAUTION, more than the usual "D/EV elevated, judge by FCF not GAAP payout" framing used elsewhere in this section: D/EV 0.473 (highest of the midstream group here, well above DTM's 0.208), payout 98.4% (near 100%, minimal cushion on GAAP), and FCF yield only 2.0% — actually BELOW the 4.06% dividend yield, meaning FCF does not fully cover the dividend at face value, not just a GAAP-payout-ratio artifact like EPD/CQP's AFFO-vs-GAAP framing; grade B (dividend_grade) but the coverage math here is a genuinely weaker case than DTM/NSC just added; technical: -12.9% off 52w high, weekly RSI 45 neutral, weekly slope -3.5% (declining), CMF -0.046 mild negative, -4.5% below 10w MA, 87w structure +11.8% "mild"; added 2026-09-18 — added on request; the FCF-vs-yield coverage gap is real and worth revisiting each quarter, not a green light to size heavily
+
+    # Telecom / Cable — high yield, FCF-covered, structural debt
+    'VZ',    # Verizon — 6.1% yield, FCF 10.3% (1.7x dividend coverage), 25% OM, ROE 17%; D/EV 0.517 from 5G spectrum (structural, not deteriorating); income play not a compounder, no rev growth
+    'CMCSA', # Comcast — #1 US cable/broadband operator (~32M internet subscribers) + NBCUniversal (broadcast + cable networks + Universal Studios + theme parks) + Sky (European cable/satellite); broadband is the economic core — once fiber is in the wall it's a near-monopoly in that footprint; GrossM 69.4% (broadband/software economics, not hardware), OM 17.2% ✓, NM 9.0% ✓, ROE 11.5% ✓, FCF 14.0% ✓ (exceptional — $12.7B FCF covers $1.32 dividend 2.7x on cash); ~5.2% yield, payout 42.3% ✓ (conservative, meaningful growth runway); fwdPE 7.05x = deeply value-priced; D/EV 51.4% structural exception — cable infrastructure leverage (borrow against predictable subscription cash flows, same sector-aware read as VZ on telecom spectrum, not deteriorating debt); 4/5 dividend gates; headwinds: RevG -1.2% (broadband subscriber losses to AT&T fiber + Verizon FIOS + T-Mobile FWA), cord-cutting secular decline for cable TV accelerating — NBCUniversal/Peacock investment phase not yet covering linear decline; Peacock streaming + theme parks = optionality, not current thesis; gate: RevG stabilizing at 0%+ as broadband ARPU growth offsets subscriber loss + D/EV trending down via FCF; added 2026-08-17
+    'TIGO',  # Millicom International Cellular ("Tigo") — Luxembourg-domiciled telecom (mobile + broadband + cable + Tigo Money mobile financial services) across Latin America: Colombia, Guatemala, Panama, Paraguay, Bolivia, El Salvador, Honduras, Nicaragua; the international/emerging-market name in this list, worth naming the real risk plainly rather than just the yield: multi-country LatAm currency/FX exposure + political/regulatory risk across several jurisdictions at once, and foreign (Luxembourg) domicile means dividend withholding tax applies, same consideration as NVO/TRP elsewhere in this file; ~3.15% yield, payout 74.8% (moderate cushion), FCF yield 11.9% — exceptional, covers the dividend ~4x on cash flow, the real reason to trust this despite the payout ratio; OM 20.7% ✓, NM 9.2% ✓, ROE 21.7% ✓, D/EV 0.444 elevated (telecom infrastructure leverage, same structural read as VZ/CMCSA above, not deteriorating); grade A; fwdPE 23.6x; technical: essentially at its 10w MA (-0.3%), weekly RSI 62 sweet spot, weekly CMF +0.215 strong, -3.9% off 52w high, 87w structure +67.8% "high" — genuinely extended on the long-term structural measure despite the otherwise clean fundamentals, the real caveat here; added 2026-09-22
+
+    # Water & Utilities — regulated moats, infrastructure compounders
+    'NEE',   # NextEra Energy — largest US utility by market cap; Florida Power & Light (regulated, ~6M customers, fastest-growing major US state) + NextEra Energy Resources (largest wind + solar operator in North America, ~25 GW); ~2.9% yield, payout 53% (lowest in utility sector = best dividend growth runway); OM 31.5% (best-in-class for a utility); ~10%/yr dividend growth rate sustained for 10+ years = Dividend Aristocrat with growth engine attached; AI datacenter + EV electrification demand = FPL rate base expansion accelerating; the premier utility dividend compounder; DCA name; added 2026-08-09
+    'DUK',   # Duke Energy — #2 largest US IOU (Carolinas + Midwest + Florida, ~8M customers); ~3.5% yield, payout 64%, 50+ yr Dividend Aristocrat; OM 27.5%; coal-to-clean transition = $73B capex plan through 2028 = rate base compounding + PUC-approved earnings uplift; Southeast + Midwest geography = above-average load growth demographics; DCA name; added 2026-08-09
+    'SO',    # Southern Company — regulated Southeast utility (Georgia Power + Alabama Power + Mississippi Power + Southern Natural Gas) + Southern Power (wholesale); ~3.3% yield, payout 72%, 70+ yr consecutive dividend history; OM 29.6%; Vogtle Units 3+4 (first new US nuclear plant in 30+ years) now fully online = large baseload capacity addition driving rate base + EPS growth; Southeast sunbelt demographics = strong load growth; DCA name; added 2026-08-09
+    'AEE',   # Ameren — regulated electric + gas utility (Missouri + Illinois, ~2.4M customers); ~2.8% yield, payout 51% (second-lowest payout in utility sector after NEE = meaningful growth headroom), Dividend Aristocrat; OM 25.2%; Missouri PUC is constructive regulator + Illinois clean energy transition adds rate base from renewables capex; clean, underrated, consistent compounder; DCA name; added 2026-08-09
+    'AWK',   # American Water Works — largest US water utility; ~37% OM, ~2.2% yield, regulated monopoly model, 15yr+ div growth; D/EV ~0.22 structural (capex-heavy utility), FCF thin from infrastructure spend; grades A
+    'XYL',   # Xylem — water tech (pumps, treatment, smart metering); ~13% OM, ~1.3% yield, Evoqua acquisition adds scale; D/EV ~0.17, FCF covers dividend; grades A/B depending on yield gate
+    'WEC',   # WEC Energy Group — regulated Midwest utility (Wisconsin/Illinois/Michigan); ~3.5% yield, 20yr+ consecutive dividend growth; OM 29%, NM 16%; D/E structural IOU capex (PUC-approved rate base) + FCF negative from grid/AI datacenter buildout; ROE PUC-capped ~11%; DCA name — buy regularly, hold long; AI datacenter load growth in Wisconsin corridor = rate base expansion = higher allowed earnings over time
+    'XEL',   # Xcel Energy — regulated electric/gas utility (MN, CO, TX Panhandle, NM); ~3% yield, payout 64% (FCF-covered on rate base earnings basis), consistent dividend grower; OM 22.7%, fwd P/E 17x; same structural D/E + FCF negatives as WEC (PUC-approved capex, not deteriorating); datacenter angle: Colorado (Denver metro) + Minnesota hyperscaler load growth = rate base expansion = higher allowed earnings; also largest US wind generator — coal-to-wind transition adds rate base; DCA alongside WEC; gate: dividend growing 5-7%/yr as datacenter contracts convert to rate base additions
+
+    'CNP',   # CenterPoint Energy — regulated electric + natural gas utility (Houston TX + Indiana + Minnesota); ~2.4% yield ($0.96/yr), payout 54% (conservative for a utility — room to grow), OM 24.5%, NM 11.6%; D/EV 0.483 structural (regulated utility capex model, PUC rate base recovery); Houston corridor = fastest-growing major US metro = rate base expansion from residential/commercial load growth + Hurricane Beryl grid hardening capex (PUCT-approved = future earnings uplift); DCA name; added 2026-08-09
+    'SRE',   # Sempra — regulated California utilities (SoCalGas + SDG&E) + Sempra Infrastructure LNG (Port Arthur LNG Texas + Energía Costa Azul Mexico Pacific LNG); ~3.1% yield ($2.63/yr), 20yr+ consecutive dividend growth, payout ~75%; D/EV 0.359 + FCF -50% structural during LNG terminal construction — take-or-pay offtake contracts signed, FCF should flip strongly positive once Port Arthur Phase 1 online; dividend covered by regulated utility earnings even during LNG build; OM 28.3%, NM 16.8%; DCA name — the LNG optionality is free on top of the regulated utility dividend base; added 2026-08-09
+
+    # Recovery / dividend watchlist — yield history exists, not yet qualifying; tracked for gate clearance
+    'SWKS',  # [RISKY-COVERAGE] Skyworks Solutions — RF front-end modules for smartphones (Apple ~55% of revenue) + IoT + automotive; this comment previously claimed FCF covered the dividend comfortably (~14% FCF yield) — confirmed live 2026-09-24 that's no longer true: yield 4.13%, FCF yield only 3.3%, payout 147.1%, a real gap now, not a GAAP-vs-cash-basis technicality; GrossM 40%, OM 7.3% (trough), ROE 5.1% (trough), RevG -3.1%; two headwinds: smartphone cycle weakness + Apple in-sourcing RF chips internally (longer-term structural risk, not imminent cliff — Apple transition takes years); TXN analog: deeply embedded in designs, cash generative through cycles historically, but the cycle trough is currently pressuring coverage too, not just margins; gate: OM recovering above 15% as smartphone volumes stabilize + Apple in-sourcing timeline clarity + FCF coverage improving
+    'NKE',   # Nike — OM 6.9%/NM 4.8% abysmal now (DTC transition + China); brand moat intact,
+             # SNKRS app + Nike ecosystem = potential network flywheel; watch for margin recovery
+    'GM',    # General Motors — Chevrolet, GMC, Cadillac, Buick; ICE dominant + Ultium EV platform;
+             # OM 3.2% (auto assembly is structurally thin); NM 1.1%;
+             # D/EV 0.696 = GM Financial captive finance arm (~$120B loan book), same structural read as PRU;
+             # yield ~0.9% (low payout, conservative post-2009 lessons); FCF strong;
+             # gate: OM >8% as GM Pro fleet + Cadillac margin mix improve
+    'F',     # [RISKY-COVERAGE] Ford Motor — Ford Pro (Transit/Super Duty commercial trucks, highest-margin segment),
+             # Ford Blue (ICE legacy), Ford Model e (EV — currently loss-making, dragging NM negative);
+             # OM 5.7%, NM -3.2% (EV losses); D/EV 0.808 = Ford Credit captive finance arm (~$130B AUM);
+             # yield 4.64%; Ford Pro is the crown jewel — fleet penetration in commercial trucks is durable;
+             # confirmed live 2026-09-24: FCF yield -15.5%, real (heavy EV-transition capex), not a data
+             # artifact — the coverage risk here is genuinely the EV-transition spend, same story as the
+             # NM drag, not a separate concern; payout only 64.1% though, so the gap is capex-driven, not
+             # a payout-ratio problem; gate: Model e losses narrow + NM turns positive + FCF turns positive
+             # as EV capex peaks
+    'VFC',   # VF Corporation — Wrangler, Lee, Timberland, Dickies; 50yr Dividend Aristocrat before cut 2023;
+             # sold Supreme (2024) for debt paydown; D/EV 0.439 now manageable, ROE 22% intact;
+             # OM 3.8% is the only structural gap — cost-out + brand mix stabilization the path;
+             # gate: OM >10% sustained + dividend above $0.50/yr
+    'FMC',   # FMC Corporation — ag-chem (Rynaxypyr insecticide patent = real pricing power globally);
+             # OM went negative (-0.5%) during 2023-24 destocking trough — NOT structural deterioration;
+             # NM -72.9% = goodwill impairments, not operations; D/EV 0.823 elevated, needs delevering;
+             # gate: OM recovery above 15% as destocking normalizes + D/EV below 0.5
+    'WD',    # Walker & Dunlop — largest non-bank commercial real estate finance firm (multifamily mortgage banking + agency origination + capital markets + appraisal + property management); Fannie Mae/Freddie Mac #1 multifamily originator = agency-backed = credit risk nearly zero (government guarantee); the weakness is the business cycle: CRE origination volumes collapse in high-rate/tight-credit environments (2023-2026 cycle) → OM 0.8% + NM 3.3% + ROE 2.4% — genuinely weak, not structural; technical Adverse 17/100 at add (slope -8.9%, CMF negative, RSI 32 near oversold); dividend yield ~2-3%, has grown consistently but payout is stretched at current earnings trough; gate: OM recovering above 10% as CRE origination volumes normalize with rate cuts + multifamily supply/demand re-balancing + NM ≥ 5% sustained; added recovery/watchlist 2026-09-03
+    'DINO',  # HF Sinclair — independent refiner (Tulsa/Navajo/Woods Cross/Puget Sound) + renewable diesel + Sinclair-branded retail marketing + lubricants (Petro-Canada Lubricants) + HEP midstream; GrossM 12.9% structural (refining crack-spread economics, not a quality flaw — same lens as other commodity processors); OM 11.7%, NM 6.1%, ROE 19.5%, D/EV 16.8%, FCF yield 10.9% (exceptional), payout ratio only 19% — dividend has real room to grow; yield ~2%; RevG 53.2% is a cyclical crack-spread upswing, not secular — refining margins swing hard both directions, treat current growth rate as a cycle peak signal not a trend; added recovery/watchlist 2026-09-05
+    'EBF',   # Ennis, Inc. — printed business products: business forms, tags & labels, envelopes, presentation folders, wide-format printing; GrossM 30.8%, OM 13.8%, NM 10.8%, ROE 14.0%, D/EV ~1.6% (nearly debt-free), payout ratio 60%, yield ~4.7%; RevG 1.5% — mature/low-growth print-adjacent market, no real expansion story; case here is balance-sheet quality + income, not growth: debt-free + consistent margins funding the dividend; yfinance data gap on shares outstanding — FCF yield approximate (~9-10%, not exact); added recovery/watchlist 2026-09-05
+    'IFF',   # [RISKY-COVERAGE] International Flavors & Fragrances — flavors + fragrances + food ingredients + health biosciences;
+             # the underlying businesses are real: IFF flavors/scent (Givaudan/Firmenich competitor), Pharma
+             # Solutions (excipients for drug delivery), Health & Biosciences (cultures, enzymes, probiotics);
+             # WHAT WENT WRONG: 2021 merger with DuPont Nutrition & Biosciences ($26B deal) was massively
+             # dilutive — took on $9B+ debt, massive goodwill, lost key customers during integration chaos,
+             # CEO Silveira replaced by Frank Clyburn (2023, ex-J&J); dividend CUT 50% in 2023 ($3.24→$1.60/yr);
+             # FLAGS (as of Aug 2026): ROE -5.5% (negative), FCF yield -8.0% (burning cash),
+             # NM 2.6% (below 5% gate), OM 8.5% (barely above 8% gate), D/EV 22.9%;
+             # payout 49.5% looks ok but EPS base is thin — dividend NOT safe if NM stays at 2.6%;
+             # GrossM 36.6% shows underlying business margins are decent — the problem is SG&A + integration
+             # costs + D&A from goodwill eating through the operating margin to near-zero net;
+             # asset sales underway (divested Health & Biosciences pharma unit, Nouryon stake) for
+             # debt paydown — deleveraging is real but slow;
+             # ~1.9% yield at $84 ($1.60/yr) — low yield for the risk being carried;
+             # GATE TO DIVIDEND UNIVERSE: OM sustained >12% + FCF yield positive + D/EV below 0.20
+             # + ROE recovering above 10% + dividend not cut again; all four must clear simultaneously;
+             # watch each earnings print for NM trajectory and asset sale proceeds going to debt;
+
+
+    # Precious Metals — high-margin royalty and mining compounders
+    'GFI',   # Gold Fields — South African gold miner (NYSE ADR); mines in Ghana/Australia/Chile/SA; OM 51.8%, NM 40.8%, ROE 51.9%, D/EV 0.046, FCF 8.2%, yield 6%, PE 8.8x; Salares Norte (Chile) online + gold ATH = beast numbers; A+
+    'B',     # Barrick Mining — world's #2 gold miner; Nevada/Carlin Trend crown jewels (US rule-of-law, no country risk premium); OM 56.2%, NM 32.1%, ROE 25.2%, D/EV 0.063, FCF 7.8%, yield 1.7%, PE 11.1x; same gross margin as GFI (55%) but lower ROE/ROA — market pays premium for asset geography safety; A+
+
+    # Crossover from growth universe — pass dividend filter
+    'ACN',   # Accenture — consulting/IT services; 13.8% OM, 3.9% yield, FCF 11.9%, D/EV 0.082, P/E 13.6; A+
+    'CTSH',  # Cognizant Tech — IT services/outsourcing; ~15% OM, ~1.8% yield, FCF covers dividend, D/EV near zero, low-debt capital-light model; A
+    'IBM',   # IBM — hybrid cloud (Red Hat OpenShift) + AI (watsonx) + consulting + zSystems mainframe (still a genuinely high-margin, sticky legacy franchise); real multi-year turnaround under CEO Arvind Krishna since 2020 — Red Hat integration paid off, back to organic growth after years of decline; OM 16.5%, NM 15.5%, ROE 34.5% (buyback-amplified), FCF yield 5.4% strong, RevG 1.1% still modest (legacy hardware/mainframe cyclicality partly offsetting software+consulting growth); D/EV 0.230 elevated — mostly Red Hat acquisition debt ($34B all-cash deal, 2019, largely debt-financed), not pension load: IBM already ran two major pension risk transfers (2022 $16B + 2024 $6B to Prudential/MetLife, funded from existing plan assets, no IBM cash) that offloaded >40% of the legacy pension obligation off-balance-sheet, so that overhang is actively shrinking, not sitting static; still the reason it doesn't clear the market-tools screener's UNIVERSE/WATCHLIST gate even though the dividend case is fine; yield 2.82%, payout 59.8% (moderate, some room); 30-year uninterrupted dividend, not an accelerating grower but reliable; mix skews more legacy-hardware+software than ACN/CTSH's pure-services model — third IT/enterprise-tech income name in this cluster; added 2026-09-10
+    'ADP',   # ADP — payroll/HCM platform; 30.2% OM, 3.1% yield, FCF 5.4%, D/EV 0.049, P/E 20.7; A+
+    'GIS',   # General Mills — cereal/food staples; 19.2% OM, 7.1% yield, FCF 12.3%, zero debt, P/E 8.4; A+ (yield elevated — stock under pressure, not a cut signal)
+    'BR',    # Broadridge Financial — investor comms infra; 18.4% OM, 2.7% yield, FCF 7.1%, D/EV 0.173, P/E 15.4; A
+    'CF',    # CF Industries — nitrogen fertilizer; 33.6% OM, 1.9% yield, FCF 6.6%, D/EV 0.175, P/E 9.5; A
+    'CME',   # CME Group — futures/derivatives exchange; 69.8% OM, 2.0% yield, FCF 3.2%, D/EV 0.039, P/E 22.7; A (price in downtrend, watch for base)
+    # 'CTRA' removed — acquired by DVN (2026)
+    'FDS',   # FactSet — financial data/analytics; 29.8% OM, 1.9% yield, FCF 6.8%, D/EV 0.157, P/E 15.3; A
+    'HSY',   # Hershey — chocolate/snacks brand moat; 21.3% OM, 3.2% yield, FCF 4.1%, D/EV 0.136, P/E 34; A
+    'KMB',   # [RISKY-COVERAGE] Kimberly-Clark — tissue/personal care staple; 19.6% OM, yield now 5.24% (was 4.9%), FCF yield 2.9%, D/EV 0.172, P/E 20.2; A; confirmed live 2026-09-24 — payout 100.4%, FCF yield below the dividend yield, a real gap that was already implicit in the original numbers (3.0% FCF vs 4.9% yield) but not called out as a coverage concern until now
+    'TRI',   # Thomson Reuters — legal/news data platform; 30.3% OM, 3.1% yield, FCF 4.7%, D/EV 0.072, P/E 23.4; A
+    'HD',    # Home Depot — home improvement duopoly; 11.9% OM, 2.8% yield, FCF 3.0%, D/EV 0.160, P/E 23.9; B
+    'PPG',   # PPG Industries — global #2 coatings (architectural: Glidden/Olympic/PPG brands + industrial: automotive OEM, aerospace, packaging, protective coatings); 50+ year Dividend Aristocrat, yield ~2.5-3%; GrossM 41.2%, OM 14.0%, NM 9.6%, ROE 19.3%, FCF 4.2%, RevG 7.2%; D/EV 0.229 only blocker — acquisition-driven (serial acquirer model, same structural read as SHW); FCF 4.2% covers dividend; SHW peer in the coatings duopoly — different channel (PPG heavier in industrial/automotive, SHW heavier in architectural contractor); watch D/EV delevering toward 0.20 as FCF compounds; added 2026-08-08
+    'RPM',   # RPM International — Dividend King 50+ consecutive years of growth; Rust-Oleum (consumer coatings), Tremco (commercial roofing sealants/waterproofing — spec'd into architect drawings before bid, no substitution), DAP (caulks/adhesives), Bondo (auto body filler); sticky B2B channel + brand lock-in across price tiers; NM 8.4%, ROE 21.4%, FCF 3.3%, payout 41.2%, D/EV 16.8%, RevG 7.2%; ~1.9% yield; 5/5 dividend quality gates; added 2026-08-12
+
+    # REIT — Experiential / Net Lease
+    'FRT',   # Federal Realty Investment Trust — longest Dividend Aristocrat streak of any REIT in existence (56+ consecutive years of increases — beats O's 30+ and NNN's 35+); one of only 3 REITs ever to achieve Dividend Aristocrat status (O, NNN, FRT); ~$9B market cap; mixed-use retail/residential REIT anchored in dense, affluent coastal markets (DC suburbs/Bethesda, Boston/Assembly Row, San Jose/Santana Row, Philadelphia, Miami/Coconut Grove); location moat is the core thesis — can't replicate Santana Row in downtown San Jose or Assembly Row in Somerville MA, high-barrier coastal real estate + mixed-use density creates self-reinforcing foot traffic that single-use strip centers can't match; development pipeline is the growth engine on top of income: Pike & Rose (Rockville MD), Assembly Row, Santana Row are transformative urban mixed-use villages, not just property acquisitions — creates NAV growth that pure net-lease REITs don't have; ~4-4.5% yield (lowest of the three REIT Aristocrats — premium coastal real estate commands a lower cap rate, same way MSCI yields less than a regional bank); AFFO payout ratio ~70-75%; occupancy ~94-96% (lower than NNN's ~99% — mixed-use complexity + development transitions explain the gap, not tenant weakness); affluent consumer base = more resilient spending through downturns than national-average retail; D/EV elevated (REIT structure, same read as O/NNN — judge by AFFO not GAAP); DCA alongside O and NNN for the full REIT Dividend Aristocrat trio; added 2026-08-27
+    'NNN',   # NNN REIT (National Retail Properties) — net-lease retail REIT (~3,500 single-tenant properties across 49 states); tenants are necessity/convenience-anchored (7-Eleven/Sunoco convenience, Midas/Mavis auto service, McDonald's/Burger King QSR, AMC theaters, LA Fitness) — non-discretionary spending base that holds through recessions; 35+ consecutive years of dividend increases (one of only 3 REITs ever to achieve Dividend Aristocrat status — O, NNN, and Federal Realty); AFFO payout ratio ~68% — most conservative in the net-lease REIT space, best dividend growth headroom of the group; ~5.5-6% yield; investment-grade rated (BBB+); occupancy ~99%; average remaining lease term ~10yr; triple-net leases (tenants pay taxes/insurance/maintenance); no single tenant >5% of revenue; smaller than O ($8B vs $50B cap) but more focused and arguably more conservative on the payout — the yield + payout discipline combination makes it a strong income compounder; D/EV elevated (REIT structure, same read as O/VICI — judge by AFFO not GAAP); DCA alongside O; added 2026-08-27
+    'O',     # Realty Income — "The Monthly Dividend Company"; largest net-lease retail REIT (~$50B market cap, 15,000+ properties across US/UK/Europe); tenants are essential/necessity-based (Walgreens, Dollar General, 7-Eleven, Walmart, FedEx, Dollar Tree, LA Fitness) — 80+ industries, no single tenant >4% of revenue = diversification that STAG/EPR/VICI don't have; triple-net leases (tenants pay taxes/insurance/maintenance) with built-in rent escalators; ~5.5% yield, 30+ consecutive years of dividend increases (Dividend Aristocrat), monthly dividend since 1969 — this is the name that created the monthly dividend REIT category; AFFO payout ratio ~75-80% (conservative for net-lease); investment-grade rated (BBB+/Baa1); Spirit Realty acquisition (2024) added scale; D/EV elevated (REIT structure — same read as VICI/EPR, judge by AFFO not GAAP); occupancy ~98-99% through cycles including 2008 and COVID; most recession-resilient of the group — essential retail (drug stores, dollar stores, convenience) holds up when consumers pull back; rate-sensitive like all REITs but long lease terms (10-20yr avg) partially buffer near-term rate shock; the anchor net-lease holding; DCA name; added 2026-08-27
+    'WPC',   # W. P. Carey — diversified global net-lease REIT (~1,300+ properties across US + Europe, ~$13B market cap); industrial/warehouse majority (~47% of portfolio) + retail net-lease + self-storage; unique among US REITs: ~35-40% of portfolio in Europe (Germany, Netherlands, Spain, UK) with CPI-linked rent escalators — built-in inflation hedge tied to European CPI, not just US; investment-grade tenants across diverse industries; KEY NOTE: cut dividend ~20% in 2023 when spinning off office properties into separate REIT (NLOP) — the cut was deliberate portfolio cleanup, not financial distress; post-spinoff WPC is a cleaner industrial-tilted net-lease business and dividend reset at more conservative payout (~70-75% AFFO); ~6-7% yield (highest in the REIT group — premium reflects European currency risk + cut history); NOT a Dividend Aristocrat (unlike FRT/O/NNN — 2023 cut breaks the streak); investment-grade rated (BBB-); D/EV elevated (REIT structure, same read as O/NNN/FRT — judge by AFFO not GAAP); watch: European portfolio occupancy + EUR/USD fx impact on USD distributions + AFFO payout ratio each quarter; added 2026-08-27
+    'EPR',   # EPR Properties — experiential net-lease REIT; owns theaters, ski resorts, attractions, early childhood education (La Petite Academy); triple-net leases = tenants pay taxes/insurance/maintenance, EPR collects rent; OM 51.3%, NM 37.7%, ROE 11.7% (passes gate), FCF 7.1% covers 5.8% yield (MOS +1.3%); D/EV 0.392 only blocker — REIT structure debt secured against experiential properties, same read as VICI; judge by AFFO coverage not GAAP earnings; added 2026-07-29
+    'RHP',   # Ryman Hospitality Properties — convention-hotel REIT (5 Gaylord Hotels: Opryland Nashville, Texan Dallas, Palms FL, National DC, Rockies CO; ~10,000 total rooms) + Grand Ole Opry + Ryman Auditorium entertainment venues; the moat is group/convention business — 80%+ of hotel revenue from group bookings (corporate meetings, conventions, events) booked 12-24 months in advance, creating a contractual revenue floor transient hotels don't have; Gaylord properties are the largest convention hotels in the US outside of Vegas (scale + geography = destination for national meetings); Opry/Ryman segment = entertainment IP + branded content on top of the hotel income floor; dividend cut 2020 COVID (hospitality REIT), fully reinstated and growing since 2022; ~4-5% yield, AFFO payout ~65-70% (conservative); D/EV elevated (REIT hotel debt — same structural read as EPR/VICI, judge by AFFO coverage not GAAP); CMF +0.273 strong accumulation at add (RSI 58, Neutral technical); gate: AFFO/share growing as group booking pace expands + dividend growing annually; added 2026-09-03
+    'VICI',  # VICI Properties — largest gaming/experiential REIT; Caesars (45%), MGM, Venetian, Hard Rock; 15-20yr triple-net leases with CPI escalators = built-in inflation hedge; ~5.5% yield, payout 61% AFFO (conservative for REIT), FCF $1.28B; zero tenant defaults since 2017 IPO; moat = gaming license tied to location (tenants can't relocate); SIP for yield compounding; ROE/D/E block standard filter — REIT-structure artifacts, judge by AFFO coverage and dividend growth
+    'AMT',   # American Tower — largest global cell tower REIT (220,000+ towers across US/Europe/India/LatAm/Africa); every wireless carrier pays AMT rent for antenna space — multi-tenant model (2nd/3rd tenant is near-pure margin); 5G densification = more antennas per tower = higher rent per site; ~4.1% yield, FCF 3.7%, NM 31.1%, ROE 33.9%; D/EV 34.9% elevated (tower acquisition debt — same structural read as EPR/VICI, judge by AFFO coverage); 4/5 gates; added 2026-08-12
+    'DLR',   # Digital Realty Trust — one of the two dominant global data center REITs (with Equinix); AMT's digital-infrastructure twin, cell towers vs. data centers, same tenant-switching-cost moat: once a customer's servers/network gear are colocated and interconnected, physically migrating to a competing facility is disruptive and risky, so tenants renew rather than move; hyperscaler/cloud/AI capacity demand is the structural growth driver, same tailwind as AMT's 5G densification; ~2.7% yield, FCF yield 5.4% (covers the dividend ~2x), OM 25.9%, NM 11.8%; ROE 2.9%/payout/P/E 89.7x all GAAP-distorted by real-estate depreciation — same read as every other REIT in this list, judge by FCF/AFFO coverage not GAAP net income; D/EV 0.228 structural; technical at add: below 10w MA (-2.3%), RSI 50 neutral, CMF -0.039, 87w structure +9.2% "at base" — not extended, -8.5% from 52wk high; added 2026-09-17
+    'STAG',  # STAG Industrial — single-tenant industrial REIT (~570 buildings across 41 US states: warehouses, distribution centers, light manufacturing); monthly dividend payer (~4% yield — income appeal is the primary thesis); tenants include Amazon, XPO, Michelin, FedEx — e-commerce + last-mile logistics demand supports occupancy (~98%); lower tier than PLD: secondary markets, smaller buildings, single-tenant vs PLD's institutional multi-tenant prime locations; single-tenant concentration risk is real — a vacancy goes 100%→0% overnight, no gradual decline buffer; D/EV elevated (REIT infrastructure debt, same structural read as VICI/EPR/AMT — judge by AFFO coverage not GAAP earnings); OM/NM GAAP-distorted by real estate D&A; monthly dividend is the differentiator in the REIT space (most pay quarterly); watch: occupancy trend + AFFO payout ratio + tenant credit quality each quarter; added 2026-08-27
+
+    # Specialty Finance / Clean Energy Infrastructure
+    'HASI',  # HA Sustainable Infrastructure Capital (formerly Hannon Armstrong) — specialty finance REIT that deploys capital into clean energy infrastructure (rooftop solar, onshore wind, energy efficiency upgrades, sustainable infrastructure); the business model: borrow capital at investment-grade rates, lend/invest in government-backed or investment-grade clean energy projects at a higher yield — spread business, same structural read as EPD MLP or mortgage REIT; D/EV 0.544 is structural (leverage is the model, not deteriorating balance sheet) and ROE 3.4% is GAAP-distorted (non-cash interest adjustments similar to how bank ROE reads — judge by distributable earnings/share growth); ~5-6% yield, consistent and growing payer since 2013; counterparty quality is high (federal agencies, utilities, investment-grade municipalities — these projects don't default); IRA tailwinds (Inflation Reduction Act clean energy incentives = expanding deal pipeline); technical Leaning 72/100 at add (CMF +0.136 accumulation, slope +2.1% rising, runway 83%, curvature +0.111 accelerating — one of the better setups in the dividend list); gate: distributable EPS/share growing year-over-year + dividend coverage ratio ≥ 1.1x + deal origination pace accelerating vs prior year; added 2026-09-03
+
+    # BDC — Business Development Company
+    'MAIN',  # Main Street Capital — BDC lending to lower middle market; internally managed (removes fee conflict vs externally managed peers); ~8.4% yield paid monthly + semi-annual special dividends; trades at ~1.55x NAV (premium unusual for BDCs, reflects management quality); ROE 14.4%; BDC structure means OM/D/E filters don't apply cleanly — judge by: NAV growth + dividend coverage + management track record
+    'ARCC',  # Ares Capital Corporation — largest BDC by assets (~$22B+); externally managed by Ares Management (ARES); lends to middle market companies ($10M–$1B revenue) that can't access public debt markets; scale moat: largest BDC = lowest cost of capital = attracts better borrowers = lower credit losses = virtuous cycle; yield ~9-10%, quarterly distributions; D/EV 0.532 structural (BDCs borrow to lend — leverage is the model), ROE 6.9% mark-to-market distortion — judge by NAV/share growth + dividend coverage ratio + non-accrual rate (credit quality); GrossM 100%, OM 75.7%, 4/4 MA aligned; vs MAIN: ARCC is externally managed (fee conflict exists), larger scale, higher yield; added 2026-08-08
+
+    # Traditional Asset Managers — incumbent active management, yield elevated from structural pressure
+    'BEN',   # [RISKY-COVERAGE] Franklin Resources (Franklin Templeton) — 40+ year Dividend Aristocrat (~5-6% yield); active fixed income + equity management across global platforms; Western Asset Management acquisition adds scale in institutional fixed income but also integration costs; FCF -17.4% is the real flag: active manager AUM outflows to passive ETFs have been persistent, Western Asset acquisition added debt absorption; OM 13.0%, NM 8.7%, D/EV 0.172, RevG 14.3%, ROE 7.9% (below 10% gate); yield is high because stock is under pressure from secular active→passive shift — not a cut signal yet (40+ yr aristocrat), but FCF negative is the watch gate; judge by: AUM net flow trend + FCF recovery + dividend coverage ratio; added 2026-08-08
+
+]
+
+
+# ─── MA Alignment ────────────────────────────────────────────────────────────
+
+def _ma_score_inner(ticker):
+    hist  = yf.Ticker(ticker).history(period='2y', interval='1wk')
+    close = hist['Close']
+    if len(close) < 40:
+        return None
+    price = float(close.iloc[-1])
+    ma50d = float(close.tail(10).mean())
+    ma20w = float(close.tail(20).mean())
+    ma10m = float(close.tail(43).mean())
+    ma20m = float(close.tail(87).mean())
+    score = sum([price > ma50d, price > ma20w, price > ma10m, price > ma20m])
+    return (ticker, round(price, 2), score)
+
+def ma_score(ticker):
+    return _fetch(ticker, _ma_score_inner)
+
+
+# ─── Fundamentals ────────────────────────────────────────────────────────────
+
+def _get_data_inner(ticker):
+    info = yf.Ticker(ticker).info
+    if not info or 'marketCap' not in info:
+        return None
+
+    mc   = info.get('marketCap') or 0
+    ev   = info.get('enterpriseValue') or 0
+    debt = info.get('totalDebt') or 0
+    fcf  = info.get('freeCashflow') or 0
+    om   = (info.get('operatingMargins') or 0) * 100
+    nm   = (info.get('profitMargins') or 0) * 100
+    roe  = (info.get('returnOnEquity') or 0) * 100
+    roa  = (info.get('returnOnAssets') or 0) * 100
+    pe   = info.get('trailingPE') or 0
+    payout_raw = (info.get('payoutRatio') or 0) * 100
+    payout = payout_raw if payout_raw <= 200 else 0   # suppress garbled data
+
+    # yfinance dividendYield quirk: sometimes decimal (0.045), sometimes percent (4.5),
+    # sometimes garbled (37 for AAPL which should be 0.37%). Heuristic normalization:
+    raw = info.get('dividendYield') or info.get('trailingAnnualDividendYield') or 0
+    if raw > 20:
+        div_yield = raw / 100    # clearly percent*100 — divide back down
+    elif raw > 1:
+        div_yield = raw          # already in percent form (e.g. 4.7 = 4.7%)
+    else:
+        div_yield = raw * 100    # decimal form (e.g. 0.047 = 4.7%)
+    if div_yield > 15:
+        div_yield = 0            # still unreasonable — suppress
+
+    fcf_yield = fcf / mc * 100 if mc else 0
+    dev       = debt / ev if ev else 0
+
+    if pe and (math.isinf(pe) or pe <= 0):
+        pe = None
+
+    return {
+        'div_yield': round(div_yield, 2),
+        'payout':    round(payout, 1),
+        'fcf_yield': round(fcf_yield, 1),
+        'om':        round(om, 1),
+        'nm':        round(nm, 1),
+        'roe':       round(roe, 1),
+        'roa':       round(roa, 1),
+        'dev':       round(dev, 3),
+        'pe':        round(pe, 1) if pe else None,
+    }
+
+def get_data(ticker):
+    return _fetch(ticker, _get_data_inner)
+
+
+# ─── Grading ─────────────────────────────────────────────────────────────────
+
+def dividend_grade(d):
+    if d is None:
+        return '—'
+    pts = 0
+
+    # Yield — entry point, not the driver (1 pt only — high yield on falling price is a trap)
+    if d['div_yield'] >= 2.0: pts += 1
+
+    # MOS — FCF buffer above dividend (2 pts — the real sustainability signal)
+    mos = d['fcf_yield'] - d['div_yield'] if d['div_yield'] > 0 else d['fcf_yield']
+    if mos >= 0:  pts += 1   # FCF covers dividend
+    if mos >= 3:  pts += 1   # strong buffer — dividend has room to grow
+
+    # ROE — quality of the business (2 pts — can it sustainably generate returns?)
+    if d['roe'] >= 12 or d['roa'] >= 10: pts += 1
+    if d['roe'] >= 20:                   pts += 1   # compounder-grade returns
+
+    # Margin quality — earnings durability
+    if d['om'] >= 15: pts += 1
+    if d['om'] >= 25: pts += 1
+
+    # Debt discipline
+    if d['dev'] <= 0.10: pts += 1
+
+    # Value
+    if d['pe'] and d['pe'] <= 15: pts += 1
+
+    if pts >= 7: return 'A+'
+    if pts >= 5: return 'A'
+    if pts >= 3: return 'B'
+    return '—'
+
+
+def passes_filter(d):
+    if d is None: return False
+    if d['div_yield'] < 1.5:  return False   # meaningful yield gate
+    if d['fcf_yield'] <= 0:   return False   # must generate cash
+    if d['om'] < 8:           return False   # quality floor
+    if d['dev'] > 0.30:       return False   # debt ceiling
+    roe_ok = d['roe'] >= 10
+    roa_ok = d['roa'] >= 10
+    if not roe_ok and not roa_ok: return False
+    return True
+
+
+# ─── HTML Output ─────────────────────────────────────────────────────────────
+
+RECOVERY_TICKERS = {'VFC', 'FMC', 'NWL', 'NKE', 'GM', 'F', 'WD'}
+
+# Curated, not mechanical — a blind "yield > FCF yield" pass misfires on
+# utilities (heavy rate-base capex makes FCF go deeply negative on a
+# healthy business), REITs (judge by AFFO, not GAAP FCF), banks (the FCF
+# metric doesn't map onto a bank's balance sheet at all), and BDCs
+# (regulated-investment-company distribution structure). EPD shows up on
+# a naive FCF-yield scan too, despite its own real DCF coverage (~1.7x)
+# comfortably covering the distribution — the generic metric is just the
+# wrong lens for an MLP. These are the names where the *right* coverage
+# metric for that entity type still shows a real gap, confirmed live
+# 2026-09-24, not mechanically flagged. See each ticker's own comment
+# for the specific numbers.
+RISKY_COVERAGE_TICKERS = {'KRP', 'TRP', 'CLX', 'KMB', 'SWKS', 'ET', 'DTM', 'BEN', 'IFF', 'F', 'DMLP'}
+
+def _grade_color(g):
+    return {'A+': '#3fb950', 'A': '#58a6ff', 'B': '#d29922'}.get(g, '#8b949e')
+
+def _cell(val, color=None, bold=False, align='right'):
+    s = f'color:{color};' if color else ''
+    b = 'font-weight:600;' if bold else ''
+    return f'<td style="padding:7px 10px;text-align:{align};{s}{b}">{val}</td>'
+
+def build_dividend_html(rows, aligned_4, aligned_3, below, now):
+    n_total   = len(rows)
+    n_4       = len(aligned_4)
+    n_aplus   = sum(1 for *_, g, ok in aligned_4 if g == 'A+')
+    n_a       = sum(1 for *_, g, ok in aligned_4 if g == 'A')
+    n_passing = sum(1 for *_, g, ok in aligned_4 if ok)
+
+    def stat(label, val, color='#e6edf3'):
+        return (
+            '<div style="background:#161b22;border:1px solid #21262d;border-radius:8px;'
+            'padding:12px 20px;text-align:center">'
+            f'<div style="font-size:22px;font-weight:700;color:{color}">{val}</div>'
+            f'<div style="font-size:11px;color:#8b949e;margin-top:3px">{label}</div>'
+            '</div>'
+        )
+
+    stats_html = (
+        '<div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px">'
+        + stat('Universe', n_total)
+        + stat('4/4 Aligned', n_4, '#58a6ff')
+        + stat('A+ (4/4)', n_aplus, '#3fb950')
+        + stat('A (4/4)', n_a, '#58a6ff')
+        + stat('Passes Filter', n_passing, '#3fb950')
+        + '</div>'
+    )
+
+    tbl_style = (
+        'width:100%;border-collapse:collapse;font-size:12px;'
+        'background:#0d1117;margin-bottom:32px'
+    )
+    th_style  = 'padding:8px 10px;text-align:right;color:#8b949e;font-weight:400;border-bottom:1px solid #21262d;font-size:11px'
+    th_left   = th_style.replace('right', 'left')
+
+    th_center = th_style.replace('right', 'center')
+
+    def table_header():
+        cols   = ['Ticker','Gr','Price','MA','Yield','FCF%','Payout','OM%','D/EV','P/E','MOS','Filter']
+        aligns = ['left','left'] + ['right']*9 + ['center']
+        ths = ''
+        for c, a in zip(cols, aligns):
+            sty = th_left if a == 'left' else (th_center if a == 'center' else th_style)
+            ths += '<th style="' + sty + '">' + c + '</th>'
+        return '<thead><tr>' + ths + '</tr></thead>'
+
+    def grade_badge(g):
+        c = _grade_color(g)
+        return (
+            f'<span style="background:{c}22;color:{c};border:1px solid {c}44;'
+            f'border-radius:4px;padding:1px 6px;font-size:11px;font-weight:600">{g}</span>'
+        )
+
+    def ma_badge(ma):
+        c = '#3fb950' if ma == 4 else '#d29922' if ma == 3 else '#8b949e'
+        return f'<span style="color:{c};font-weight:600">{ma}/4</span>'
+
+    def html_row(t, p, ma, d, g, ok):
+        is_recovery = t in RECOVERY_TICKERS
+        row_bg = ''
+        if g == 'A+' and ok:
+            row_bg = 'background:rgba(63,185,80,0.05);'
+        elif g == 'A' and ok:
+            row_bg = 'background:rgba(88,166,255,0.04);'
+        elif is_recovery:
+            row_bg = 'background:rgba(248,81,73,0.03);'
+
+        hover = f'<tr style="{row_bg}border-bottom:1px solid #21262d14">'
+
+        if d is None:
+            return hover + f'<td style="padding:7px 10px">{t}</td>' + '<td colspan="11" style="padding:7px 10px;color:#8b949e">no data</td></tr>'
+
+        is_risky_coverage = t in RISKY_COVERAGE_TICKERS
+        ticker_style = 'font-weight:600;'
+        if is_recovery:
+            ticker_style += 'color:#f0883e;'
+        risk_badge = (
+            ' <span title="Real coverage risk, confirmed live — the right cash-flow metric for this '
+            'entity type still shows a gap, not just a naive yield&gt;FCF-yield flag" '
+            'style="color:#f85149;font-size:11px;cursor:help">&#9888;</span>'
+        ) if is_risky_coverage else ''
+        ticker_td = f'<td style="padding:7px 10px;{ticker_style}">{t}{risk_badge}</td>'
+
+        yc = '#3fb950' if d['div_yield'] >= 3.5 else '#d29922' if d['div_yield'] >= 2.0 else '#8b949e'
+        fc = '#3fb950' if d['fcf_yield'] >= d['div_yield'] else '#f85149' if d['fcf_yield'] <= 0 else '#d29922'
+        oc = '#3fb950' if d['om'] >= 25 else '#58a6ff' if d['om'] >= 15 else '#d29922' if d['om'] >= 8 else '#f85149'
+        dc = '#3fb950' if d['dev'] <= 0.10 else '#d29922' if d['dev'] <= 0.30 else '#f85149'
+
+        ys   = f"{d['div_yield']:.1f}%" if d['div_yield'] > 0 else '—'
+        fs   = f"{d['fcf_yield']:.1f}%"
+        pays = f"{d['payout']:.0f}%"   if d['payout'] > 0 else '—'
+        oms  = f"{d['om']:.1f}%"
+        ds   = f"{d['dev']:.3f}"
+        pes  = f"{d['pe']:.1f}x"       if d['pe'] else '—'
+        flag = '<span style="color:#3fb950">✓</span>' if ok else '<span style="color:#f85149">✗</span>'
+        ps   = f'${p:.2f}'
+
+        mos_val = d['fcf_yield'] - d['div_yield']
+        if d['div_yield'] > 0:
+            mos_s  = ('+' if mos_val >= 0 else '') + f'{mos_val:.1f}%'
+            mos_c  = '#3fb950' if mos_val >= 3 else '#d29922' if mos_val >= 0 else '#f85149'
+        else:
+            mos_s, mos_c = '—', '#8b949e'
+
+        return (
+            hover
+            + ticker_td
+            + _cell(grade_badge(g), align='left')
+            + _cell(ps, '#e6edf3', bold=True)
+            + _cell(ma_badge(ma), align='right')
+            + _cell(ys, yc)
+            + _cell(fs, fc)
+            + _cell(pays)
+            + _cell(oms, oc)
+            + _cell(ds, dc)
+            + _cell(pes)
+            + _cell(mos_s, mos_c, bold=True)
+            + f'<td style="padding:7px 10px;text-align:center">{flag}</td>'
+            + '</tr>'
+        )
+
+    def section(title, section_rows, grade_groups=False):
+        if not section_rows:
+            return ''
+        hdr = (
+            f'<div style="font-size:13px;font-weight:600;color:#e6edf3;margin-bottom:10px">'
+            f'{title} <span style="color:#8b949e;font-weight:400">({len(section_rows)} names)</span></div>'
+        )
+        tbl = f'<table style="{tbl_style}">' + table_header() + '<tbody>'
+
+        if grade_groups:
+            last_g = None
+            for t, p, ma, d, g, ok in section_rows:
+                if g != last_g:
+                    label = g if g != '—' else 'Below threshold'
+                    tbl += (
+                        f'<tr class="grp"><td colspan="12" style="padding:6px 10px 4px;'
+                        f'color:#8b949e;font-size:10px;letter-spacing:.06em;text-transform:uppercase;'
+                        f'background:#161b22;border-bottom:1px solid #21262d">{label}</td></tr>'
+                    )
+                    last_g = g
+                tbl += html_row(t, p, ma, d, g, ok)
+        else:
+            for t, p, ma, d, g, ok in section_rows:
+                tbl += html_row(t, p, ma, d, g, ok)
+
+        tbl += '</tbody></table>'
+        return hdr + tbl
+
+    legend = (
+        '<div style="font-size:11px;color:#8b949e;margin-bottom:24px;line-height:1.8">'
+        '<span style="color:#3fb950">✓</span> passes all filter gates &nbsp;·&nbsp; '
+        '<span style="color:#f85149">✗</span> one or more gates failing &nbsp;·&nbsp; '
+        '<span style="color:#f0883e">orange ticker</span> = recovery/watchlist (tracked, not yet qualifying) &nbsp;·&nbsp; '
+        '<span style="color:#f85149">&#9888;</span> = confirmed coverage risk — the RIGHT cash-flow metric for that '
+        'entity type (not a naive yield&gt;FCF-yield scan, which misfires on utilities/REITs/banks/BDCs) still shows '
+        'the dividend isn\'t comfortably covered, checked live &nbsp;·&nbsp; '
+        'Filter gates: yield ≥1.5% · FCF>0 · OM≥8% · D/EV≤0.30 · ROE or ROA ≥10% &nbsp;·&nbsp; '
+        '<strong style="color:#e6edf3">MOS</strong> = FCF yield − Div yield (FCF buffer above dividend; '
+        '<span style="color:#3fb950">green ≥+3%</span> · '
+        '<span style="color:#d29922">yellow 0–3%</span> · '
+        '<span style="color:#f85149">red = dividend not FCF-covered</span>)'
+        '</div>'
+    )
+
+    body = (
+        stats_html
+        + legend
+        + section('4/4 MA ALIGNED', aligned_4, grade_groups=True)
+        + section('3/4 NEAR-ALIGNED', aligned_3)
+        + section('BELOW STRUCTURE', below)
+    )
+
+    return f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dividend Screener — {now}</title>
+<style>
+  body{{background:#0d1117;color:#e6edf3;font-family:'SF Mono','Fira Code',monospace;font-size:13px;padding:28px 32px;margin:0}}
+  h1{{font-size:16px;font-weight:600;margin:0 0 4px}}
+  .sub{{color:#8b949e;font-size:12px;margin-bottom:20px}}
+  table td,table th{{border-bottom:1px solid #21262d22}}
+  tr:hover td{{background:#161b2288}}
+  a{{color:#58a6ff;text-decoration:none}}
+</style>
+</head>
+<body>
+<h1>Dividend &amp; Income Screener</h1>
+<div class="sub">{now} UTC &nbsp;·&nbsp; {n_total} names tracked</div>
+{body}
+</body>
+</html>'''
+
+
+# ─── Main ────────────────────────────────────────────────────────────────────
+
+if __name__ == '__main__':
+    now = datetime.now().strftime('%b %d %Y  %H:%M')
+
+    ma_cache = _load_ma_cache()
+
+    print(f'  Fetching MA alignment for {len(UNIVERSE)} tickers ...', flush=True)
+    with ThreadPoolExecutor(max_workers=6) as ex:
+        ma_results = list(ex.map(ma_score, UNIVERSE))
+
+    price_map = {}
+    for r in ma_results:
+        if r:
+            t, p, s = r
+            price_map[t] = (p, s)
+            ma_cache[t] = {'price': p, 'score': s}
+        # missing tickers handled below via cache fallback
+
+    ma_misses = [t for t in UNIVERSE if t not in price_map]
+    for t in ma_misses:
+        if t in ma_cache:
+            c = ma_cache[t]
+            price_map[t] = (c['price'], c['score'])
+            print(f'  [{t}] MA miss — using cached data', flush=True)
+
+    _save_ma_cache(ma_cache)
+
+    cache = _load_cache()
+
+    print(f'  Fetching dividend data ...', flush=True)
+    with ThreadPoolExecutor(max_workers=5) as ex:
+        fresh = {t: d for t, d in zip(UNIVERSE, ex.map(get_data, UNIVERSE))}
+
+    fund_results = {}
+    for t in UNIVERSE:
+        d = fresh.get(t)
+        if d is not None:
+            cache[t] = d          # update cache with fresh data
+            fund_results[t] = d
+        elif t in cache:
+            fund_results[t] = cache[t]   # rate-limited — use last good data
+            print(f'  [{t}] yfinance miss — using cached data', flush=True)
+        else:
+            fund_results[t] = None
+
+    _save_cache(cache)
+
+    # Build full result list
+    rows = []
+    for t in UNIVERSE:
+        p, ma = price_map.get(t, (0, 0))
+        d     = fund_results.get(t)
+        g     = dividend_grade(d)
+        ok    = passes_filter(d)
+        rows.append((t, p, ma, d, g, ok))
+
+    aligned_4 = sorted([r for r in rows if r[2] == 4], key=lambda x: (
+        {'A+': 0, 'A': 1, 'B': 2, '—': 3}.get(x[4], 4), x[0]
+    ))
+    aligned_3 = sorted([r for r in rows if r[2] == 3], key=lambda x: x[0])
+    below     = sorted([r for r in rows if r[2] < 3],  key=lambda x: x[0])
+
+    HDR = f'  {"Ticker":<7} {"Gr":<4} {"Price":>8}  {"Yield":>6} {"FCF%":>6} {"Payout":>7} {"OM%":>6} {"D/EV":>6} {"P/E":>7} {"MOS":>7}'
+    DIV = f'  {"─"*7} {"─"*4} {"─"*8}  {"─"*6} {"─"*6} {"─"*7} {"─"*6} {"─"*6} {"─"*7} {"─"*7}'
+
+    def row_str(t, p, ma, d, g, ok):
+        if d is None:
+            return f'  {t:<7} {"?":4} {"—":>8}  no data'
+        ps    = f'${p:.2f}'
+        ys    = f'{d["div_yield"]:.1f}%'  if d["div_yield"] > 0 else '—'
+        fs    = f'{d["fcf_yield"]:.1f}%'
+        pays  = f'{d["payout"]:.0f}%'     if d["payout"] > 0 else '—'
+        oms   = f'{d["om"]:.1f}%'
+        ds    = f'{d["dev"]:.3f}'
+        pes   = f'{d["pe"]:.1f}x'         if d["pe"] else '—'
+        flag  = '' if ok else '  ✗'
+        mos   = d["fcf_yield"] - d["div_yield"]
+        moss  = ('+' if mos >= 0 else '') + f'{mos:.1f}%' if d["div_yield"] > 0 else '—'
+        return f'  {t:<7} {g:<4} {ps:>8}  {ys:>6} {fs:>6} {pays:>7} {oms:>6} {ds:>6} {pes:>7} {moss:>7}{flag}'
+
+    print(f'\n  DIVIDEND & VALUE SCREENER — {now}')
+    print(f'  Universe: {len(UNIVERSE)} names\n')
+
+    print(f'  4/4 ALIGNED — {len(aligned_4)} names')
+    print(f'  {"─"*65}')
+    print(HDR)
+    print(DIV)
+
+    last_grade = None
+    for t, p, ma, d, g, ok in aligned_4:
+        if g == '—':
+            continue   # below threshold — skip from full table
+        if g != last_grade:
+            print(f'\n  {g}')
+            last_grade = g
+        print(row_str(t, p, ma, d, g, ok))
+
+    below_thresh_4 = [t for t, p, ma, d, g, ok in aligned_4 if g == '—']
+    if below_thresh_4:
+        print(f'\n  Below threshold (4/4): {", ".join(below_thresh_4)}')
+
+    if aligned_3:
+        tickers_3 = ', '.join(t for t, *_ in aligned_3)
+        print(f'\n\n  3/4 NEAR-ALIGNED — {len(aligned_3)} names (see HTML)')
+        print(f'  {"─"*65}')
+        print(f'  {tickers_3}')
+
+    if below:
+        tickers_below = ', '.join(t for t, *_ in below)
+        print(f'\n\n  BELOW STRUCTURE — {len(below)} names (see HTML)')
+        print(f'  {"─"*65}')
+        print(f'  {tickers_below}')
+
+    # Summary
+    passing_4 = [t for t, p, ma, d, g, ok in aligned_4 if ok]
+    print(f'\n  {"─"*65}')
+    print(f'  {len(passing_4)} names — 4/4 aligned + passes dividend filter')
+    print(f'  A+ aligned: {sum(1 for t,p,ma,d,g,ok in aligned_4 if g=="A+")}'
+          f'   A: {sum(1 for t,p,ma,d,g,ok in aligned_4 if g=="A")}')
+    print()
+
+    # HTML output
+    import os, subprocess
+    html = build_dividend_html(rows, aligned_4, aligned_3, below, now)
+    out  = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'dividend_screener.html')
+    with open(out, 'w') as f:
+        f.write(html)
+    print(f'  Saved → {out}')
+
+    # Git push
+    try:
+        repo = os.path.dirname(os.path.abspath(__file__))
+        subprocess.run(['git', 'add', 'dividend_screener.html', 'dividend_data_cache.json', 'dividend_ma_cache.json'], cwd=repo, check=True, capture_output=True)
+        subprocess.run(['git', 'commit', '-m', f'dividend_screener: {now} UTC'], cwd=repo, check=True, capture_output=True)
+        subprocess.run(['git', 'pull', '--rebase', 'origin', 'main'], cwd=repo, check=True, capture_output=True)
+        subprocess.run(['git', 'push', 'origin', 'main'], cwd=repo, check=True, capture_output=True)
+        print('  Pushed → GitHub')
+    except subprocess.CalledProcessError as e:
+        msg = e.stderr.decode().strip() if e.stderr else str(e)
+        print(f'  Git push skipped: {msg or "nothing new to commit"}')

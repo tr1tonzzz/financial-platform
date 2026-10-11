@@ -1,10 +1,28 @@
 # Đề tài hiện hành và tài liệu triển khai
 
+**Điều chỉnh kế hoạch v6:** [chi tiết tuần này](research-platform/33-ke-hoach-chi-tiet-tuan-01.md) gộp thay Paddle vào triển khai UC-1 cơ bản; tái sử dụng tải/text/render đã thử. [Kế hoạch 10 tuần](research-platform/32-ke-hoach-10-tuan-tiep-theo.md) và [HTML](research-platform/checklist-10-tuan-v4.html) bổ sung gợi ý Word/slide/demo từng tuần. Tên file HTML v4 giữ nguyên để URL đang mở hoạt động.
+
+**Kế hoạch thực hiện mới nhất:** [10 tuần tiếp theo v6](research-platform/32-ke-hoach-10-tuan-tiep-theo.md), [HTML đánh dấu và lưu tiến độ](research-platform/checklist-10-tuan-v4.html). Hạn còn 10 tuần; cuối tuần 4 demo cơ bản UC-1/2/3, tuần 5 hoàn thiện ba mã; UC-5 tuần 6–8, UC-4 có điều kiện tuần 9.
+
+**Phạm vi/stack đã chốt:** HPG, VNM, FPT năm 2023–2025; OCR chính chuyển PaddleOCR theo người thực hiện. [Quyết định và bước triển khai](research-platform/31-chot-pham-vi-va-stack-paddleocr.md). Chưa cài/chạy Paddle; giữ Tesseract làm đối chứng.
+
+**Thứ tự triển khai mới nhất:** UC-F01/02/03/05 trước, UC-F04 sau. [Đã làm được gì và kế hoạch từng UC](research-platform/28-ke-hoach-thuc-hien-uc-1-2-3-5.md), [dữ liệu cần thu thập](research-platform/29-du-lieu-can-thu-thap-cho-uc-1-2-3-5.md). Kiểm repository 11/10: có prototype và số mẫu kiểm thủ công; `src` chưa có mã ứng dụng. Kế hoạch mới chọn lát cắt sử dụng được, chưa tự mở toàn bộ phạm vi SRS.
+
+**Cập nhật mới nhất 11/10/2026:** đã loại A04 và các yêu cầu sàng lọc theo người thực hiện. [Yêu cầu chức năng v2.0](research-platform/27-yeu-cau-chuc-nang-va-vi-du.md) tổ chức5 nhóm chính (khai thác, phân tích, so sánh, theo dõi, cổ tức) và2 hướng mở rộng (danh mục, kịch bản/định giá),38 chức năng nhỏ có mục đích/ví dụ. Người dùng chính là người theo dõi tài chính doanh nghiệp/đầu tư; thu/trích/duyệt là nền hỗ trợ.
+
+**Nghiên cứu GitHub rộng:** [36 repository ưu tiên sao cao](research-high-star-finance/README.md),25 repo ≥3.000 sao;35 README và mã chọn lọc17 repo,87 tệp nguồn/34 tham chiếu mã. [Bảng khảo sát](research-high-star-finance/01-khao-sat-repository.md), [minh chứng](research-high-star-finance/02-minh-chung-ma-va-bai-hoc.md), [khả thi/thứ tự](research-high-star-finance/03-kha-thi-va-thu-tu-thuc-hien.md). Chưa cài/chạy các nền tảng nguồn.
+
+**Đặc tả hiện hành:** [SRS v3.3 dự thảo](research-platform/22-srs-dac-ta-yeu-cau-phan-mem.md) ghi CR-AN-03 tại mục18, rút FR29/FR30/D09/D10, còn91 yêu cầu/51 tình huống dự kiến;5BUC nền giữ truy vết. Các chức năng mới trong danh mục vẫn là ứng viên. Wordv3.1 và kế hoạch167 giờ là baseline trước cập nhật;64–98 giờ của CR-DIV-02 cũ cần tính lại. Chưa nghiệm thu ứng dụng hoặc phê duyệt giảng viên.
+
+**Bằng chứng trước:** [G02/G03 và phần lưu hồ sơ](research-dividend-functions/README.md) có ca DHG/FPT và20 tests prototype; screening G01 đã rút. [Hướng nền tảng dữ liệu](research-financial-platform-direction/README.md) được kế thừa theo quyết định mới.
+
+**Góp ý giảng viên ghi nhận 11/10/2026:** [kế hoạch nghiên cứu sâu](research-platform/26-ke-hoach-nghien-cuu-sau-gop-y-giang-vien.md) ưu tiên chức năng hỗ trợ đánh giá đầu tư cổ tức, tác động của cổ tức bằng cổ phiếu, đối chứng PaddleOCR–Tesseract và thuật ngữ nghiệp vụ. Đây là kế hoạch có UC/đầu ra/gate; kết quả nghiên cứu và CR-DIV-02 đã bổ sung trong bộ mới; OCR benchmark còn chưa chạy.
+
 **Báo cáo 1 đang soạn:** [bối cảnh đề tài, hướng project và ví dụ Vinamilk quý I/2026](research-platform/reports/dot-01-tuan-01-02/bao-cao-01.md), kèm [phụ lục số liệu/phép tính](research-platform/reports/dot-01-tuan-01-02/vi-du-phan-tich-vnm.md). Theo yêu cầu hiện tại, chỉ làm tài liệu Markdown; chưa cần các bản xuất Word/slide/PDF.
 
 **Nghiên cứu giá trị sử dụng 05/10/2026:** [vì sao liên kết BCTC với cổ tức có ích](research-platform/reports/dot-01-tuan-01-02/co-so-hoc-thuat-va-gia-tri-su-dung.md), có 10 nghiên cứu, tài liệu nghề nghiệp/pháp lý và ma trận câu hỏi người dùng → dữ liệu → kết quả → lợi ích. Phân biệt tác vụ pilot với đánh giá payout/FCFE cần thêm nguồn; chưa là phạm vi SRS mở rộng đã chốt.
 
-**Hướng hiện hành cập nhật 05/10/2026:** Xây dựng hệ thống thu thập, chuẩn hóa và phân tích lợi nhuận, dòng tiền kinh doanh trong mối liên hệ với cổ tức tiền mặt của doanh nghiệp niêm yết Việt Nam. Lợi nhuận và khả năng chuyển thành tiền là trục, cổ tức là lớp đối chiếu. [SRS v3.1](research-platform/22-srs-dac-ta-yeu-cau-phan-mem.md) đã tích hợp CR-PCD-01: tối thiểu một ca cầu nối CFO, mục tiêu1–3 sau gate; 83 mã yêu cầu/42 tình huống dự kiến. [Kế hoạch v3](research-platform/04-ke-hoach-13-tuan.md) và checklist cùng JSON có quỹ dự toán143+24=167 giờ; chưa xác nhận tăng thời gian thực. Quyết định giữ tên/extension chưa tích hợp ngày04/10 bên dưới được thay bằng cập nhật này. Chưa có phê duyệt giảng viên hoặc phần mềm hoàn chỉnh.
+**Baseline hướng kết hợp ngày 05/10/2026 (được kế thừa trong v3.3):** Xây dựng hệ thống thu thập, chuẩn hóa và phân tích lợi nhuận, dòng tiền kinh doanh trong mối liên hệ với cổ tức tiền mặt của doanh nghiệp niêm yết Việt Nam. Lợi nhuận và khả năng chuyển thành tiền là trục, cổ tức là lớp đối chiếu. [SRS hiện hành kế thừa v3.1](research-platform/22-srs-dac-ta-yeu-cau-phan-mem.md) đã tích hợp CR-PCD-01: tối thiểu một ca cầu nối CFO, mục tiêu1–3 sau gate; 83 mã yêu cầu/42 tình huống dự kiến. [Kế hoạch v3](research-platform/04-ke-hoach-13-tuan.md) và checklist cùng JSON có quỹ dự toán143+24=167 giờ; chưa xác nhận tăng thời gian thực. Quyết định giữ tên/extension chưa tích hợp ngày04/10 bên dưới được thay bằng cập nhật này. Chưa có phê duyệt giảng viên hoặc phần mềm hoàn chỉnh.
 
 Hướng ban đầu ngày **03/10/2026**, cập nhật diễn đạt và chiều sâu ngày **05/10/2026**:
 **Xây dựng hệ thống thu thập, chuẩn hóa và phân tích lợi nhuận, dòng tiền kinh doanh trong mối liên hệ với cổ tức tiền mặt của doanh nghiệp niêm yết Việt Nam.**
@@ -13,9 +31,11 @@ Project làm thu thập, kiểm định, phân tích mô tả và ứng dụng t
 
 ## Tài liệu chính thức
 
+[Yêu cầu chức năng — giải thích đơn giản và ví dụ](research-platform/27-yeu-cau-chuc-nang-va-vi-du.md): tài liệu riêng cho5 nhóm chính/2 hướng mở rộng, phân rã38 chức năng nhỏ có mục đích/ví dụ.
+
 [Bộ tài liệu hiện hành](research-platform/README.md) là đầu mối triển khai duy nhất.
 
-1. [SRS-FAP-01 v3.1](research-platform/22-srs-dac-ta-yeu-cau-phan-mem.md), [Word chỉnh sửa được](research-platform/reports/SRS-FAP-01-v3.1.docx); [bài toán và nhu cầu nền](research-platform/02-de-tai-va-srs.md).
+1. [SRS-FAP-01 v3.3](research-platform/22-srs-dac-ta-yeu-cau-phan-mem.md), [Word v3.1 lưu trước cập nhật](research-platform/reports/SRS-FAP-01-v3.1.docx); [bài toán và nhu cầu nền](research-platform/02-de-tai-va-srs.md).
 2. [Phương pháp thu thập và xử lý đã thống nhất](research-platform/11-phuong-phap-thu-thap-va-xu-ly.md).
 3. [Kiến thức tài chính và từ điển dữ liệu](research-platform/12-kien-thuc-tai-chinh-va-tu-dien.md).
 4. [Thiết kế kỹ thuật dữ liệu](research-platform/03-kien-truc-va-du-lieu.md).
@@ -43,7 +63,7 @@ Scope hiện hành: pilot 3 công ty × 3 năm; mục tiêu 5–8 công ty, 2023
 
 ## Theo dõi thực hiện và báo cáo
 
-Để bắt đầu: [Hướng dẫn buổi đầu/mẫu minh chứng](research-platform/23-bat-dau-va-minh-chung-thuc-hien.md) và [kế hoạch13tuần v3 theo SRS v3.0](research-platform/04-ke-hoach-13-tuan.md), đồng bộ với checklist dưới đây.
+Để bắt đầu: [Hướng dẫn buổi đầu/mẫu minh chứng](research-platform/23-bat-dau-va-minh-chung-thuc-hien.md) và [kế hoạch13 tuần v3 theo SRS v3.0](research-platform/04-ke-hoach-13-tuan.md), đồng bộ với checklist dưới đây.
 
 - [Checklist HTML 13 tuần](research-platform/checklist-13-tuan.html): đánh dấu, nhật ký, lưu trình duyệt, xuất/nhập JSON và ngày bắt đầu.
 - [Khung Word/slide hai tuần](research-platform/07-bao-cao-hang-tuan.md), [gợi ý bảy mốc](research-platform/goi-y-noi-dung-7-dot-bao-cao.md), [mẫu điền](research-platform/mau-bao-cao-hai-tuan.md).

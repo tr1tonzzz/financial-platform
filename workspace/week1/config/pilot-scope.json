@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "decision_date": "2026-10-11",
+  "status": "scope_confirmed_data_collection_pending",
+  "scope": "main project pilot; not a completed collection or application config integration",
+  "issuers": [
+    {
+      "ticker": "HPG",
+      "name": "Hòa Phát"
+    },
+    {
+      "ticker": "VNM",
+      "name": "Vinamilk"
+    },
+    {
+      "ticker": "FPT",
+      "name": "FPT"
+    }
+  ],
+  "fiscal_years": [
+    2023,
+    2024,
+    2025
+  ],
+  "preferred_report_scope": "consolidated",
+  "report_type": "annual_audited",
+  "core_metrics": [
+    "net_income_total",
+    "cfo",
+    "cash_equivalents",
+    "total_assets",
+    "total_liabilities",
+    "total_equity"
+  ],
+  "expected_report_count": 9,
+  "expected_core_fact_count": 54,
+  "ocr": {
+    "primary_engine": "paddleocr",
+    "inference_backend": "paddlepaddle",
+    "device_preference": "cpu",
+    "package_version": "3.3.2",
+    "model_name": "latin_PP-OCRv5_mobile_rec",
+    "language_target": "vi",
+    "status": "cpu_smoke_test_passed_on_existing_vnm_q1_image",
+    "comparison_engine": "tesseract",
+    "comparison_only": true,
+    "paddlepaddle_version": "3.2.2",
+    "text_detection_model_name": "PP-OCRv5_mobile_det",
+    "smoke_test_evidence": "workspace/week1/data/vnm-2025/smoke-q1/run.json",
+    "package_lock": "workspace/week1/config/requirements-paddle-win-py312.lock.txt",
+    "model_lock": "workspace/week1/config/paddleocr-models.lock.json"
+  },
+  "report_targets": [
+    {
+      "ticker": "HPG",
+      "fiscal_year": 2023,
+      "scope": "consolidated",
+      "status": "planned_not_reconciled_with_source_ledger"
+    },
+    {
+      "ticker": "HPG",
+      "fiscal_year": 2024,
+      "scope": "consolidated",
+      "status": "planned_not_reconciled_with_source_ledger"
+    },
+    {
+      "ticker": "HPG",
+      "fiscal_year": 2025,
+      "scope": "consolidated",
+      "status": "planned_not_reconciled_with_source_ledger"
+    },
+    {
+      "ticker": "VNM",
+      "fiscal_year": 2023,
+      "scope": "consolidated",
+      "status": "planned_not_reconciled_with_source_ledger"
+    },
+    {
+      "ticker": "VNM",
+      "fiscal_year": 2024,
+      "scope": "consolidated",
+      "status": "planned_not_reconciled_with_source_ledger"
+    },
+    {
+      "ticker": "VNM",
+      "fiscal_year": 2025,
+      "scope": "consolidated",
+      "status": "planned_not_reconciled_with_source_ledger"
+    },
+    {
+      "ticker": "FPT",
+      "fiscal_year": 2023,
+      "scope": "consolidated",
+      "status": "planned_not_reconciled_with_source_ledger"
+    },
+    {
+      "ticker": "FPT",
+      "fiscal_year": 2024,
+      "scope": "consolidated",
+      "status": "planned_not_reconciled_with_source_ledger"
+    },
+    {
+      "ticker": "FPT",
+      "fiscal_year": 2025,
+      "scope": "consolidated",
+      "status": "planned_not_reconciled_with_source_ledger"
+    }
+  ],
+  "application_stack": {
+    "frontend": "React + TypeScript + Vite",
+    "backend": "FastAPI + Python 3.12",
+    "database": "PostgreSQL",
+    "persistence": "SQLAlchemy + Alembic",
+    "deployment": "local web first",
+    "status": "selected_not_implemented",
+    "decision_date": "2026-10-11"
+  }
+}

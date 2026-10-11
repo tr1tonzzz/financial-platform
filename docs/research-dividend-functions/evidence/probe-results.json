@@ -1,0 +1,68 @@
+{
+  "method": "independent arithmetic/rule probe; no production integration or user acceptance",
+  "dhg": {
+    "2024": {
+      "status": "computed",
+      "formula_version": "probe-1",
+      "distribution_kind": "owner_distribution_grouped",
+      "cash_after_capex": "1228878690826",
+      "cash_after_distribution": "248283158326",
+      "coverage": {
+        "status": "computed",
+        "value": "1.232192182712116792052490535"
+      },
+      "sources": [
+        "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11",
+        "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11",
+        "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11"
+      ]
+    },
+    "2025": {
+      "status": "computed",
+      "formula_version": "probe-1",
+      "distribution_kind": "owner_distribution_grouped",
+      "cash_after_capex": "1181831302533",
+      "cash_after_distribution": "-125629407467",
+      "coverage": {
+        "status": "computed",
+        "value": "0.9061484547808896785716970782"
+      },
+      "sources": [
+        "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11",
+        "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11",
+        "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11"
+      ]
+    }
+  },
+  "fpt_rounding": {
+    "eligible_shares": 21,
+    "additional_shares": 3,
+    "source": "https://vsdc.vn/vi/ad1/184974",
+    "assumption": "eligibility at free-share event only; no later cash entitlement inferred"
+  },
+  "dhg_screen_example": {
+    "status": "fail",
+    "conditions": [
+      {
+        "metric": "residual",
+        "operator": ">=",
+        "threshold": "0",
+        "status": "fail",
+        "value": "-125629407467",
+        "sources": [
+          "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11",
+          "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11",
+          "https://dhgpharma.com.vn/sites/default/files/2026-03/DHG-Audited-FS-2025-VN.pdf#page=11"
+        ]
+      },
+      {
+        "metric": "annual_dps_growth",
+        "operator": ">=",
+        "threshold": "0",
+        "status": "unknown",
+        "reason": "missing_or_ineligible_metric"
+      }
+    ],
+    "contains_unknown": true
+  }
+}

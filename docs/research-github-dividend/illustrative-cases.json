@@ -1,0 +1,72 @@
+{
+  "status": "synthetic_independent_arithmetic_not_repository_execution_not_company_data",
+  "created_for": "FAP GitHub functional research 2026-10-11",
+  "cash_coverage": [
+    {
+      "case": "A",
+      "net_income": 100,
+      "cfo": 120,
+      "capex_outflow": 80,
+      "dividends_paid": 60,
+      "cfo_net_income": 1.2,
+      "coverage": 0.8571428571428571,
+      "cash_after_capex": 40,
+      "cash_after_capex_and_dividends": -20
+    },
+    {
+      "case": "B",
+      "net_income": 100,
+      "cfo": 95,
+      "capex_outflow": 20,
+      "dividends_paid": 40,
+      "cfo_net_income": 0.95,
+      "coverage": 1.5833333333333333,
+      "cash_after_capex": 75,
+      "cash_after_capex_and_dividends": 35
+    }
+  ],
+  "share_basis": {
+    "shares_before": 100,
+    "dps_before": 1000,
+    "shares_after": 120,
+    "dps_after": 900,
+    "income_before": 100000,
+    "income_after": 108000,
+    "dps_change_pct": -10.0,
+    "income_change_pct": 8.0,
+    "assumption": "all 120 shares entitled at later cash payment; excludes prices taxes fees rounding"
+  },
+  "yield": {
+    "dps": 1000,
+    "price_before": 20000,
+    "price_after": 10000,
+    "yield_before_pct": 5.0,
+    "yield_after_pct": 10.0
+  },
+  "income_concentration": {
+    "A_income": 75,
+    "B_income": 25,
+    "A_cut_pct": 50,
+    "total_after": 62.5,
+    "total_loss_pct": 37.5
+  },
+  "missing_weights": {
+    "description": "Independent weighted arithmetic based on source weights, not execution of source safety function",
+    "weights": {
+      "payout": 30,
+      "fcf": 25,
+      "debt": 20,
+      "coverage": 15,
+      "streak": 10
+    },
+    "assumed_factor_scores": {
+      "payout": 100,
+      "fcf": 0,
+      "debt": 0,
+      "coverage": 0,
+      "streak": 0
+    },
+    "all_factors_score": 30,
+    "if_only_payout_and_streak_available": 75.0
+  }
+}

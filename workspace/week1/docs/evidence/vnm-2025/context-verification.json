@@ -1,0 +1,3890 @@
+{
+  "required_context_verified": true,
+  "checks": {
+    "issuer_legal_name": [
+      {
+        "pdf_page_index": 0,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-001.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "CÔNG TY C",
+            "bbox": [
+              1214,
+              72,
+              1390,
+              116
+            ],
+            "confidence": 0.983728289604187
+          },
+          {
+            "id": 1,
+            "text": "PHN SA",
+            "bbox": [
+              1215,
+              113,
+              1363,
+              154
+            ],
+            "confidence": 0.9934390187263489
+          },
+          {
+            "id": 2,
+            "text": "VIT NAM",
+            "bbox": [
+              1214,
+              155,
+              1352,
+              194
+            ],
+            "confidence": 0.9965616464614868
+          }
+        ],
+        "raw_text": "CÔNG TY C PHN SA VIT NAM"
+      },
+      {
+        "pdf_page_index": 1,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-002.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              197,
+              851,
+              244
+            ],
+            "confidence": 0.9680720567703247
+          },
+          {
+            "id": 1,
+            "text": "NQI DUNG",
+            "bbox": [
+              196,
+              335,
+              362,
+              384
+            ],
+            "confidence": 0.9490280151367188
+          },
+          {
+            "id": 2,
+            "text": "TRANG",
+            "bbox": [
+              1216,
+              345,
+              1337,
+              387
+            ],
+            "confidence": 0.9995445013046265
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con NQI DUNG TRANG"
+      },
+      {
+        "pdf_page_index": 2,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-003.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              199,
+              852,
+              244
+            ],
+            "confidence": 0.9699238538742065
+          },
+          {
+            "id": 1,
+            "text": "Thông tin v Công ty",
+            "bbox": [
+              204,
+              235,
+              479,
+              277
+            ],
+            "confidence": 0.9690570831298828
+          },
+          {
+            "id": 2,
+            "text": "Giy Chng nhn",
+            "bbox": [
+              206,
+              342,
+              419,
+              379
+            ],
+            "confidence": 0.9664865136146545
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thông tin v Công ty Giy Chng nhn"
+      },
+      {
+        "pdf_page_index": 3,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-004.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              191,
+              164,
+              842,
+              211
+            ],
+            "confidence": 0.9938130974769592
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo ca Ban Điu hành",
+            "bbox": [
+              190,
+              204,
+              546,
+              237
+            ],
+            "confidence": 0.9805272817611694
+          },
+          {
+            "id": 2,
+            "text": "TRCH NHIM CA BAN ĐIU HÀNH ĐI VI B CO TÀI CHNH HP NHT",
+            "bbox": [
+              190,
+              335,
+              1255,
+              380
+            ],
+            "confidence": 0.9469457864761353
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo ca Ban Điu hành TRCH NHIM CA BAN ĐIU HÀNH ĐI VI B CO TÀI CHNH HP NHT"
+      },
+      {
+        "pdf_page_index": 4,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-005.json",
+        "entries": [
+          {
+            "id": 5,
+            "text": "BÁO CÁO KIM TOÁN ĐC LP",
+            "bbox": [
+              155,
+              572,
+              616,
+              616
+            ],
+            "confidence": 0.9398512244224548
+          },
+          {
+            "id": 6,
+            "text": "Kính gi các C đông",
+            "bbox": [
+              154,
+              635,
+              471,
+              679
+            ],
+            "confidence": 0.9472256898880005
+          },
+          {
+            "id": 7,
+            "text": "Công ty C phn Sa Vit Nam",
+            "bbox": [
+              154,
+              673,
+              600,
+              713
+            ],
+            "confidence": 0.977081298828125
+          }
+        ],
+        "raw_text": "BÁO CÁO KIM TOÁN ĐC LP Kính gi các C đông Công ty C phn Sa Vit Nam"
+      },
+      {
+        "pdf_page_index": 5,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-006.json",
+        "entries": [
+          {
+            "id": 1,
+            "text": "Ý kin ca kim toán viên",
+            "bbox": [
+              157,
+              339,
+              527,
+              382
+            ],
+            "confidence": 0.9513552188873291
+          },
+          {
+            "id": 2,
+            "text": "Theo ý kin ca chúng ti, báo cáo tài chính hp nht đã phn ánh trung thc và hp lý, trên các",
+            "bbox": [
+              159,
+              406,
+              1335,
+              454
+            ],
+            "confidence": 0.9690198302268982
+          },
+          {
+            "id": 3,
+            "text": "khía cnh trng yu, tình hình tài chính hp nht ca Công ty C phn Sa Vit Nam và các",
+            "bbox": [
+              158,
+              441,
+              1334,
+              484
+            ],
+            "confidence": 0.9621722102165222
+          }
+        ],
+        "raw_text": "Ý kin ca kim toán viên Theo ý kin ca chúng ti, báo cáo tài chính hp nht đã phn ánh trung thc và hp lý, trên các khía cnh trng yu, tình hình tài chính hp nht ca Công ty C phn Sa Vit Nam và các"
+      },
+      {
+        "pdf_page_index": 6,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-007.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              199,
+              130,
+              848,
+              171
+            ],
+            "confidence": 0.9841733574867249
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo tình hình tài chính hp nht ti ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              195,
+              167,
+              1072,
+              205
+            ],
+            "confidence": 0.970315158367157
+          },
+          {
+            "id": 2,
+            "text": "Mãu B 01  DN/HN",
+            "bbox": [
+              1118,
+              221,
+              1358,
+              257
+            ],
+            "confidence": 0.9083874821662903
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo tình hình tài chính hp nht ti ngày 31 tháng 12 năm 2025 Mãu B 01  DN/HN"
+      },
+      {
+        "pdf_page_index": 7,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-008.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              202,
+              130,
+              851,
+              171
+            ],
+            "confidence": 0.95742267370224
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo tình hình tài chính hp nht ti ngày 31 tháng 12 năm 2025 (tip theo)",
+            "bbox": [
+              198,
+              167,
+              1214,
+              212
+            ],
+            "confidence": 0.973414421081543
+          },
+          {
+            "id": 2,
+            "text": "Mu B 01  DN/HN",
+            "bbox": [
+              1121,
+              222,
+              1359,
+              258
+            ],
+            "confidence": 0.9400233030319214
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo tình hình tài chính hp nht ti ngày 31 tháng 12 năm 2025 (tip theo) Mu B 01  DN/HN"
+      },
+      {
+        "pdf_page_index": 8,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-009.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              190,
+              112,
+              844,
+              161
+            ],
+            "confidence": 0.9883657097816467
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo tình hình tài chính hp nht ti ngày 31 tháng 12 năm 2025 (tip theo)",
+            "bbox": [
+              187,
+              149,
+              1203,
+              199
+            ],
+            "confidence": 0.9764432311058044
+          },
+          {
+            "id": 2,
+            "text": "Mãu B 01  DN/HN",
+            "bbox": [
+              1111,
+              210,
+              1350,
+              249
+            ],
+            "confidence": 0.9410883188247681
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo tình hình tài chính hp nht ti ngày 31 tháng 12 năm 2025 (tip theo) Mãu B 01  DN/HN"
+      },
+      {
+        "pdf_page_index": 9,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-010.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              199,
+              145,
+              851,
+              184
+            ],
+            "confidence": 0.9845842719078064
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo kt qu hot đng kinh doanh hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              198,
+              178,
+              1408,
+              224
+            ],
+            "confidence": 0.9664157032966614
+          },
+          {
+            "id": 2,
+            "text": "Mu B 02  DN/HN",
+            "bbox": [
+              1123,
+              235,
+              1359,
+              271
+            ],
+            "confidence": 0.9819077849388123
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo kt qu hot đng kinh doanh hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 Mu B 02  DN/HN"
+      },
+      {
+        "pdf_page_index": 10,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-011.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              190,
+              113,
+              842,
+              161
+            ],
+            "confidence": 0.9862226247787476
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo kt qu hot đng kinh doanh hp nht cho năm kt thc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              187,
+              149,
+              1400,
+              199
+            ],
+            "confidence": 0.9900039434432983
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              187,
+              184,
+              330,
+              229
+            ],
+            "confidence": 0.9865131378173828
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo kt qu hot đng kinh doanh hp nht cho năm kt thc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 11,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-012.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              207,
+              130,
+              855,
+              171
+            ],
+            "confidence": 0.9748226404190063
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              205,
+              167,
+              1256,
+              211
+            ],
+            "confidence": 0.9589305520057678
+          },
+          {
+            "id": 2,
+            "text": "(Phương pháp gián tip  tip theo)",
+            "bbox": [
+              206,
+              204,
+              663,
+              242
+            ],
+            "confidence": 0.9276154041290283
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (Phương pháp gián tip  tip theo)"
+      },
+      {
+        "pdf_page_index": 12,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-013.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              130,
+              852,
+              172
+            ],
+            "confidence": 0.9814125895500183
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              202,
+              167,
+              1255,
+              209
+            ],
+            "confidence": 0.9675719141960144
+          },
+          {
+            "id": 2,
+            "text": "(Phưong pháp gián tip - tip theo)",
+            "bbox": [
+              205,
+              204,
+              661,
+              242
+            ],
+            "confidence": 0.950423002243042
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (Phưong pháp gián tip - tip theo)"
+      },
+      {
+        "pdf_page_index": 13,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-014.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              191,
+              112,
+              843,
+              161
+            ],
+            "confidence": 0.9904069304466248
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              190,
+              151,
+              1243,
+              196
+            ],
+            "confidence": 0.9712088108062744
+          },
+          {
+            "id": 2,
+            "text": "(Phưong pháp gián tip - tip theo)",
+            "bbox": [
+              190,
+              191,
+              650,
+              228
+            ],
+            "confidence": 0.938788652420044
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (Phưong pháp gián tip - tip theo)"
+      },
+      {
+        "pdf_page_index": 14,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-015.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              207,
+              133,
+              852,
+              172
+            ],
+            "confidence": 0.9688135981559753
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              168,
+              1310,
+              211
+            ],
+            "confidence": 0.9828134775161743
+          },
+          {
+            "id": 2,
+            "text": "Mu B 09  DN/HN",
+            "bbox": [
+              1101,
+              223,
+              1336,
+              259
+            ],
+            "confidence": 0.9408704042434692
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 Mu B 09  DN/HN"
+      },
+      {
+        "pdf_page_index": 15,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-016.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              203,
+              137,
+              851,
+              176
+            ],
+            "confidence": 0.9779990315437317
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              202,
+              172,
+              1308,
+              213
+            ],
+            "confidence": 0.973940372467041
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              203,
+              208,
+              339,
+              246
+            ],
+            "confidence": 0.9926156997680664
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 16,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-017.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              135,
+              852,
+              175
+            ],
+            "confidence": 0.9735227227210999
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              171,
+              1308,
+              213
+            ],
+            "confidence": 0.9709925651550293
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              203,
+              205,
+              341,
+              246
+            ],
+            "confidence": 0.9804884195327759
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 17,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-018.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              206,
+              135,
+              854,
+              176
+            ],
+            "confidence": 0.9792860150337219
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              171,
+              1308,
+              213
+            ],
+            "confidence": 0.9764745235443115
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              203,
+              205,
+              342,
+              246
+            ],
+            "confidence": 0.9890036582946777
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 18,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-019.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              203,
+              134,
+              851,
+              175
+            ],
+            "confidence": 0.9797587990760803
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              202,
+              171,
+              1307,
+              213
+            ],
+            "confidence": 0.9619576334953308
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              202,
+              204,
+              339,
+              245
+            ],
+            "confidence": 0.9844098091125488
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 19,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-020.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              134,
+              854,
+              175
+            ],
+            "confidence": 0.9526693820953369
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hop nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              170,
+              1308,
+              212
+            ],
+            "confidence": 0.9831961393356323
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              202,
+              201,
+              343,
+              248
+            ],
+            "confidence": 0.975415050983429
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hop nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 20,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-021.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              133,
+              851,
+              172
+            ],
+            "confidence": 0.9880270957946777
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              170,
+              1307,
+              209
+            ],
+            "confidence": 0.9824226498603821
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              200,
+              201,
+              341,
+              245
+            ],
+            "confidence": 0.9687684774398804
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 21,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-022.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              206,
+              134,
+              854,
+              175
+            ],
+            "confidence": 0.9683427214622498
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              170,
+              1308,
+              213
+            ],
+            "confidence": 0.9774117469787598
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              206,
+              205,
+              342,
+              243
+            ],
+            "confidence": 0.9780908823013306
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      }
+    ],
+    "consolidated_scope": [
+      {
+        "pdf_page_index": 0,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-001.json",
+        "entries": [
+          {
+            "id": 9,
+            "text": "Công ty C phn Sa Vit Nam",
+            "bbox": [
+              525,
+              792,
+              965,
+              837
+            ],
+            "confidence": 0.9853417277336121
+          },
+          {
+            "id": 10,
+            "text": "và các công ty con",
+            "bbox": [
+              618,
+              832,
+              879,
+              877
+            ],
+            "confidence": 0.996296763420105
+          },
+          {
+            "id": 11,
+            "text": "Báo cáo tài chính hp nht cho năm kt thúc",
+            "bbox": [
+              443,
+              920,
+              1042,
+              959
+            ],
+            "confidence": 0.9857734441757202
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo tài chính hp nht cho năm kt thúc"
+      },
+      {
+        "pdf_page_index": 1,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-002.json",
+        "entries": [
+          {
+            "id": 13,
+            "text": "BÁO CÁO LUU CHUYN TIN T HP NHT",
+            "bbox": [
+              202,
+              955,
+              820,
+              993
+            ],
+            "confidence": 0.9438364505767822
+          },
+          {
+            "id": 14,
+            "text": "11-13",
+            "bbox": [
+              1236,
+              963,
+              1336,
+              999
+            ],
+            "confidence": 0.9727250933647156
+          },
+          {
+            "id": 15,
+            "text": "THUYT MINH BÁO CO TÀI CHÍNH HP NHT",
+            "bbox": [
+              203,
+              1058,
+              874,
+              1097
+            ],
+            "confidence": 0.9661357998847961
+          }
+        ],
+        "raw_text": "BÁO CÁO LUU CHUYN TIN T HP NHT 11-13 THUYT MINH BÁO CO TÀI CHÍNH HP NHT"
+      },
+      {
+        "pdf_page_index": 3,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-004.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              191,
+              164,
+              842,
+              211
+            ],
+            "confidence": 0.9938130974769592
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo ca Ban Điu hành",
+            "bbox": [
+              190,
+              204,
+              546,
+              237
+            ],
+            "confidence": 0.9805272817611694
+          },
+          {
+            "id": 2,
+            "text": "TRCH NHIM CA BAN ĐIU HÀNH ĐI VI B CO TÀI CHNH HP NHT",
+            "bbox": [
+              190,
+              335,
+              1255,
+              380
+            ],
+            "confidence": 0.9469457864761353
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo ca Ban Điu hành TRCH NHIM CA BAN ĐIU HÀNH ĐI VI B CO TÀI CHNH HP NHT"
+      },
+      {
+        "pdf_page_index": 4,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-005.json",
+        "entries": [
+          {
+            "id": 6,
+            "text": "Kính gi các C đông",
+            "bbox": [
+              154,
+              635,
+              471,
+              679
+            ],
+            "confidence": 0.9472256898880005
+          },
+          {
+            "id": 7,
+            "text": "Công ty C phn Sa Vit Nam",
+            "bbox": [
+              154,
+              673,
+              600,
+              713
+            ],
+            "confidence": 0.977081298828125
+          },
+          {
+            "id": 8,
+            "text": "Chúng tôi đã kim toán báo cáo tài chính hp nht đnh kèm ca Công ty C phn Sa Vit Nam",
+            "bbox": [
+              153,
+              738,
+              1330,
+              783
+            ],
+            "confidence": 0.9708036780357361
+          }
+        ],
+        "raw_text": "Kính gi các C đông Công ty C phn Sa Vit Nam Chúng tôi đã kim toán báo cáo tài chính hp nht đnh kèm ca Công ty C phn Sa Vit Nam"
+      },
+      {
+        "pdf_page_index": 5,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-006.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "KPMG",
+            "bbox": [
+              134,
+              168,
+              317,
+              235
+            ],
+            "confidence": 0.9850658774375916
+          },
+          {
+            "id": 1,
+            "text": "Ý kin ca kim toán viên",
+            "bbox": [
+              157,
+              339,
+              527,
+              382
+            ],
+            "confidence": 0.9513552188873291
+          },
+          {
+            "id": 2,
+            "text": "Theo ý kin ca chúng ti, báo cáo tài chính hp nht đã phn ánh trung thc và hp lý, trên các",
+            "bbox": [
+              159,
+              406,
+              1335,
+              454
+            ],
+            "confidence": 0.9690198302268982
+          }
+        ],
+        "raw_text": "KPMG Ý kin ca kim toán viên Theo ý kin ca chúng ti, báo cáo tài chính hp nht đã phn ánh trung thc và hp lý, trên các"
+      },
+      {
+        "pdf_page_index": 6,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-007.json",
+        "entries": [
+          {
+            "id": 108,
+            "text": "MC",
+            "bbox": [
+              1437,
+              1502,
+              1481,
+              1547
+            ],
+            "confidence": 0.6970958709716797
+          },
+          {
+            "id": 109,
+            "text": "D",
+            "bbox": [
+              1437,
+              1562,
+              1482,
+              1614
+            ],
+            "confidence": 0.3252267837524414
+          },
+          {
+            "id": 110,
+            "text": "Các thuyt minh đính kèm là b phn hp thành ca báo co tài chính hp nht này",
+            "bbox": [
+              311,
+              1930,
+              1243,
+              1970
+            ],
+            "confidence": 0.9777706861495972
+          }
+        ],
+        "raw_text": "MC D Các thuyt minh đính kèm là b phn hp thành ca báo co tài chính hp nht này"
+      },
+      {
+        "pdf_page_index": 7,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-008.json",
+        "entries": [
+          {
+            "id": 136,
+            "text": "53.312.370.717.301",
+            "bbox": [
+              887,
+              1646,
+              1111,
+              1672
+            ],
+            "confidence": 0.9999302625656128
+          },
+          {
+            "id": 137,
+            "text": "55.049.061.537.061",
+            "bbox": [
+              1134,
+              1644,
+              1361,
+              1675
+            ],
+            "confidence": 0.9993859529495239
+          },
+          {
+            "id": 138,
+            "text": "Các thuyt minh đinh kèm là b phn hp thành cůa báo cáo tài chinh hp nht này",
+            "bbox": [
+              312,
+              1933,
+              1244,
+              1972
+            ],
+            "confidence": 0.9717293977737427
+          }
+        ],
+        "raw_text": "53.312.370.717.301 55.049.061.537.061 Các thuyt minh đinh kèm là b phn hp thành cůa báo cáo tài chinh hp nht này"
+      },
+      {
+        "pdf_page_index": 8,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-009.json",
+        "entries": [
+          {
+            "id": 161,
+            "text": "Tài chinh",
+            "bbox": [
+              713,
+              1879,
+              826,
+              1910
+            ],
+            "confidence": 0.9957020282745361
+          },
+          {
+            "id": 162,
+            "text": "THANI",
+            "bbox": [
+              1424,
+              1873,
+              1485,
+              1945
+            ],
+            "confidence": 0.8569151759147644
+          },
+          {
+            "id": 163,
+            "text": "Các thuyt minh đinh kèm là b phn hp thành ca báo cáo tài chinh hp nht này",
+            "bbox": [
+              294,
+              1922,
+              1227,
+              1967
+            ],
+            "confidence": 0.9861595630645752
+          }
+        ],
+        "raw_text": "Tài chinh THANI Các thuyt minh đinh kèm là b phn hp thành ca báo cáo tài chinh hp nht này"
+      },
+      {
+        "pdf_page_index": 9,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-010.json",
+        "entries": [
+          {
+            "id": 110,
+            "text": "KP",
+            "bbox": [
+              1427,
+              1855,
+              1482,
+              1898
+            ],
+            "confidence": 0.9981458187103271
+          },
+          {
+            "id": 111,
+            "text": "PHO",
+            "bbox": [
+              1420,
+              1914,
+              1484,
+              1966
+            ],
+            "confidence": 0.8433319926261902
+          },
+          {
+            "id": 112,
+            "text": "Các thuyt minh đnh kèm là b phn hp thành ca báo cáo tài chính hp nht này",
+            "bbox": [
+              314,
+              1944,
+              1247,
+              1984
+            ],
+            "confidence": 0.9784965515136719
+          }
+        ],
+        "raw_text": "KP PHO Các thuyt minh đnh kèm là b phn hp thành ca báo cáo tài chính hp nht này"
+      },
+      {
+        "pdf_page_index": 10,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-011.json",
+        "entries": [
+          {
+            "id": 53,
+            "text": "VC",
+            "bbox": [
+              1441,
+              1854,
+              1482,
+              1901
+            ],
+            "confidence": 0.7651505470275879
+          },
+          {
+            "id": 54,
+            "text": "OG",
+            "bbox": [
+              1438,
+              1912,
+              1484,
+              1966
+            ],
+            "confidence": 0.40501153469085693
+          },
+          {
+            "id": 55,
+            "text": "Các thuyt minh đinh kèm là b phn hp thành ca báo co tài chinh hp nht này",
+            "bbox": [
+              294,
+              1922,
+              1227,
+              1966
+            ],
+            "confidence": 0.9853038787841797
+          }
+        ],
+        "raw_text": "VC OG Các thuyt minh đinh kèm là b phn hp thành ca báo co tài chinh hp nht này"
+      },
+      {
+        "pdf_page_index": 11,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-012.json",
+        "entries": [
+          {
+            "id": 88,
+            "text": "JHH",
+            "bbox": [
+              1440,
+              1820,
+              1480,
+              1854
+            ],
+            "confidence": 0.5187488198280334
+          },
+          {
+            "id": 89,
+            "text": "LMR",
+            "bbox": [
+              1440,
+              1879,
+              1481,
+              1951
+            ],
+            "confidence": 0.31016549468040466
+          },
+          {
+            "id": 90,
+            "text": "Các thuyt minh đnh kèm là b phn hp thành ca báo cáo tài chính hp nht này",
+            "bbox": [
+              299,
+              1934,
+              1231,
+              1976
+            ],
+            "confidence": 0.9857890605926514
+          }
+        ],
+        "raw_text": "JHH LMR Các thuyt minh đnh kèm là b phn hp thành ca báo cáo tài chính hp nht này"
+      },
+      {
+        "pdf_page_index": 12,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-013.json",
+        "entries": [
+          {
+            "id": 71,
+            "text": "THA",
+            "bbox": [
+              1416,
+              1557,
+              1489,
+              1673
+            ],
+            "confidence": 0.9784584045410156
+          },
+          {
+            "id": 72,
+            "text": "MTN.H.H * MM",
+            "bbox": [
+              1424,
+              1747,
+              1476,
+              1931
+            ],
+            "confidence": 0.7725546956062317
+          },
+          {
+            "id": 73,
+            "text": "Các thuyt minh đnh kèm là b phn hp thành ca báo co tài chinh hp nht này",
+            "bbox": [
+              299,
+              1934,
+              1233,
+              1976
+            ],
+            "confidence": 0.9768945574760437
+          }
+        ],
+        "raw_text": "THA MTN.H.H * MM Các thuyt minh đnh kèm là b phn hp thành ca báo co tài chinh hp nht này"
+      },
+      {
+        "pdf_page_index": 13,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-014.json",
+        "entries": [
+          {
+            "id": 57,
+            "text": "KI",
+            "bbox": [
+              1445,
+              1583,
+              1485,
+              1629
+            ],
+            "confidence": 0.8571988940238953
+          },
+          {
+            "id": 58,
+            "text": "VH PH",
+            "bbox": [
+              1412,
+              1630,
+              1489,
+              1698
+            ],
+            "confidence": 0.7852112054824829
+          },
+          {
+            "id": 59,
+            "text": "Các thuyt minh đinh kèm là b phn hp thành ca bo cáo tài chinh hp nht này",
+            "bbox": [
+              283,
+              1926,
+              1215,
+              1970
+            ],
+            "confidence": 0.9803631901741028
+          }
+        ],
+        "raw_text": "KI VH PH Các thuyt minh đinh kèm là b phn hp thành ca bo cáo tài chinh hp nht này"
+      },
+      {
+        "pdf_page_index": 14,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-015.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              207,
+              133,
+              852,
+              172
+            ],
+            "confidence": 0.9688135981559753
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              168,
+              1310,
+              211
+            ],
+            "confidence": 0.9828134775161743
+          },
+          {
+            "id": 2,
+            "text": "Mu B 09  DN/HN",
+            "bbox": [
+              1101,
+              223,
+              1336,
+              259
+            ],
+            "confidence": 0.9408704042434692
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 Mu B 09  DN/HN"
+      },
+      {
+        "pdf_page_index": 15,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-016.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              203,
+              137,
+              851,
+              176
+            ],
+            "confidence": 0.9779990315437317
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              202,
+              172,
+              1308,
+              213
+            ],
+            "confidence": 0.973940372467041
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              203,
+              208,
+              339,
+              246
+            ],
+            "confidence": 0.9926156997680664
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 16,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-017.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              135,
+              852,
+              175
+            ],
+            "confidence": 0.9735227227210999
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              171,
+              1308,
+              213
+            ],
+            "confidence": 0.9709925651550293
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              203,
+              205,
+              341,
+              246
+            ],
+            "confidence": 0.9804884195327759
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 17,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-018.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              206,
+              135,
+              854,
+              176
+            ],
+            "confidence": 0.9792860150337219
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              171,
+              1308,
+              213
+            ],
+            "confidence": 0.9764745235443115
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              203,
+              205,
+              342,
+              246
+            ],
+            "confidence": 0.9890036582946777
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 18,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-019.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              203,
+              134,
+              851,
+              175
+            ],
+            "confidence": 0.9797587990760803
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              202,
+              171,
+              1307,
+              213
+            ],
+            "confidence": 0.9619576334953308
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              202,
+              204,
+              339,
+              245
+            ],
+            "confidence": 0.9844098091125488
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 19,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-020.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              134,
+              854,
+              175
+            ],
+            "confidence": 0.9526693820953369
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hop nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              170,
+              1308,
+              212
+            ],
+            "confidence": 0.9831961393356323
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              202,
+              201,
+              343,
+              248
+            ],
+            "confidence": 0.975415050983429
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hop nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 20,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-021.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              133,
+              851,
+              172
+            ],
+            "confidence": 0.9880270957946777
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              170,
+              1307,
+              209
+            ],
+            "confidence": 0.9824226498603821
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              200,
+              201,
+              341,
+              245
+            ],
+            "confidence": 0.9687684774398804
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 21,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-022.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              206,
+              134,
+              854,
+              175
+            ],
+            "confidence": 0.9683427214622498
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              170,
+              1308,
+              213
+            ],
+            "confidence": 0.9774117469787598
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              206,
+              205,
+              342,
+              243
+            ],
+            "confidence": 0.9780908823013306
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      }
+    ],
+    "annual_period_end": [
+      {
+        "pdf_page_index": 0,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-001.json",
+        "entries": [
+          {
+            "id": 10,
+            "text": "và các công ty con",
+            "bbox": [
+              618,
+              832,
+              879,
+              877
+            ],
+            "confidence": 0.996296763420105
+          },
+          {
+            "id": 11,
+            "text": "Báo cáo tài chính hp nht cho năm kt thúc",
+            "bbox": [
+              443,
+              920,
+              1042,
+              959
+            ],
+            "confidence": 0.9857734441757202
+          },
+          {
+            "id": 12,
+            "text": "ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              552,
+              955,
+              932,
+              1001
+            ],
+            "confidence": 0.99534010887146
+          }
+        ],
+        "raw_text": "và các công ty con Báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025"
+      },
+      {
+        "pdf_page_index": 9,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-010.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              199,
+              145,
+              851,
+              184
+            ],
+            "confidence": 0.9845842719078064
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo kt qu hot đng kinh doanh hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              198,
+              178,
+              1408,
+              224
+            ],
+            "confidence": 0.9664157032966614
+          },
+          {
+            "id": 2,
+            "text": "Mu B 02  DN/HN",
+            "bbox": [
+              1123,
+              235,
+              1359,
+              271
+            ],
+            "confidence": 0.9819077849388123
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo kt qu hot đng kinh doanh hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 Mu B 02  DN/HN"
+      },
+      {
+        "pdf_page_index": 10,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-011.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              190,
+              113,
+              842,
+              161
+            ],
+            "confidence": 0.9862226247787476
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo kt qu hot đng kinh doanh hp nht cho năm kt thc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              187,
+              149,
+              1400,
+              199
+            ],
+            "confidence": 0.9900039434432983
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              187,
+              184,
+              330,
+              229
+            ],
+            "confidence": 0.9865131378173828
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo kt qu hot đng kinh doanh hp nht cho năm kt thc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 11,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-012.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              207,
+              130,
+              855,
+              171
+            ],
+            "confidence": 0.9748226404190063
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              205,
+              167,
+              1256,
+              211
+            ],
+            "confidence": 0.9589305520057678
+          },
+          {
+            "id": 2,
+            "text": "(Phương pháp gián tip  tip theo)",
+            "bbox": [
+              206,
+              204,
+              663,
+              242
+            ],
+            "confidence": 0.9276154041290283
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (Phương pháp gián tip  tip theo)"
+      },
+      {
+        "pdf_page_index": 12,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-013.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              130,
+              852,
+              172
+            ],
+            "confidence": 0.9814125895500183
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              202,
+              167,
+              1255,
+              209
+            ],
+            "confidence": 0.9675719141960144
+          },
+          {
+            "id": 2,
+            "text": "(Phưong pháp gián tip - tip theo)",
+            "bbox": [
+              205,
+              204,
+              661,
+              242
+            ],
+            "confidence": 0.950423002243042
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (Phưong pháp gián tip - tip theo)"
+      },
+      {
+        "pdf_page_index": 13,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-014.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              191,
+              112,
+              843,
+              161
+            ],
+            "confidence": 0.9904069304466248
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              190,
+              151,
+              1243,
+              196
+            ],
+            "confidence": 0.9712088108062744
+          },
+          {
+            "id": 2,
+            "text": "(Phưong pháp gián tip - tip theo)",
+            "bbox": [
+              190,
+              191,
+              650,
+              228
+            ],
+            "confidence": 0.938788652420044
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (Phưong pháp gián tip - tip theo)"
+      },
+      {
+        "pdf_page_index": 14,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-015.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              207,
+              133,
+              852,
+              172
+            ],
+            "confidence": 0.9688135981559753
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              168,
+              1310,
+              211
+            ],
+            "confidence": 0.9828134775161743
+          },
+          {
+            "id": 2,
+            "text": "Mu B 09  DN/HN",
+            "bbox": [
+              1101,
+              223,
+              1336,
+              259
+            ],
+            "confidence": 0.9408704042434692
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 Mu B 09  DN/HN"
+      },
+      {
+        "pdf_page_index": 15,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-016.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              203,
+              137,
+              851,
+              176
+            ],
+            "confidence": 0.9779990315437317
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              202,
+              172,
+              1308,
+              213
+            ],
+            "confidence": 0.973940372467041
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              203,
+              208,
+              339,
+              246
+            ],
+            "confidence": 0.9926156997680664
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 16,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-017.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              135,
+              852,
+              175
+            ],
+            "confidence": 0.9735227227210999
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              171,
+              1308,
+              213
+            ],
+            "confidence": 0.9709925651550293
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              203,
+              205,
+              341,
+              246
+            ],
+            "confidence": 0.9804884195327759
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 17,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-018.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              206,
+              135,
+              854,
+              176
+            ],
+            "confidence": 0.9792860150337219
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              171,
+              1308,
+              213
+            ],
+            "confidence": 0.9764745235443115
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              203,
+              205,
+              342,
+              246
+            ],
+            "confidence": 0.9890036582946777
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 18,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-019.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              203,
+              134,
+              851,
+              175
+            ],
+            "confidence": 0.9797587990760803
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              202,
+              171,
+              1307,
+              213
+            ],
+            "confidence": 0.9619576334953308
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              202,
+              204,
+              339,
+              245
+            ],
+            "confidence": 0.9844098091125488
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 19,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-020.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              134,
+              854,
+              175
+            ],
+            "confidence": 0.9526693820953369
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hop nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              170,
+              1308,
+              212
+            ],
+            "confidence": 0.9831961393356323
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              202,
+              201,
+              343,
+              248
+            ],
+            "confidence": 0.975415050983429
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hop nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 20,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-021.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              133,
+              851,
+              172
+            ],
+            "confidence": 0.9880270957946777
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              170,
+              1307,
+              209
+            ],
+            "confidence": 0.9824226498603821
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              200,
+              201,
+              341,
+              245
+            ],
+            "confidence": 0.9687684774398804
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 21,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-022.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              206,
+              134,
+              854,
+              175
+            ],
+            "confidence": 0.9683427214622498
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              170,
+              1308,
+              213
+            ],
+            "confidence": 0.9774117469787598
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              206,
+              205,
+              342,
+              243
+            ],
+            "confidence": 0.9780908823013306
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      }
+    ],
+    "independent_audit": [
+      {
+        "pdf_page_index": 1,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-002.json",
+        "entries": [
+          {
+            "id": 5,
+            "text": "BÁO CÁO CA BAN ĐIU HÀNH",
+            "bbox": [
+              202,
+              539,
+              657,
+              580
+            ],
+            "confidence": 0.9668612480163574
+          },
+          {
+            "id": 6,
+            "text": "3",
+            "bbox": [
+              1306,
+              546,
+              1339,
+              588
+            ],
+            "confidence": 0.9998350143432617
+          },
+          {
+            "id": 7,
+            "text": "BÁO CO KIM TON ĐC LP",
+            "bbox": [
+              202,
+              639,
+              649,
+              684
+            ],
+            "confidence": 0.8749873042106628
+          }
+        ],
+        "raw_text": "BÁO CÁO CA BAN ĐIU HÀNH 3 BÁO CO KIM TON ĐC LP"
+      },
+      {
+        "pdf_page_index": 4,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-005.json",
+        "entries": [
+          {
+            "id": 3,
+            "text": "Thành ph H Chí Minh, Vit Nam",
+            "bbox": [
+              150,
+              391,
+              576,
+              429
+            ],
+            "confidence": 0.9769588708877563
+          },
+          {
+            "id": 4,
+            "text": "+84 (28) 3821 9266 | kpmg.com.vn",
+            "bbox": [
+              147,
+              423,
+              581,
+              461
+            ],
+            "confidence": 0.9863783121109009
+          },
+          {
+            "id": 5,
+            "text": "BÁO CÁO KIM TOÁN ĐC LP",
+            "bbox": [
+              155,
+              572,
+              616,
+              616
+            ],
+            "confidence": 0.9398512244224548
+          }
+        ],
+        "raw_text": "Thành ph H Chí Minh, Vit Nam +84 (28) 3821 9266 | kpmg.com.vn BÁO CÁO KIM TOÁN ĐC LP"
+      }
+    ],
+    "currency_vnd": [
+      {
+        "pdf_page_index": 6,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-007.json",
+        "entries": [
+          {
+            "id": 9,
+            "text": "S",
+            "bbox": [
+              694,
+              376,
+              734,
+              416
+            ],
+            "confidence": 0.4095171093940735
+          },
+          {
+            "id": 10,
+            "text": "minh",
+            "bbox": [
+              770,
+              383,
+              843,
+              417
+            ],
+            "confidence": 0.9997752904891968
+          },
+          {
+            "id": 11,
+            "text": "VND",
+            "bbox": [
+              956,
+              385,
+              1025,
+              416
+            ],
+            "confidence": 0.9997149109840393
+          }
+        ],
+        "raw_text": "S minh VND"
+      },
+      {
+        "pdf_page_index": 7,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-008.json",
+        "entries": [
+          {
+            "id": 9,
+            "text": "s",
+            "bbox": [
+              701,
+              382,
+              738,
+              417
+            ],
+            "confidence": 0.7628004550933838
+          },
+          {
+            "id": 10,
+            "text": "minh",
+            "bbox": [
+              778,
+              385,
+              852,
+              420
+            ],
+            "confidence": 0.9993404150009155
+          },
+          {
+            "id": 11,
+            "text": "VND",
+            "bbox": [
+              964,
+              389,
+              1033,
+              420
+            ],
+            "confidence": 0.9996516108512878
+          }
+        ],
+        "raw_text": "s minh VND"
+      },
+      {
+        "pdf_page_index": 8,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-009.json",
+        "entries": [
+          {
+            "id": 9,
+            "text": "s",
+            "bbox": [
+              693,
+              370,
+              729,
+              407
+            ],
+            "confidence": 0.9506428837776184
+          },
+          {
+            "id": 10,
+            "text": "minh",
+            "bbox": [
+              772,
+              375,
+              847,
+              408
+            ],
+            "confidence": 0.9990650415420532
+          },
+          {
+            "id": 11,
+            "text": "VND",
+            "bbox": [
+              957,
+              378,
+              1025,
+              408
+            ],
+            "confidence": 0.9996109008789062
+          }
+        ],
+        "raw_text": "s minh VND"
+      },
+      {
+        "pdf_page_index": 9,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-010.json",
+        "entries": [
+          {
+            "id": 9,
+            "text": "s",
+            "bbox": [
+              727,
+              395,
+              766,
+              433
+            ],
+            "confidence": 0.7180070877075195
+          },
+          {
+            "id": 10,
+            "text": "minh",
+            "bbox": [
+              798,
+              400,
+              875,
+              433
+            ],
+            "confidence": 0.9984081983566284
+          },
+          {
+            "id": 11,
+            "text": "VND",
+            "bbox": [
+              980,
+              401,
+              1053,
+              434
+            ],
+            "confidence": 0.999384880065918
+          }
+        ],
+        "raw_text": "s minh VND"
+      },
+      {
+        "pdf_page_index": 10,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-011.json",
+        "entries": [
+          {
+            "id": 10,
+            "text": "s",
+            "bbox": [
+              751,
+              405,
+              794,
+              446
+            ],
+            "confidence": 0.5023066997528076
+          },
+          {
+            "id": 11,
+            "text": "minh",
+            "bbox": [
+              823,
+              412,
+              899,
+              445
+            ],
+            "confidence": 0.9991163015365601
+          },
+          {
+            "id": 12,
+            "text": "VND",
+            "bbox": [
+              998,
+              412,
+              1070,
+              446
+            ],
+            "confidence": 0.9988627433776855
+          }
+        ],
+        "raw_text": "s minh VND"
+      },
+      {
+        "pdf_page_index": 11,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-012.json",
+        "entries": [
+          {
+            "id": 9,
+            "text": "só",
+            "bbox": [
+              718,
+              418,
+              755,
+              453
+            ],
+            "confidence": 0.7439458966255188
+          },
+          {
+            "id": 10,
+            "text": "minh",
+            "bbox": [
+              787,
+              422,
+              865,
+              455
+            ],
+            "confidence": 0.9984511137008667
+          },
+          {
+            "id": 11,
+            "text": "VND",
+            "bbox": [
+              968,
+              425,
+              1036,
+              455
+            ],
+            "confidence": 0.9988229274749756
+          }
+        ],
+        "raw_text": "só minh VND"
+      },
+      {
+        "pdf_page_index": 12,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-013.json",
+        "entries": [
+          {
+            "id": 10,
+            "text": "s6",
+            "bbox": [
+              675,
+              417,
+              713,
+              454
+            ],
+            "confidence": 0.6122748255729675
+          },
+          {
+            "id": 11,
+            "text": "minh",
+            "bbox": [
+              754,
+              422,
+              830,
+              455
+            ],
+            "confidence": 0.9968300461769104
+          },
+          {
+            "id": 12,
+            "text": "VND",
+            "bbox": [
+              929,
+              422,
+              1002,
+              457
+            ],
+            "confidence": 0.9992120862007141
+          }
+        ],
+        "raw_text": "s6 minh VND"
+      },
+      {
+        "pdf_page_index": 13,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-014.json",
+        "entries": [
+          {
+            "id": 9,
+            "text": "s",
+            "bbox": [
+              693,
+              407,
+              733,
+              443
+            ],
+            "confidence": 0.7917351126670837
+          },
+          {
+            "id": 10,
+            "text": "minh",
+            "bbox": [
+              760,
+              406,
+              839,
+              445
+            ],
+            "confidence": 0.9993002414703369
+          },
+          {
+            "id": 11,
+            "text": "VND",
+            "bbox": [
+              943,
+              410,
+              1013,
+              446
+            ],
+            "confidence": 0.9997310638427734
+          }
+        ],
+        "raw_text": "s minh VND"
+      },
+      {
+        "pdf_page_index": 15,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-016.json",
+        "entries": [
+          {
+            "id": 36,
+            "text": "t hp trang tri b sa và bò tht công ngh cao. Giao dch này hoàn tt vào",
+            "bbox": [
+              476,
+              1226,
+              1331,
+              1262
+            ],
+            "confidence": 0.9772042632102966
+          },
+          {
+            "id": 37,
+            "text": "ngày 23 tháng 11 năm 2018. Ngày 29 tháng 1 năm 2019, Công ty đã đu tư",
+            "bbox": [
+              477,
+              1262,
+              1332,
+              1292
+            ],
+            "confidence": 0.9794642329216003
+          },
+          {
+            "id": 38,
+            "text": "51.547 triu VND theo t l s hu trong công ty này theo quyt đnh ca các",
+            "bbox": [
+              476,
+              1291,
+              1331,
+              1325
+            ],
+            "confidence": 0.9749237298965454
+          }
+        ],
+        "raw_text": "t hp trang tri b sa và bò tht công ngh cao. Giao dch này hoàn tt vào ngày 23 tháng 11 năm 2018. Ngày 29 tháng 1 năm 2019, Công ty đã đu tư 51.547 triu VND theo t l s hu trong công ty này theo quyt đnh ca các"
+      },
+      {
+        "pdf_page_index": 16,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-017.json",
+        "entries": [
+          {
+            "id": 16,
+            "text": "0316724859 do S K hoch và Đu tư Thành ph H Chí Minh cp. Ngày 9",
+            "bbox": [
+              476,
+              651,
+              1331,
+              691
+            ],
+            "confidence": 0.9845445156097412
+          },
+          {
+            "id": 17,
+            "text": "tháng 4 năm 2021 và ngày 10 tháng 6 năm 2021, Công ty đã góp vn ln lưt",
+            "bbox": [
+              476,
+              684,
+              1331,
+              722
+            ],
+            "confidence": 0.9698688983917236
+          },
+          {
+            "id": 18,
+            "text": "là 51.000 triu VND và 153.000 triu VND vào Công ty TNHH Liên doanh",
+            "bbox": [
+              476,
+              717,
+              1331,
+              754
+            ],
+            "confidence": 0.990561306476593
+          }
+        ],
+        "raw_text": "0316724859 do S K hoch và Đu tư Thành ph H Chí Minh cp. Ngày 9 tháng 4 năm 2021 và ngày 10 tháng 6 năm 2021, Công ty đã góp vn ln lưt là 51.000 triu VND và 153.000 triu VND vào Công ty TNHH Liên doanh"
+      },
+      {
+        "pdf_page_index": 17,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-018.json",
+        "entries": [
+          {
+            "id": 7,
+            "text": "Công ty đã mua 29.296.875 c phiu trong tng s 40.145.438 c phiu mi",
+            "bbox": [
+              479,
+              389,
+              1334,
+              425
+            ],
+            "confidence": 0.9804462194442749
+          },
+          {
+            "id": 8,
+            "text": "phát hành ca Tng Công ty Chăn nui Vit Nam  Công ty C phn vi giá",
+            "bbox": [
+              479,
+              422,
+              1334,
+              459
+            ],
+            "confidence": 0.9783928394317627
+          },
+          {
+            "id": 9,
+            "text": "mua là 410.156 triu VND. Do đó, t l s hu ca Công ty ti Tng Công ty",
+            "bbox": [
+              476,
+              450,
+              1335,
+              495
+            ],
+            "confidence": 0.96748286485672
+          }
+        ],
+        "raw_text": "Công ty đã mua 29.296.875 c phiu trong tng s 40.145.438 c phiu mi phát hành ca Tng Công ty Chăn nui Vit Nam  Công ty C phn vi giá mua là 410.156 triu VND. Do đó, t l s hu ca Công ty ti Tng Công ty"
+      },
+      {
+        "pdf_page_index": 20,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-021.json",
+        "entries": [
+          {
+            "id": 56,
+            "text": "Philippines",
+            "bbox": [
+              456,
+              1051,
+              592,
+              1091
+            ],
+            "confidence": 0.9990628957748413
+          },
+          {
+            "id": 57,
+            "text": "Trong tháng 12 năm 2025, Công ty đã mua 6.289.822 c phiu trong s 25.200.000 c phiu mi phát",
+            "bbox": [
+              197,
+              1112,
+              1336,
+              1153
+            ],
+            "confidence": 0.9899269342422485
+          },
+          {
+            "id": 58,
+            "text": "hành ca Công ty C phn Ch bin Da Á Châu vi giá mua là 62.898 triu VND.",
+            "bbox": [
+              201,
+              1147,
+              1126,
+              1180
+            ],
+            "confidence": 0.986258327960968
+          }
+        ],
+        "raw_text": "Philippines Trong tháng 12 năm 2025, Công ty đã mua 6.289.822 c phiu trong s 25.200.000 c phiu mi phát hành ca Công ty C phn Ch bin Da Á Châu vi giá mua là 62.898 triu VND."
+      },
+      {
+        "pdf_page_index": 21,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-022.json",
+        "entries": [
+          {
+            "id": 40,
+            "text": "2.",
+            "bbox": [
+              133,
+              1813,
+              165,
+              1842
+            ],
+            "confidence": 0.9987125396728516
+          },
+          {
+            "id": 41,
+            "text": "Đon v tin t k toán và trình bày báo cáo tài chính",
+            "bbox": [
+              194,
+              1808,
+              868,
+              1847
+            ],
+            "confidence": 0.9614765644073486
+          },
+          {
+            "id": 42,
+            "text": "Đơn v tin t k toán ca Công ty là Đng Vit Nam (\"VND’) cũng là đơn v tin t đưc s dng cho",
+            "bbox": [
+              199,
+              1858,
+              1331,
+              1900
+            ],
+            "confidence": 0.9465546011924744
+          }
+        ],
+        "raw_text": "2. Đon v tin t k toán và trình bày báo cáo tài chính Đơn v tin t k toán ca Công ty là Đng Vit Nam (\"VND’) cũng là đơn v tin t đưc s dng cho"
+      }
+    ],
+    "annual_period_start_policy": [
+      {
+        "pdf_page_index": 21,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-022.json",
+        "entries": [
+          {
+            "id": 37,
+            "text": "1.",
+            "bbox": [
+              136,
+              1668,
+              164,
+              1696
+            ],
+            "confidence": 0.9998358488082886
+          },
+          {
+            "id": 38,
+            "text": "K k toán năm",
+            "bbox": [
+              198,
+              1663,
+              411,
+              1698
+            ],
+            "confidence": 0.9813392162322998
+          },
+          {
+            "id": 39,
+            "text": "K k ton năm ca Tp đoàn bt đu t ngày 1 tháng 1 và kt thúc ngày 31 tháng 12.",
+            "bbox": [
+              201,
+              1710,
+              1151,
+              1754
+            ],
+            "confidence": 0.9787828326225281
+          }
+        ],
+        "raw_text": "1. K k toán năm K k ton năm ca Tp đoàn bt đu t ngày 1 tháng 1 và kt thúc ngày 31 tháng 12."
+      }
+    ],
+    "annual_period_end_policy": [
+      {
+        "pdf_page_index": 0,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-001.json",
+        "entries": [
+          {
+            "id": 10,
+            "text": "và các công ty con",
+            "bbox": [
+              618,
+              832,
+              879,
+              877
+            ],
+            "confidence": 0.996296763420105
+          },
+          {
+            "id": 11,
+            "text": "Báo cáo tài chính hp nht cho năm kt thúc",
+            "bbox": [
+              443,
+              920,
+              1042,
+              959
+            ],
+            "confidence": 0.9857734441757202
+          },
+          {
+            "id": 12,
+            "text": "ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              552,
+              955,
+              932,
+              1001
+            ],
+            "confidence": 0.99534010887146
+          }
+        ],
+        "raw_text": "và các công ty con Báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025"
+      },
+      {
+        "pdf_page_index": 3,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-004.json",
+        "entries": [
+          {
+            "id": 3,
+            "text": "Ban Điu hành chu trách nhim lp báo cáo tài chính hp nht ca Công ty C phn Sa Vit Nam",
+            "bbox": [
+              189,
+              404,
+              1314,
+              446
+            ],
+            "confidence": 0.9723324775695801
+          },
+          {
+            "id": 4,
+            "text": "(“Công ty”) và các công ty con (gi chung là “Tp đoàn') phn ánh trung thc và hp lý tình hinh tài",
+            "bbox": [
+              189,
+              437,
+              1314,
+              478
+            ],
+            "confidence": 0.9519347548484802
+          },
+          {
+            "id": 5,
+            "text": "chính hp nht ca Tp đoàn ti ngày 31 tháng 12 năm 2025, kt qu hot đng kinh doanh hp nht",
+            "bbox": [
+              189,
+              466,
+              1315,
+              512
+            ],
+            "confidence": 0.9852579236030579
+          }
+        ],
+        "raw_text": "Ban Điu hành chu trách nhim lp báo cáo tài chính hp nht ca Công ty C phn Sa Vit Nam (“Công ty”) và các công ty con (gi chung là “Tp đoàn') phn ánh trung thc và hp lý tình hinh tài chính hp nht ca Tp đoàn ti ngày 31 tháng 12 năm 2025, kt qu hot đng kinh doanh hp nht"
+      },
+      {
+        "pdf_page_index": 4,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-005.json",
+        "entries": [
+          {
+            "id": 8,
+            "text": "Chúng tôi đã kim toán báo cáo tài chính hp nht đnh kèm ca Công ty C phn Sa Vit Nam",
+            "bbox": [
+              153,
+              738,
+              1330,
+              783
+            ],
+            "confidence": 0.9708036780357361
+          },
+          {
+            "id": 9,
+            "text": "(\"Công ty”) và các công ty con (gi chung là “Tp đoàn”), bao gm báo cáo tình hình tài chính",
+            "bbox": [
+              154,
+              771,
+              1327,
+              814
+            ],
+            "confidence": 0.9714440107345581
+          },
+          {
+            "id": 10,
+            "text": "hp nht ti ngày 31 tháng 12 năm 2025, báo cáo kt qu hot đng kinh doanh hp nht và",
+            "bbox": [
+              153,
+              804,
+              1328,
+              843
+            ],
+            "confidence": 0.9783896803855896
+          }
+        ],
+        "raw_text": "Chúng tôi đã kim toán báo cáo tài chính hp nht đnh kèm ca Công ty C phn Sa Vit Nam (\"Công ty”) và các công ty con (gi chung là “Tp đoàn”), bao gm báo cáo tình hình tài chính hp nht ti ngày 31 tháng 12 năm 2025, báo cáo kt qu hot đng kinh doanh hp nht và"
+      },
+      {
+        "pdf_page_index": 5,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-006.json",
+        "entries": [
+          {
+            "id": 2,
+            "text": "Theo ý kin ca chúng ti, báo cáo tài chính hp nht đã phn ánh trung thc và hp lý, trên các",
+            "bbox": [
+              159,
+              406,
+              1335,
+              454
+            ],
+            "confidence": 0.9690198302268982
+          },
+          {
+            "id": 3,
+            "text": "khía cnh trng yu, tình hình tài chính hp nht ca Công ty C phn Sa Vit Nam và các",
+            "bbox": [
+              158,
+              441,
+              1334,
+              484
+            ],
+            "confidence": 0.9621722102165222
+          },
+          {
+            "id": 4,
+            "text": "công ty con ti ngày 31 tháng 12 năm 2025, kt qu hot đng kinh doanh hp nht và lưu",
+            "bbox": [
+              157,
+              471,
+              1335,
+              516
+            ],
+            "confidence": 0.987384021282196
+          }
+        ],
+        "raw_text": "Theo ý kin ca chúng ti, báo cáo tài chính hp nht đã phn ánh trung thc và hp lý, trên các khía cnh trng yu, tình hình tài chính hp nht ca Công ty C phn Sa Vit Nam và các công ty con ti ngày 31 tháng 12 năm 2025, kt qu hot đng kinh doanh hp nht và lưu"
+      },
+      {
+        "pdf_page_index": 6,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-007.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              199,
+              130,
+              848,
+              171
+            ],
+            "confidence": 0.9841733574867249
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo tình hình tài chính hp nht ti ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              195,
+              167,
+              1072,
+              205
+            ],
+            "confidence": 0.970315158367157
+          },
+          {
+            "id": 2,
+            "text": "Mãu B 01  DN/HN",
+            "bbox": [
+              1118,
+              221,
+              1358,
+              257
+            ],
+            "confidence": 0.9083874821662903
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo tình hình tài chính hp nht ti ngày 31 tháng 12 năm 2025 Mãu B 01  DN/HN"
+      },
+      {
+        "pdf_page_index": 7,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-008.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              202,
+              130,
+              851,
+              171
+            ],
+            "confidence": 0.95742267370224
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo tình hình tài chính hp nht ti ngày 31 tháng 12 năm 2025 (tip theo)",
+            "bbox": [
+              198,
+              167,
+              1214,
+              212
+            ],
+            "confidence": 0.973414421081543
+          },
+          {
+            "id": 2,
+            "text": "Mu B 01  DN/HN",
+            "bbox": [
+              1121,
+              222,
+              1359,
+              258
+            ],
+            "confidence": 0.9400233030319214
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo tình hình tài chính hp nht ti ngày 31 tháng 12 năm 2025 (tip theo) Mu B 01  DN/HN"
+      },
+      {
+        "pdf_page_index": 8,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-009.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              190,
+              112,
+              844,
+              161
+            ],
+            "confidence": 0.9883657097816467
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo tình hình tài chính hp nht ti ngày 31 tháng 12 năm 2025 (tip theo)",
+            "bbox": [
+              187,
+              149,
+              1203,
+              199
+            ],
+            "confidence": 0.9764432311058044
+          },
+          {
+            "id": 2,
+            "text": "Mãu B 01  DN/HN",
+            "bbox": [
+              1111,
+              210,
+              1350,
+              249
+            ],
+            "confidence": 0.9410883188247681
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo tình hình tài chính hp nht ti ngày 31 tháng 12 năm 2025 (tip theo) Mãu B 01  DN/HN"
+      },
+      {
+        "pdf_page_index": 9,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-010.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              199,
+              145,
+              851,
+              184
+            ],
+            "confidence": 0.9845842719078064
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo kt qu hot đng kinh doanh hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              198,
+              178,
+              1408,
+              224
+            ],
+            "confidence": 0.9664157032966614
+          },
+          {
+            "id": 2,
+            "text": "Mu B 02  DN/HN",
+            "bbox": [
+              1123,
+              235,
+              1359,
+              271
+            ],
+            "confidence": 0.9819077849388123
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo kt qu hot đng kinh doanh hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 Mu B 02  DN/HN"
+      },
+      {
+        "pdf_page_index": 10,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-011.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              190,
+              113,
+              842,
+              161
+            ],
+            "confidence": 0.9862226247787476
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo kt qu hot đng kinh doanh hp nht cho năm kt thc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              187,
+              149,
+              1400,
+              199
+            ],
+            "confidence": 0.9900039434432983
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              187,
+              184,
+              330,
+              229
+            ],
+            "confidence": 0.9865131378173828
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo kt qu hot đng kinh doanh hp nht cho năm kt thc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 11,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-012.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              207,
+              130,
+              855,
+              171
+            ],
+            "confidence": 0.9748226404190063
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              205,
+              167,
+              1256,
+              211
+            ],
+            "confidence": 0.9589305520057678
+          },
+          {
+            "id": 2,
+            "text": "(Phương pháp gián tip  tip theo)",
+            "bbox": [
+              206,
+              204,
+              663,
+              242
+            ],
+            "confidence": 0.9276154041290283
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (Phương pháp gián tip  tip theo)"
+      },
+      {
+        "pdf_page_index": 12,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-013.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              130,
+              852,
+              172
+            ],
+            "confidence": 0.9814125895500183
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              202,
+              167,
+              1255,
+              209
+            ],
+            "confidence": 0.9675719141960144
+          },
+          {
+            "id": 2,
+            "text": "(Phưong pháp gián tip - tip theo)",
+            "bbox": [
+              205,
+              204,
+              661,
+              242
+            ],
+            "confidence": 0.950423002243042
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (Phưong pháp gián tip - tip theo)"
+      },
+      {
+        "pdf_page_index": 13,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-014.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              191,
+              112,
+              843,
+              161
+            ],
+            "confidence": 0.9904069304466248
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              190,
+              151,
+              1243,
+              196
+            ],
+            "confidence": 0.9712088108062744
+          },
+          {
+            "id": 2,
+            "text": "(Phưong pháp gián tip - tip theo)",
+            "bbox": [
+              190,
+              191,
+              650,
+              228
+            ],
+            "confidence": 0.938788652420044
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (Phưong pháp gián tip - tip theo)"
+      },
+      {
+        "pdf_page_index": 14,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-015.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              207,
+              133,
+              852,
+              172
+            ],
+            "confidence": 0.9688135981559753
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              168,
+              1310,
+              211
+            ],
+            "confidence": 0.9828134775161743
+          },
+          {
+            "id": 2,
+            "text": "Mu B 09  DN/HN",
+            "bbox": [
+              1101,
+              223,
+              1336,
+              259
+            ],
+            "confidence": 0.9408704042434692
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 Mu B 09  DN/HN"
+      },
+      {
+        "pdf_page_index": 15,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-016.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              203,
+              137,
+              851,
+              176
+            ],
+            "confidence": 0.9779990315437317
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              202,
+              172,
+              1308,
+              213
+            ],
+            "confidence": 0.973940372467041
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              203,
+              208,
+              339,
+              246
+            ],
+            "confidence": 0.9926156997680664
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 16,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-017.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              135,
+              852,
+              175
+            ],
+            "confidence": 0.9735227227210999
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              171,
+              1308,
+              213
+            ],
+            "confidence": 0.9709925651550293
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              203,
+              205,
+              341,
+              246
+            ],
+            "confidence": 0.9804884195327759
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 17,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-018.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              206,
+              135,
+              854,
+              176
+            ],
+            "confidence": 0.9792860150337219
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              171,
+              1308,
+              213
+            ],
+            "confidence": 0.9764745235443115
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              203,
+              205,
+              342,
+              246
+            ],
+            "confidence": 0.9890036582946777
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 18,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-019.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              203,
+              134,
+              851,
+              175
+            ],
+            "confidence": 0.9797587990760803
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              202,
+              171,
+              1307,
+              213
+            ],
+            "confidence": 0.9619576334953308
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              202,
+              204,
+              339,
+              245
+            ],
+            "confidence": 0.9844098091125488
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 19,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-020.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              134,
+              854,
+              175
+            ],
+            "confidence": 0.9526693820953369
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hop nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              170,
+              1308,
+              212
+            ],
+            "confidence": 0.9831961393356323
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              202,
+              201,
+              343,
+              248
+            ],
+            "confidence": 0.975415050983429
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hop nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 20,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-021.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              133,
+              851,
+              172
+            ],
+            "confidence": 0.9880270957946777
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              170,
+              1307,
+              209
+            ],
+            "confidence": 0.9824226498603821
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              200,
+              201,
+              341,
+              245
+            ],
+            "confidence": 0.9687684774398804
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      },
+      {
+        "pdf_page_index": 21,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr-context\\page-022.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              206,
+              134,
+              854,
+              175
+            ],
+            "confidence": 0.9683427214622498
+          },
+          {
+            "id": 1,
+            "text": "Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              203,
+              170,
+              1308,
+              213
+            ],
+            "confidence": 0.9774117469787598
+          },
+          {
+            "id": 2,
+            "text": "(tip theo)",
+            "bbox": [
+              206,
+              205,
+              342,
+              243
+            ],
+            "confidence": 0.9780908823013306
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Thuyt minh báo cáo tài chính hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (tip theo)"
+      }
+    ],
+    "indirect_cashflow": [
+      {
+        "pdf_page_index": 11,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-012.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              207,
+              130,
+              855,
+              171
+            ],
+            "confidence": 0.9748226404190063
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              205,
+              167,
+              1256,
+              211
+            ],
+            "confidence": 0.9589305520057678
+          },
+          {
+            "id": 2,
+            "text": "(Phương pháp gián tip  tip theo)",
+            "bbox": [
+              206,
+              204,
+              663,
+              242
+            ],
+            "confidence": 0.9276154041290283
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (Phương pháp gián tip  tip theo)"
+      },
+      {
+        "pdf_page_index": 12,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-013.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              205,
+              130,
+              852,
+              172
+            ],
+            "confidence": 0.9814125895500183
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              202,
+              167,
+              1255,
+              209
+            ],
+            "confidence": 0.9675719141960144
+          },
+          {
+            "id": 2,
+            "text": "(Phưong pháp gián tip - tip theo)",
+            "bbox": [
+              205,
+              204,
+              661,
+              242
+            ],
+            "confidence": 0.950423002243042
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (Phưong pháp gián tip - tip theo)"
+      },
+      {
+        "pdf_page_index": 13,
+        "ocr_file": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\workspace\\week1\\data\\vnm-2025\\ocr\\page-014.json",
+        "entries": [
+          {
+            "id": 0,
+            "text": "Công ty C phn Sa Vit Nam và các công ty con",
+            "bbox": [
+              191,
+              112,
+              843,
+              161
+            ],
+            "confidence": 0.9904069304466248
+          },
+          {
+            "id": 1,
+            "text": "Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025",
+            "bbox": [
+              190,
+              151,
+              1243,
+              196
+            ],
+            "confidence": 0.9712088108062744
+          },
+          {
+            "id": 2,
+            "text": "(Phưong pháp gián tip - tip theo)",
+            "bbox": [
+              190,
+              191,
+              650,
+              228
+            ],
+            "confidence": 0.938788652420044
+          }
+        ],
+        "raw_text": "Công ty C phn Sa Vit Nam và các công ty con Báo cáo lưu chuyn tin t hp nht cho năm kt thúc ngày 31 tháng 12 năm 2025 (Phưong pháp gián tip - tip theo)"
+      }
+    ],
+    "ticker_literal_vnm": [],
+    "comparative_reclassified_marker": [],
+    "comparative_restated_marker": []
+  },
+  "ticker_resolution": "VNM manifest + official Vinamilk catalog + matching PDF legal name; literal ticker not located in processed OCR pages",
+  "processed_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22
+  ],
+  "notes": "Consonant matching tolerates omitted Vietnamese vowels. Raw OCR retained; context self-check is not independent human verification."
+}

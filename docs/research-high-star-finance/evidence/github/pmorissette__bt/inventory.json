@@ -1,0 +1,28 @@
+{
+  "requested_repo": "pmorissette/bt",
+  "repo": "pmorissette/bt",
+  "sha": "651e3e1479f37b70fd66f0a0f3b0c1ff95a75205",
+  "stars": 2996,
+  "forks": 499,
+  "archived": false,
+  "default_branch": "master",
+  "description": "bt - flexible backtesting for Python",
+  "pushed_at": "2026-10-10T23:48:16Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 3007,
+      "sha256": "1e8b88096250b668d1da109e585e758af2e3013cd79c032fb84a2eb99ef0c2fc"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

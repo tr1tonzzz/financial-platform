@@ -1,0 +1,47 @@
+{
+  "started_at": "2026-10-11T13:15:16.610889+00:00",
+  "command": [
+    "scripts/research/run_paddle_vnm.py",
+    "--image",
+    "exports/demo1-vnm/output/page-12.png",
+    "--output",
+    "data-sets/fap/execution-v4/vnm-2025/smoke-q1"
+  ],
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\.venv-paddle\\Scripts\\python.exe",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "dpi": 180,
+  "pages": [
+    {
+      "pdf_page_index": null,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\smoke-q1\\smoke-existing-vnm-q1.json",
+      "entries": 56,
+      "seconds": 11.578
+    }
+  ],
+  "error": null,
+  "config": {
+    "lang": "vi",
+    "ocr_version": "PP-OCRv5",
+    "device": "cpu",
+    "text_detection_model_name": "PP-OCRv5_mobile_det",
+    "text_recognition_model_name": "latin_PP-OCRv5_mobile_rec",
+    "use_doc_orientation_classify": false,
+    "use_doc_unwarping": false,
+    "use_textline_orientation": false,
+    "enable_mkldnn": false,
+    "cpu_threads": 4,
+    "text_det_limit_side_len": 1600,
+    "text_det_limit_type": "max"
+  },
+  "packages": {
+    "paddleocr": "3.3.2",
+    "paddlepaddle": "3.2.2",
+    "paddlex": "3.3.13",
+    "pymupdf": "1.28.2",
+    "numpy": "2.5.4"
+  },
+  "finished_at": "2026-10-11T13:15:54.233814+00:00",
+  "seconds": 37.5
+}

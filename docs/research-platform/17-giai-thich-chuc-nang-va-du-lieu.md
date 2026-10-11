@@ -1,8 +1,12 @@
 # Giải thích chức năng và dữ liệu của đề tài
 
-**Đồng bộ hướng kết hợp 05/10/2026:** theo [SRS v3.1](22-srs-dac-ta-yeu-cau-phan-mem.md), học/triển khai thêm cầu nối LNTT→CFO cho ít nhất một ca, mục tiêu 1–3 sau gate. Đọc [nghiệp vụ](../research-profit-cash-dividend/03-nghiep-vu-va-tu-dien.md) và [ca DHG/VNM](../research-profit-cash-dividend/08-ca-thuc-te-dhg-vnm.md). Minh chứng cần reviewed rows/nguồn, residual/completeness, replay và giờ nhập–duyệt; ghi LNST cạnh LNTT, cổ tức theo profit_year riêng lịch trả. Tuần2 đọc mẫu, tuần4 đo effort, tuần6 cầu nối, tuần8 freeze, tuần10 replay, tuần12–13 kết quả/demo; chưa làm thì ghi pending/not_run. Nhịp báo cáo hai tuần giữ nguyên; theo kế hoạch v3 cho giờ và tiêu chí mới.
+**Cập nhật phạm vi 11/10/2026:** [danh mục chức năng v2.0](27-yeu-cau-chuc-nang-va-vi-du.md) là góc nhìn UC lớn→nhỏ cho người theo dõi tài chính/đầu tư; [SRS mục18](22-srs-dac-ta-yeu-cau-phan-mem.md) rút screening. Nội dung nền dưới đây được đọc theo quyết định mới.
 
-Ngày cập nhật: **04/10/2026**.
+**Tài liệu chức năng riêng:** [Yêu cầu chức năng — mục đích, cách sử dụng và ví dụ](27-yeu-cau-chuc-nang-va-vi-du.md) trình bày đủ năm UC lớn với giải thích đơn giản và tình huống minh họa. Tệp hiện tại giữ vai trò giải thích dữ liệu và bối cảnh sử dụng.
+
+**Baseline hướng kết hợp 05/10/2026, được kế thừa trong v3.3:** theo [SRS hiện hành](22-srs-dac-ta-yeu-cau-phan-mem.md), học/triển khai thêm cầu nối LNTT→CFO cho ít nhất một ca, mục tiêu 1–3 sau gate. Đọc [nghiệp vụ](../research-profit-cash-dividend/03-nghiep-vu-va-tu-dien.md) và [ca DHG/VNM](../research-profit-cash-dividend/08-ca-thuc-te-dhg-vnm.md). Minh chứng cần reviewed rows/nguồn, residual/completeness, replay và giờ nhập–duyệt; ghi LNST cạnh LNTT, cổ tức theo profit_year riêng lịch trả. Tuần2 đọc mẫu, tuần4 đo effort, tuần6 cầu nối, tuần8 freeze, tuần10 replay, tuần12–13 kết quả/demo; chưa làm thì ghi pending/not_run. Nhịp báo cáo hai tuần giữ nguyên; kế hoạch v3 là baseline 167 giờ, CR-DIV-02 có dự toán bổ sung riêng.
+
+Ngày cập nhật: **11/10/2026**.
 
 **Đề tài:** Xây dựng hệ thống thu thập, chuẩn hóa và phân tích lợi nhuận, dòng tiền kinh doanh trong mối liên hệ với cổ tức tiền mặt của doanh nghiệp niêm yết Việt Nam.
 
@@ -117,117 +121,29 @@ Hệ thống lưu công ty–năm–phạm vi cần tìm, nguồn/trang/khoảng
 
 Ví dụ: đã có sáu số BCTC 2025 nhưng mới tìm được một đợt cổ tức 2025. Khi đó BCTC có thể đủ, cổ tức vẫn chưa đủ. Có số chưa có nghĩa đã có toàn bộ lịch sử năm đó.
 
-## 4 Các chức năng cụ thể của hệ thống
+## 4 Các chức năng chính theo UC lớn
 
-### 4.1 Chọn doanh nghiệp và xem dữ liệu đã có
+Cấu trúc cập nhật 11/10/2026 theo [SRS v3.3](22-srs-dac-ta-yeu-cau-phan-mem.md). Các bước thu thập, trích xuất, chuẩn hóa và duyệt được gom vào UC quản lý hồ sơ dữ liệu. [Bộ nghiên cứu ba chức năng](../research-dividend-functions/README.md) có thiết kế, khả thi, ca thật và minh chứng đã chạy; phần tích hợp ứng dụng mới đề xuất.
 
-**Người dùng làm gì:** chọn doanh nghiệp và các năm muốn đọc.
+### 4.1 BUC01 — Khai thác và quản lý dữ liệu doanh nghiệp
 
-**Dữ liệu dùng:** mã/tên doanh nghiệp, giai đoạn, danh sách BCTC, sáu số đã duyệt, các đợt cổ tức và trạng thái đầy đủ.
+Đầu vào: doanh nghiệp/kỳ và tài liệu từ nguồn chính thức. Xử lý: thiết lập tập → thu/cập nhật → trích/chuẩn hóa → kiểm tra/duyệt → lưu phiên bản và độ đầy đủ. Đầu ra: hồ sơ có số liệu được duyệt, nguồn và mục còn thiếu. Giải quyết việc tìm/nhập lặp lại và nhầm số/kỳ/đơn vị; hoàn thành khi dữ liệu phân tích được, không chỉ tải được file. Luồng nhỏ UC01–04/08 được giữ trong mục17 SRS.
 
-**Hệ thống thực hiện:** hiển thị bảng theo năm, phạm vi báo cáo, chỉ tiêu có/thiếu, trạng thái cổ tức và lý do còn thiếu. Người dùng thấy ngay năm nào đủ điều kiện phân tích.
+### 4.2 BUC02 — Phân tích tài chính và nền tảng tiền mặt
 
-**Vấn đề giải quyết:** tránh phân tích một bảng có lỗ hổng mà không biết, hoặc nhầm “chưa tìm thấy” thành số 0.
+Đầu vào: LNST/CFO, tiền/nợ/tài sản và các dòng mở rộng được chọn. Xử lý: xu hướng/tỷ số → cầu nối CFO → CFO sau CAPEX/phân phối khi đủ dữ liệu. Đầu ra: bảng đối chiếu có công thức/nguồn và vấn đề cần đọc thêm. G02 mới cho thấy CFO dương vẫn có thể không bao phủ các khoản chi; ca DHG có phép tính đã chạy, chưa UI end-to-end. Không gọi số dư là dự báo cắt cổ tức.
 
-### 4.2 Tự tìm và tải tài liệu từ nguồn chính thức
+### 4.3 BUC03 — Phân tích lịch sử chính sách và quyền cổ tức
 
-**Dữ liệu dùng:** danh sách doanh nghiệp, địa chỉ danh mục BCTC/trang tìm thông báo, mã chứng khoán và năm cần tìm.
+Đầu vào: thông báo/đợt/năm lợi nhuận, coverage, chuỗi sửa/hủy và ledger cổ phiếu mới. Xử lý: xác định hiệu lực → tổng theo năm → kiểm basis → so DPS gốc/tham chiếu. Đầu ra: lịch sử với giải thích hoặc chưa đủ cơ sở. Không cộng cổ phiếu vào tiền mặt nhưng giữ sự kiện để tránh diễn giải sai DPS. G03 mới có ca FPT về quyền 20:3/phần lẻ; chưa tự xác nhận mọi ngày basis hay thực nhận.
 
-**Hệ thống thực hiện:** đọc danh mục, tìm tài liệu phù hợp, tải PDF/HTML, lưu địa chỉ nguồn và ngày lấy. Tách báo cáo năm với quý/bán niên; khi chạy lại thì kiểm tra nội dung có đổi không và giữ các phiên bản cần thiết.
+### 4.4 BUC04 — Đối chiếu dữ liệu tài chính doanh nghiệp
 
-**Đầu ra:** tài liệu gốc kèm danh sách tìm thấy, chưa tìm thấy hoặc tải lỗi. Nếu nhập tay một URL/file để bổ sung, phải ghi đó là nhập hỗ trợ.
+Đầu vào: doanh nghiệp/kỳ/scope tự chọn và snapshot. Xử lý: kiểm tương thích/độ đầy đủ → xem bảng và biểu đồ → đối chiếu số/nguồn. Đầu ra: dữ liệu cùng cơ sở hoặc lý do chưa so được. FR29/30 và D09/10 đã rút theo CR-AN-03; bảng nhiều doanh nghiệp trong UC-F03 là bổ sung cần đặc tả.
 
-**Vấn đề giải quyết:** giảm thao tác tìm/tải từng file; tránh bỏ mất dấu vết nguồn. Thời gian tiết kiệm phải đo cả phần kiểm tra tay, chưa mặc định hệ thống tự động hoàn toàn.
+### 4.5 BUC05 — Lưu và tiếp tục phân tích
 
-### 4.3 Đọc sáu số tài chính và nội dung cổ tức
-
-**Dữ liệu dùng:** PDF BCTC và nội dung chính của thông báo cổ tức.
-
-**Hệ thống thực hiện:** lấy các dòng ở mục 3.2 và trường ở mục 3.4. PDF có chữ thì đọc trực tiếp; PDF dạng ảnh thì nhận dạng chữ/số bằng OCR. Đổi nghìn/triệu đồng về đồng, giữ dấu âm và gắn đúng năm/phạm vi. Các số máy đọc được vẫn chờ kiểm tra.
-
-**Đầu ra:** bảng số trích được, giá trị/đơn vị gốc, giá trị chuẩn hóa, vị trí nguồn và các chỗ chưa đọc chắc chắn.
-
-**Vấn đề giải quyết:** giảm nhập số lặp lại và xử lý khác biệt định dạng. Ví dụ “120.000 triệu đồng” phải thành 120 tỷ đồng, không thành 120.000 đồng.
-
-### 4.4 Kiểm tra và duyệt dữ liệu trước khi phân tích
-
-**Dữ liệu dùng:** số máy đọc, ảnh/trang/đoạn gốc, kỳ, đơn vị, phạm vi và quan hệ giữa các thông báo.
-
-**Hệ thống thực hiện:** kiểm tra đúng cột năm, đúng phạm vi, thiếu chỉ tiêu, số âm, đơn vị và cân đối tài sản–nợ–VCSH. Với cổ tức, kiểm tra mã, năm lợi nhuận, các đợt, trùng/sửa/hủy. Người vận hành đối chiếu nguồn, xác nhận hoặc sửa; lưu số trước/sau và lý do.
-
-**Đầu ra:** dữ liệu đã duyệt để phân tích và danh sách chưa đủ điều kiện. Cân đối khớp là một phép kiểm tra, chưa tự chứng minh mọi số đã đúng.
-
-**Vấn đề giải quyết:** ngăn lỗi máy đọc hoặc lỗi ghép trở thành kết quả có vẻ chính xác trên biểu đồ; có lịch sử để kiểm tra người đã sửa gì.
-
-### 4.5 Ghép cổ tức với đúng năm lợi nhuận và tính tổng
-
-**Dữ liệu dùng:** doanh nghiệp, năm lợi nhuận, DPS từng đợt, loại sự kiện, quan hệ sửa/hủy/trùng, cơ sở cổ phiếu và độ đầy đủ.
-
-**Hệ thống thực hiện:** tách một thông báo gộp nhiều năm thành các phần thuộc đúng năm; một đợt ở nhiều nguồn chỉ cộng một lần sau xác nhận; sửa mức tiền thay số cũ, sửa lịch giữ số tiền. Với hủy, xác định đúng đối tượng bị hủy: hủy ngày đăng ký/thông báo thực hiện quyền không đồng nghĩa không chia cổ tức cả năm; rà bản thay thế và giữ trạng thái chưa đủ nếu chưa rõ. Khi cơ sở cổ phiếu chưa tương thích, chưa cộng thành tổng năm.
-
-**Đầu ra:** từng đợt cùng nguồn; **tổng phần đã quan sát**; **tổng năm đã rà đủ tại mốc dữ liệu** nếu đủ điều kiện; chênh lệch/% giữa hai năm khi so sánh hợp lệ.
-
-**Vấn đề giải quyết:** tránh cổ tức năm 2024 bị đưa vào 2025 chỉ vì đăng thông báo năm 2025; tránh tổng phình lên do đăng trùng/bản sửa; tránh coi lịch sử thiếu là không chia cổ tức.
-
-**Ví dụ đã lưu trong hồ sơ khảo sát:** thông báo VNM 187729 có tổng 2.850 đồng/cổ phiếu, gồm 350 đồng thuộc năm lợi nhuận 2024 và 2.500 đồng thuộc 2025. Hệ thống phải tách đúng hai phần. Đây là nội dung một thông báo trong [bộ ví dụ cổ tức đã lưu](../research-recent-data/dividend-event-examples.json), chưa phải tổng cổ tức đầy đủ của hai năm hay xác nhận đã trả.
-
-### 4.6 Phân tích lợi nhuận và dòng tiền kinh doanh
-
-**Dữ liệu dùng:** LNST tổng và CFO của từng năm, cùng phạm vi và đơn vị, đã duyệt.
-
-**Hệ thống thực hiện và đầu ra:**
-
-| Câu hỏi cụ thể | Phép xử lý | Kết quả người dùng nhận |
-|---|---|---|
-| LNST và CFO từng năm là bao nhiêu? | Sắp chuỗi theo năm | Bảng và hai đường cùng đơn vị |
-| Năm sau khác năm trước bao nhiêu? | Giá trị năm sau − năm trước | Chênh lệch bằng đồng/tỷ đồng, giữ đúng dấu |
-| LNST tăng/giảm bao nhiêu %? | (LNST năm sau − LNST năm trước) / LNST năm trước × 100% | % khi năm trước >0; nếu <=0 thì ghi lý do không tính theo cách này |
-| CFO bằng bao nhiêu lần LNST? | CFO / LNST tổng | Tỷ số khi LNST >0; CFO âm vẫn cho tỷ số âm; nếu LNST <=0 thì trả trạng thái riêng |
-| Có năm nào LNST tăng nhưng CFO giảm? | So chênh lệch của hai biến trên cùng cặp năm | Danh sách các trường hợp kèm số và nguồn |
-
-**Vấn đề giải quyết:** người dùng không chỉ nhìn một số lợi nhuận riêng lẻ; thấy được CFO thấp, giảm hoặc âm khi đối chiếu cùng kỳ. Kết quả chưa tự giải thích nguyên nhân khác biệt vì sáu trường lõi chưa có chi tiết khoản phải thu, tồn kho hoặc các điều chỉnh CFO.
-
-### 4.7 Xem cơ cấu tiền và nợ phải trả
-
-**Dữ liệu dùng:** tiền và tương đương tiền, tổng tài sản, tổng nợ phải trả và VCSH tại cùng ngày cuối năm, cùng phạm vi.
-
-**Hệ thống thực hiện:** tính **tiền / tổng tài sản × 100%** và **nợ phải trả / tổng tài sản × 100%** khi tổng tài sản >0; hiển thị từng năm và mức thay đổi. VCSH dùng trong bảng và kiểm tra cân đối.
-
-**Đầu ra:** ví dụ giả định tiền chiếm 9,09% tài sản, nợ phải trả chiếm 50% tài sản; mở được số đầu vào.
-
-**Vấn đề giải quyết:** thêm bối cảnh về số dư tiền và cơ cấu nguồn vốn khi đọc lợi nhuận–CFO–cổ tức. Hai tỷ lệ này chưa chứng minh khả năng thanh toán tức thời hay số tiền pháp nhân mẹ có thể chia cổ tức; nợ phải trả không được đổi tên thành nợ vay.
-
-### 4.8 Đối chiếu lợi nhuận dòng tiền và cổ tức
-
-**Dữ liệu dùng:** bảng doanh nghiệp–năm với LNST, CFO, tỷ số hợp lệ và DPS năm đã đủ/so sánh được.
-
-**Hệ thống thực hiện:** đặt các chuỗi theo cùng trục năm với đơn vị riêng; lọc các cặp năm như “LNST tăng, CFO giảm” hoặc “DPS giữ nguyên/tăng trong khi LNST hoặc CFO giảm”. Điều kiện có DPS phải kiểm tra đủ lịch sử và cơ sở cổ phiếu của cả hai năm.
-
-**Đầu ra:** danh sách trường hợp, số liệu trước/sau, biểu đồ và nguồn; số quan sát dùng được/bị loại kèm lý do. Chọn ba trường hợp thật có bằng chứng để viết phân tích sâu.
-
-Trên tập hợp lệ có thể thêm biểu đồ phân tán và hệ số tương quan thứ hạng Spearman, chẳng hạn giữa % thay đổi LNST và % thay đổi DPS. Biểu đồ cho thấy các cặp số; hệ số mô tả mức cùng chiều/ngược chiều theo thứ hạng. Nếu <3 cặp hoặc một biến không thay đổi thì chưa xuất hệ số. Kể cả có hệ số, mẫu nhỏ và quan sát lặp theo doanh nghiệp vẫn hạn chế cách diễn giải.
-
-**Vấn đề giải quyết:** giúp tập hợp những trường hợp cần đọc sâu thay vì rà từng công ty bằng tay. Kết quả mô tả điều đã xảy ra; chưa kết luận CFO gây thay đổi cổ tức hoặc dự báo năm sau.
-
-### 4.9 Xem lịch công bố và các thay đổi
-
-**Dữ liệu dùng:** ngày công bố, ngày đăng ký cuối cùng, ngày thanh toán theo lịch, năm lợi nhuận và quan hệ sửa/hủy.
-
-**Hệ thống thực hiện:** vẽ dòng thời gian; hiển thị nội dung hiện hành và bản trước. Người dùng thấy năm lợi nhuận ở bảng phân tích và ngày công bố/thanh toán ở lịch sự kiện, không đánh đồng hai loại mốc.
-
-**Đầu ra:** thông báo nào đến trước/sau, lịch nào đã đổi, thông báo nào bị hủy và mức tiền đang có hiệu lực.
-
-**Vấn đề giải quyết:** tránh đọc lịch cũ hoặc nhầm ngày thanh toán với năm tạo lợi nhuận; giữ riêng trạng thái xác nhận thực trả khi có bằng chứng.
-
-### 4.10 Mở nguồn và xuất dữ liệu có thể kiểm tra lại
-
-**Dữ liệu dùng:** số gốc, công thức, các đợt cấu thành DPS, nguồn/phiên bản, trạng thái đầy đủ và mốc dữ liệu.
-
-**Hệ thống thực hiện:** khi bấm một số, mở các số đầu vào và đúng trang/đoạn nguồn. Khi xuất CSV/JSON, kèm tập dữ liệu đã chốt, điều kiện lọc, đơn vị/phạm vi, công thức và nguồn. Bản dữ liệu chốt tại một mốc gọi là **snapshot**; nguồn đổi sau đó không làm bản cũ đổi theo.
-
-**Đầu ra:** dữ liệu để viết báo cáo và tái tính trên cùng đầu vào; lịch sử trước/sau khi tài liệu hoặc số được sửa. CSV là dạng bảng có thể mở bằng Excel; JSON là dạng dữ liệu có cấu trúc cho chương trình đọc lại.
-
-**Vấn đề giải quyết:** người đọc biết một nhận xét dựa trên đâu; người khác có thể kiểm tra và làm lại thay vì chỉ nhìn ảnh biểu đồ.
+Đầu vào: kết quả phân tích/đối chiếu và nhận xét người dùng. Xử lý: tra soát nguồn → ghi luận điểm/câu hỏi cần xử lý → lưu snapshot → xuất/replay. Đầu ra: hồ sơ lập luận mở lại được sau khi dữ liệu hiện hành đổi. G01 mới thêm note/task/dossier; FR31/34/35 là nền provenance và snapshot. Theo dõi ảnh hưởng thay đổi tự động là giai đoạn sau.
 
 ## 5 Ví dụ xuyên suốt từ đầu vào tới kết quả
 
@@ -270,43 +186,44 @@ flowchart TD
   D --> E[Ghép đúng năm và kiểm tra độ đầy đủ]
   E --> F[Tính chỉ số và đối chiếu các chuỗi]
   F --> G[Xem bảng biểu đồ và lịch sự kiện]
-  G --> H[Mở nguồn hoặc xuất snapshot]
+  G --> H[Tra soát bằng chứng hoặc xuất snapshot]
 ```
 
 | Màn hình dự kiến | Nội dung người dùng thấy |
 |---|---|
 | Hồ sơ doanh nghiệp | Tên/mã, giai đoạn, phạm vi, bảng sáu số và mức đầy đủ của BCTC/cổ tức |
-| Phân tích | Các đường LNST–CFO, tỷ số, chuỗi DPS, chênh lệch và bộ lọc trường hợp |
+| Phân tích | Các đường LNST–CFO, tỷ số, chuỗi DPS, chênh lệch và dữ liệu người dùng chọn |
 | Sự kiện cổ tức | Các đợt theo năm lợi nhuận và lịch công bố/chốt quyền/thanh toán, bản sửa/hủy |
 | Kiểm chứng | Số đầu vào, công thức, nguồn và vị trí bằng chứng; xuất snapshot |
 | Kiểm tra dữ liệu cho người vận hành | Số đang chờ duyệt, vấn đề cần sửa, trang gốc và lịch sử thay đổi |
 
 Đây là cách nhóm nội dung giao diện, chưa yêu cầu năm ứng dụng riêng hoặc hệ thống nhiều tài khoản. Chức năng demo/đánh giá trong SRS dùng các luồng này để chứng minh chạy đúng trên dữ liệu thật và tình huống lỗi.
 
-## 7 Những vấn đề được xử lý và cách biết hệ thống có ích
+## 7 Vấn đề được giải quyết và phép đo ích lợi
 
-| Vấn đề trong thực tế sử dụng | Chức năng xử lý | Bằng chứng cần đo/kiểm tra |
+| Vấn đề | UC lớn | Minh chứng cần có |
 |---|---|---|
-| Mất công tìm tài liệu và nhập số lặp lại | 4.2–4.4 | Thời gian/công sức so với nhập tay cùng tập, gồm cả review |
-| Nhầm đơn vị, năm, phạm vi hoặc dấu số | 4.3–4.4 | Đối chiếu số với trang gốc, đo lỗi trước/sau review |
-| Cộng sai cổ tức theo năm đăng, đăng trùng hoặc bản sửa | 4.5, 4.9 | Ca gộp năm/trùng/sửa/hủy cho đúng tổng và giữ lịch sử |
-| Thiếu dữ liệu nhưng vẫn kết luận tăng/giảm | 4.1, 4.5, 4.8 | Ca thiếu hiển thị lý do; không tự điền 0 hoặc xuất annual growth |
-| Khó nhận ra LNST–CFO–DPS khác chiều | 4.6–4.8 | Bộ lọc đúng, người dùng đọc được số cụ thể và chọn được case |
-| Không kiểm chứng hoặc làm lại nhận xét | 4.10 | 100% giá trị xuất bản có nguồn; tái tính snapshot khớp sau cập nhật |
+| Tìm/nhập số lặp, sai kỳ/đơn vị/scope | BUC01 | Giờ gồm review, lỗi đối chiếu nguồn và coverage |
+| Chỉ nhìn lợi nhuận/CFO dương nên bỏ sót nhu cầu tiền | BUC02 | Ca bao phủ khoản chi và tra soát đúng định nghĩa/chủ thể |
+| DPS thay đổi nhưng nhầm chính sách vì basis hoặc thiếu thông báo | BUC03 | Ca raw/reference, partial và quyền/sửa/hủy |
+| Muốn đối chiếu dữ liệu doanh nghiệp đã chọn | BUC04 | Đúng kỳ/scope/đơn vị; thiếu có lý do |
+| Nhận xét không kiểm lại được hoặc mất sau update | BUC05 | Dossier có nguồn, bản freeze và replay đúng |
 
-Chưa có kết quả đo tiết kiệm công sức hay mức hữu ích với người dùng. Các phép đo này là cách nghiệm thu giá trị sử dụng, không tự suy từ việc có giao diện và biểu đồ.
+Các mục trên là lợi ích phải đo bằng tác vụ; 20 kiểm tra prototype mới chứng minh phép tính/quy tắc. Chưa có kết quả thử người dùng hay hiệu quả đầu tư.
 
 ## 8 Phạm vi hiện tại và hướng tốt nghiệp
 
 **Project hiện tại:** thu thập, kiểm tra, ghép và phân tích lịch sử. Có thể chỉ ra “LNST tăng nhưng CFO giảm”, “DPS công bố tăng trong bối cảnh CFO giảm” hoặc “năm này chưa đủ dữ liệu để so sánh”.
 
-**Chưa đưa vào chức năng lõi:** giá cổ phiếu/lợi suất cổ tức theo giá thị trường, mọi quý hoặc số liệu 12 tháng gần nhất, doanh thu, lợi nhuận mỗi cổ phiếu (EPS), nợ vay, vốn lưu động, chi đầu tư, tỷ suất lợi nhuận trên VCSH (ROE) hoặc tỷ lệ DPS/EPS. Chỉ bổ sung khi có câu hỏi cụ thể và dữ liệu/định nghĩa phù hợp. Sáu số hiện tại chưa đủ để giải thích sâu nguyên nhân CFO thay đổi hoặc khẳng định tiền có thể phân phối tại công ty mẹ.
+**Ngoài baseline sáu trường, bổ sung theo ca CR-DIV-02:** CAPEX/phân phối thực chi và ledger sự kiện cổ phiếu có điều kiện. Chưa mở các trường này cho toàn tập.
+
+**Chưa đưa vào chức năng lõi:** giá cổ phiếu/lợi suất cổ tức theo giá thị trường, mọi quý hoặc số liệu 12 tháng gần nhất, doanh thu, lợi nhuận mỗi cổ phiếu (EPS), nợ vay, vốn lưu động toàn tập, tỷ suất lợi nhuận trên VCSH (ROE) hoặc tỷ lệ DPS/EPS. Chỉ bổ sung khi có câu hỏi cụ thể và dữ liệu/định nghĩa phù hợp. Sáu số hiện tại chưa đủ để giải thích sâu nguyên nhân CFO thay đổi hoặc khẳng định tiền có thể phân phối tại công ty mẹ.
 
 **Hướng tốt nghiệp cập nhật sau nghiên cứu lần hai:** ưu tiên nhận biết dữ liệu nào thay đổi giữa các phiên bản và ratio/tổng DPS/case nào bị ảnh hưởng, có review và giữ snapshot cũ. Dự đoán giảm cổ tức là tùy chọn khi có nhiều năm/doanh nghiệp, nhãn đủ và thông tin đúng thời điểm; phải so baseline và tách thông báo tương lai. Project hiện tại chưa cung cấp xác suất hay khuyến nghị mua/bán. [Quyết định cuối](20-nghien-cuu-lan-hai-va-chot-de-tai.md).
 
 ## 9 Đối chiếu với tài liệu triển khai
 
-- [SRS hiện hành](02-de-tai-va-srs.md): yêu cầu và tiêu chí chấp nhận, mã PF01–PF09 và AN01–AN07.
+- [SRS v3.3 hiện hành](22-srs-dac-ta-yeu-cau-phan-mem.md): 5 BUC, FR còn hoạt động và D01–D08/D11–D12; [nhu cầu nền](02-de-tai-va-srs.md) giữ PF/AN làm năng lực phân rã.
 - [Từ điển tài chính và sự kiện](12-kien-thuc-tai-chinh-va-tu-dien.md): ý nghĩa chính xác của các trường.
 - [Phương pháp thu thập và kiểm tra](11-phuong-phap-thu-thap-va-xu-ly.md): nguồn, bước tự động và phần cần review.
 - [Quy tắc ghép và phép phân tích](13-ghep-co-tuc-va-phan-tich.md): xử lý cổ tức, điều kiện tính và giới hạn.

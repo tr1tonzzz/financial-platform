@@ -1,0 +1,30 @@
+{
+  "scope": "documentation, evidence integrity and independent probe; not production acceptance",
+  "srs_version": "3.3",
+  "business_ucs": 5,
+  "requirement_ids": 91,
+  "planned_test_cases": 51,
+  "preserved_baseline_FR": 34,
+  "withdrawn_requirements": [
+    "FR29",
+    "FR30",
+    "D09",
+    "D10"
+  ],
+  "withdrawn_tests": [
+    "TC22",
+    "TC-D09",
+    "TC-D10"
+  ],
+  "changed_FR": [
+    "FR32",
+    "FR38"
+  ],
+  "old_screening_probe_status": "historical evidence; outside current scope",
+  "markdown_files_checked": 11,
+  "local_links_checked": 72,
+  "new_github_repos": 3,
+  "source_snapshots_checked": 19,
+  "dhg_source_hash": "passed",
+  "validation": "passed"
+}

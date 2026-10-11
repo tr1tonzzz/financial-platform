@@ -1,0 +1,60 @@
+{
+  "repo": "carlosbrown2/dividend-screener",
+  "commit": "39fc5ad1f20df5dbe540a9256879380f7d7efef9",
+  "commit_date": "2021-09-24T00:07:57Z",
+  "retrieved_on": "2026-10-11",
+  "license": {
+    "key": "gpl-3.0",
+    "name": "GNU General Public License v3.0",
+    "spdx_id": "GPL-3.0",
+    "url": "https://api.github.com/licenses/gpl-3.0",
+    "node_id": "MDc6TGljZW5zZTk="
+  },
+  "tree_truncated": false,
+  "paths": [
+    ".DS_Store",
+    ".gitignore",
+    "LICENSE",
+    "Procfile",
+    "README.md",
+    "app.py",
+    "assets/styles.css",
+    "funcs.py",
+    "requirements.txt",
+    "runtime.txt",
+    "static.py"
+  ],
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/carlosbrown2/dividend-screener/39fc5ad1f20df5dbe540a9256879380f7d7efef9/LICENSE",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "bytes": 35149
+    },
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/carlosbrown2/dividend-screener/39fc5ad1f20df5dbe540a9256879380f7d7efef9/README.md",
+      "sha256": "a2c31a66e016bef530d12a38e6b9bd6abb47f36a0a6a02bc5f4cd1ef02851adb",
+      "bytes": 539
+    },
+    {
+      "path": "app.py",
+      "url": "https://raw.githubusercontent.com/carlosbrown2/dividend-screener/39fc5ad1f20df5dbe540a9256879380f7d7efef9/app.py",
+      "sha256": "0613e9af25ea3755d392510b6a87855095c7ad0f7aafbfa112ce692e7cfc75c9",
+      "bytes": 9730
+    },
+    {
+      "path": "funcs.py",
+      "url": "https://raw.githubusercontent.com/carlosbrown2/dividend-screener/39fc5ad1f20df5dbe540a9256879380f7d7efef9/funcs.py",
+      "sha256": "08f04b7ecf8db14f0e9b83f495db785358feb9ddc0b1211841d9b01c80ab80dd",
+      "bytes": 2027
+    },
+    {
+      "path": "static.py",
+      "url": "https://raw.githubusercontent.com/carlosbrown2/dividend-screener/39fc5ad1f20df5dbe540a9256879380f7d7efef9/static.py",
+      "sha256": "7b19bf5ad4752e36b0cc84c41a09d699ad7fe376ba6dace09a1a872630b069e1",
+      "bytes": 1928
+    }
+  ],
+  "method": "static review; repository code not executed"
+}

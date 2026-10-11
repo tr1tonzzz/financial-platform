@@ -1,0 +1,28 @@
+{
+  "requested_repo": "vnpy/vnpy",
+  "repo": "vnpy/vnpy",
+  "sha": "c6e231caf32b7fc97e6459817fff66458cf7e7c4",
+  "stars": 45803,
+  "forks": 12510,
+  "archived": false,
+  "default_branch": "master",
+  "description": "基于Python的开源量化交易平台开发框架",
+  "pushed_at": "2026-10-06T09:57:47Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 20730,
+      "sha256": "373d5bf6472de16a9b40aa10de5741f38fd88cd6b03d74451796b43e7cd2ad2c"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

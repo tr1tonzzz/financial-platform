@@ -1,0 +1,28 @@
+{
+  "requested_repo": "stefan-jansen/machine-learning-for-trading",
+  "repo": "stefan-jansen/machine-learning-for-trading",
+  "sha": "3d159425061a50a07825e0f85566b64c5124f9a1",
+  "stars": 21293,
+  "forks": 5690,
+  "archived": false,
+  "default_branch": "main",
+  "description": "Code for Machine Learning for Trading, 3rd edition — from data sourcing to live execution.",
+  "pushed_at": "2026-10-10T13:49:40Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 29272,
+      "sha256": "a3abadcff64f032f807eefb8f947a67ca20c6a90b62d07698c32abf78f8fc27f"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

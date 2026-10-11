@@ -1,0 +1,88 @@
+{
+  "validated_at": "2026-10-11T12:57:18.479361+00:00",
+  "input": "docs\\research-platform\\execution-v4\\hpg-2025-reference-input.json",
+  "input_sha256": "25a61a158c92aca5ea2a2042ac43c1b49b26fd1afa6a2a1979bb3528120812a2",
+  "pdf_hash_verified": true,
+  "preserved_pdf_hash_verified": true,
+  "reference_count": 6,
+  "csv_round_trip_all_fields": true,
+  "csv_sha256": "0a85f22bcb583d2d128f570b3d3924aeae437039c1269eb14bb5da19fb05c83c",
+  "checks": [
+    {
+      "metric_code": "cash_equivalents",
+      "pdf_page_index": 6,
+      "row_codes": [
+        "111",
+        "112"
+      ],
+      "raw_operands": [
+        "4.602.047.650.138",
+        "3.698.842.654.067"
+      ],
+      "sum_vnd": "8300890304205",
+      "reference_vnd": "8300890304205",
+      "passed": true,
+      "status": "executed"
+    },
+    {
+      "metric_code": "total_assets",
+      "pdf_page_indices": [
+        6,
+        7
+      ],
+      "row_codes": [
+        "100",
+        "200"
+      ],
+      "raw_operands": [
+        "103.659.402.759.724",
+        "154.239.798.057.823"
+      ],
+      "sum_vnd": "257899200817547",
+      "reference_vnd": "257899200817547",
+      "passed": true,
+      "status": "executed"
+    },
+    {
+      "metric_code": "total_liabilities",
+      "pdf_page_index": 8,
+      "row_codes": [
+        "310",
+        "330"
+      ],
+      "raw_operands": [
+        "94.186.268.324.508",
+        "32.492.921.616.464"
+      ],
+      "sum_vnd": "126679189940972",
+      "reference_vnd": "126679189940972",
+      "passed": true,
+      "status": "executed"
+    },
+    {
+      "metric_code": "net_income_total",
+      "pdf_page_index": 9,
+      "row_codes": [
+        "61",
+        "62"
+      ],
+      "raw_operands": [
+        "15.453.174.006.223",
+        "61.757.565.383"
+      ],
+      "sum_vnd": "15514931571606",
+      "reference_vnd": "15514931571606",
+      "passed": true,
+      "status": "executed"
+    },
+    {
+      "check": "assets_equals_liabilities_plus_equity",
+      "sum_vnd": "257899200817547",
+      "passed": true,
+      "status": "executed"
+    }
+  ],
+  "reviewed_fact_count": 0,
+  "independent_gold": false,
+  "ocr_executed": false
+}

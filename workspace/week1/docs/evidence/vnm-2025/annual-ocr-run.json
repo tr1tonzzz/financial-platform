@@ -1,0 +1,150 @@
+{
+  "started_at": "2026-10-11T13:16:06.467047+00:00",
+  "command": [
+    "scripts/research/run_paddle_vnm.py",
+    "--pdf",
+    "data-sets/fap/execution-v4/vnm-2025/20260227_BCTC_KIEM_TOAN_2025_HOP_NHAT_VN_94f1e76e45.pdf",
+    "--pages",
+    "1-15",
+    "--output",
+    "data-sets/fap/execution-v4/vnm-2025/ocr"
+  ],
+  "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+  "executable": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\.venv-paddle\\Scripts\\python.exe",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "dpi": 180,
+  "pages": [
+    {
+      "pdf_page_index": 0,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-001.json",
+      "entries": 14,
+      "seconds": 4.187
+    },
+    {
+      "pdf_page_index": 1,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-002.json",
+      "entries": 23,
+      "seconds": 6.532
+    },
+    {
+      "pdf_page_index": 2,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-003.json",
+      "entries": 66,
+      "seconds": 14.89
+    },
+    {
+      "pdf_page_index": 3,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-004.json",
+      "entries": 40,
+      "seconds": 18.516
+    },
+    {
+      "pdf_page_index": 4,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-005.json",
+      "entries": 43,
+      "seconds": 24.547
+    },
+    {
+      "pdf_page_index": 5,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-006.json",
+      "entries": 31,
+      "seconds": 10.343
+    },
+    {
+      "pdf_page_index": 6,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-007.json",
+      "entries": 112,
+      "seconds": 19.641
+    },
+    {
+      "pdf_page_index": 7,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-008.json",
+      "entries": 140,
+      "seconds": 23.031
+    },
+    {
+      "pdf_page_index": 8,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-009.json",
+      "entries": 165,
+      "seconds": 26.437
+    },
+    {
+      "pdf_page_index": 9,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-010.json",
+      "entries": 114,
+      "seconds": 21.516
+    },
+    {
+      "pdf_page_index": 10,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-011.json",
+      "entries": 57,
+      "seconds": 11.938
+    },
+    {
+      "pdf_page_index": 11,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-012.json",
+      "entries": 92,
+      "seconds": 18.656
+    },
+    {
+      "pdf_page_index": 12,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-013.json",
+      "entries": 75,
+      "seconds": 16.156
+    },
+    {
+      "pdf_page_index": 13,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-014.json",
+      "entries": 61,
+      "seconds": 13.344
+    },
+    {
+      "pdf_page_index": 14,
+      "cached": false,
+      "result": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\ocr\\page-015.json",
+      "entries": 56,
+      "seconds": 21.579
+    }
+  ],
+  "error": null,
+  "config": {
+    "lang": "vi",
+    "ocr_version": "PP-OCRv5",
+    "device": "cpu",
+    "text_detection_model_name": "PP-OCRv5_mobile_det",
+    "text_recognition_model_name": "latin_PP-OCRv5_mobile_rec",
+    "use_doc_orientation_classify": false,
+    "use_doc_unwarping": false,
+    "use_textline_orientation": false,
+    "enable_mkldnn": false,
+    "cpu_threads": 4,
+    "text_det_limit_side_len": 1600,
+    "text_det_limit_type": "max"
+  },
+  "packages": {
+    "paddleocr": "3.3.2",
+    "paddlepaddle": "3.2.2",
+    "paddlex": "3.3.13",
+    "pymupdf": "1.28.2",
+    "numpy": "2.5.4"
+  },
+  "pdf_sha256": "ee996ffcb87f0699a59c20b102082666f6716fcf9be8ee314ad2de055f79c940",
+  "pdf_pages": 63,
+  "pdf": "C:\\Users\\admin\\Documents\\GitHub\\financial-analysis-platform\\data-sets\\fap\\execution-v4\\vnm-2025\\20260227_BCTC_KIEM_TOAN_2025_HOP_NHAT_VN_94f1e76e45.pdf",
+  "finished_at": "2026-10-11T13:20:23.079872+00:00",
+  "seconds": 256.547
+}

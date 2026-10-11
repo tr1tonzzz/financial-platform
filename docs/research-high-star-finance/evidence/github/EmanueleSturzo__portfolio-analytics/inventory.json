@@ -1,0 +1,28 @@
+{
+  "requested_repo": "EmanueleSturzo/portfolio-analytics",
+  "repo": "EmanueleSturzo/portfolio-analytics",
+  "sha": "1f98bbce7ec8f14968a2937d4f7d38ae4e1f5658",
+  "stars": 0,
+  "forks": 0,
+  "archived": false,
+  "default_branch": "main",
+  "description": "Portfolio analytics dashboard with performance tracking (CAGR, Sharpe, Sortino, alpha, beta), risk analysis (VaR, CVaR, max drawdown), asset allocation, correlation matrix, and dividend tracking. Interactive Streamlit web app with live market data via Yahoo Finance.",
+  "pushed_at": "2026-04-08T10:14:01Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 5065,
+      "sha256": "b44e9cfdb86d0fe24ccb933d8055d666cac55e01dc34ba81ae6c08aa27b6bfcd"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

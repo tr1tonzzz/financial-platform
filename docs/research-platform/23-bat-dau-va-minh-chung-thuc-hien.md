@@ -44,7 +44,7 @@ Tuần 2 xem CLI và chạy thử nhỏ sau khi rà policy:
 & '.\.venv-fap\Scripts\python.exe' '.\scripts\research\crawl_official_reports.py' '.\data-sets\fap\prototype-smoke' --companies DHG --max-pages 1 --max-pdfs-per-company 1
 ```
 
-Smoke còn filter cũ, không thu đủ pilot hoặc crawl notice. Policy-skip/lỗi giữ log, không gọi pass. CLI mới được tài liệu hóa sau khi xây. Chưa có lệnh chạy Streamlit MVP hôm nay.
+Smoke còn filter cũ, không thu đủ pilot hoặc crawl notice. Policy-skip/lỗi giữ log, không gọi pass. CLI mới được tài liệu hóa sau khi xây. Chưa có lệnh chạy React MVP hôm nay.
 
 ## 2. Nơi lưu dự kiến
 
@@ -55,9 +55,9 @@ Các vị trí sau tương đối từ repo, bạn tạo khi làm; không coi mo
 | `config/pilot.json` | Issuer/year/scope/source/window/as_of có version; prototype chưa tự đọc config này |
 | `src/fap/`, `tests/` | Module và fixtures tạo dần; giữ regression crawler hiện tại |
 | `data-sets/fap/raw/`, `runs/` | Raw bất biến, source/hash/version, run config/errors/effort |
-| `data-sets/fap/pilot/`, `staging/`, `store/` | Expected/gold tay, candidates/issues, SQLite/review |
+| `data-sets/fap/pilot/`, `staging/`, `store/` | Expected/gold tay, candidates/issues, PostgreSQL/review |
 | `data-sets/fap/evaluation/` | Development/holdout/gold/baselines/metrics/tests; synthetic benchmark tách khỏi case thật |
-| `data-sets/fap/snapshots/`, `backup/` | Gói tái lập và backup; SQLite dùng backup API hoặc dừng ghi |
+| `data-sets/fap/snapshots/`, `backup/` | Gói tái lập và backup; PostgreSQL dùng backup API hoặc dừng ghi |
 | `docs/research-platform/execution/` | Environment/schema/decisions, nhật ký/requirement status/cases |
 | `docs/research-platform/reports/` | Sáu đợt tiến độ và tổng kết từ kết quả thật |
 

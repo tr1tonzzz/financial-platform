@@ -1,0 +1,38 @@
+{
+  "requested_repo": "dgunning/edgartools",
+  "repo": "dgunning/edgartools",
+  "sha": "246010946cdbe588b0397643fb1598a04fe0cad6",
+  "stars": 2781,
+  "forks": 502,
+  "archived": false,
+  "default_branch": "main",
+  "description": "Read and analyze SEC EDGAR filings in Python. 10-K, 8-K, XBRL financials, Form 3/4/5, 13F, ADV — clean API, well-typed, MIT-licensed.",
+  "pushed_at": "2026-10-08T22:28:33Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 14765,
+      "sha256": "943bb25c120e0d4965e44f1baa5f3afb82423e5cf9b41155eae5901ca3877f57"
+    },
+    {
+      "path": "edgar/entity/query.py",
+      "bytes": 48840,
+      "sha256": "92b287cab020758ae7b7dc96466404fdb5c4f13318021f752c6dc6df4b3154ae"
+    },
+    {
+      "path": "edgar/xbrl/stitching/core.py",
+      "bytes": 52034,
+      "sha256": "7fd7468fed79de20992cb519b747e849159212bcfc15818b3a36aa4033b76118"
+    }
+  ],
+  "review_level": "README and selected implementation files",
+  "method": "static evidence capture; no installation or execution"
+}

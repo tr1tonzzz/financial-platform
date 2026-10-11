@@ -1,0 +1,28 @@
+{
+  "requested_repo": "freqtrade/freqtrade",
+  "repo": "freqtrade/freqtrade",
+  "sha": "9a2f03a6bf8408f155591304c78aab20ca5c44cc",
+  "stars": 55237,
+  "forks": 11408,
+  "archived": false,
+  "default_branch": "develop",
+  "description": "Free, open source crypto trading bot",
+  "pushed_at": "2026-10-10T14:32:24Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "gpl-3.0",
+    "name": "GNU General Public License v3.0",
+    "spdx_id": "GPL-3.0",
+    "url": "https://api.github.com/licenses/gpl-3.0",
+    "node_id": "MDc6TGljZW5zZTk="
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 12770,
+      "sha256": "119d586166ae397b05f9763caf7f90e2d27792f90c8455c04ac3455e14a40d89"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

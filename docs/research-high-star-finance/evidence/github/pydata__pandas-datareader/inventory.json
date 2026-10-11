@@ -1,0 +1,28 @@
+{
+  "requested_repo": "pydata/pandas-datareader",
+  "repo": "pydata/pandas-datareader",
+  "sha": "9a3e2fe8c4e202bf9be6b4543fd1a06c3cdce7de",
+  "stars": 3274,
+  "forks": 693,
+  "archived": false,
+  "default_branch": "main",
+  "description": "Extract data from a wide range of Internet sources into a pandas DataFrame.",
+  "pushed_at": "2026-07-21T08:28:05Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "other",
+    "name": "Other",
+    "spdx_id": "NOASSERTION",
+    "url": null,
+    "node_id": "MDc6TGljZW5zZTA="
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 2529,
+      "sha256": "663af3b381e03b2ae58b76cfd4bb6da2218a713729f598516d74c86be5cbf7be"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

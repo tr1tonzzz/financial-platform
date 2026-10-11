@@ -1,0 +1,55 @@
+{
+  "scope": "local design QA; not Figma canvas validation or application acceptance",
+  "screens": 10,
+  "editable_text_vector_svg": 10,
+  "checks": [
+    "SVG without image wrapper",
+    "10 screen switches",
+    "source/review walkthrough",
+    "text stays within SVG bounds",
+    "mobile horizontal canvas scroll without page overflow"
+  ],
+  "bounds": [
+    {
+      "screen": "uc1",
+      "text_outside_frame": []
+    },
+    {
+      "screen": "uc2",
+      "text_outside_frame": []
+    },
+    {
+      "screen": "uc3",
+      "text_outside_frame": []
+    },
+    {
+      "screen": "uc4",
+      "text_outside_frame": []
+    },
+    {
+      "screen": "uc5",
+      "text_outside_frame": []
+    },
+    {
+      "screen": "source",
+      "text_outside_frame": []
+    },
+    {
+      "screen": "review",
+      "text_outside_frame": []
+    },
+    {
+      "screen": "bridge",
+      "text_outside_frame": []
+    },
+    {
+      "screen": "basis",
+      "text_outside_frame": []
+    },
+    {
+      "screen": "saved",
+      "text_outside_frame": []
+    }
+  ],
+  "browser_errors": []
+}

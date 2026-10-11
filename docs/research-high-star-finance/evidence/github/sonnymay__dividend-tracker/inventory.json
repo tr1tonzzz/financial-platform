@@ -1,0 +1,28 @@
+{
+  "requested_repo": "sonnymay/dividend-tracker",
+  "repo": "sonnymay/dividend-tracker",
+  "sha": "278046c8212131c44e3cd27b9db600fefbe502c2",
+  "stars": 0,
+  "forks": 0,
+  "archived": false,
+  "default_branch": "main",
+  "description": "Dividend portfolio tracker with live stock data (yfinance), FastAPI backend, and Recharts visualizations.",
+  "pushed_at": "2026-06-26T21:37:02Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "mit",
+    "name": "MIT License",
+    "spdx_id": "MIT",
+    "url": "https://api.github.com/licenses/mit",
+    "node_id": "MDc6TGljZW5zZTEz"
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6052,
+      "sha256": "b148824dea41f8980ba415069341ecd6bdb53df1a775ae90f0ee1cfa1186fd9c"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

@@ -1,0 +1,22 @@
+{
+  "requested_repo": "wilsonfreitas/awesome-quant",
+  "repo": "wilsonfreitas/awesome-quant",
+  "sha": "48e48a76b2054b5fe6eede6852ffef7783b992ce",
+  "stars": 30030,
+  "forks": 4107,
+  "archived": false,
+  "default_branch": "main",
+  "description": "A curated list of insanely awesome libraries, packages and resources for Quants (Quantitative Finance)",
+  "pushed_at": "2026-10-11T01:29:24Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": null,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 138900,
+      "sha256": "fa346fdbc05f651f500795e7ea95e90b6d8c0cb394daee1f7b612470650caa86"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

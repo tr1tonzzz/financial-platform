@@ -16,9 +16,9 @@ Ba BCTC; lợi nhuận khác CFO; instant khác duration; hợp nhất/riêng/en
 
 Tuần 1–2: biến/list/dict/if/for/hàm, pathlib, file JSON, lỗi, virtualenv/Git, HTTP/urljoin/selector/hash. Tự viết một hàm chọn link và lưu manifest. Tuần 3–4: normalize số, regex nhiều dòng, text/OCR, SQL/join/keys/transaction; giải thích một lỗi cột.
 
-Tuần 5–6: pandas merge/group với cardinality check, missing, Streamlit/state, module và tests. Tự tách một notice thành hai năm, kiểm tra không nhân bản tài chính khi JOIN nhiều events. Tuần 7–10: batch/logs/coverage, update/version và snapshot. Class/typing học khi cần module, không học mọi framework cùng lúc.
+Tuần 5–6: pandas merge/group với cardinality check, missing, React/state, module và tests. Tự tách một notice thành hai năm, kiểm tra không nhân bản tài chính khi JOIN nhiều events. Tuần 7–10: batch/logs/coverage, update/version và snapshot. Class/typing học khi cần module, không học mọi framework cùng lúc.
 
-Nguồn: [Python](https://docs.python.org/3.12/tutorial/), [pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html), [SQLite](https://www.sqlite.org/lang.html), [Streamlit](https://docs.streamlit.io/get-started/fundamentals). Tutorial Python giả định nền lập trình cơ bản, nên cần ví dụ 10–20 dòng nếu chưa vững.
+Nguồn: [Python](https://docs.python.org/3.12/tutorial/), [pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html), [PostgreSQL](https://www.postgresql.org/docs/current/tutorial.html), [React](https://react.dev/learn). Tutorial Python giả định nền lập trình cơ bản, nên cần ví dụ 10–20 dòng nếu chưa vững.
 
 ## 3 Phân tích và kiểm định
 
@@ -33,3 +33,7 @@ Mỗi tuần tự tính một ví dụ, viết/sửa một hàm, đổi input v�
 ## Đọc sách song song
 
 Chọn [Trí tuệ tài chính và lộ trình đọc](15-sach-nen-tang-va-cach-doc.md); ưu tiên lợi nhuận, bảng cân đối, dòng tiền và tỷ số, áp dụng vào BCTC thật. Đọc trong quỹ học đã tính. Nhật ký hằng tuần, Word/slide tổng hợp hai tuần một lần.
+
+## Lát cắt học theo kế hoạch web v6
+
+Lịch tuần học bên trên là tham khảo từ baseline. Để thực hiện [tuần 1](33-ke-hoach-chi-tiet-tuan-01.md), học đúng phần cần: React/TypeScript/Vite (state, fetch, bảng và form), FastAPI (request/response, validation, CORS), PostgreSQL/SQLAlchemy (NUMERIC, keys và transaction) và Alembic migration. Tuần 2 học query nhiều kỳ, revision conflict, error/loading và pg_dump/pg_restore. Không đợi học hết framework mới nối luồng một báo cáo. Chưa cần SSR, microservices hoặc hệ thống hàng đợi phân tán.

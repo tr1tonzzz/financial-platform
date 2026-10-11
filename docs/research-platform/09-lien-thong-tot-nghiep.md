@@ -6,7 +6,7 @@
 
 Người vận hành nhận BCTC hoặc thông báo mới, cần phân biệt thay nội dung hành chính, lịch, số tiền và đối tượng thực hiện quyền; muốn biết ratio/aggregate/case nào cần review/tái tính. Nguồn mới không được làm mất snapshot đã dùng trong báo cáo.
 
-Cập nhật 05/10/2026 theo SRS v3.1: project có thêm cầu nối CFO theo ca, giữ operands/mapping/formula versions. Nhánh tốt nghiệp có thể đối chiếu tác động bản sửa lên bridge/residual/case sau gate. Phạm vi đầu: sáu financial targets hiện hành, bridge ở ca chọn và fields/components cổ tức; ghép cùng kỳ/scope/basis trước diff. Lưu quan hệ operands tới kết quả bằng bảng SQLite; không bắt buộc graph database. Review bản mới trước khi thay active view. Không tự suy hủy ngày đăng ký thành không chia cổ tức, không hứa khôi phục mọi phiên bản lịch sử.
+Cập nhật 05/10/2026 theo SRS v3.1: project có thêm cầu nối CFO theo ca, giữ operands/mapping/formula versions. Nhánh tốt nghiệp có thể đối chiếu tác động bản sửa lên bridge/residual/case sau gate. Phạm vi đầu: sáu financial targets hiện hành, bridge ở ca chọn và fields/components cổ tức; ghép cùng kỳ/scope/basis trước diff. Lưu quan hệ operands tới kết quả bằng bảng PostgreSQL; không bắt buộc graph database. Review bản mới trước khi thay active view. Không tự suy hủy ngày đăng ký thành không chia cổ tức, không hứa khôi phục mọi phiên bản lịch sử.
 
 Đánh giá bằng gold cặp tài liệu/chuỗi sự kiện thật, so hash-only/overwrite/refresh toàn bộ với diff nghiệp vụ/cập nhật kết quả phụ thuộc. Đo đúng loại thay đổi/impact, công sức review và tái lập snapshot. Fixture giả lập giữ riêng khỏi bằng chứng nguồn thật. Chi tiết baseline/gate/cỡ pilot trong mục 6 của báo cáo nghiên cứu lần hai.
 

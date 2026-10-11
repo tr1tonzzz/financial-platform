@@ -1,0 +1,28 @@
+{
+  "requested_repo": "stefan-jansen/zipline-reloaded",
+  "repo": "stefan-jansen/zipline-reloaded",
+  "sha": "943010b9da848e317fc520de87edade2b884d329",
+  "stars": 1960,
+  "forks": 332,
+  "archived": false,
+  "default_branch": "main",
+  "description": "Zipline, a Pythonic Algorithmic Trading Library",
+  "pushed_at": "2026-10-10T09:25:00Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "spdx_id": "Apache-2.0",
+    "url": "https://api.github.com/licenses/apache-2.0",
+    "node_id": "MDc6TGljZW5zZTI="
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 8498,
+      "sha256": "4b008972fe011fcf5b6b546fe2012e2a3552a67b64b934f796fe8308f5be8a7c"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

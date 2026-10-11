@@ -1,0 +1,242 @@
+[
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/Giai_trinh_bao_cao_KQKD_Q4_2025_VN_f880cd55c9.pdf",
+    "text": "30/01/2026 2025 Q4 Giải trình biến động kinh doanh Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/Giai_trinh_bao_cao_KQKD_Q4_2025_VN_f880cd55c9.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260130_VNM_Ban_tin_NDT_Q4_2025_6f582a0027.pdf",
+    "text": "31/01/2026 2025 Q4 Bản tin nhà đầu tư Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/20260130_VNM_Ban_tin_NDT_Q4_2025_6f582a0027.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/VNM_Thuyet_trinh_KQKD_Q4_2025_061e9c45f6.pdf",
+    "text": "31/01/2026 2025 Q4 Thuyết trình lợi nhuận Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/VNM_Thuyet_trinh_KQKD_Q4_2025_061e9c45f6.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260227_BCTC_KIEM_TOAN_2025_HOP_NHAT_VN_94f1e76e45.pdf",
+    "text": "27/02/2026 2025 Q4 Báo cáo tài chính hợp nhất Đã soát xét/kiểm toán Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/20260227_BCTC_KIEM_TOAN_2025_HOP_NHAT_VN_94f1e76e45.pdf"
+    },
+    "selected": true,
+    "reason": "Candidate annual audited consolidated; verify PDF by Paddle before confirming"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260227_BCTC_KIEM_TOAN_2025_RIENG_VN_513ddd4aca.pdf",
+    "text": "27/02/2026 2025 Q4 Báo cáo tài chính riêng Đã soát xét/kiểm toán Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/20260227_BCTC_KIEM_TOAN_2025_RIENG_VN_513ddd4aca.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/BCTC_VNM_31_12_2025_RIENG_VN_7397123b2c.pdf",
+    "text": "30/01/2026 2025 Q4 Báo cáo tài chính riêng Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/BCTC_VNM_31_12_2025_RIENG_VN_7397123b2c.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/BCTC_VNM_31_12_2025_HOP_NHAT_VN_27bf15cfdc.pdf",
+    "text": "30/01/2026 2025 Q4 Báo cáo tài chính hợp nhất Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/BCTC_VNM_31_12_2025_HOP_NHAT_VN_27bf15cfdc.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/20251030_VNM_Ban_tin_NDT_Q3_2025_ver_29_10_e9074db22b.pdf",
+    "text": "30/10/2025 2025 Q3 Bản tin nhà đầu tư Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/20251030_VNM_Ban_tin_NDT_Q3_2025_ver_29_10_e9074db22b.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/BCTC_DA_SOAT_XET_RIENG_VN_30_09_2025_c260a2d0e4.pdf",
+    "text": "30/10/2025 2025 Q3 Báo cáo tài chính riêng Đã soát xét/kiểm toán Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/BCTC_DA_SOAT_XET_RIENG_VN_30_09_2025_c260a2d0e4.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/BCTC_DA_SOAT_XET_HOP_NHAT_VN_30_09_2025_1cdc00d66f.pdf",
+    "text": "30/10/2025 2025 Q3 Báo cáo tài chính hợp nhất Đã soát xét/kiểm toán Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/BCTC_DA_SOAT_XET_HOP_NHAT_VN_30_09_2025_1cdc00d66f.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/VNM_Thuyet_trinh_KQKD_Q3_2025_a6cb9d7df0.pdf",
+    "text": "29/10/2025 2025 Q3 Thuyết trình lợi nhuận Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/VNM_Thuyet_trinh_KQKD_Q3_2025_a6cb9d7df0.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/20250730_VNM_GIAI_TRINH_BCTC_HN_Q2_2025_eaf029a6de.pdf",
+    "text": "30/07/2025 2025 Q2 Giải trình biến động kết quả kinh doanh Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/20250730_VNM_GIAI_TRINH_BCTC_HN_Q2_2025_eaf029a6de.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/20250730_VNM_Ban_tin_NDT_Q2_2025_a6ae4de509.pdf",
+    "text": "30/07/2025 2025 Q2 Bản tin nhà đầu tư Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/20250730_VNM_Ban_tin_NDT_Q2_2025_a6ae4de509.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/20250730_VNM_BCTC_RIENG_Q2_2025_c2ce4af566.pdf",
+    "text": "30/07/2025 2025 Q2 Báo cáo tài chính riêng Đã soát xét/kiểm toán Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/20250730_VNM_BCTC_RIENG_Q2_2025_c2ce4af566.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/VNM_Thuyet_trinh_KQKD_Q2_2025_a1b67a71f8.pdf",
+    "text": "30/07/2025 2025 Q2 Thuyết trình lợi nhuận Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/VNM_Thuyet_trinh_KQKD_Q2_2025_a1b67a71f8.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/20250730_VNM_BCTC_HN_Q2_2025_3f4f8d6651.pdf",
+    "text": "29/07/2025 2025 Q2 Báo cáo tài chính hợp nhất Đã soát xét/kiểm toán Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/20250730_VNM_BCTC_HN_Q2_2025_3f4f8d6651.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/1746599412_VNM_Thuyet_trinh_KQKD_Q1_2025_5a5ad24adc.pdf",
+    "text": "28/04/2025 2025 Q1 Thuyết Trình Lợi Nhuận Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/1746599412_VNM_Thuyet_trinh_KQKD_Q1_2025_5a5ad24adc.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/1745917288_20250429_VNM_GIAI_TRINH_BCTC_HN_Q1_2025_53d8b7ece7.pdf",
+    "text": "28/04/2025 2025 Q1 Giải trình biến động kết quả kinh doanh Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/1745917288_20250429_VNM_GIAI_TRINH_BCTC_HN_Q1_2025_53d8b7ece7.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/1746782305_2025059_VNM_Ban_tin_NDT_Q1_2025_7cf3f66b3a.pdf",
+    "text": "28/04/2025 2025 Q1 Bản tin nhà đầu tư Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/1746782305_2025059_VNM_Ban_tin_NDT_Q1_2025_7cf3f66b3a.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/1745917107_20250429_VNM_BCTC_RIENG_Q1_2025_3d7ff56f60.pdf",
+    "text": "28/04/2025 2025 Q1 Báo cáo tài chính riêng Đã soát xét/kiểm toán Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/1745917107_20250429_VNM_BCTC_RIENG_Q1_2025_3d7ff56f60.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/1745917000_20250429_VNM_BCTC_HN_Q1_2025_98db14f9e7.pdf",
+    "text": "28/04/2025 2025 Q1 Báo cáo tài chính hợp nhất Đã soát xét/kiểm toán Xem",
+    "attributes": {
+      "class": "text-vnm-link border-troke-primary hover:bg-surface-hovered flex w-full cursor-pointer flex-wrap items-center gap-4 border-b py-4 md:flex-nowrap md:gap-8",
+      "target": "_blank",
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/1745917000_20250429_VNM_BCTC_HN_Q1_2025_98db14f9e7.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  },
+  {
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/Vinamilk_Quy_che_hoat_dong_san_giao_dich_TMDT_vinamilk_com_vn_Cap_nhat_03_09_2025_88a7d62ae9.pdf",
+    "text": "Quy chế hoạt động",
+    "attributes": {
+      "href": "https://d8um25gjecm9v.cloudfront.net/cms/Vinamilk_Quy_che_hoat_dong_san_giao_dich_TMDT_vinamilk_com_vn_Cap_nhat_03_09_2025_88a7d62ae9.pdf"
+    },
+    "selected": false,
+    "reason": "Not the audited consolidated annual candidate (quarterly/separate/other document)"
+  }
+]

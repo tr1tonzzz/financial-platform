@@ -1,0 +1,235 @@
+% Ho tro pdfLaTeX, XeLaTeX va LuaLaTeX tren Overleaf.
+% XeLaTeX: dung Arial neu co, neu khong dung TeX Gyre Heros.
+% pdfLaTeX: dung TeX Gyre Heros, font sans serif gan Helvetica/Arial.
+% Khong can beamerthemeHUST.sty. Anh nen HUST trong images/ la tuy chon.
+\documentclass[t,aspectratio=169,11pt]{beamer}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[utf8]{inputenc}
+  \usepackage[T5]{fontenc}
+  \usepackage{tgheros}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  \usepackage{fontspec}
+  \IfFontExistsTF{Arial}{
+    \setmainfont{Arial}
+    \setsansfont{Arial}
+  }{
+    \setmainfont{TeX Gyre Heros}
+    \setsansfont{TeX Gyre Heros}
+  }
+\fi
+\usefonttheme{professionalfonts}
+\usepackage{booktabs,array,graphicx,tikz}
+\definecolor{hustprimary}{HTML}{003563}
+\definecolor{hustred}{HTML}{CE1628}
+\setbeamersize{text margin left=0.65cm,text margin right=0.65cm}
+\setbeamercolor{normal text}{fg=black,bg=white}
+\setbeamercolor{structure}{fg=hustprimary}
+\setbeamercolor{frametitle}{fg=white,bg=hustprimary}
+\setbeamercolor{title}{fg=hustprimary}
+\setbeamerfont{frametitle}{size=\large,series=\bfseries}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{itemize item}{--}
+\setbeamertemplate{itemize subitem}{--}
+\setlength{\parskip}{0.2em}
+\hypersetup{unicode=true,colorlinks=true,urlcolor=hustprimary}
+
+% Nen goc khi co anh. Chi tai file .tex van bien dich duoc.
+\newif\ifHustBackground
+\newcommand{\HustBackground}[1]{%
+  \HustBackgroundfalse
+  \setbeamertemplate{background canvas}{}%
+  \IfFileExists{images/hust-blue-169-#1.png}{%
+    \HustBackgroundtrue
+    \setbeamertemplate{background canvas}{%
+      \includegraphics[width=\paperwidth,height=\paperheight]{images/hust-blue-169-#1.png}}%
+  }{%
+    \IfFileExists{hust-blue-169-#1.png}{%
+      \HustBackgroundtrue
+      \setbeamertemplate{background canvas}{%
+        \includegraphics[width=\paperwidth,height=\paperheight]{hust-blue-169-#1.png}}%
+    }{}%
+  }%
+}
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip
+  \begin{beamercolorbox}[wd=\paperwidth,ht=0.62cm,dp=0.2cm,leftskip=0.5cm]{frametitle}
+    \usebeamerfont{frametitle}\insertframetitle
+  \end{beamercolorbox}
+  {\color{hustred}\hrule height 0.5pt}
+  \vspace{0.25cm}
+}
+\setbeamertemplate{footline}{%
+  \ifHustBackground\else
+    \hspace*{0.65cm}{\color{hustred}\bfseries\scriptsize HUST}
+  \fi
+  \hfill{\color{hustprimary}\scriptsize\insertframenumber/\inserttotalframenumber}
+  \hspace*{0.4cm}\vspace*{0.75cm}
+}
+\newcommand{\source}[1]{\par\vspace{0.25em}{\scriptsize\color{black!65}#1\par}}
+
+\title{BÁO CÁO 2}
+\subtitle{Xây dựng hệ thống thu thập, chuẩn hóa và phân tích lợi nhuận,
+  dòng tiền kinh doanh trong mối liên hệ với cổ tức tiền mặt
+  của doanh nghiệp niêm yết Việt Nam}
+\author{Phạm Hải Nam -- 20235791\\[0.4em]
+  \textbf{GVHD: TS. Nguyễn Đức Toàn}}
+\date{}
+
+\begin{document}
+
+% 1. Bia
+{\HustBackground{title}
+\begin{frame}[plain]
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north west,xshift=0.7cm,yshift=-2.3cm,text width=11.1cm]
+      at (current page.north west) {%
+        {\raggedright\LARGE\bfseries\color{hustprimary}\inserttitle\par}
+        \vspace{0.35cm}
+        {\raggedright\large\bfseries\insertsubtitle\par}
+        \vspace{0.5cm}
+        {\raggedright\normalsize\insertauthor\par}
+      };
+  \end{tikzpicture}
+\end{frame}}
+
+\HustBackground{content-hust-full}
+
+% 2. Boi canh
+\begin{frame}{1. Bối cảnh và cơ sở đề tài}
+  \begin{itemize}
+    \item BCTC và thông báo cổ tức phân tán, cần ghép đúng kỳ, đơn vị,
+      phạm vi báo cáo và giữ nguồn kiểm chứng.
+    \item \textbf{Lợi nhuận} cần đọc cùng lợi nhuận giữ lại và các điều kiện
+      phân phối, gồm nghĩa vụ tài chính, trích quỹ và thanh toán nợ.
+    \item \textbf{CFO} cần đọc cùng nhu cầu đầu tư, trả nợ và tiền đầu kỳ.
+    \item \textbf{Cổ tức tiền mặt} bổ sung bối cảnh về chính sách phân phối.
+      Cần phân biệt năm lợi nhuận, ngày công bố và lịch trả.
+  \end{itemize}
+  \source{Cơ sở: Khoản 2 Điều 135 Luật Doanh nghiệp.
+    CFA Institute (2026), \textit{Free Cash Flow Valuation}.
+    Brav và cộng sự (2005), \textit{Payout policy in the 21st century}, mục 5.4.}
+\end{frame}
+
+% 3. Muc tieu
+\begin{frame}{2. Mục tiêu và phạm vi dự kiến}
+  \textbf{Mục tiêu}
+  \begin{itemize}
+    \item Thu thập, chuẩn hóa và kiểm tra dữ liệu từ nguồn công bố chính thức.
+    \item Phân tích lợi nhuận sau thuế (LNST), dòng tiền thuần từ hoạt động
+      kinh doanh (CFO) và cổ tức tiền mặt.
+    \item Mở được nguồn của từng số và lưu dữ liệu để tính lại kết quả.
+  \end{itemize}
+  \vspace{0.3em}
+\end{frame}
+
+% 4. Chuc nang
+\begin{frame}{3. Quy trình và chức năng chính}
+  \begin{enumerate}
+    \item \textbf{Quản lý nguồn và thu thập:} chọn doanh nghiệp, tìm và tải
+      BCTC cùng thông báo cổ tức, giữ bản gốc và ngày lấy.
+    \item \textbf{Trích xuất và chuẩn hóa:} tạo số ứng viên, xác định đúng
+      kỳ, cột, đơn vị và phạm vi báo cáo.
+    \item \textbf{Kiểm tra và duyệt:} xem số cạnh nguồn, sửa có lịch sử,
+      ghi nhận phần thiếu và chặn phép tính chưa đủ dữ liệu.
+    \item \textbf{Phân tích và truy nguồn:} xem biến động, cầu nối CFO,
+      cổ tức theo năm lợi nhuận, mở nguồn và lưu kết quả.
+  \end{enumerate}
+\end{frame}
+
+% 5. Du lieu
+\begin{frame}{4. Các nhóm dữ liệu cần thu thập}
+  \begin{itemize}
+    \item \textbf{Doanh nghiệp và tài liệu:} mã, sàn, ngành, cơ sở quyền,
+      BCTC, thông báo, bản sửa hoặc hủy, URL, kỳ, đơn vị và phiên bản.
+    \item \textbf{Sáu chỉ tiêu nền:} tổng LNST, CFO, tiền và tương đương tiền,
+      tổng tài sản, tổng nợ phải trả, tổng vốn chủ sở hữu.
+    \item \textbf{Cầu nối và dòng tiền đã chi:} lợi nhuận trước thuế,
+      các dòng điều chỉnh, CFO cuối cầu nối và tiền chi cho chủ sở hữu.
+    \item \textbf{Sự kiện cổ tức:} đợt, năm lợi nhuận, tiền trên cổ phiếu,
+      cơ sở quy đổi, các ngày và quan hệ sửa, hủy, trùng.
+    \item \textbf{Truy nguồn và chất lượng:} trang hoặc vùng nguồn,
+      trạng thái duyệt, lịch sửa và dữ liệu thiếu.
+  \end{itemize}
+\end{frame}
+
+% 6. Mau va cong cu
+\begin{frame}{5. Mẫu thử nghiệm VNM và công cụ}
+  \textbf{BCTC hợp nhất VNM quý I/2026 đã soát xét}
+  \begin{itemize}
+    \item 71 trang, đơn vị VND. Cột quý I/2025 đã phân loại lại.
+    \item Chọn trang PDF 12--14 để OCR, tương ứng trang in 11--13.
+  \end{itemize}
+  \textbf{Công cụ sử dụng}
+  \begin{itemize}
+    \item \texttt{urllib}, \texttt{lxml}, \texttt{hashlib}: tìm, tải và tính SHA-256.
+    \item \texttt{pypdf}, Poppler: kiểm lớp chữ và chuyển trang thành ảnh.
+    \item Tesseract.js và Python \texttt{re}: OCR tiếng Việt và Anh,
+      trích số, đối chiếu và tính chỉ tiêu.
+  \end{itemize}
+  \source{\href{https://d8um25gjecm9v.cloudfront.net/cms/20260429_VNM_BCTC_DA_SOAT_XET_Q1_2026_HOP_NHAT_VN_d44326741a.pdf}{Nguồn: BCTC hợp nhất VNM quý I/2026, công bố ngày 29/04/2026.}}
+\end{frame}
+
+% 7. Ket qua cong cu
+\begin{frame}{6. Kết quả thu thập và OCR ghi nhận}
+  \begin{itemize}
+    \item \textbf{Tìm và tải:} danh mục HTTP 200, tìm 9 liên kết PDF.
+      PDF được chọn có 3.839.441 byte, lưu theo SHA-256.
+    \item \textbf{Kiểm lớp chữ:} 71/71 trang trả về 0 ký tự với \texttt{pypdf}.
+      Chuyển trang 12--14 thành ảnh ở 220 DPI.
+    \item \textbf{OCR ba trang:} 6,026 giây
+    \item \textbf{Đối chiếu sáu ô:} ghi nhận 6 đúng, 0 sai, 0 thiếu,
+      so với tham chiếu đọc thủ công từ trang gốc.
+  \end{itemize}
+
+\end{frame}
+
+% 8. So lieu va nhan xet
+\begin{frame}{7. Số liệu trích xuất và nhận xét}
+  {\small
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.25}
+  \begin{tabular}{@{}p{3.5cm}rrp{1.1cm}@{}}
+    \toprule
+    \textbf{Chỉ tiêu, VND} & \textbf{Q1/2026} & \textbf{Q1/2025*} & \textbf{PDF}\\
+    \midrule
+    Tổng LNST hợp nhất & 2.458.221.002.532 & 1.587.273.268.054 & 12\\
+    CFO & 269.326.997.516 & $-$124.187.023.735 & 13\\
+    Tiền chi trả cổ tức & $-$55.837.540 & $-$1.044.977.722.500 & 14\\
+    \bottomrule
+  \end{tabular}}
+  \vspace{0.4em}
+  \begin{itemize}
+    \item LNST tăng \textbf{54,87\%}. CFO tăng \textbf{393,514 tỷ đồng}, từ âm sang dương.
+    \item CFO/LNST khoảng \textbf{0,110 lần}. Cần đọc tiếp các khoản điều chỉnh
+      và vốn lưu động. Một quý chưa đủ kết luận chất lượng lợi nhuận.
+  \end{itemize}
+
+\end{frame}
+
+
+% 10. Ket luan va buoc tiep
+\begin{frame}{8. Kết luận và công việc tiếp theo}
+  \small
+  \textbf{Kết luận báo cáo}
+  \par Đã làm rõ bài toán, mục tiêu và dữ liệu cần thu thập.
+  Hệ thống hướng tới đối chiếu lợi nhuận, khả năng tạo tiền và chính sách
+  cổ tức trên dữ liệu đúng kỳ, có nguồn kiểm chứng.
+  \vspace{0.3em}
+  \textbf{Thử nghiệm công cụ}
+  \par Đã thử tìm và tải PDF VNM, kiểm lớp chữ, OCR ba trang rồi trích số.
+  Sáu ô chọn trước khớp tham chiếu và tính được chỉ tiêu sơ bộ.
+  Kết quả hỗ trợ tính khả thi bước đầu, chưa đại diện độ chính xác chung.
+  \vspace{0.3em}
+  \textbf{Công việc tiếp theo}
+  \begin{itemize}
+    \item Hoàn thiện trích xuất, chuẩn hóa và duyệt số có nguồn.
+      Thử thêm BCTC, đo số đúng/sai/thiếu và thời gian xử lý.
+    \item Tích hợp cầu nối CFO và ghép thông báo cổ tức đúng năm lợi nhuận,
+      có kiểm tra bản sửa/hủy.
+    \item Xây dựng giao diện đối chiếu và mở nguồn từng số.
+  \end{itemize}
+\end{frame}
+
+\end{document}

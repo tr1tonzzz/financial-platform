@@ -1,0 +1,74 @@
+{
+  "started_at": "2026-10-09T08:52:48.949787+00:00",
+  "catalog_url": "https://www.vinamilk.com.vn/investor/reports/financial",
+  "candidates": [
+    {
+      "title": "29/04/2026 2026 Q1 Báo cáo tài chính riêng Đã soát xét/kiểm toán Xem",
+      "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260429_VNM_BCTC_DA_SOAT_XET_Q1_2026_RIENG_VN_920896fa41.pdf"
+    },
+    {
+      "title": "29/04/2026 2026 Q1 Giải trình biến động kinh doanh Xem",
+      "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260429_VNM_Giai_trinh_bao_cao_KQKD_Q1_2026_VN_0addc7c703.pdf"
+    },
+    {
+      "title": "30/07/2026 2026 Q2 Báo cáo tài chính hợp nhất Đã soát xét/kiểm toán Xem",
+      "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260730_VNM_BCTC_da_soat_xet_Q2_2026_Hop_nhat_76ef2e29c1.pdf"
+    },
+    {
+      "title": "30/07/2026 2026 Q2 Giải trình biến động kinh doanh Xem",
+      "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260730_VNM_Giai_trinh_BC_KQKD_Q2_2026_743c7e43d5.pdf"
+    },
+    {
+      "title": "30/07/2026 2026 Q2 Bản tin nhà đầu tư Xem",
+      "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260730_VNM_Ban_tin_NDT_Q2_2026_227a507c03.pdf"
+    },
+    {
+      "title": "30/07/2026 2026 Q2 Báo cáo tài chính riêng Đã soát xét/kiểm toán Xem",
+      "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260730_VNM_BCTC_da_soat_xet_Q2_2026_Rieng_936c679432.pdf"
+    },
+    {
+      "title": "29/04/2026 2026 Q1 Báo cáo tài chính hợp nhất Đã soát xét/kiểm toán Xem",
+      "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260429_VNM_BCTC_DA_SOAT_XET_Q1_2026_HOP_NHAT_VN_d44326741a.pdf"
+    },
+    {
+      "title": "29/04/2026 2026 Q1 Bản tin nhà đầu tư Xem",
+      "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260429_VNM_Ban_tin_NDT_Q1_2026_7518aa5da1.pdf"
+    },
+    {
+      "title": "Quy chế hoạt động",
+      "url": "https://d8um25gjecm9v.cloudfront.net/cms/Vinamilk_Quy_che_hoat_dong_san_giao_dich_TMDT_vinamilk_com_vn_Cap_nhat_03_09_2025_88a7d62ae9.pdf"
+    }
+  ],
+  "requests": [
+    {
+      "url": "https://www.vinamilk.com.vn/investor/reports/financial",
+      "started_at": "2026-10-09T08:52:48.950005+00:00",
+      "status": 200,
+      "final_url": "https://www.vinamilk.com.vn/investor/reports/financial",
+      "bytes": 353717,
+      "content_type": "text/html; charset=utf-8",
+      "finished_at": "2026-10-09T08:52:49.170840+00:00",
+      "seconds": 0.221
+    },
+    {
+      "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260429_VNM_BCTC_DA_SOAT_XET_Q1_2026_HOP_NHAT_VN_d44326741a.pdf",
+      "started_at": "2026-10-09T08:52:49.185481+00:00",
+      "status": 200,
+      "final_url": "https://d8um25gjecm9v.cloudfront.net/cms/20260429_VNM_BCTC_DA_SOAT_XET_Q1_2026_HOP_NHAT_VN_d44326741a.pdf",
+      "bytes": 3839441,
+      "content_type": "application/pdf",
+      "finished_at": "2026-10-09T08:52:49.471041+00:00",
+      "seconds": 0.286
+    }
+  ],
+  "mode": "catalog_discovery",
+  "catalog_html": "catalog.html",
+  "selected": {
+    "title": "29/04/2026 2026 Q1 Báo cáo tài chính hợp nhất Đã soát xét/kiểm toán Xem",
+    "url": "https://d8um25gjecm9v.cloudfront.net/cms/20260429_VNM_BCTC_DA_SOAT_XET_Q1_2026_HOP_NHAT_VN_d44326741a.pdf"
+  },
+  "pdf_url": "https://d8um25gjecm9v.cloudfront.net/cms/20260429_VNM_BCTC_DA_SOAT_XET_Q1_2026_HOP_NHAT_VN_d44326741a.pdf",
+  "pdf_path": "sample.pdf",
+  "pdf_bytes": 3839441,
+  "finished_at": "2026-10-09T08:52:49.473470+00:00"
+}

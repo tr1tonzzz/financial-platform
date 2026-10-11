@@ -13,7 +13,7 @@
 | [HTTP RFC 9110](https://www.rfc-editor.org/rfc/rfc9110.html#name-conditional-requests), [robots RFC 9309](https://www.rfc-editor.org/rfc/rfc9309.html) | Update/policy | GET/304 đã thử; robots parser pilot chưa đầy đủ RFC |
 | [pdfplumber](https://github.com/jsvine/pdfplumber), [Tesseract](https://github.com/tesseract-ocr/tesseract) | Text/bbox và OCR baseline | Đã có probe; confidence không là accuracy |
 | [SciPy Spearman](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.spearmanr.html) | Tương quan mô tả | Đã đọc docs; chưa chạy tương quan dataset project |
-| [Python](https://docs.python.org/3.12/tutorial/), [pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html), [SQLite](https://www.sqlite.org/lang.html), [Streamlit](https://docs.streamlit.io/get-started/fundamentals) | Học/stack | Nền đã chọn; app cần triển khai |
+| [Python](https://docs.python.org/3.12/tutorial/), [pandas](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html), [PostgreSQL](https://www.postgresql.org/docs/current/tutorial.html), [React](https://react.dev/learn) | Học/stack | Nền đã chọn; app cần triển khai |
 | [SEC beginner guide](https://www.sec.gov/about/reports-publications/beginners-guide-financial-statements) | Học cơ chế BCTC | Tham khảo kiến thức, không hướng dẫn pháp luật Việt Nam |
 | [Scrapy files](https://docs.scrapy.org/en/latest/topics/media-pipeline.html), [Playwright downloads](https://playwright.dev/python/docs/downloads) | Phương án mở rộng | Nghiên cứu, chưa chạy trong collector mới |
 

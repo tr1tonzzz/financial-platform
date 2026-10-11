@@ -1,0 +1,210 @@
+{
+  "record_created_at_utc": "2026-10-11T09:41:27.600463+00:00",
+  "scope": "Local inventory/hash checks and recalculation of manually recorded DHG bridge. Not application acceptance, not new OCR or source retrieval.",
+  "priority": [
+    "UC-F01",
+    "UC-F02",
+    "UC-F03",
+    "UC-F05",
+    "UC-F04"
+  ],
+  "src_files": [],
+  "raw_evidence": [
+    {
+      "path": "data-sets/research-evidence/2026-10-03-crawl-methods/verified/pdf/9a2881a88ac8ca4cc5cd948b0fafa031ff30fd0332a372f362477a8a6b0c9968.pdf",
+      "exists": true,
+      "sha256": "9a2881a88ac8ca4cc5cd948b0fafa031ff30fd0332a372f362477a8a6b0c9968",
+      "expected_sha256": "9a2881a88ac8ca4cc5cd948b0fafa031ff30fd0332a372f362477a8a6b0c9968",
+      "hash_matches": true
+    },
+    {
+      "path": "data-sets/research-evidence/2026-10-03-crawl-methods/verified/pdf/f38c5f75becf7d3f145d27183eec81f119fd4f75e378b983a2763ddc3f7e0c07.pdf",
+      "exists": true,
+      "sha256": "f38c5f75becf7d3f145d27183eec81f119fd4f75e378b983a2763ddc3f7e0c07",
+      "expected_sha256": "f38c5f75becf7d3f145d27183eec81f119fd4f75e378b983a2763ddc3f7e0c07",
+      "hash_matches": true
+    },
+    {
+      "path": "data-sets/research-evidence/2026-10-03-crawl-methods/verified/pdf/b68e08e74770c5231fee96ad73915b793647629659a43889eb724d6be6798a69.pdf",
+      "exists": true,
+      "sha256": "b68e08e74770c5231fee96ad73915b793647629659a43889eb724d6be6798a69",
+      "expected_sha256": "b68e08e74770c5231fee96ad73915b793647629659a43889eb724d6be6798a69",
+      "hash_matches": true
+    },
+    {
+      "path": "data-sets/research-evidence/2026-10-03-crawl-methods/verified/pdf/abaaac8d3813329db1987e769f325fbee7b8c4776b4205b26a4673f95b589973.pdf",
+      "exists": true,
+      "sha256": "abaaac8d3813329db1987e769f325fbee7b8c4776b4205b26a4673f95b589973",
+      "expected_sha256": "abaaac8d3813329db1987e769f325fbee7b8c4776b4205b26a4673f95b589973",
+      "hash_matches": true
+    },
+    {
+      "path": "data-sets/research-evidence/2026-10-03-crawl-methods/verified/pdf/e7034122d696abea75b8022ca977d6176726137a1fd55c52d258b2a1f53ac41b.pdf",
+      "exists": true,
+      "sha256": "e7034122d696abea75b8022ca977d6176726137a1fd55c52d258b2a1f53ac41b",
+      "expected_sha256": "e7034122d696abea75b8022ca977d6176726137a1fd55c52d258b2a1f53ac41b",
+      "hash_matches": true
+    },
+    {
+      "path": "data-sets/research-evidence/2026-10-03-crawl-methods/verified/pdf/00629dd42ea6c9d31cc81b1bc56e59e39056753d5cc61cfba78fe5e620667850.pdf",
+      "exists": true,
+      "sha256": "00629dd42ea6c9d31cc81b1bc56e59e39056753d5cc61cfba78fe5e620667850",
+      "expected_sha256": "00629dd42ea6c9d31cc81b1bc56e59e39056753d5cc61cfba78fe5e620667850",
+      "hash_matches": true
+    },
+    {
+      "path": "data-sets/research-evidence/2026-10-03-crawl-methods/verified/pdf/e278d2dacc38acf7da010f05a1162a69371aa8d69b744171ddb72d9464efa019.pdf",
+      "exists": true,
+      "sha256": "e278d2dacc38acf7da010f05a1162a69371aa8d69b744171ddb72d9464efa019",
+      "expected_sha256": "e278d2dacc38acf7da010f05a1162a69371aa8d69b744171ddb72d9464efa019",
+      "hash_matches": true
+    },
+    {
+      "path": "data-sets/research-evidence/2026-10-03-crawl-methods/verified/pdf/d2e2c906474f96651e27f99fb54afb05b6551641dcb56bc072c1f0184a469ef3.pdf",
+      "exists": true,
+      "sha256": "d2e2c906474f96651e27f99fb54afb05b6551641dcb56bc072c1f0184a469ef3",
+      "expected_sha256": "d2e2c906474f96651e27f99fb54afb05b6551641dcb56bc072c1f0184a469ef3",
+      "hash_matches": true
+    },
+    {
+      "path": "data-sets/research-evidence/2026-10-06-report-01-vnm-q1-2026/pdf/aa9e9d9a18fbbf05cc23c35b71a5dbae7a0a858a81727ff2e0d1c8ad047cb451.pdf",
+      "exists": true,
+      "sha256": "aa9e9d9a18fbbf05cc23c35b71a5dbae7a0a858a81727ff2e0d1c8ad047cb451",
+      "expected_sha256": "aa9e9d9a18fbbf05cc23c35b71a5dbae7a0a858a81727ff2e0d1c8ad047cb451",
+      "hash_matches": true
+    },
+    {
+      "path": "data-sets/research-evidence/2026-10-03-recent/dhg-fy2025.pdf",
+      "exists": true,
+      "sha256": "abaaac8d3813329db1987e769f325fbee7b8c4776b4205b26a4673f95b589973",
+      "expected_sha256": "abaaac8d3813329db1987e769f325fbee7b8c4776b4205b26a4673f95b589973",
+      "hash_matches": true
+    }
+  ],
+  "source_code": [
+    {
+      "path": "scripts/research/crawl_official_reports.py",
+      "exists": true,
+      "sha256": "4a57b59d5ca9fe3353f4a0f2c2dffdc60ced97a7cd7fe5c9a8e74f12743271fd",
+      "expected_sha256": null,
+      "hash_matches": null
+    },
+    {
+      "path": "scripts/research/probe_vnm_q1.py",
+      "exists": true,
+      "sha256": "d3c5d05180926e9c6cb048d8dc553e6b2e8f26ceb3c6b96f0df6b0db7937ba82",
+      "expected_sha256": null,
+      "hash_matches": null
+    },
+    {
+      "path": "scripts/research/check_vnm_q1.py",
+      "exists": true,
+      "sha256": "b03626d19a681dff7873e8880722dbfdd4642b8c3ba019e1803dd2508398fdda",
+      "expected_sha256": null,
+      "hash_matches": null
+    },
+    {
+      "path": "scripts/research/dividend_functions_probe.py",
+      "exists": true,
+      "sha256": "e5068f2fb91aca5937707642a7dd6c70034718701cebb31b2ecdad0755560369",
+      "expected_sha256": null,
+      "hash_matches": null
+    },
+    {
+      "path": "scripts/research/extract_recent_dividend_examples.py",
+      "exists": true,
+      "sha256": "a7c56dda4377a4fd154a34d3b7129d6c16594d6739732cdd36da5d07ac070995",
+      "expected_sha256": null,
+      "hash_matches": null
+    },
+    {
+      "path": "scripts/research/test_crawl_official_reports.py",
+      "exists": true,
+      "sha256": "636c30484ff265644f7c53fe39769844a146f9991418d7d0efc8733fdf0dd7cc",
+      "expected_sha256": null,
+      "hash_matches": null
+    },
+    {
+      "path": "scripts/research/test_dividend_functions_probe.py",
+      "exists": true,
+      "sha256": "fb366ad7d284552a91634a14213f7c541492675266af1b1de0fe25e3b349af7a",
+      "expected_sha256": null,
+      "hash_matches": null
+    }
+  ],
+  "crawl_pdf_count_in_this_manifest": 8,
+  "deduplication_note": "Additional VNM and DHG case sources may overlap other research manifests; do not interpret this list as total unique project corpus.",
+  "vnm_oct06_comparison": {
+    "counts": {
+      "correct": 6,
+      "wrong": 0,
+      "missing": 0
+    },
+    "rows": [
+      {
+        "field": "net_income",
+        "quarter": "Q1/2026",
+        "pdf_page": 12,
+        "actual": 2458221002532,
+        "reference": 2458221002532,
+        "result": "correct"
+      },
+      {
+        "field": "net_income",
+        "quarter": "Q1/2025",
+        "pdf_page": 12,
+        "actual": 1587273268054,
+        "reference": 1587273268054,
+        "result": "correct"
+      },
+      {
+        "field": "cfo",
+        "quarter": "Q1/2026",
+        "pdf_page": 13,
+        "actual": 269326997516,
+        "reference": 269326997516,
+        "result": "correct"
+      },
+      {
+        "field": "cfo",
+        "quarter": "Q1/2025",
+        "pdf_page": 13,
+        "actual": -124187023735,
+        "reference": -124187023735,
+        "result": "correct"
+      },
+      {
+        "field": "cash_dividends_paid",
+        "quarter": "Q1/2026",
+        "pdf_page": 14,
+        "actual": -55837540,
+        "reference": -55837540,
+        "result": "correct"
+      },
+      {
+        "field": "cash_dividends_paid",
+        "quarter": "Q1/2025",
+        "pdf_page": 14,
+        "actual": -1044977722500,
+        "reference": -1044977722500,
+        "result": "correct"
+      }
+    ],
+    "metrics": {
+      "net_income_growth_percent": 54.87068622693958,
+      "cfo_change_vnd": 393514021251,
+      "cfo_net_income_ratio_2026": 0.10956175105435584,
+      "cfo_net_income_ratio_2025": -0.07823922082884538
+    },
+    "warning": "Six selected development cells only; same-person manual reference; no measured general OCR accuracy."
+  },
+  "dhg_manual_bridge_residual_vnd": {
+    "2025": 0,
+    "2024": 0
+  },
+  "review_limitations": [
+    "Manual facts reviewed by research author; no independently verified gold.",
+    "VNM six checked cells represent three lines and two periods, not six distinct core metrics.",
+    "No UI or full application acceptance inferred from source/test presence."
+  ]
+}

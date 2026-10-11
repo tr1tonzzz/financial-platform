@@ -1,0 +1,26 @@
+{
+  "scope": "Checklist artifact QA only; not application acceptance",
+  "plan_version": 6,
+  "weeks": 10,
+  "tasks": 60,
+  "hours": 195,
+  "weekly_reporting_guides": 10,
+  "checks": [
+    "HTML/JSON match",
+    "initially unchecked",
+    "date calculation",
+    "checkbox/note/hours survive reload",
+    "JSON export",
+    "paste restore",
+    "file restore",
+    "wrong plan rejected without state loss",
+    "invalid calendar date rejected",
+    "mobile without page overflow",
+    "print expands and restores weeks",
+    "blocked storage warns",
+    "10 weekly Word/slide/demo guides",
+    "v5 migration retains notes/hours and unchanged tasks; changed web tasks reset; original retained",
+    "v4 import retains dates/notes/hours and resets ticks"
+  ],
+  "browser_errors": []
+}

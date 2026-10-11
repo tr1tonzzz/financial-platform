@@ -1,0 +1,19 @@
+{
+  "scope": "static research evidence/document consistency; no project execution or application acceptance",
+  "retrieval_date": "2026-10-11",
+  "repositories": 36,
+  "repos_ge_3000_stars": 25,
+  "repos_ge_10000_stars": 12,
+  "readme_repos": 35,
+  "selected_code_repos": 17,
+  "source_files_hash_checked": 87,
+  "code_references_checked": 34,
+  "catalogue_version": "2.0",
+  "macro_uc_groups": 7,
+  "child_functions": 38,
+  "srs_version": "3.3",
+  "active_requirement_ids": 91,
+  "planned_test_cases": 51,
+  "local_links_checked": 52,
+  "validation": "passed"
+}

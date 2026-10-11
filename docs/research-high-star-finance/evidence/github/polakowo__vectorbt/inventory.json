@@ -1,0 +1,28 @@
+{
+  "requested_repo": "polakowo/vectorbt",
+  "repo": "polakowo/vectorbt",
+  "sha": "f54802a5982c9fd8123d85c3b5a1d06a80b2726a",
+  "stars": 9331,
+  "forks": 1196,
+  "archived": false,
+  "default_branch": "master",
+  "description": "The backtesting engine that gives you an unfair advantage. Run thousands of trading ideas before others finish one.",
+  "pushed_at": "2026-10-09T20:04:03Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "other",
+    "name": "Other",
+    "spdx_id": "NOASSERTION",
+    "url": null,
+    "node_id": "MDc6TGljZW5zZTA="
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 14091,
+      "sha256": "171a1854805ff901f00017d1a918484f4b00413757b2c6e2fe61ea752c06a141"
+    }
+  ],
+  "review_level": "metadata and README",
+  "method": "static evidence capture; no installation or execution"
+}

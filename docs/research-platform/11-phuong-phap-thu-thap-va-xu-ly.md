@@ -8,7 +8,7 @@ Phiên bản 2.0 ngày 03/10/2026. Áp dụng cho project lợi nhuận–dòng 
 
 ## 1 Quyết định công nghệ và nguồn
 
-Python 3.12, HTTP + lxml cho discovery, downloader chung, pdfplumber/pypdf cho text và metadata, render + Tesseract vie/eng cho scan, SQLite cho dữ liệu và Streamlit cho ứng dụng. Pin thư viện sau smoke test, tái sử dụng prototype đã kiểm chứng. Chưa cần Scrapy/Playwright nếu HTML đã có dữ liệu; dùng browser chỉ cho control năm/trang công khai thực sự cần, sau kiểm tra policy.
+Python 3.12, HTTP + lxml cho discovery, downloader chung, pdfplumber/pypdf cho text và metadata, Poppler render + **PaddleOCR/PaddlePaddle CPU** cho scan, PostgreSQL cho dữ liệu và React cho ứng dụng. Người thực hiện chốt chuyển OCR ngày 11/10/2026; Tesseract giữ làm đối chứng, không là OCR mặc định mới. Pin thư viện/model sau smoke test; prototype cũ vẫn mang tên engine đã chạy, chưa là bằng chứng Paddle. Mẫu chính là HPG/VNM/FPT năm 2023–2025. [Quyết định chi tiết](31-chot-pham-vi-va-stack-paddleocr.md). Chưa cần Scrapy/Playwright nếu HTML đã có dữ liệu; dùng browser chỉ cho control năm/trang công khai thực sự cần, sau kiểm tra policy.
 
 | Loại dữ liệu | Nguồn chính | Nguồn đối chiếu/fallback |
 |---|---|---|
@@ -63,9 +63,9 @@ Dataset snapshot giữ document/fact/event version IDs, cutoff, config và revie
 
 ## 8 Phần đã có và thứ tự triển khai
 
-Đã có crawler BCTC FY2025/H1-2026 và 304, OCR sáu trường ở hai tài liệu development, bốn thông báo cổ tức mẫu. Chưa thu tự động đầy đủ 2023–2025, chưa có event discovery adapter, history SQLite hoặc UI review.
+Đã có crawler BCTC FY2025/H1-2026 và 304, OCR sáu trường ở hai tài liệu development, bốn thông báo cổ tức mẫu. Chưa thu tự động đầy đủ 2023–2025, chưa có event discovery adapter, history PostgreSQL hoặc UI review.
 
-Thứ tự: một issuer end-to-end → adapter cổ tức + tách năm → pilot chín BCTC và ledger → SQLite/review → dashboard → mở rộng và holdout. Tự động hóa phát hiện/tải là lõi; xác nhận metadata/closure và sửa OCR có người review được chấp nhận nhưng phải đo công sức.
+Thứ tự: một issuer end-to-end → adapter cổ tức + tách năm → pilot chín BCTC và ledger → PostgreSQL/review → dashboard → mở rộng và holdout. Tự động hóa phát hiện/tải là lõi; xác nhận metadata/closure và sửa OCR có người review được chấp nhận nhưng phải đo công sức.
 
 ## 9 Thuật ngữ và đầu ra để người mới theo dõi
 
@@ -80,6 +80,6 @@ Thứ tự: một issuer end-to-end → adapter cổ tức + tách năm → pilo
 | Coverage ledger | Sổ ghi nguồn, trang và khoảng ngày đã rà, phần còn thiếu và căn cứ kết luận đủ |
 | Snapshot/holdout | Bản dữ liệu chốt tại một mốc / tài liệu để đánh giá chưa dùng chỉnh parser |
 
-Đầu ra dự kiến của một lần chạy: manifest nguồn và file gốc → JSON candidates cùng lỗi → facts/events đã duyệt trong SQLite → bảng năm và timeline trong snapshot → biểu đồ và CSV/JSON export. Một dòng phân tích phải lần được tới từng số BCTC và component cổ tức gốc. JSON trích xuất ban đầu không tự được xem là dataset cuối.
+Đầu ra dự kiến của một lần chạy: manifest nguồn và file gốc → JSON candidates cùng lỗi → facts/events đã duyệt trong PostgreSQL → bảng năm và timeline trong snapshot → biểu đồ và CSV/JSON export. Một dòng phân tích phải lần được tới từng số BCTC và component cổ tức gốc. JSON trích xuất ban đầu không tự được xem là dataset cuối.
 
 Ví dụ đọc bằng tay trước khi viết code: thông báo VNM 187729 có 2.850 đồng/cổ phiếu gồm 350 của 2024 và 2.500 của 2025. Tạo một event, hai components; sau đó đưa đúng phần vào đúng năm, kiểm tra còn thông báo khác hay không. Đọc [từ điển và ví dụ có nguồn](12-kien-thuc-tai-chinh-va-tu-dien.md) trước khi lập bảng.

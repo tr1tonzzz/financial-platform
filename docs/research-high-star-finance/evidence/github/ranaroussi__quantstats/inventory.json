@@ -1,0 +1,90 @@
+{
+  "requested_repo": "ranaroussi/quantstats",
+  "repo": "ranaroussi/quantstats",
+  "sha": "9ef4c6d0a4ffe7831f6ebba6a5824fd33a90c05a",
+  "stars": 7694,
+  "forks": 1251,
+  "archived": false,
+  "default_branch": "main",
+  "description": "Portfolio analytics for quants, written in Python",
+  "pushed_at": "2026-09-27T19:40:19Z",
+  "retrieved_on": "2026-10-11",
+  "license_metadata": {
+    "key": "apache-2.0",
+    "name": "Apache License 2.0",
+    "spdx_id": "Apache-2.0",
+    "url": "https://api.github.com/licenses/apache-2.0",
+    "node_id": "MDc6TGljZW5zZTI="
+  },
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 8365,
+      "sha256": "9ba1cfc9fc64b4faa4e0846faeed3c1fd229a5c7748527f8e7fc112390f3c004"
+    },
+    {
+      "path": "quantstats/reports.py",
+      "bytes": 91858,
+      "sha256": "254e2541e6b2f3bb03c01c2cfb9728aaaef4892fbabf4efb0687914f373daf51"
+    },
+    {
+      "path": "quantstats/plots.py",
+      "bytes": 857,
+      "sha256": "48089ba33e3793cc4b37c33184e54b36c758c911329d171d414fee361ab31213"
+    },
+    {
+      "path": "quantstats/stats.py",
+      "bytes": 128855,
+      "sha256": "07b3ceeec1a06f90fddb33ec6b089f7f8dbfa2a4cd6b6d6affb7e0acd0f51503"
+    }
+  ],
+  "review_level": "README and selected implementation files",
+  "method": "static evidence capture; no installation or execution",
+  "tree_truncated": false,
+  "tree_paths": [
+    ".claude/2026-modernization-plan.md",
+    ".claude/PROJECT.md",
+    ".deepsource.toml",
+    ".flake8",
+    ".github/FUNDING.yml",
+    ".github/dependabot.yml",
+    ".github/workflows/python-publish.yml",
+    ".github/workflows/test-compatibility.yml",
+    ".gitignore",
+    "CHANGELOG.md",
+    "CONTRIBUTORS.txt",
+    "LICENSE.txt",
+    "MANIFEST.in",
+    "README.md",
+    "docs/montecarlo.md",
+    "docs/report.webp",
+    "docs/snapshot.webp",
+    "docs/tearsheet.html",
+    "pyproject.toml",
+    "quantstats/__init__.py",
+    "quantstats/_compat.py",
+    "quantstats/_montecarlo.py",
+    "quantstats/_numpy_compat.py",
+    "quantstats/_plotting/__init__.py",
+    "quantstats/_plotting/core.py",
+    "quantstats/_plotting/wrappers.py",
+    "quantstats/plots.py",
+    "quantstats/py.typed",
+    "quantstats/report.html",
+    "quantstats/reports.py",
+    "quantstats/stats.py",
+    "quantstats/utils.py",
+    "quantstats/version.py",
+    "requirements.txt",
+    "setup.cfg",
+    "tests/__init__.py",
+    "tests/test_compat.py",
+    "tests/test_extend_pandas.py",
+    "tests/test_montecarlo.py",
+    "tests/test_plots.py",
+    "tests/test_regressions.py",
+    "tests/test_reports.py",
+    "tests/test_stats.py",
+    "tests/test_utils.py"
+  ]
+}

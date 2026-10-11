@@ -2,7 +2,7 @@
 
 **Trạng thái cập nhật05/10/2026:** hướng kết hợp đã được tích hợp vào [SRS v3.1](../research-platform/22-srs-dac-ta-yeu-cau-phan-mem.md), CR-PCD-01/mục15, theo yêu cầu cập nhật tài liệu của người thực hiện. Tối thiểu một ca cầu nối là nghĩa vụ dự thảo; E05/E10 và ca thêm có điều kiện. Nội dung đề xuất ngày04/10 bên dưới là cơ sở nghiên cứu; các câu “chưa tích hợp/chờ change record” mô tả trạng thái lúc đó, được thay bởi SRS v3.1. Chưa có phê duyệt giảng viên hoặc kiểm thử ứng dụng đã chạy. Kế hoạch/checklist v3 là lịch triển khai duy nhất; bảng tuần/giờ trong hồ sơ nghiên cứu là phương án trước tích hợp.
 
-Thiết kế đề xuất, chưa là xác nhận module đã triển khai. Dùng stack và schema nền của [thiết kế hiện hành](../research-platform/03-kien-truc-va-du-lieu.md): Python, HTTP/parser, PDF/OCR, SQLite, pandas và Streamlit. Không cần thêm microservices hoặc một frontend mới chỉ để mở rộng phân tích.
+Thiết kế đề xuất, chưa là xác nhận module đã triển khai. Dùng stack và schema nền của [thiết kế hiện hành](../research-platform/03-kien-truc-va-du-lieu.md): React/TypeScript, FastAPI/Python, HTTP/parser, PDF/PaddleOCR, PostgreSQL và pandas. Không cần thêm microservices hoặc một frontend mới chỉ để mở rộng phân tích.
 
 ## 1. Workflow nghiên cứu và phát triển
 
