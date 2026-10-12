@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "financial-data-pipeline"
+version = "0.1.0"
+description = "Financial report collection, OCR, normalization and PostgreSQL storage"
+requires-python = ">=3.12"
+dependencies = ["PyMuPDF==1.28.2", "SQLAlchemy==2.1.4", "alembic==1.20.0", "psycopg[binary]==3.3.6", "python-dotenv>=1,<2"]
+
+[project.scripts]
+financial-pipeline = "financial_pipeline.pipeline:main"
+financial-pipeline-stage = "financial_pipeline.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

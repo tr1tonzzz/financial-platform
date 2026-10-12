@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "decision_date": "2026-10-11",
-  "status": "scope_confirmed_data_collection_pending",
-  "scope": "main project pilot; not a completed collection or application config integration",
+  "status": "scope_confirmed_current_work_catalog_to_database",
+  "scope": "Overall cohort remains HPG/VNM/FPT 2023–2025; current assigned slice is VNM and HPG annual consolidated audited 2025, official catalog discovery through PostgreSQL, pending human review",
   "issuers": [
     {
       "ticker": "HPG",
@@ -35,20 +35,39 @@
   "expected_report_count": 9,
   "expected_core_fact_count": 54,
   "ocr": {
-    "primary_engine": "paddleocr",
-    "inference_backend": "paddlepaddle",
+    "primary_engine": "paddle_detection_vietocr_recognition",
+    "decision_date": "2026-10-12",
     "device_preference": "cpu",
-    "package_version": "3.3.2",
-    "model_name": "latin_PP-OCRv5_mobile_rec",
-    "language_target": "vi",
-    "status": "cpu_smoke_test_passed_on_existing_vnm_q1_image",
+    "detector": {
+      "package": "paddleocr",
+      "package_version": "3.3.2",
+      "backend": "paddlepaddle",
+      "backend_version": "3.2.2",
+      "model": "PP-OCRv5_mobile_det",
+      "role": "text_detection_and_crop"
+    },
+    "recognizer": {
+      "package": "vietocr",
+      "package_version": "0.3.13",
+      "backend": "torch",
+      "backend_version": "2.5.1+cpu",
+      "model": "vgg_seq2seq",
+      "weights_sha256": "0921503a41375a0584268e23ef3d414ea478a8fe8777865c7745d38f2d0bc5db",
+      "role": "vietnamese_text_recognition"
+    },
+    "status": "implemented_paddle_detection_vietocr_current_assigned_slice",
     "comparison_engine": "tesseract",
     "comparison_only": true,
-    "paddlepaddle_version": "3.2.2",
-    "text_detection_model_name": "PP-OCRv5_mobile_det",
-    "smoke_test_evidence": "workspace/week1/data/vnm-2025/smoke-q1/run.json",
-    "package_lock": "workspace/week1/config/requirements-paddle-win-py312.lock.txt",
-    "model_lock": "workspace/week1/config/paddleocr-models.lock.json"
+    "package_locks": [
+      "config/requirements-detection.lock.txt",
+      "config/requirements-inference.lock.txt"
+    ],
+    "model_locks": [
+      "config/paddle-detector-model.lock.json",
+      "config/vietocr-model.lock.json"
+    ],
+    "historical_paddle_only_evidence": "workspace/week1/docs/vnm-2025.md",
+    "historical_execution_evidence": "workspace/history/week1-over-scope-2026-10-12/evidence/completion.json"
   },
   "report_targets": [
     {
@@ -67,7 +86,8 @@
       "ticker": "HPG",
       "fiscal_year": 2025,
       "scope": "consolidated",
-      "status": "planned_not_reconciled_with_source_ledger"
+      "status": "extracted_to_postgresql_pending_human_review",
+      "evidence": "var/data/processed/HPG-2025-f38c5f75becf/database-readback.csv"
     },
     {
       "ticker": "VNM",
@@ -85,7 +105,8 @@
       "ticker": "VNM",
       "fiscal_year": 2025,
       "scope": "consolidated",
-      "status": "planned_not_reconciled_with_source_ledger"
+      "status": "extracted_to_postgresql_pending_human_review",
+      "evidence": "var/data/processed/VNM-2025-ee996ffcb87f/database-readback.csv"
     },
     {
       "ticker": "FPT",
@@ -112,7 +133,32 @@
     "database": "PostgreSQL",
     "persistence": "SQLAlchemy + Alembic",
     "deployment": "local web first",
-    "status": "selected_not_implemented",
+    "status": "selected_deferred_in_current_collection_scope",
     "decision_date": "2026-10-11"
+  },
+  "current_work": {
+    "tickers": [
+      "VNM",
+      "HPG"
+    ],
+    "fiscal_years": [
+      2025
+    ],
+    "report_period": "annual",
+    "preferred_report_scope": "consolidated",
+    "assurance": "audited",
+    "language": "vi",
+    "ends_at": "postgresql_readback",
+    "human_review_complete": false,
+    "source_registry": "config/report-sources.json",
+    "entry_point": "scripts/run_pipeline.py",
+    "reusable_collection_package": "src/financial_pipeline/collection",
+    "expected_report_count": 2,
+    "expected_core_target_count": 12,
+    "reusable_extraction_package": "src/financial_pipeline/extraction",
+    "core_tests": "tests/financial_pipeline",
+    "runtime_profile": "config/pipeline.json",
+    "reusable_ocr_package": "src/financial_pipeline/ocr",
+    "reusable_storage_package": "src/financial_pipeline/storage"
   }
 }

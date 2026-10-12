@@ -1,0 +1,20 @@
+{
+  "prepared_at": "2026-10-12T02:44:37.463013+00:00",
+  "recognizer": "VietOCR",
+  "model_name": "vgg_seq2seq",
+  "weights_url": "https://vocr.vn/data/vietocr/vgg_seq2seq.pth",
+  "weights_sha256": "0921503a41375a0584268e23ef3d414ea478a8fe8777865c7745d38f2d0bc5db",
+  "weights_bytes": 89575371,
+  "config_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/pbcquoc/vietocr/master/config/base.yml",
+      "sha256": "9c8283fadb950f06f5d3400475f80d5355700ff315c9c48b7875e6ea66647d1c"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/pbcquoc/vietocr/master/config/vgg-seq2seq.yml",
+      "sha256": "0160ba8d442ae96f4c6095b92ac3521c59b83ce6eda9fd5459e8628a5586c3e8"
+    }
+  ],
+  "configuration": "config/vietocr-inference.yml",
+  "device": "cpu"
+}

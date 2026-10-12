@@ -93,6 +93,8 @@ Các tác nhân ngoài gồm website quan hệ nhà đầu tư/công bố chính
 
 Một ứng dụng web React/TypeScript, REST API FastAPI/Python 3.12, PostgreSQL và pandas; HTTP/lxml cho nguồn, pypdf/pdfplumber cho PDF có text, Poppler render và **PaddleOCR/PaddlePaddle CPU cho OCR fallback** theo quyết định người thực hiện ngày 11/10/2026. Tesseract giữ làm đối chứng; chưa có thực nghiệm chứng minh Paddle tốt hơn trên corpus project. Phụ thuộc/model và cấu hình phải được khóa theo phiên bản triển khai thực tế sau smoke test. Môi trường nghiệm thu chính là Windows local; React và FastAPI là lựa chọn kiến trúc hiện hành; cloud, GPU và server nhiều người dùng chưa bắt buộc. Có thể thay thư viện tương đương bằng quyết định thiết kế nếu vẫn đạt toàn bộ yêu cầu và cập nhật manifest.
 
+**Đính chính thiết kế ngày 12/10/2026:** bước OCR hiện hành dùng **Paddle phát hiện vùng chữ/crop → VietOCR nhận diện tiếng Việt**; demo tuần 1 Vinamilk 2025 render trang bằng PyMuPDF rồi chạy pipeline này, không dùng recognizer Paddle hoặc native text làm số đầu ra. Đây là thay lựa chọn triển khai OCR, không thêm UC/FR hoặc đổi sáu metrics. Nhánh PDF có text trong SRS vẫn là khả năng thiết kế; chưa coi demo mới đã thực hiện nhánh đó. [Phương án và minh chứng](../../workspace/history/week1-over-scope-2026-10-12/README.md).
+
 Ngân sách baseline v3.1: 13 tuần, 143 giờ nền + 24 giờ cầu nối dự toán; CR-DIV-02 trước đây ước tính thêm 64–98 giờ với giả định hạ tầng nền đã chạy, chưa cộng vào lịch/checklist; cần tính lại sau CR-AN-03; quỹ thực cần chốt tại G4/mục 15. Thay đổi cỡ mẫu/chỉ tiêu phải ghi change record ở mục 12; không âm thầm mở rộng MVP.
 
 ### 2.4. Giả định và phụ thuộc

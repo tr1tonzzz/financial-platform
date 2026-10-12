@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "sources": {
+    "VNM": {
+      "legal_name": "Công ty Cổ phần Sữa Việt Nam",
+      "catalog_url": "https://www.vinamilk.com.vn/investor/reports/financial",
+      "adapter": "vinamilk",
+      "catalog_hosts": ["www.vinamilk.com.vn"],
+      "download_hosts": ["d8um25gjecm9v.cloudfront.net"],
+      "max_pages": 60
+    },
+    "HPG": {
+      "legal_name": "Công ty Cổ phần Tập đoàn Hòa Phát",
+      "catalog_url": "https://www.hoaphat.com.vn/quan-he-co-dong/bao-cao-tai-chinh",
+      "adapter": "html",
+      "entry": {"tag": "div", "class": "item"},
+      "pagination": {
+        "mode": "numbered",
+        "parameter": "page",
+        "container": {"class": "pagination"}
+      },
+      "catalog_hosts": ["www.hoaphat.com.vn"],
+      "download_hosts": ["file.hoaphat.com.vn"],
+      "max_pages": 60
+    }
+  }
+}

@@ -1,4 +1,4 @@
-# Chốt phạm vi HPG–VNM–FPT và stack PaddleOCR
+# Chốt phạm vi HPG–VNM–FPT và stack Paddle detection + VietOCR
 
 Quyết định của người thực hiện ngày **11/10/2026**: chọn **Hòa Phát (HPG), Vinamilk (VNM), FPT (FPT)**; chuyển công cụ OCR chính sang **PaddleOCR**. Quyết định này thay các phương án chưa chốt trong tài liệu 29/30 và lựa chọn Tesseract trong thiết kế trước. Không phải kết luận thực nghiệm rằng PaddleOCR đọc tốt hơn.
 
@@ -29,7 +29,8 @@ Nhóm này phù hợp để kiểm luồng trên các doanh nghiệp có hoạt 
 | Thu thập | HTTP + lxml, downloader có hash/phiên bản | Catalog BCTC, thông báo và tài liệu nguồn |
 | PDF có text | pypdf/pdfplumber | Metadata, text/tọa độ; kiểm text có dùng được hay không |
 | Render trang scan | Poppler | Chuyển trang cần đọc thành ảnh, giữ số trang/DPI |
-| OCR chính | PaddleOCR dòng 3.x, engine PaddlePaddle, ưu tiên CPU | Nhận diện chữ/số và vị trí trên ảnh; chọn model hỗ trợ tiếng Việt |
+| Phát hiện vùng chữ | PaddleOCR TextDetection, engine PaddlePaddle CPU | Phát hiện vị trí; crop ảnh vùng chữ, không dùng recognizer Paddle cho luồng hiện hành |
+| Nhận diện văn bản | VietOCR, PyTorch CPU | Nhận diện text tiếng Việt trên ảnh crop do bước Paddle tạo |
 | Database | PostgreSQL; SQLAlchemy + Alembic | Schema, transaction, revision và migration; NUMERIC cho số tiền |
 | Tính toán | pandas, integer/Decimal | Công thức chạy ở backend trên dữ liệu đã duyệt |
 | Tài liệu gốc | Thư mục raw theo SHA-256; metadata trong PostgreSQL | PDF/ảnh không nhét toàn bộ vào bảng số liệu; API phục vụ nguồn qua ID |
@@ -47,7 +48,11 @@ Tài liệu chính thức [cài PaddleOCR](https://www.paddleocr.ai/main/en/vers
 
 ## 3. Pipeline sau khi chuyển
 
-PDF → kiểm text/tọa độ → nếu không dùng được thì render trang → PaddleOCR → chữ/số/vị trí/confidence → ánh xạ nhãn và cột → chuẩn hóa candidate → kiểm đơn vị/kỳ/scope/dấu → người vận hành duyệt → PostgreSQL → phân tích/biểu đồ.
+**Đính chính tiếp ngày 12/10/2026 — quyết định hiện hành:** người thực hiện chốt **Paddle phát hiện vùng chữ và crop ảnh, VietOCR nhận diện văn bản tiếng Việt**. Luồng tuần 1 làm lại từ thu nguồn Vinamilk 2025 trong `workspace/week1-demo/`: PDF → render trang → Paddle text detection → crop vùng chữ → VietOCR recognition → ánh xạ dòng/cột → chuẩn hóa candidate → đối chiếu/duyệt → PostgreSQL → bảng React/nguồn/CSV. Phần lựa chọn recognizer Paddle và mô tả nhánh đọc text bên dưới là thiết kế trước đính chính; không dùng làm đầu ra của demo mới. Kết quả Paddle-only cũ giữ tên engine thật. Khóa VietOCR/package/model sau smoke test; không khẳng định chất lượng tốt hơn trước thực nghiệm.
+
+**Chốt lại ngày 12/10/2026:** phương án đọc tài liệu PDF là **PaddleOCR kết hợp pipeline OCR của project**. PaddleOCR đảm nhiệm nhận diện chữ/số trên ảnh; pipeline nối tiếp nhận PDF, đọc/render trang, ánh xạ dòng/cột, chuẩn hóa, đối chiếu và duyệt, lưu số liệu kèm nguồn. Tiếp tục giữ nhánh đọc text khi text/tọa độ dùng được theo thiết kế hiện hành. Đây là xác nhận phương án triển khai, không phải kết luận về chất lượng trích số hoặc xác nhận toàn bộ pipeline đã chạy.
+
+**Luồng demo hiện hành:** PDF → render trang → Paddle phát hiện vùng chữ → crop ảnh → VietOCR nhận diện text → ánh xạ nhãn và cột → chuẩn hóa candidate → kiểm đơn vị/kỳ/scope/dấu → người vận hành duyệt → PostgreSQL → bảng React/truy nguồn/CSV. Chạy mới và giới hạn được ghi trong [workspace demo tuần 1](../../workspace/history/week1-over-scope-2026-10-12/README.md).
 
 Mỗi lần OCR lưu engine/package/model/config, trang, tọa độ, text thô, confidence, thời gian và lỗi. Confidence không thay kiểm đúng số. Giữ kết quả cũ dưới tên engine cũ để không biến phép đo Tesseract thành minh chứng Paddle.
 

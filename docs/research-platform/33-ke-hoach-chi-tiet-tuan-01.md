@@ -4,6 +4,8 @@ Ngày lập: **11/10/2026**. Tuần 1 làm tiếp theo [kế hoạch 10 tuần, 
 
 **Đầu ra là web local React + FastAPI + PostgreSQL.** Script xử lý PDF/OCR được tái sử dụng trong backend; chưa xây ứng dụng desktop/mobile hoặc một giao diện Streamlit song song. [Stack hiện hành](31-chot-pham-vi-va-stack-paddleocr.md).
 
+**Đính chính phạm vi hiện hành ngày 12/10/2026:** người thực hiện chỉ giao **phần thu thập dữ liệu Vinamilk 2025 cho tuần này**, không giao làm hết kế hoạch tuần 1 bên dưới. Chỉ đi sâu phần thu thập; các bước đọc OCR/trích số, kho/API/frontend và duyệt làm sau khi được giao. Hướng đọc tài liệu đã chọn là Paddle detection/crop → VietOCR, không tự mở rộng phạm vi thu thập. Kết quả phải do chạy code sinh ra; không thêm file báo cáo, nhật ký, snapshot tổng hợp hoặc minh chứng tự soạn bởi Codex. Xem quy tắc hiện hành trong [AGENTS.md](../../AGENTS.md).
+
 **Đích cuối tuần:** một BCTC năm của HPG/VNM/FPT đi được từ tài liệu đến bảng sáu chỉ tiêu đã duyệt hoặc thiếu có lý do; người dùng xem nguồn từng ô và xuất CSV. Paddle thay bước OCR trong pipeline đã thử, không dành tuần này kiểm lại toàn bộ stack.
 
 **Căn cứ Báo cáo 2:** giữ sáu chỉ tiêu nền đã nêu trong báo cáo; xem [từ điển và hợp đồng dữ liệu chi tiết](35-dac-ta-metrics-tu-bao-cao-02.md). Thực nghiệm cũ là **LNST/CFO/tiền chi cổ tức × hai kỳ**, không phải đã trích đủ sáu chỉ tiêu nền. Không chọn lại metrics hoặc lấy kết quả Tesseract cũ làm số đo Paddle. [Tuần 2 chi tiết](34-ke-hoach-chi-tiet-tuan-02.md) tiếp nối kho và màn hình tuần này.

@@ -8,3 +8,9 @@ node_modules/
 docs/report-docs/
 _plan_render/
 data-sets/
+workspace/history/
+*.egg-info/
+.pytest_cache/
+var/
+build/
+dist/

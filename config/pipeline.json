@@ -1,0 +1,13 @@
+{
+  "base_dir": "..",
+  "workspace": "var",
+  "detector_python": ".venv-paddle/Scripts/python.exe",
+  "inference_python": "var/runtime/venv/Scripts/python.exe",
+  "paddle_model_dir": "~/.paddlex/official_models/PP-OCRv5_mobile_det",
+  "detector_lock": "config/paddle-detector-model.lock.json",
+  "vietocr_config": "config/vietocr-inference.yml",
+  "vietocr_lock": "config/vietocr-model.lock.json",
+  "vietocr_weights": "var/runtime/models/vgg_seq2seq.pth",
+  "database_env": "var/runtime/database.env",
+  "source_registry": "config/report-sources.json"
+}
